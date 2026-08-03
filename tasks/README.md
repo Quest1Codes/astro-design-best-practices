@@ -331,11 +331,11 @@ Status legend: `NOT STARTED` | `IN PROGRESS` | `IN REVIEW (Critic)` | `IN SIGN-O
 | SETUP-1 | Repo Scaffolding + Agent Pipeline Definitions | MERGED | — | |
 | SETUP-2 | Import Mentor-Authored Companion Skills | MERGED | — | |
 | SETUP-3 | Axis Relevance Matrix | MERGED | — | Cluster-level (13 rows) |
-| SETUP-4 | Seed Source List | NOT STARTED | — | Blocks all 130 topic tasks |
+| SETUP-4 | Seed Source List | PARTIAL | — | Done informally for Cluster 1 only, as part of generating 001-010 (not run as its own gated task); Clusters 2-19 still NOT STARTED |
 | SETUP-5 | Tier-3 Partner Material Ingestion Path | NOT STARTED | — | |
-| SETUP-6 | Skill Scaffold | NOT STARTED | — | Blocks all 130 topic tasks |
-| 001 | DAG-factory pattern for large estates | NOT STARTED | — | Task file written in full as the confirmed template |
-| 002-100 | Remaining Cluster 1-13 topic tasks | NOT STARTED | — | Task files generated per-cluster as work starts, following 001's shape |
+| SETUP-6 | Skill Scaffold | PARTIAL | — | `SKILL.md` + `reference/scheduler-and-dag/` exist; remaining 18 cluster subdirectories NOT STARTED |
+| 001-010 | Cluster 1 — Scheduler & DAG Design | CRITIC-REVIEWED, NOT SIGNED OFF | — | Generated + Critic-pass-reviewed autonomously; Human Source Check and Human Sign-off gates explicitly skipped per direct instruction. Critic found and fixed 6 real defects (see `research/cluster-1-topics-001-010-critic-report.md`); 3 `NEEDS_EXEC_CHECK` items remain, genuinely requiring a human to run something real. Not to be treated as fully verified until `.agents/signoff-checklist.md` is completed per file. |
+| 011-100 | Remaining Cluster 2-13 topic tasks | NOT STARTED | — | Task files generated per-cluster as work starts, following 001's shape |
 | 101-130 | Cluster 14-19 topic tasks | NOT STARTED | — | Added after researching real AutoSys documentation (Broadcom TechDocs) — see the per-cluster grounding notes above |
 
 ---
