@@ -1,6 +1,6 @@
-# Task 002 — Import Mentor-Authored Companion Skills
+# Task SETUP-2 — Import Mentor-Authored Companion Skills
 
-**Phase**: 0 — Repo Foundation
+**Phase**: Setup (prerequisite — not one of the 100 numbered topic tasks)
 **Priority**: P0 (blocking)
 **Status**: MERGED
 
@@ -32,7 +32,7 @@ All copied verbatim — no content changes in this task. `.DS_Store` files exclu
 
 ## Dependencies
 
-- 001
+- SETUP-1
 
 ## Follow-up
 

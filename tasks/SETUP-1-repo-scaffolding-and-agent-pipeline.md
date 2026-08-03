@@ -1,6 +1,6 @@
-# Task 001 — Repo Scaffolding + Agent Pipeline Definitions
+# Task SETUP-1 — Repo Scaffolding + Agent Pipeline Definitions
 
-**Phase**: 0 — Repo Foundation
+**Phase**: Setup (prerequisite — not one of the 100 numbered topic tasks)
 **Priority**: P0 (blocking)
 **Status**: MERGED
 
