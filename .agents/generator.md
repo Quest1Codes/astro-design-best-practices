@@ -29,7 +29,7 @@ Write to `.work/{topic-id}/generator-output.md`:
 ## Draft reference file
 
 {The actual content, formatted as it would appear at
-skills/astro-design-best-practices/reference/{topic}.md — matching the house
+skills/astro-design-best-practices/reference/{cluster}/{topic}.md — matching the house
 style: short intro, then rule/decision tables, terse, no filler prose.
 Each non-obvious claim gets an inline citation marker like [B1] or [A1-2]
 referencing the fact-sheet row it came from.}

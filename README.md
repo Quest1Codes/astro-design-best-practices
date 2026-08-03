@@ -1,15 +1,15 @@
 # Astro Migration Skills
 
-Quest1's Astronomer-partner skill library for AutoSys → Astronomer/Airflow migrations. This is a **content repo**: Claude-Code-style skills (`SKILL.md` + `reference/*.md` + `scripts/`) meant to be usable directly (via Claude Code or any CLI agent), consumed by Shinro's assessment-report generation, and eventually served by an MCP server to any MCP-compatible client.
+Quest1's Astronomer-partner skill library for AutoSys → Astronomer/Airflow migrations. This is a **content repo**: Claude-Code-style skills (`SKILL.md` + `reference/*.md` + `scripts/`) meant to stand on their own as a production-grade knowledge base — usable directly via Claude Code or any CLI agent — before anyone wires them into a specific consumer.
 
 ## What's here
 
 - **`skills/migrating-autosys-to-astronomer/`** and its 3 topology companions (`...-k8s-to-astronomer`, `...-mainframe-boundary-to-astro`, `...-onprem-distributed-to-astro-cloud`) — imported as-is from the mentor's existing work in `shinro`. These cover *migration workflow*: inventory, classification, translation, cutover.
-- **`skills/astro-design-best-practices/`** (in progress) — a new skill covering *target-side architecture design*: how to design the Astro/Airflow solution well (scheduler/DAG design, executor/worker architecture, metadata DB, security/multi-tenancy, observability, CI/CD topology, secrets, HA/DR, regulatory/compliance) rather than just how to translate a JIL construct.
+- **`skills/astro-design-best-practices/`** (in progress — this is the actual project) — a new skill covering *target-side architecture design*: 100 topic files across 13 clusters (scheduler/DAG design, executor/worker architecture, metadata DB, security/multi-tenancy, observability, CI/CD topology, config/secrets, HA/DR, regulatory/compliance, integration/enterprise mesh, migration execution/coexistence, cost/capacity governance, governance/operating model) — how to design the Astro/Airflow solution well, not just how to translate a JIL construct.
 
 ## Why a separate repo from Shinro
 
-This content needs its own release lifecycle, needs to be reviewable by non-engineers (SMEs, partner content), and is meant to be consumed by more than one thing (Shinro today, an MCP server eventually) — bundling it inside one Shinro agent's Python package made all three harder. Shinro is a **consumer** of this repo, not its origin.
+This content needs its own release lifecycle and needs to be reviewable by non-engineers (SMEs, partner content) — bundling it inside one Shinro agent's Python package made both harder. This repo's job stops at producing a verified, sourced knowledge base. **Consuming it — wiring it into Shinro's report generation, an MCP server, or anything else — is explicitly out of scope here** (see `tasks/README.md`'s "Explicitly out of scope" section); that's separate downstream work for whichever project ends up consuming this one, once it exists.
 
 ## How content gets built here
 

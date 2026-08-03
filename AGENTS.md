@@ -68,19 +68,24 @@ astro-migration-skills/
     ├── migrating-autosys-onprem-distributed-to-astro-cloud/    (mentor-authored, imported)
     └── astro-design-best-practices/                            (new — built by this pipeline)
         ├── SKILL.md
-        └── reference/
-            ├── scheduler-and-dag-design.md
-            ├── executor-and-worker-architecture.md
-            ├── metadata-db-and-state-design.md
-            ├── security-and-multitenancy-design.md
-            ├── observability-and-alerting-design.md
-            ├── cicd-and-environment-topology.md
-            ├── config-and-secrets-design.md
-            ├── ha-and-dr-design.md
-            └── regulatory-and-compliance-design.md
+        └── reference/               (100 topic files across 13 cluster subdirectories;
+                                        see tasks/README.md for the full list — e.g.:)
+            ├── scheduler-and-dag/          (13 files, e.g. dag-factory-pattern-for-large-estates.md)
+            ├── executor-and-worker/        (11 files)
+            ├── metadata-db-and-state/      (8 files)
+            ├── security-and-multitenancy/  (10 files)
+            ├── observability-and-alerting/ (10 files)
+            ├── cicd-and-environment-topology/ (10 files)
+            ├── config-and-secrets/         (6 files)
+            ├── ha-and-dr/                  (5 files)
+            ├── regulatory-and-compliance/  (7 files)
+            ├── integration-and-enterprise-mesh/ (6 files)
+            ├── migration-execution-and-coexistence/ (4 files)
+            ├── cost-and-capacity-governance/ (4 files)
+            └── governance-and-operating-model/ (6 files)
 ```
 
-**Key rule**: this repo is the source of truth for skill content. Shinro (`shinro/apps/api/agents/autosys_astronomer/skill_loader.py`) is a *consumer* — it vendors or pulls from here, it does not originate content. The 4 skills under `skills/` above were copied in from Shinro's tree as a starting point; Shinro's copies should eventually be treated as the stale ones once this repo is established as canonical, not the other way around.
+**Key rule**: this repo is the source of truth for skill content, and this content's job is to stand on its own as a production-grade knowledge base — not to be built *for* any particular consumer. Shinro (`shinro/apps/api/agents/autosys_astronomer/skill_loader.py`) is one *possible future consumer*, the same way an eventual MCP server would be — wiring either of those up is explicitly **not** part of this project's roadmap (see `tasks/README.md`'s "Explicitly out of scope" section). The 4 skills under `skills/` above were copied in from Shinro's tree as a starting point; Shinro's copies should eventually be treated as the stale ones once this repo is established as canonical, not the other way around.
 
 ---
 
@@ -104,7 +109,7 @@ Create `.work/{topic-id}/status.md`:
 # Pipeline Status — {topic-id}
 
 ## Topic
-- **Reference file**: skills/astro-design-best-practices/reference/{topic}.md
+- **Reference file**: skills/astro-design-best-practices/reference/{cluster}/{topic}.md
 - **Relevant axes**: {list from tasks/README.md relevance matrix}
 
 ## Stages
@@ -167,10 +172,10 @@ Update status: `critic = DONE`.
 
 ### Stage 4: Human Sign-off (MANDATORY gate)
 
-Read `.agents/signoff-checklist.md`. This is where anything the Critic flagged as execution-checkable actually gets run (e.g. `astro dev start` + confirm a claimed CLI/API behavior), not just re-read. Nothing moves from `.work/{topic-id}/generator-output.md` into `skills/astro-design-best-practices/reference/{topic}.md` without this gate set to `APPROVED`.
+Read `.agents/signoff-checklist.md`. This is where anything the Critic flagged as execution-checkable actually gets run (e.g. `astro dev start` + confirm a claimed CLI/API behavior), not just re-read. Nothing moves from `.work/{topic-id}/generator-output.md` into `skills/astro-design-best-practices/reference/{cluster}/{topic}.md` without this gate set to `APPROVED`.
 
 On approval:
-1. Copy the (possibly critic-revised) draft into `skills/astro-design-best-practices/reference/{topic}.md`
+1. Copy the (possibly critic-revised) draft into `skills/astro-design-best-practices/reference/{cluster}/{topic}.md`
 2. Copy the fact-sheet into `research/{topic}.md` (permanent, for future re-verification)
 3. Update `skills/astro-design-best-practices/SKILL.md`'s Reference Files index
 4. Commit

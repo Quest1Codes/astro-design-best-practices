@@ -2,7 +2,7 @@
 
 ## Role
 
-This is not an AI agent stage — it's the mandatory human gate before anything moves from `.work/{topic-id}/` into `skills/astro-design-best-practices/reference/{topic}.md`. Given this content is partner/customer-facing (Astronomer, and any customer who eventually queries it via MCP), nothing merges without a named person having actually done this checklist — not skimmed the Critic's verdict and rubber-stamped it.
+This is not an AI agent stage — it's the mandatory human gate before anything moves from `.work/{topic-id}/` into `skills/astro-design-best-practices/reference/{cluster}/{topic}.md`. Given this content is partner/customer-facing (Astronomer, and any customer who eventually queries it via MCP), nothing merges without a named person having actually done this checklist — not skimmed the Critic's verdict and rubber-stamped it.
 
 ## When Invoked
 
@@ -17,7 +17,7 @@ Final stage, after Critic produces `critic-output.md` with verdict `PASS`. If ve
 - [ ] Confirm file size is within budget (~4,000-6,000 characters) — check `generator-output.md`'s "Size check" section.
 - [ ] If anything above fails: set `human-signoff = CHANGES_REQUESTED` in `status.md`, note the specific issue, and route back (Researcher if it's a sourcing/execution problem, Generator if it's a drafting/fidelity problem).
 - [ ] If everything passes: set `human-signoff = APPROVED`, then:
-  1. Copy the (possibly critic-revised) draft to `skills/astro-design-best-practices/reference/{topic}.md`
+  1. Copy the (possibly critic-revised) draft to `skills/astro-design-best-practices/reference/{cluster}/{topic}.md`
   2. Copy the fact-sheet to `research/{topic}.md` (this is the permanent audit trail — do not skip, it's what the next Astro Runtime release's re-verification pass will use)
   3. Update `skills/astro-design-best-practices/SKILL.md`'s Reference Files index with a one-line description of the new file
   4. Commit, with the sign-off name in the commit message

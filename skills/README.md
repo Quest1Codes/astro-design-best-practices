@@ -11,6 +11,8 @@ These 4 are source-**topology** skills — the axis where the value genuinely ch
 
 ## In progress (this pipeline builds it — Phases 1-3)
 
-- `astro-design-best-practices/` — not yet scaffolded (Task 006). Covers target-side architecture design: scheduler/DAG design, executor/worker architecture, metadata DB, security/multi-tenancy, observability/alerting, CI/CD topology, config/secrets, HA/DR, regulatory/compliance. Every other axis discussed (deployment model, estate scale, migration temporal strategy, org model, vertical, executor substrate, integration surface) lives as decision tables *inside* these 9 reference files, per the Axis Relevance Matrix in `tasks/README.md` — not as separate skills.
+- `astro-design-best-practices/` — not yet scaffolded (Task 006). 100 topic files across 13 clusters (scheduler/DAG design, executor/worker architecture, metadata DB, security/multi-tenancy, observability/alerting, CI/CD topology, config/secrets, HA/DR, regulatory/compliance, integration/enterprise mesh, migration execution/coexistence, cost/capacity governance, governance/operating model), organized as `reference/{cluster}/{topic}.md`. Every other axis discussed (deployment model, estate scale, migration temporal strategy, org model, vertical, executor substrate, integration surface) lives as decision tables *inside* these files, per the cluster-level Axis Relevance Matrix in `tasks/README.md` — not as separate skills.
 
-See `tasks/README.md` for the phase-by-phase build order and `AGENTS.md` for how each reference file gets produced.
+This is the whole scope of this project — building and verifying the 100 files. Consuming them (Shinro's report generation, an MCP server, or anything else) is explicitly out of scope here; see `tasks/README.md`'s "Explicitly out of scope" section.
+
+See `tasks/README.md` for the full 100-topic list and phase-by-phase build order, and `AGENTS.md` for how each reference file gets produced.
