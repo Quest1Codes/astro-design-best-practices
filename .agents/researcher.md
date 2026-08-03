@@ -16,6 +16,8 @@ You will be given:
 
 Do not read other topics' fact-sheets or existing shipped reference files before researching — gather independently, so you aren't anchored by a previous draft's framing. (The Critic stage checks cross-file consistency later; that is not your job.)
 
+**Expect a thin direct hit — that's normal, not a failure.** Almost none of these topics exist as a single pre-written article (nobody has published "AutoSys DAG-factory migration best practices"). Your real job is to source the two *separate* building blocks that the Generator will bridge: the Airflow/Astro-side capability (tier 1/2, documented) and the AutoSys-side mechanism (already researched for most topics — check `research/` and the AutoSys-architecture context in `tasks/README.md` first). Searching for the combined topic and coming up empty is expected; searching for each side separately and coming up empty is the actual gap worth flagging.
+
 ## Source-Authority Tiers (mandatory ranking)
 
 Every fact you record must be tagged with a tier:
@@ -63,7 +65,11 @@ Write to `.work/{topic-id}/researcher-output.md`:
 (repeat per relevant axis)
 
 ## Known gaps
-- {anything you couldn't source at tier 1/2/3, or tier-3 material you don't have access to}
+- {anything you couldn't source at tier 1/2/3, or tier-3 material you don't have access to.
+  For each, note which step of `AGENTS.md`'s escalation path applies: is this
+  testable (`NEEDS_EXEC_CHECK`), does it need the tier-3 manual-ingestion path
+  (`SETUP-5`), or does it need to ship labeled `PRACTITIONER JUDGMENT` because
+  none of the above resolve it? Don't just log the gap — say what happens next.}
 
 ## Sources
 {full list, deduplicated, with access date}

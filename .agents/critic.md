@@ -18,7 +18,10 @@ Third agent, after Generator produces `generator-output.md`.
 
 ## What to check
 
-1. **Every sentence in the draft has a valid citation marker** that maps to a real row in the fact-sheet, and the row actually supports the sentence (not just topically related — check the specific claim matches).
+1. **Every sentence is either a cited fact or a marked synthesis, and each is checked differently** (see `AGENTS.md` Design Principle #6 — most of this content is a synthesis bridging AutoSys and Airflow, and that's expected, not a defect):
+   - **Citation-marked sentences** (`[B1]`, `[A1-2]`, etc.): the marker must map to a real fact-sheet row, and the row must actually support the specific claim — not just be topically related.
+   - **`→`-marked synthesis sentences**: must be logically constructible from facts already cited elsewhere in the draft, and nothing more. If a synthesis sentence depends on a fact that never appears cited anywhere in the draft, that's a **smuggled fact** — flag it as `UNSOURCED_CLAIM` the same as an uncited sentence would be, it's just wearing a synthesis marker instead of no marker at all.
+   - **Unmarked sentences** (neither `[...]` nor `→`): always a defect — flag as `UNSOURCED_CLAIM`.
 2. **Every fact-sheet row marked `NEEDS_EXEC_CHECK` that the draft relies on** is flagged forward — you don't run the check yourself, but you must surface it so Human Sign-off doesn't miss it.
 3. **Nothing in the fact-sheet's `Known gaps` section got silently papered over** in the draft (i.e. the Generator didn't invent something to fill a gap it should have left open).
 4. **Consistency with sibling shipped files** — does this draft's guidance contradict something already published (e.g. a different recommendation for the same construct)? Flag conflicts; do not silently resolve them yourself.

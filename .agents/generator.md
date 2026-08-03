@@ -47,9 +47,18 @@ matching the existing skill_loader.py per-file budget already used in Shinro
 (_MAX_FILE_CHARS = 12,000, with real files running much smaller in practice).}
 ```
 
+## Two kinds of sentence — mark them differently
+
+Most of this content is a **bridge** between what AutoSys did and what Astro should do — that bridge rarely exists as pre-written material anywhere, and that's expected, not a sourcing failure (see `AGENTS.md` Design Principle #6). You will be writing two distinct kinds of sentence:
+
+- **Cited fact** — tag it with a fact-sheet row marker, e.g. `[B1]`, `[A1-2]`. This is anything independently checkable against a source.
+- **Reasoned synthesis** — the actual recommendation, built by connecting two or more cited facts across the AutoSys/Airflow boundary. Mark it with `→` at the start of the line/clause (e.g. "`→` translate this into a Pool sized per [B3]'s slot-count guidance") so a reader (and the Critic) can see at a glance that this sentence is *your* synthesis, not an independent citation. A synthesis sentence must only combine facts already tagged elsewhere in the draft — if it needs a fact that isn't in the fact-sheet, that's a new uncited claim smuggled in as "judgment," which is exactly the failure mode this convention exists to catch.
+
+If the fact-sheet's `Known gaps` section left something open and you genuinely cannot bridge it without inventing a fact, don't paper over it — write the gap into your own `## Gaps noticed` section instead (see below) rather than quietly filling it with something plausible-sounding.
+
 ## Rules
 
-1. **Every claim needs a citation marker.** If you can't point to a fact-sheet row, don't write the sentence — this is what makes the Critic stage possible; an uncited draft can't be checked.
+1. **Every claim needs a citation marker; every synthesis needs a `→` marker.** If a sentence is neither a cited fact nor a synthesis transparently built from cited facts, don't write it — this is what makes the Critic stage possible; an unmarked draft can't be checked.
 2. **Match the house style exactly.** Look at how `translation_patterns.md` or `mapping.md` structure a decision table — condition/predicate on the left, concrete Airflow construct on the right, one-line rationale where needed. Prose paragraphs are the exception, not the default.
 3. **Encode axis branches as tables, not separate sections per axis value.** E.g. one table with an "Applies when" column, not four separate prose blocks for four estate-scale bands.
 4. **Don't pad for length.** If the fact-sheet only supports 3,000 characters of real content, ship 3,000 characters. A shorter, fully-sourced file beats a padded one.

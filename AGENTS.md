@@ -38,6 +38,19 @@ These were established through discussion before this repo existed and should no
 
 5. **Nothing merges without a source trail.** Every reference file ends with a `## Sources` section — not decorative, this is what a future maintenance pass (Astro Runtime ships a new release, a claim needs re-checking) actually uses.
 
+6. **Two different kinds of content, checked differently — most topics are the second kind, not the first.** Almost none of these 130 topics exist as a single pre-written article anywhere; the bridge between "what AutoSys did" and "what Astro should do" is the actual product, not something to find.
+   - **Cited fact**: a specific, checkable claim ("Airflow supports dynamic task mapping since 2.3" / "AutoSys's `max_load` has no fixed relationship to physical CPU/memory"). Needs a citation marker to a fact-sheet row. This is what Design Principle #1 governs.
+   - **Reasoned synthesis**: the recommendation itself, built by connecting two or more cited facts across the AutoSys/Airflow boundary ("...therefore, translate AutoSys's `max_load` weighting directly into Airflow Pool slot counts, sized per [B3]"). This does **not** need its own external citation — nobody has published it — but every fact it depends on must already be cited, and the synthesis must not smuggle in a *new* factual claim under cover of "design judgment." The Critic's job is to tell these apart: an uncited *fact* is a defect; an uncited *recommendation* built transparently from cited facts is the point of the file.
+   - **Genuine information gap**: sometimes even the raw facts aren't documented anywhere (tier 1-4 comes up empty). This is not the same problem as the two above and gets a different response — see the escalation path below.
+
+## When the Researcher can't find enough — the escalation path
+
+For a **genuine information gap** (not a synthesis gap — see Principle 6), in order:
+1. **Check if it's testable.** Many "undocumented" claims about Airflow/Astro behavior are a five-minute `astro dev start` away from being directly verified — that's a *better* source than a citation, not a fallback. Flag it `NEEDS_EXEC_CHECK` and let Human Sign-off resolve it empirically rather than leaving it as a citation gap.
+2. **Escalate to the tier-3 manual-ingestion path** (`SETUP-5`). If it's the kind of thing an Astronomer SA would just know, that's exactly what partner material is for — a gap in public docs is not necessarily a gap in what Quest1 has access to.
+3. **Label it explicitly and ship at reduced confidence**, if 1 and 2 both come up empty: `PRACTITIONER JUDGMENT — not independently verifiable from public sources as of {date}`. This is a last resort, used sparingly, and it must be visibly flagged in the shipped file, not smoothed over — a reader should be able to tell this claim apart from a cited one at a glance.
+4. **Defer the specific claim (not the whole topic) if none of the above work.** A topic doesn't need every cell filled to ship — it needs every cell to be honest about its own confidence. Forcing a fully-covered file out of thin material is worse than shipping a shorter, honestly-labeled one. The 130-topic count is a floor for *coverage*, never a target to hit by padding weak claims.
+
 ---
 
 ## Repository Structure

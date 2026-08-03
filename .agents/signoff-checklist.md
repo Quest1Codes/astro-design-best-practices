@@ -15,6 +15,8 @@ Final stage, after Critic produces `critic-output.md` with verdict `PASS`. If ve
 - [ ] Spot-check 2-3 tier-1/2 citations from `research-output.md` — open the actual source, confirm it says what's claimed. This catches a Researcher that mis-cited or over-generalized a source.
 - [ ] Confirm the draft's axis coverage table looks complete against `tasks/README.md`'s relevance matrix for this topic.
 - [ ] Confirm file size is within budget (~4,000-6,000 characters) — check `generator-output.md`'s "Size check" section.
+- [ ] For every item in the fact-sheet's `Known gaps` section: confirm it was actually escalated per `AGENTS.md`'s escalation path — either resolved by an exec-check above, escalated to tier-3 (`SETUP-5`), or explicitly labeled `PRACTITIONER JUDGMENT — not independently verifiable from public sources as of {date}` in the shipped file. A gap that was just logged and left unresolved is not mergeable — decide which path it took, on the record.
+- [ ] If a topic's real coverage turns out too thin even after escalation, it's fine to ship a shorter file, or to defer specific claims rather than the whole topic — do not pad weak material just to look complete. Note the decision either way.
 - [ ] If anything above fails: set `human-signoff = CHANGES_REQUESTED` in `status.md`, note the specific issue, and route back (Researcher if it's a sourcing/execution problem, Generator if it's a drafting/fidelity problem).
 - [ ] If everything passes: set `human-signoff = APPROVED`, then:
   1. Copy the (possibly critic-revised) draft to `skills/astro-design-best-practices/reference/{cluster}/{topic}.md`
