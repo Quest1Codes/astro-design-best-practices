@@ -1,7 +1,7 @@
 # Task SETUP-3 — Axis Relevance Matrix
 
-**Phase**: Setup (prerequisite — not one of the 100 numbered topic tasks)
-**Priority**: P0 (blocking — every one of the 100 topic tasks reads this)
+**Phase**: Setup (prerequisite — not one of the 130 numbered topic tasks)
+**Priority**: P0 (blocking — every one of the 130 topic tasks reads this)
 **Status**: MERGED
 
 ---
@@ -11,7 +11,7 @@
 Before any topic file gets drafted, decide which of the 7 decision-table axes
 (deployment model, estate scale, migration temporal strategy, org model,
 vertical/compliance, executor/compute substrate, integration surface) actually
-matter to which of the 13 `astro-design-best-practices` clusters (100 topics
+matter to which of the 19 `astro-design-best-practices` clusters (130 topics
 total). Without this matrix, a per-topic pipeline run has no way to know which
 axes its Researcher brief should cover — it would either ignore axes that
 matter or waste effort researching axes that don't change the topic's guidance
@@ -19,7 +19,7 @@ at all.
 
 ## Deliverables
 
-- The Axis Relevance Matrix in `tasks/README.md` (13 clusters × 7 axes, H/M/L rated)
+- The Axis Relevance Matrix in `tasks/README.md` (19 clusters × 7 axes, H/M/L rated)
 - Priority rationale explaining why scheduler, executor, security, CI/CD
   topology, and regulatory-compliance clusters are P0
 

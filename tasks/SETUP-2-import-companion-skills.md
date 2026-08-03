@@ -1,6 +1,6 @@
 # Task SETUP-2 — Import Mentor-Authored Companion Skills
 
-**Phase**: Setup (prerequisite — not one of the 100 numbered topic tasks)
+**Phase**: Setup (prerequisite — not one of the 130 numbered topic tasks)
 **Priority**: P0 (blocking)
 **Status**: MERGED
 

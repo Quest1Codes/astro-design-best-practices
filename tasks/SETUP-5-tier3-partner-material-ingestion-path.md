@@ -1,6 +1,6 @@
 # Task SETUP-5 — Tier-3 Partner Material Ingestion Path
 
-**Phase**: Setup (prerequisite — not one of the 100 numbered topic tasks)
+**Phase**: Setup (prerequisite — not one of the 130 numbered topic tasks)
 **Priority**: P1
 **Status**: NOT STARTED
 

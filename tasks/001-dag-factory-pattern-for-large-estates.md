@@ -29,7 +29,7 @@ platform team asks once they see the job count.
 This is **one topic = one full run of the 4-stage pipeline defined in
 `AGENTS.md`** — this task does not get hand-written; it gets produced by
 `Researcher → Human Source Check → Generator → Critic → Human Sign-off`,
-same as all 100 tasks in this project:
+same as all 130 tasks in this project:
 
 1. **Researcher** gathers a sourced fact-sheet for this topic specifically —
    tier 1 (Astronomer docs on dynamic DAG generation / DAG factories), tier 2

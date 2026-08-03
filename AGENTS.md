@@ -68,7 +68,7 @@ astro-migration-skills/
     ├── migrating-autosys-onprem-distributed-to-astro-cloud/    (mentor-authored, imported)
     └── astro-design-best-practices/                            (new — built by this pipeline)
         ├── SKILL.md
-        └── reference/               (100 topic files across 13 cluster subdirectories;
+        └── reference/               (130 topic files across 19 cluster subdirectories;
                                         see tasks/README.md for the full list — e.g.:)
             ├── scheduler-and-dag/          (13 files, e.g. dag-factory-pattern-for-large-estates.md)
             ├── executor-and-worker/        (11 files)
@@ -82,8 +82,20 @@ astro-migration-skills/
             ├── integration-and-enterprise-mesh/ (6 files)
             ├── migration-execution-and-coexistence/ (4 files)
             ├── cost-and-capacity-governance/ (4 files)
-            └── governance-and-operating-model/ (6 files)
+            ├── governance-and-operating-model/ (6 files)
+            ├── multi-instance-and-cross-instance/       (5 files — added after researching
+            │                                              AutoSys's real instance/CCI model)
+            ├── machine-load-and-virtual-resources/      (4 files — from max_load/job_load/
+            │                                              virtual-resource mechanics)
+            ├── native-security-and-credentials/         (4 files — from EEM/autosys_secure/PAM)
+            ├── reporting-and-forecasting/                (3 files — from Forecast/autorep)
+            ├── native-erp-and-webservice-agents/          (5 files — from the SAP/PeopleSoft/
+            │                                                Oracle EBS/WS-job native agents)
+            └── container-native-and-legacy-precision/     (8 files — from AutoSys's own k8s
+                                                             container-agent feature + HA mechanics)
 ```
+
+**On the 101-130 cluster additions**: these came from actually researching Broadcom's AutoSys documentation (see `tasks/README.md`'s per-cluster grounding notes) rather than from the same general-reasoning pass that produced 001-100. This is a live example of Design Principle #1 applied one level up — the topic *taxonomy itself* needed the same source discipline as any individual topic's content, and the first pass hadn't gotten that treatment yet.
 
 **Key rule**: this repo is the source of truth for skill content, and this content's job is to stand on its own as a production-grade knowledge base — not to be built *for* any particular consumer. Shinro (`shinro/apps/api/agents/autosys_astronomer/skill_loader.py`) is one *possible future consumer*, the same way an eventual MCP server would be — wiring either of those up is explicitly **not** part of this project's roadmap (see `tasks/README.md`'s "Explicitly out of scope" section). The 4 skills under `skills/` above were copied in from Shinro's tree as a starting point; Shinro's copies should eventually be treated as the stale ones once this repo is established as canonical, not the other way around.
 
