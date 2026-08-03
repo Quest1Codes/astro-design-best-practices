@@ -331,11 +331,12 @@ Status legend: `NOT STARTED` | `IN PROGRESS` | `IN REVIEW (Critic)` | `IN SIGN-O
 | SETUP-1 | Repo Scaffolding + Agent Pipeline Definitions | MERGED | — | |
 | SETUP-2 | Import Mentor-Authored Companion Skills | MERGED | — | |
 | SETUP-3 | Axis Relevance Matrix | MERGED | — | Cluster-level (13 rows) |
-| SETUP-4 | Seed Source List | PARTIAL | — | Done informally for Cluster 1 only, as part of generating 001-010 (not run as its own gated task); Clusters 2-19 still NOT STARTED |
+| SETUP-4 | Seed Source List | PARTIAL | — | Done informally for Clusters 1-2 only, as part of generating 001-020 (not run as its own gated task); Clusters 3-19 still NOT STARTED |
 | SETUP-5 | Tier-3 Partner Material Ingestion Path | NOT STARTED | — | |
-| SETUP-6 | Skill Scaffold | PARTIAL | — | `SKILL.md` + `reference/scheduler-and-dag/` exist; remaining 18 cluster subdirectories NOT STARTED |
-| 001-010 | Cluster 1 — Scheduler & DAG Design | CRITIC-REVIEWED, NOT SIGNED OFF | — | Generated + Critic-pass-reviewed autonomously; Human Source Check and Human Sign-off gates explicitly skipped per direct instruction. Critic found and fixed 6 real defects (see `research/cluster-1-topics-001-010-critic-report.md`); 3 `NEEDS_EXEC_CHECK` items remain, genuinely requiring a human to run something real. Not to be treated as fully verified until `.agents/signoff-checklist.md` is completed per file. |
-| 011-100 | Remaining Cluster 2-13 topic tasks | NOT STARTED | — | Task files generated per-cluster as work starts, following 001's shape |
+| SETUP-6 | Skill Scaffold | PARTIAL | — | `SKILL.md` + `reference/scheduler-and-dag/` + `reference/executor-and-worker/` exist; remaining 17 cluster subdirectories NOT STARTED |
+| 001-013 | Cluster 1 — Scheduler & DAG Design (complete) | CRITIC-REVIEWED, NOT SIGNED OFF | — | Generated + Critic-pass-reviewed autonomously; Human Source Check and Human Sign-off gates explicitly skipped per direct instruction. Two Critic passes (001-010, 011-013 as part of a combined pass) found and fixed real defects — see `research/cluster-1-topics-001-010-critic-report.md` and `research/topics-011-020-critic-report.md`. Several `NEEDS_EXEC_CHECK` items remain, genuinely requiring a human to run something real. Not to be treated as fully verified until `.agents/signoff-checklist.md` is completed per file. |
+| 014-020 | Cluster 2 — Executor & Worker Architecture (7 of 11) | CRITIC-REVIEWED, NOT SIGNED OFF | — | Same process as above. This batch's Critic pass found 2 outright `FAIL`s (a fabricated KEDA polling-interval/cool-down figure, and two Kubernetes resource-limit claims cited to a source supporting neither) — both fixed; see `research/topics-011-020-critic-report.md`. One `NEEDS_EXEC_CHECK` remains open (KEDA `cooldownPeriod` ambiguity). |
+| 021-100 | Remaining Cluster 2 (4 topics) + Clusters 3-13 | NOT STARTED | — | Task files generated per-cluster as work starts, following 001's shape |
 | 101-130 | Cluster 14-19 topic tasks | NOT STARTED | — | Added after researching real AutoSys documentation (Broadcom TechDocs) — see the per-cluster grounding notes above |
 
 ---
