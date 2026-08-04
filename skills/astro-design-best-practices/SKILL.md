@@ -12,7 +12,7 @@ metadata:
   author: Quest1
   version: "0.1.0"
   status: "in progress — 20 of 130 planned topics shipped"
-  source_project: astro-migration-skills
+  source_project: astro-design-best-practices
 ---
 
 # astro-design-best-practices

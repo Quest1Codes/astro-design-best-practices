@@ -1,4 +1,4 @@
-# Astro Migration Skills
+# Astro Design Best Practices
 
 Quest1's Astronomer-partner skill library for AutoSys → Astronomer/Airflow migrations. This is a **content repo**: Claude-Code-style skills (`SKILL.md` + `reference/*.md` + `scripts/`) meant to stand on their own as a production-grade knowledge base — usable directly via Claude Code or any CLI agent — before anyone wires them into a specific consumer.
 

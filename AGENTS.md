@@ -1,4 +1,4 @@
-# Astro Migration Skills — Agent Team Workflow
+# Astro Design Best Practices — Agent Team Workflow
 
 ### Multi-agent pipeline for producing production-grade, MCP-attachable Astro/Airflow design-best-practice skill content, sourced from AutoSys migration work · CLI-agnostic
 
@@ -56,7 +56,7 @@ For a **genuine information gap** (not a synthesis gap — see Principle 6), in 
 ## Repository Structure
 
 ```
-astro-migration-skills/
+astro-design-best-practices/
 ├── AGENTS.md                 ← This file (orchestration)
 ├── README.md                 ← Project overview
 ├── .agents/                  ← Agent role definitions
@@ -107,6 +107,8 @@ astro-migration-skills/
             └── container-native-and-legacy-precision/     (8 files — from AutoSys's own k8s
                                                              container-agent feature + HA mechanics)
 ```
+
+**Naming note**: the repo and its primary deliverable skill share the name `astro-design-best-practices` — this is intentional, not a duplication error. The repo also holds the 4 imported migration-workflow skills (siblings under `skills/`), so the repo-level name isn't literally redundant with the skill directory, even though they read the same.
 
 **On the 101-130 cluster additions**: these came from actually researching Broadcom's AutoSys documentation (see `tasks/README.md`'s per-cluster grounding notes) rather than from the same general-reasoning pass that produced 001-100. This is a live example of Design Principle #1 applied one level up — the topic *taxonomy itself* needed the same source discipline as any individual topic's content, and the first pass hadn't gotten that treatment yet.
 

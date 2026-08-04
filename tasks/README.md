@@ -1,4 +1,4 @@
-# Astro Migration Skills — Task List
+# Astro Design Best Practices — Task List
 
 ### Roadmap for building the `astro-design-best-practices` knowledge base — 130 topics, one task each — via the Researcher → Generator → Critic → Human Sign-off pipeline defined in `AGENTS.md`
 
