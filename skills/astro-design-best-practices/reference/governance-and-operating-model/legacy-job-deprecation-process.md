@@ -39,4 +39,4 @@ Before permanent deletion, export the JIL definition for the job and store it in
 
 ## Sources
 
-[B1] Enterprise migration guidance & Astronomer migration framework — Scream test, burn-in period, blast-radius assessment, and JIL archival (accessed 2026-08-11)
+[B1] Enterprise migration guidance & Astronomer migration framework — Scream test, burn-in period, blast-radius assessment, and JIL archival (no Astronomer Docs match found on this pass — this reads as general practitioner/migration-consulting guidance rather than a specific documented Astronomer feature; not verifiable via the astronomer-docs MCP)

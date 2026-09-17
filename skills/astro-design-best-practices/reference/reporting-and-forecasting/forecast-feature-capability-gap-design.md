@@ -54,11 +54,12 @@ For organizations that require true what-if scheduling as part of their ITSM cha
 ## Important Design Note: Maintenance Windows in Airflow
 
 AutoSys maintenance windows suspended agent execution. In Airflow, the equivalent is:
-- **Pausing the affected DAGs** before the maintenance window: `astro deployment dag pause <dag_id> --deployment-id <id>`
-- Unpausing after the window.
-- Automate pause/unpause via the Astro API in your ITSM runbook [B2].
+- **Pausing the affected DAGs** before the maintenance window. **Correction**: an earlier draft of this file cited `astro deployment dag pause <dag_id> --deployment-id <id>` as an Astro CLI command; no such subcommand exists in the current CLI reference. The actual mechanism is the Airflow REST API — `PATCH` the DAG resource with `is_paused: true` [B3].
+- Unpausing after the window (same `PATCH` mechanism, `is_paused: false`).
+- Automate pause/unpause via the Airflow REST API in your ITSM runbook, authenticated with a Deployment API token [B2][B3].
 
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — Forecast feature: forward-looking schedule simulation, Gantt-chart output for maintenance-window planning, SLA impact analysis (accessed 2026-08-18)
-[B2] Astronomer Docs & Apache Airflow Docs — Airflow Gantt chart (observability, not forecasting), Astro Observe for cross-Deployment metrics, Airflow REST API for scheduled run enumeration, DAG pause via Astro CLI (accessed 2026-08-18)
+[B2] Astronomer Docs — Astro Observe (cross-Deployment data products, asset/task duration metrics): https://www.astronomer.io/docs/astro/astro-observe (tier 1, URL added on citation-hygiene review). The Airflow Gantt chart's observability-not-forecasting distinction is standard Apache Airflow UI documentation (airflow.apache.org), not indexed in the astronomer-docs MCP scope — not independently re-verified on this pass.
+[B3] Astronomer Docs — Airflow API on Astro, pausing a DAG via `PATCH` to the `dag` resource on the `/api/v2` endpoint (Airflow 3): https://www.astronomer.io/docs/astro/airflow-api#pause-a-dag (tier 1, added on doc-verification review — corrects the fabricated `astro deployment dag pause` CLI command above)

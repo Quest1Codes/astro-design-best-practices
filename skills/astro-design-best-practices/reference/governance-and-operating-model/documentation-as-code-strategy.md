@@ -66,4 +66,4 @@ All DAG files must include a standard header block as `doc_md` content covering:
 
 ## Sources
 
-[B1] Apache Airflow Docs — `doc_md` attribute for DAG and task documentation, Markdown rendering in Airflow UI (accessed 2026-08-11)
+[B1] Astronomer Learn — Add custom documentation to your Airflow UI (`doc_md` attribute, `__doc__` pattern, Markdown rendering in Grid/Graph/Calendar views): https://www.astronomer.io/docs/learn/custom-airflow-ui-docs-tutorial (tier 1, added on doc-verification review); UI parameters reference: https://www.astronomer.io/docs/learn/airflow-dag-parameters#ui-parameters (tier 1, added on doc-verification review)

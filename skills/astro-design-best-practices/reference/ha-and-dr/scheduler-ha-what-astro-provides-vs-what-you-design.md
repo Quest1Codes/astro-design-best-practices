@@ -22,14 +22,16 @@ AutoSys's HA model required explicit architectural planning: a **primary** sched
 
 ## What Still Requires Explicit Design Decisions
 
-- **Number of Scheduler Replicas**: Astro does not auto-scale schedulers. You must choose the appropriate replica count based on your DAG parse volume and task throughput. Astronomer recommends starting with 2 replicas for production HA [B1].
+- **Number of Scheduler Replicas**: Astro does not auto-scale schedulers, and the replica model differs by deployment type — this is not one uniform "choose a number" decision. On **Astro Private Cloud/Hybrid**, replica count is a real, configurable sizing decision (up to 4 by default) based on DAG parse volume and task throughput [B5]. On **Astro Hosted**, there is no configurable replica count: a Deployment runs a single scheduler by default, and the **High Availability** toggle is a binary on/off switch to exactly two schedulers — there is no "starting with 2 and scaling to 4" path on Hosted [B6]. See `reference/scheduler-and-dag/scheduler-ha-and-leader-election.md` for the full platform split.
 - **Scheduler Resource Sizing**: Each scheduler replica requires memory and CPU allocation. Under-provisioning in large estates (e.g., post-AutoSys migrations with thousands of DAGs) leads to parse-loop degradation, not clean failures.
 - **Metadata DB Resilience**: On **Astro Private Cloud** (self-hosted), you are responsible for the HA configuration of the underlying PostgreSQL instance (e.g., RDS Multi-AZ, Cloud SQL HA) [B3]. On Astro Cloud (managed), this is handled for you.
 - **DAG Idempotency**: The active-active model means a task could theoretically be triggered twice if a scheduler replica fails mid-dispatch. DAGs **must** be idempotent to avoid data duplication in failure scenarios [B4].
 
 ## Sources
 
-[B1] Astronomer Docs — Scheduler HA and active-active architecture (accessed 2026-08-10)
-[B2] Astronomer Docs — Astro data plane resilience and multi-AZ design (accessed 2026-08-10)
-[B3] Astronomer Docs — Astro Private Cloud / Software database HA responsibilities (accessed 2026-08-10)
-[B4] Apache Airflow Docs — Idempotency best practices (accessed 2026-08-10)
+[B1] Astronomer Docs — Airflow components, high availability (active-active scheduler model; Astro High Availability toggle): https://www.astronomer.io/docs/learn/airflow-components#high-availability (tier 1, resolved on citation review — closes the earlier `NEEDS_EXEC_CHECK`)
+[B2] Astronomer Docs — Resilience (Astro control/data plane AZ design, automated backups, cross-region DR): https://www.astronomer.io/docs/astro/resilience (tier 1, resolved on citation review — closes the earlier `NEEDS_EXEC_CHECK`)
+[B3] Astronomer Docs — Private Cloud database architecture, PostgreSQL replication ("Astronomer doesn't recommend using internal PostgreSQL instance... use an externally managed database service"): https://www.astronomer.io/docs/astro-private-cloud/v-2-x/database-architecture#postgresql-replication (tier 1, resolved on citation review — closes the earlier `NEEDS_EXEC_CHECK`)
+[B4] Apache Airflow Docs — Idempotency best practices (no Astronomer Docs match found on this pass — this is Apache Airflow OSS content not indexed in the Astronomer docs MCP; verify against airflow.apache.org's best-practices guide directly rather than treating this as closed)
+[B5] Astronomer Docs — Airflow system components, "Horizontal scaling" (Astro Private Cloud/Hybrid): Scheduler supports up to 4 replicas by default: https://www.astronomer.io/docs/astro-private-cloud/v-2-x/airflow-system-components#horizontal-scaling (tier 1, added on platform-split review)
+[B6] Astronomer Docs — Scheduler (Astro Hosted): single scheduler by default; High Availability toggle runs exactly two, not a configurable count: https://www.astronomer.io/docs/astro/deployment-resources#scheduler (tier 1, added on platform-split review)

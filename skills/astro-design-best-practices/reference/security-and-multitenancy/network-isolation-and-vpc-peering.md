@@ -66,4 +66,4 @@ For data residency (EU GDPR, Australia Privacy Act) or ITAR/export control requi
 [Network facts] Astronomer Docs — Dedicated clusters and networking: https://www.astronomer.io/docs/astro/create-dedicated-cluster (accessed 2026-08-08)
 [Remote Execution] Astronomer Docs — Remote Execution: https://www.astronomer.io/docs/astro/remote-execution (accessed 2026-08-08)
 [Private egress] Astronomer Docs — Private network egress: https://www.astronomer.io/docs/astro/private-network-egress (accessed 2026-08-08)
-[PrivateLink] Astronomer Docs — AWS PrivateLink configuration (accessed 2026-08-08)
+[PrivateLink] Astronomer Docs — Create a dedicated cluster (private networking options; no dedicated standalone "AWS PrivateLink" page found — this is the closest confirmed match, covering VPC/Pod CIDR and private connectivity configuration): https://www.astronomer.io/docs/astro/create-dedicated-cluster (tier 1, URL added on citation review)

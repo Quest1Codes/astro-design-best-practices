@@ -2,6 +2,8 @@
 
 AutoSys's HA had deterministic failure modes: if the primary scheduler's heartbeat missed a threshold, the shadow promoted itself. Airflow's distributed architecture has different, less obvious failure paths. Proactive chaos testing is required to validate assumptions about resilience before a real incident exposes them.
 
+**Citation-quality note (Critic-pass finding)**: nearly every claim in this file cites [B1] or [B2], but both Sources entries are themselves flagged "no Astronomer Docs match found — verify separately." That makes most of the `[B1]`/`[B2]` markers below functionally decorative rather than real traceability — they point at a *category* of source ("Airflow OSS behavior," "chaos-engineering community practice"), not a specific verified page. The individual behavioral claims (task-marked-failed-on-pod-kill, active-active double-trigger risk on boundary failures, standard Kubernetes/chaos-engineering tooling) reflect well-established Airflow/Kubernetes operational knowledge and are plausible, but none of them has been independently re-verified against a live source on this pass. Treat this file as a lower-confidence, `NEEDS_EXEC_CHECK` reference until someone runs the actual chaos drills it describes — which is, appropriately, exactly what the file itself recommends doing before trusting any resilience assumption.
+
 ## Failure Mode Map
 
 | Component | Failure Scenario | Expected Airflow Behavior | Test Method |
@@ -32,7 +34,7 @@ AutoSys's HA had deterministic failure modes: if the primary scheduler's heartbe
 | Tasks retry correctly after worker failure | Confirms `retries` and `retry_delay` are configured correctly [B1]. |
 | Scheduler heartbeat recovers within expected SLA | Validates replica count is sufficient for your load [B2]. |
 | DAGs are **idempotent** after task retry | Critical — active-active schedulers can trigger tasks twice on boundary failures [B2]. |
-| No zombie tasks accumulate after repeated pod kills | Tests scheduler cleanup logic and `scheduler_zombie_task_threshold` configuration. |
+| No zombie tasks accumulate after repeated pod kills | Tests scheduler cleanup logic and `scheduler_zombie_task_threshold` configuration [B2]. |
 
 ## Integration with CI/CD
 
@@ -43,5 +45,5 @@ Incorporate a lightweight resilience check in your staging deployment pipeline [
 
 ## Sources
 
-[B1] Astronomer Docs and Community — Chaos engineering principles for Airflow deployments (accessed 2026-08-10)
-[B2] Apache Airflow Docs — Scheduler HA, zombie task handling, idempotency best practices (accessed 2026-08-10)
+[B1] Astronomer Docs and Community — Chaos engineering principles for Airflow deployments (no Astronomer Docs match found on this pass — likely community/blog content or general chaos-engineering practice, not a dedicated Astronomer product page; verify separately)
+[B2] Apache Airflow Docs — Scheduler HA, zombie task handling, idempotency best practices (no Astronomer Docs match found on this pass — this is Apache Airflow OSS content not indexed in the Astronomer docs MCP; verify against airflow.apache.org directly)

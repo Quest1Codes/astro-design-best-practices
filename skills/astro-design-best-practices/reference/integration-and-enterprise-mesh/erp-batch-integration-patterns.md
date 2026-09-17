@@ -37,5 +37,5 @@ For legacy ERP systems that consume batch input files (common AutoSys pattern):
 
 ## Sources
 
-[B1] Apache Airflow Docs — Deferrable Operators, Sensor modes, and top-level code anti-patterns (accessed 2026-08-10)
-[B2] Astronomer Docs — Connections, Secrets Backends, and enterprise integration best practices (accessed 2026-08-10)
+[B1] Apache Airflow Docs — Deferrable Operators, Sensor modes, and top-level code anti-patterns. Deferrable operators (`deferrable=True`, `operators.default_deferrable`, `triggerer` requirement): https://www.astronomer.io/docs/learn/deferrable-operators (tier 1, URL added on citation review). Sensor `mode='reschedule'` and top-level-code anti-patterns are Apache Airflow OSS content not indexed in the Astronomer docs MCP — not independently re-verified on this pass.
+[B2] Astronomer Docs — Configure a Secrets Backend on Astro: https://www.astronomer.io/docs/astro/secrets-backend (tier 1, URL added on citation review)

@@ -11,7 +11,7 @@ description: >
 metadata:
   author: Quest1
   version: "0.1.0"
-  status: "COMPLETE — all 130 of 130 planned topics shipped"
+  status: "COMPLETE — all 130 of 130 planned topics shipped across 19 clusters"
   source_project: astro-design-best-practices
 ---
 
@@ -42,6 +42,13 @@ file in both batches as **draft-quality, Critic-checked but not
 human-verified**, until someone completes `.agents/signoff-checklist.md` for
 each.
 
+**Topics 021-130 (the rest of Cluster 2, and all of Clusters 3-19) have no
+corresponding critic-report or fact-sheet artifact in `research/`** — each
+file carries its own `## Sources` section, but unlike 001-020 there is no
+separate fresh-context adversarial pass on record for these batches. Treat
+them as **generated, self-cited, but not independently Critic-reviewed**
+until a critic pass is run and logged the same way it was for 001-020.
+
 ## Reference Files — Cluster 1: Scheduler & DAG Design
 
 - `reference/scheduler-and-dag/dag-factory-pattern-for-large-estates.md` — config-driven DAG generation for estates too large to hand-write one DAG per box; estate-scale decision table.
@@ -60,15 +67,78 @@ each.
 
 Cluster 1 (Scheduler & DAG Design, 13 topics) is now complete.
 
-## Reference Files — Cluster 2: Executor & Worker Architecture (in progress, 7 of 11)
+## Reference Files — Cluster 2: Executor & Worker Architecture (complete, 11 of 11)
 
-- `reference/executor-and-worker/celeryexecutor-vs-kubernetesexecutor-decision-framework.md` — decision table keyed off AutoSys `machine:` pinning patterns and job-volume burstiness.
+- `reference/executor-and-worker/celeryexecutor-vs-kubernetesexecutor-decision-framework.md` — decision table keyed off AutoSys `machine:` pinning patterns and job-volume burstiness; now leads with the Astro executor (Airflow 3.x default, only option in Remote Execution mode) before the original Celery-vs-Kubernetes framing.
 - `reference/executor-and-worker/worker-queue-segregation-mirroring-machine-groups.md` — classifies *why* AutoSys machine groups existed before translating them into Astro worker queues, rather than a 1:1 machine→queue mapping.
 - `reference/executor-and-worker/autoscaling-design-for-bursty-batch-workloads.md` — min/max/concurrency sizing for AutoSys-shaped batch-window bursts.
 - `reference/executor-and-worker/per-task-resource-requests-and-limits.md` — `executor_config`/`pod_override` sizing from AutoSys machine-tier signals; a Critic pass caught and corrected an inverted claim about Kubernetes' actual admission-time failure behavior.
 - `reference/executor-and-worker/node-affinity-and-taints-for-specialized-jobs.md` — taints/tolerations vs. soft affinity, mapped onto *why* a job was machine-pinned, not just that it was.
 - `reference/executor-and-worker/keda-based-autoscaling.md` — the specific autoscaling formula and polling/cool-down mechanics; **contains an unresolved `NEEDS_EXEC_CHECK`** on a real ambiguity between two different cool-down figures found in different sources.
-- `reference/executor-and-worker/hybrid-executor-strategy.md` — distinguishes `CeleryKubernetesExecutor` (queue-level routing) from `KubernetesPodOperator` (operator-level, executor-independent) as two genuinely different hybrid mechanisms.
+- `reference/executor-and-worker/hybrid-executor-strategy.md` — `KubernetesPodOperator` (operator-level, works under any executor) as the outlier-isolation mechanism; `CeleryKubernetesExecutor` corrected to legacy/not-selectable-on-Astro status, with dedicated worker queues under the Astro/Celery executor as the actual current replacement.
+- `reference/executor-and-worker/legacy-server-access-via-sshoperator.md` — `SSHOperator`/`SSHHook` as the durable replacement for `machine:` pinning to a legacy/vendor host that won't containerize; Secrets-Backend-resolved SSH connections; a design-smell table for when SSH-wrapping signals a job needs re-platforming instead.
+- `reference/executor-and-worker/worker-fleet-capacity-planning-methodology.md` — aggregate worker-fleet sizing (worker count/type/min-max) from estate-wide job count and schedule density, distinct from per-machine Pool sizing and scheduler/DAG-Processor sizing covered elsewhere; the A5–A160 worker-type table and a 5-step sizing methodology.
+- `reference/executor-and-worker/zombie-task-detection-and-handling.md` — AutoSys `chase`/`PROCESS_MIA` reconciliation mapped to Airflow's zombie/undead-task detection; Astro-specific heartbeat-timeout defaults (60s standard, **120s on the Astro executor**); the Airflow 3+ metric rename.
+- `reference/executor-and-worker/gpu-specialized-compute-worker-design.md` — two real, documented patterns for GPU workloads on Astro: `KubernetesPodOperator` into an external GPU cluster (Hosted mode) vs. Remote Execution Agent GPU node targeting; explicitly flags that standard Astro worker types have no documented GPU support.
+
+## Reference Files — Cluster 3: Metadata DB & State Design (complete, 8 of 8)
+
+- `reference/metadata-db-and-state/postgres-sizing-and-instance-class-selection.md` — Event Server RDBMS (Oracle/SQL Server/Sybase, DBA-managed) → Postgres metadata DB; deployment-model decision table, Hosted rightsizing vs. BYOD instance-class guidance, tables to monitor.
+- `reference/metadata-db-and-state/connection-pooling-with-pgbouncer.md` — AutoSys's fixed-client binary protocol (no connection pool to design) → PgBouncer; full connection chain (scheduler/worker/triggerer → SQLAlchemy pool → PgBouncer → Postgres), estate-scale sizing table.
+- `reference/metadata-db-and-state/metadata-retention-and-cleanup-policy.md` — Event Server RDBMS retention (DBA-set, outside AutoSys) → no built-in Airflow purge mechanism; `airflow db clean` reference, archive → VACUUM lifecycle, high-churn tables.
+- `reference/metadata-db-and-state/backup-and-point-in-time-recovery.md` — Event Server RDBMS DBA backup procedures → Postgres PITR; deployment-model decision table, self-managed and cloud-managed PITR checklists, RPO/RTO planning.
+- `reference/metadata-db-and-state/read-replica-strategy-for-reporting.md` — direct Event Server reporting queries (scheduler-performance risk) → dedicated Postgres read-replica architecture for reporting, keeping the primary DB isolated from ad hoc load.
+- `reference/metadata-db-and-state/db-migration-strategy-across-airflow-upgrades.md` — schema-migration discipline for major-version upgrades (Airflow 2 → 3); pre-migration checklist, downtime and component-state handling.
+- `reference/metadata-db-and-state/metadata-db-growth-at-scale.md` — DB tuning at thousands-of-DAGs scale: maintenance as the most critical factor, DAG-authoring load reduction, infrastructure tuning, to avoid slow scheduling and UI timeouts.
+- `reference/metadata-db-and-state/custom-xcom-backend-design.md` — AutoSys's global-variable job-to-job state passing → XCom; why the default DB-backed backend fails at scale, `Common IO` provider custom-backend design.
+
+## Reference Files — Cluster 4: Security & Multi-Tenancy Design (complete, 10 of 10)
+
+- `reference/security-and-multitenancy/workspace-and-deployment-boundary-design.md` — AutoSys `group`/`application` JIL classification tags (not isolation boundaries) → Astro's Organization/Workspace/Deployment hierarchy; the primary Deployment-boundary-placement design question.
+- `reference/security-and-multitenancy/rbac-role-shape-design-mirrored-from-eem-entitlements.md` — CA EEM job-group/application entitlements → Astro's hierarchical, additive RBAC (Organization/Workspace/Deployment/DAG roles); EEM → Astro role-mapping pattern.
+- `reference/security-and-multitenancy/secrets-backend-selection.md` — Event Server RDBMS/OS keystore credential storage → Airflow's secret lookup priority across Variables/Connections/Secrets Backend; backend option matrix and the `Variable.get()`-in-top-level-code pitfall.
+- `reference/security-and-multitenancy/connection-scoping-and-least-privilege.md` — JIL-embedded `machine:`/`login:` credentials with no cross-job scoping → Airflow Connections' global-within-Deployment visibility risk; least-privilege worker IAM and Workload Identity design.
+- `reference/security-and-multitenancy/sso-oauth-integration-design.md` — OS-level PAM/LDAP/AD or EEM-managed auth → Astro's SAML 2.0 SSO plus SCIM 2.0 automated user-lifecycle management.
+- `reference/security-and-multitenancy/network-isolation-and-vpc-peering.md` — OS-level TCP Event Server ↔ agent connectivity (no VPC model) → Astro Standard vs. Dedicated Cluster decision; private connectivity and Remote Execution hybrid networking.
+- `reference/security-and-multitenancy/audit-log-design-for-access-and-actions.md` — DBA-controlled OS/RDBMS audit trails → Astro's two-layer audit architecture (platform audit log + Airflow task-execution history); SIEM integration and compliance-standard mapping.
+- `reference/security-and-multitenancy/federated-vs-centralized-self-service-design.md` — one-AutoSys-instance-per-business-unit vs. single shared-instance topologies → Airflow 3 Multi-Team mode and Workspace-per-domain self-service design.
+- `reference/security-and-multitenancy/api-token-service-account-lifecycle-management.md` — OS-level, LDAP/AD-managed AutoSys service accounts → scoped Astro API tokens; token-type/lifecycle design, Workload Identity as the preferred alternative for cloud resources.
+- `reference/security-and-multitenancy/encryption-at-rest-and-in-transit-design.md` — Event Server TDE and OS-level TLS → Astro's default-on Hosted encryption posture; Fernet key management and BYOK for self-managed/BYOD contexts.
+
+## Reference Files — Cluster 5: Observability & Alerting Design (complete, 10 of 10)
+
+- `reference/observability-and-alerting/on_failure_callback-design-patterns.md` — AutoSys's native job-failure alerting → Airflow's programmatic task/DAG-level callbacks; layered-alerting pattern and callback error-handling pitfalls.
+- `reference/observability-and-alerting/astronomer-alerts-routing-and-escalation.md` — enterprise-event-manager alarm routing by job criticality → the two-tier Astro Alerts (platform-level) plus Airflow callback (code-level) routing and escalation design.
+- `reference/observability-and-alerting/alert-fatigue-and-deduplication-strategy.md` — manual console-level alarm suppression → architectural deduplication and anti-"flappy"-alert design for Airflow retries and cascade failures.
+- `reference/observability-and-alerting/openlineage-data-lineage-integration.md` — AutoSys's job-dependency-only visibility (no data-asset tracking) → OpenLineage's data-supply-chain lineage; rollout strategy, namespace consistency, temporary-table handling.
+- `reference/observability-and-alerting/astronomer-observe-integration.md` — AutoSys/WCC's job-centric reporting → Astro Observe's data-product-centric observability model (timeliness, health, cost over individual task status).
+- `reference/observability-and-alerting/metrics-export-prometheus-datadog.md` — proprietary SNMP-trap/DB-query metrics → native Airflow metrics exported via the Universal Metrics Exporter (Prometheus/Grafana) or native Datadog integration.
+- `reference/observability-and-alerting/log-architecture-remote-storage-and-retention.md` — local agent-filesystem logs (`$AUTOSYS/out`) → externalized log storage for Astro's ephemeral pods (Elasticsearch on Private Cloud, S3/GCS, CloudWatch).
+- `reference/observability-and-alerting/sla-miss-detection-and-escalation.md` — `term_run_time`/`max_run_alarm`/Cross-Box alarms → the Airflow/Astro SLA-monitoring spectrum, from code-level callbacks to Astro Observe.
+- `reference/observability-and-alerting/incident-ticket-automation.md` — proprietary OS-level/plugin ServiceNow or BMC Remedy ticket creation → API-driven orchestration or event-driven middleware ticket automation on Astro.
+- `reference/observability-and-alerting/dashboard-design-for-stakeholder-visibility.md` — AutoSys WCC stakeholder reporting → a tiered dashboard strategy (Astro Observe, Grafana, custom BI), since Airflow's native UI targets data engineers, not business stakeholders.
+
+## Reference Files — Cluster 6: CI/CD & Environment Topology (complete, 10 of 10)
+
+- `reference/cicd-and-environment-topology/astro-cli-deploy-pipeline-design.md` — custom shell scripts and manual JIL imports (`jil < job.jil`) → `astro` CLI-driven CI/CD pipeline design and authentication.
+- `reference/cicd-and-environment-topology/dev-staging-prod-deployment-topology.md` — AutoSys's single massive shared instance → isolated per-lifecycle-stage Astro Deployments, since Airflow is not natively multi-tenant and a bad DAG can crash a shared scheduler.
+- `reference/cicd-and-environment-topology/dag-testing-and-parse-gates-before-merge.md` — post-import `chk_auto_up`/runtime JIL validation → a pre-merge CI testing pyramid (parse/integrity check, unit tests, ephemeral integration tests).
+- `reference/cicd-and-environment-topology/branching-strategy-for-dag-code.md` — direct GUI/CLI job editing → Git branching strategy mapped to environments, plus Astronomer's native GitHub integration.
+- `reference/cicd-and-environment-topology/environment-promotion-process.md` — manual JIL extract/import with machine-name tweaks between environments → immutable-image, Git-based promotion (code promotion, image promotion, config-difference handling).
+- `reference/cicd-and-environment-topology/gitops-design-for-dag-deployment.md` — JIL-file import against a database → the `GitDagBundle` GitOps architecture; repo organization, DAG hashing, bundle selection by estate scale.
+- `reference/cicd-and-environment-topology/rollback-strategy-design.md` — manual re-import of an older JIL version → Astro's "Deploy Rollbacks" feature as a faster alternative to reverting Git commits during an outage.
+- `reference/cicd-and-environment-topology/multi-region-deployment-topology-at-scale.md` — distributed multi-region AutoSys instances (e.g. NA/EMEA) → Astro's control-plane/data-plane separation; multi-cluster, Remote Execution, and cross-region DR strategies.
+- `reference/cicd-and-environment-topology/feature-flagging-for-gradual-dag-rollout.md` — unique-named or `ON ICE` job streams → Airflow 3 DAG versioning, Variable-based logic flags, and DAG-only fast-iteration deploys for gradual rollout.
+- `reference/cicd-and-environment-topology/local-development-environment-standards.md` — shared dev-database development → containerized `astro dev` local environments, including Airflow 3+ Standalone Mode.
+
+## Reference Files — Cluster 7: Config & Secrets Design (complete, 6 of 6)
+
+- `reference/config-and-secrets/variables-vs-connections-vs-secrets-backend-decision-framework.md` — AutoSys's flat global `%%VAR%%` store → Airflow's config/credential split across Variables, Connections, and Secrets Backend, with security-precedence guidance.
+- `reference/config-and-secrets/per-environment-variable-scoping.md` — environment-specific hardcoding anti-pattern (`if env == 'dev'`) → per-environment variable scoping and sensitive-variable masking, avoiding top-level-code lookups.
+- `reference/config-and-secrets/global-variable-sprawl-remediation.md` — the AutoSys `%%VAR%%` lift-and-shift trap (thousands of flat Airflow Variables) → remediation strategy split by variable purpose (task communication, repetitive config, environment targeting, secrets).
+- `reference/config-and-secrets/config-as-code-for-dag-factory-inputs.md` — DAG-factory (topic 001) input-file management: storage/format, modularity vs. monoliths, preventing DB lookups during parsing, CI/CD validation.
+- `reference/config-and-secrets/secret-rotation-strategy.md` — manual DB-stored credential updates → Secrets Backend-driven rotation strategy and security best practices.
+- `reference/config-and-secrets/environment-specific-connection-management.md` — the requirement that DAG code stay identical across Dev/Prod → Astro Environment Manager, external secrets backend, and environment-variable connection-resolution strategies.
 
 ## Reference Files — Cluster 8: HA & DR Design (complete, 5 of 5)
 
@@ -172,9 +242,10 @@ Cluster 1 (Scheduler & DAG Design, 13 topics) is now complete.
 
 - A fresh-context Critic pass found and fixed 6 real defects across this batch (wrong parameter name, two unsupported citations, one citation-number swap, one now-outdated sub-claim, one already-resolvable `NEEDS_EXEC_CHECK`) — see `research/cluster-1-topics-001-010-critic-report.md`. What remains open genuinely requires a human running something real, not just re-reading:
   - `dag-factory-pattern-for-large-estates.md` — confirm `is_paused_upon_creation` behaves as documented (an open Airflow GitHub issue questions its reliability).
-  - `scheduler-ha-and-leader-election.md` — the "2+, up to 4 schedulers" guidance is sourced from Astronomer *Software* v0.37 docs; re-confirm against current Cloud/Hybrid.
+  - ~~`scheduler-ha-and-leader-election.md` — the "2+, up to 4 schedulers" guidance is sourced from Astronomer *Software* v0.37 docs; re-confirm against current Cloud/Hybrid.~~ **Resolved via live docs**: "up to 4" still holds for Private Cloud/Hybrid on current docs, but Astro Hosted uses a separate binary High Availability toggle (exactly 2 schedulers, not a configurable count) — file now documents both, see its Deployment-model callout.
   - `dag-level-sla-and-catchup-backfill-policy.md` — confirm Deadline Alerts' production-readiness on the actual target Astro Runtime version (still marked experimental upstream).
 - The 011-020 batch's Critic pass found and fixed 5 more defects, including **2 outright FAILs** (see `research/topics-011-020-critic-report.md`): a fabricated polling-interval/cool-down number in `keda-based-autoscaling.md`, and two claims in `per-task-resource-requests-and-limits.md` cited to a source that supported neither (one was corrected — and in the process, found to be *backwards*: real Kubernetes behavior is a clean admission-time rejection, not a silent stuck pod — the other was removed entirely since no real source could be found). What remains open:
-  - `keda-based-autoscaling.md` — a genuine, unresolved ambiguity between the Airflow Helm chart's general `cooldownPeriod: 30`s default and separate KEDA documentation describing a 300s/5-minute cool-down specific to scale-to-zero. Needs resolving against a real deployed `ScaledObject`, not further documentation research.
+  - ~~`keda-based-autoscaling.md` — a genuine, unresolved ambiguity between the Airflow Helm chart's general `cooldownPeriod: 30`s default and separate KEDA documentation describing a 300s/5-minute cool-down specific to scale-to-zero.~~ **Resolved via live docs**: Astro's own product docs (Celery executor, Astro executor, and Remote Execution Agent workers — three independent surfaces) all currently document a 300s/5-minute cool-down; the 30s figure is the generic OSS Helm chart default and does not apply to Astro-managed Deployments. File updated with citations.
+  - ~~Cluster 2's `hybrid-executor-strategy.md` and `celeryexecutor-vs-kubernetesexecutor-decision-framework.md` predate the Astro executor...~~ **Resolved**: both files rewritten to lead with the Astro executor (Airflow 3.x default, only option in Remote Execution mode) and to correct `CeleryKubernetesExecutor` from "recommended hybrid mechanism" to "not even a selectable Astro Deployment executor, and Astronomer's own docs call it no-longer-recommended since Airflow 2.10." `machine-load-and-virtual-resources/virtual-machine-groups-to-executor-queue-design.md`'s matching row was updated for consistency. Still open: Cluster 2 remains 7 of 11 topics — the 4 unwritten topics (021 SSHOperator legacy-server access, 022 worker fleet capacity planning, 023 zombie-task detection, 024 GPU/specialized-compute workers) are a separate gap, tracked in `tasks/README.md`.
 - `dag-level-sla-and-catchup-backfill-policy.md` flags that the imported `skills/migrating-autosys-to-astronomer/reference/alerting-and-sla.md` needs a correction (its "Airflow 3: SLA callbacks" line is stale — SLA was removed in 3.0, confirmed independently by both the original research and the Critic pass). Not fixed here; that's a different skill's file.
 - `SETUP-4` (seed source list) and `SETUP-6` (formal scaffold task) were done informally as part of generating this batch, not as their own gated tasks — see `tasks/README.md` for the formal tracker state.

@@ -38,6 +38,6 @@ Astro has built-in, streamlined support for exporting logs and metrics directly 
 ## Sources
 
 [B1, B3, B4] Astronomer Docs — Universal Metrics Exporter: https://www.astronomer.io/docs/astro/export-metrics (accessed 2026-08-08)
-[B5, B6] Astronomer Docs — Datadog integration (accessed 2026-08-08)
+[B5, B6] Astronomer Docs — Export metrics and logs to Datadog: https://www.astronomer.io/docs/astro/export-datadog (tier 1)
 [B7, B8] Medium — Airflow and StatsD architecture (accessed 2026-08-08)
-[B9] Astronomer Docs — Astronomer Software Grafana integration (accessed 2026-08-08)
+[B9] Astronomer Docs — Private Cloud Grafana metrics access: https://www.astronomer.io/docs/astro-private-cloud/v-0-37/grafana-metrics#access-grafana (tier 1)

@@ -28,7 +28,7 @@ When developers use `astro dev start`, they need access to development connectio
 
 ## Sources
 
-[B1, B2] Astronomer Docs — Astro Environment Manager and per-deployment overrides (accessed 2026-08-08)
-[B3, B4] Astronomer Docs — Integrating external Secrets Backends for environment isolation (accessed 2026-08-08)
-[B5, B6] Apache Airflow Docs — Connections via environment variables (accessed 2026-08-08)
-[B7] Astronomer Docs — Astro CLI connection syncing for local development (accessed 2026-08-08)
+[B1, B2] Astronomer Docs — Manage Airflow connections, variables, and environment variables, Astro Environment Manager section (per-Deployment overrides): https://www.astronomer.io/docs/astro/manage-connections-variables#astro-environment-manager (tier 1, URL added on citation review)
+[B3, B4] Astronomer Docs — Configure a secrets backend: https://www.astronomer.io/docs/astro/secrets-backend (tier 1, URL added on citation review)
+[B5, B6] Astronomer Docs — Manage Airflow connections in Astro (environment-variable-based connections): https://www.astronomer.io/docs/learn/connections (tier 1, URL added on citation review)
+[B7] Astronomer Docs — Use connections locally (`astro dev start --deployment-id`, syncing Environment Manager connections to local development): https://www.astronomer.io/docs/cli/v1.45/local-connections (tier 1, URL added on citation review)

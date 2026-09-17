@@ -4,7 +4,7 @@ RTO/RPO targets and backup responsibilities differ significantly between **Astro
 
 ## Astro Cloud (Managed SaaS)
 
-On Astro's managed platform with the cross-region DR feature enabled:
+On Astro's managed platform with the cross-region DR feature enabled. **Requires the Enterprise Business Critical tier and a dedicated cluster** — this is a hard gate, not available on shared clusters or lower tiers, and an earlier draft of this file didn't state that constraint [B4]. The feature is also currently documented as **Preview** as of its most recent release notes; confirm current GA status before treating these targets as a committed SLA [B5]:
 
 | Metric | Target |
 |---|---|
@@ -41,6 +41,8 @@ On self-hosted Astronomer Software, the customer is fully responsible for backup
 
 ## Sources
 
-[B1] Astronomer Docs — Astro Cloud Disaster Recovery RTO/RPO targets (accessed 2026-08-10)
-[B2] Astronomer Docs — Cross-region DR failover and Task Log Replication SLA (accessed 2026-08-10)
-[B3] Astronomer Docs — Astro Private Cloud backup strategy (Velero, PostgreSQL, PITR) (accessed 2026-08-10)
+[B1] Astronomer Docs — Disaster recovery, RTO/RPO targets: https://www.astronomer.io/docs/astro/disaster-recovery#rto-and-rpo (tier 1, URL added on citation review)
+[B2] Astronomer Docs — Prepare for disaster recovery, Task Logs Replication SLA: https://www.astronomer.io/docs/astro/disaster-recovery-prepare#task-logs-replication-sla (tier 1, URL added on citation review)
+[B3] Astronomer Docs — Astronomer Software disaster recovery (Velero-based backup/restore recommendation): https://www.astronomer.io/docs/astro-private-cloud/v-0-37/disaster-recovery (tier 1, URL added on citation review)
+[B4] Astronomer Docs — Disaster recovery (Enterprise Business Critical tier requirement, dedicated clusters only): https://www.astronomer.io/docs/astro/disaster-recovery (tier 1, added on doc-verification review)
+[B5] Astronomer Docs — Release notes, March 11 2026 (cross-region DR documented as Preview): https://www.astronomer.io/docs/astro/release-notes#march-11-2026 (tier 1, added on doc-verification review)

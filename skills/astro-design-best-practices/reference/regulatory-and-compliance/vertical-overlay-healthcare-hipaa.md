@@ -32,5 +32,5 @@ Before processing Protected Health Information (PHI) in any Airflow pipeline on 
 
 ## Sources
 
-[B1] Astronomer Docs — HIPAA compliance overview, BAA requirement, and dedicated cluster requirement (accessed 2026-08-10)
-[B2] Astronomer Security Docs — PHI handling best practices, encryption standards, and secrets management for healthcare (accessed 2026-08-10)
+[B1] Astronomer Docs — HIPAA compliance (BAA requirement, PHI processing on dedicated clusters, Astronomer's obligations): https://www.astronomer.io/docs/astro/hipaa-compliance (tier 1, URL added on citation review)
+[B2] Astronomer Docs — Data protection (encryption in transit/at rest standards): https://www.astronomer.io/docs/astro/data-protection (tier 1, URL added on citation review); Secrets management: https://www.astronomer.io/docs/astro/secrets-management (tier 1, URL added on citation review)

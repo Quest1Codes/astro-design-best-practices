@@ -31,6 +31,6 @@ When performing manual migrations (self-managed) or executing major architectura
 
 ## Sources
 
-[B1, B3] Astronomer Best Practices — Upgrading Airflow and database migration strategies (accessed 2026-08-08)
-[B2] Astronomer Docs — Deploying updates to Astro (accessed 2026-08-08)
-[B4] Apache Airflow Docs — Upgrading the database (accessed 2026-08-08)
+[B1, B3] Astronomer Docs — Upgrade to Airflow 3 on Astro: https://www.astronomer.io/docs/astro/airflow3/upgrade-af3 (tier 1, URL added on citation review)
+[B2] Astronomer Docs — `astro deployment airflow upgrade` CLI command: https://www.astronomer.io/docs/cli/v1.45/astro-deployment-airflow-upgrade (tier 1, URL added on citation review)
+[B4] Apache Airflow Docs — Upgrading the database (canonical OSS upgrade-check reference; not independently re-verified on this pass): https://airflow.apache.org/docs/apache-airflow/stable/installation/upgrading.html (tier 2)

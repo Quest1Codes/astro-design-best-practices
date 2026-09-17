@@ -34,4 +34,4 @@ The Airflow metadata database on Astro is **PostgreSQL** (managed by Astronomer)
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — Event Server RDBMS support (Oracle, SQL Server, Sybase); AutoSys DataMigrator utility for migration to PostgreSQL (accessed 2026-08-18)
-[B2] Astronomer Docs — Astro Deployment metadata DB is PostgreSQL (managed); no import path from external RDBMS schemas (accessed 2026-08-18)
+[B2] Astronomer Docs — Airflow metadata database (PostgreSQL, managed, no external-RDBMS import mechanism): https://www.astronomer.io/docs/learn/airflow-database (tier 1, URL added on citation-hygiene review)

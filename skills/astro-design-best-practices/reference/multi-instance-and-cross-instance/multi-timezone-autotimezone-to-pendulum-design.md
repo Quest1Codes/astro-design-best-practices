@@ -61,4 +61,4 @@ Each runs at "06:00 local time" for its region without shared-timezone complexit
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — `autotimezone` command, `ujo_timezones` table, per-job `timezone` JIL attribute, IANA timezone name support (accessed 2026-08-11)
-[B2] Apache Airflow Docs — UTC internal storage, `pendulum` for timezone-aware `start_date`, cron DST gap handling, `timedelta` as DST-agnostic alternative (accessed 2026-08-11)
+[B2] Astronomer Learn — Schedule DAGs in Apache Airflow (`start_date`/`schedule` parameters, `pendulum.datetime()` timezone-aware construction): https://www.astronomer.io/docs/learn/scheduling-in-airflow (tier 1, added on doc-verification review). UTC internal storage and cron DST gap/`timedelta`-as-DST-agnostic specifics are general Apache Airflow OSS behavior not tied to one specific Astronomer docs page — not independently re-verified on this pass.

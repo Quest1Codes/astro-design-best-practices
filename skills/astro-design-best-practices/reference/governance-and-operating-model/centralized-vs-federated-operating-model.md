@@ -44,5 +44,5 @@ AutoSys operations staff transitioning to Airflow must evolve from reactive job 
 
 ## Sources
 
-[B1] Astronomer Docs — Organization/Workspace/Deployment hierarchy, RBAC for federated team isolation (accessed 2026-08-11)
-[B2] Astronomer Blog — Center of Excellence design for data platform teams (accessed 2026-08-11)
+[B1] Astronomer Docs — Astro user permissions reference (Organization/Workspace/Deployment RBAC hierarchy): https://www.astronomer.io/docs/astro/user-permissions (tier 1, added on doc-verification review)
+[B2] Astronomer Blog — Platform engineering for Airflow at scale: https://www.astronomer.io/blog/platform-engineering-airflow (tier 1, added on doc-verification review) — closest topical match found for Center-of-Excellence/platform-team design; not independently re-verified as covering "Center of Excellence" terminology specifically.

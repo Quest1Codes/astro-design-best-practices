@@ -14,7 +14,7 @@ AutoSys triggers the Airflow DAG via the **Airflow REST API** upon completion of
 
 ```
 AutoSys Box A completes
-  → AutoSys Job (HTTP step) calls Airflow API: POST /api/v1/dags/{dag_id}/dagRuns
+  → AutoSys Job (HTTP step) calls Airflow API: POST /api/v2/dags/{dag_id}/dagRuns
   → Airflow DAG runs, but writes to a shadow/staging output location
   → AutoSys continues as the production truth
 ```
@@ -48,6 +48,6 @@ Shortly before cutover:
 
 ## Sources
 
-[B1] Astronomer Docs & Migration Guidance — AutoSys-to-Airflow coexistence patterns (accessed 2026-08-11)
-[B2] BatchFoundry / Enterprise migration community — Dual-run architecture, staging output paths, and feature flag kill switches (accessed 2026-08-11)
-[B3] Apache Airflow REST API Docs — `POST /api/v1/dags/{dag_id}/dagRuns` endpoint for external triggering (accessed 2026-08-11)
+[B1] Astronomer Docs & Migration Guidance — AutoSys-to-Airflow coexistence patterns (no confident single-page Astronomer Docs match found on this pass — this is project-internal migration-pattern synthesis, not a citable single Astronomer page)
+[B2] BatchFoundry / Enterprise migration community — Dual-run architecture, staging output paths, and feature flag kill switches (out of scope for the Astronomer docs MCP — third-party/community content, not on astronomer.io; not verified on this pass)
+[B3] Apache Airflow REST API Docs — `POST /api/v2/dags/{dag_id}/dagRuns` endpoint for external triggering (accessed 2026-08-11). **Correction**: originally cited as `/api/v1/`; Airflow 3 uses the v2 REST API — see https://www.astronomer.io/docs/astro/airflow-api (tier 1, added on doc-verification review). Confirm the target Deployment's actual Airflow major version before relying on this path.

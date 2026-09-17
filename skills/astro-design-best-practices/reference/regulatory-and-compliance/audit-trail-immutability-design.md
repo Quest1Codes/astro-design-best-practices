@@ -20,11 +20,11 @@ Neither log is tamper-proof in its default location. Immutability is achieved by
    - AWS S3 Object Lock (Governance or Compliance mode)
    - Google Cloud Storage bucket lock policies
    - Azure Immutable Blob Storage
-3. **Separate Storage Access from Platform Access**: The team that administers the Astro platform must NOT have permissions to delete or modify the audit log storage bucket. This enforces the separation of duties required by SOX Section 404 [B1][B2].
+3. **Separate Storage Access from Platform Access**: The team that administers the Astro platform must NOT have permissions to delete or modify the audit log storage bucket. This enforces the separation-of-duties principle behind SOX Section 404 [B-SOX]. **Correction**: an earlier draft cited this legal claim to [B1][B2] (Astronomer's own audit-log/RBAC docs), which document the Astro-side mechanism but say nothing about SOX itself — a legal citation shouldn't be a product-doc link. Corrected below.
 
 ## Long-Term Retention
 
-SOX typically requires 7-year audit retention. Astro's internal 90-day retention means you must implement an **automated export pipeline** to cold/archival WORM storage (e.g., AWS S3 Glacier with Object Lock) [B1].
+SOX audit-record retention is commonly cited as around 7 years, though the specific requirement depends on record type and applicable SEC rule [B-SOX]. **Correction**: an earlier draft stated this flatly as sourced fact under [B1] (an Astronomer product doc, not a legal source) — retagged below. Astro's internal 90-day retention means you must implement an **automated export pipeline** to cold/archival WORM storage (e.g., AWS S3 Glacier with Object Lock) [B1].
 
 ## Cryptographic Integrity (Advanced)
 
@@ -37,5 +37,6 @@ For SOX and AML use-cases where auditors need to trace the provenance of data fe
 
 ## Sources
 
-[B1] Astronomer Docs — Astro audit log structure, export format (NDJSON), and 90-day retention policy (accessed 2026-08-10)
-[B2] Astronomer Docs & SOX compliance guidance — WORM storage, separation of duties, OpenLineage for data-layer audit (accessed 2026-08-10)
+[B1] Astronomer Docs — Export audit logs (90-day retention, NDJSON export format, `astro organization audit-logs export` CLI): https://www.astronomer.io/docs/astro/audit-logs#export-audit-logs (tier 1, URL added on citation review)
+[B2] Astronomer Docs — Configure OpenLineage on Astro (data-layer lineage/audit): https://www.astronomer.io/docs/astro/observe-openlineage (tier 1, URL added on citation review — covers the OpenLineage portion only; the WORM-storage and separation-of-duties guidance is general SOX practice, not a specific Astronomer doc page, and wasn't independently verified on this pass)
+[B-SOX] U.S. Securities and Exchange Commission / SOX legislative text — Sarbanes-Oxley Act Section 404 (internal controls) and Section 802 (record retention, commonly summarized as ~7 years for certain audit/work-paper records, exact period depends on record type and rule): https://www.sec.gov/spotlight/sarbanes-oxley.htm (tier 3 — external legal source, not an Astronomer product doc; added on Critic-pass review to separate the legal claim from the Astro-side mechanism it was previously bundled under)

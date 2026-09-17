@@ -47,4 +47,4 @@ In the Airflow UI, `tags` are filterable from the DAGs list view — operators c
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — `group` and `application` JIL attributes, independent of box hierarchy (accessed 2026-08-11)
-[B2] Apache Airflow Docs — `tags` parameter on DAG object, `dag_id` naming conventions (accessed 2026-08-11)
+[B2] Astronomer Learn — Airflow DAG parameters, UI parameters (`tags` parameter for filtering in the Airflow UI): https://www.astronomer.io/docs/learn/airflow-dag-parameters#ui-parameters (tier 1, added on doc-verification review). `dag_id` naming-convention guidance is general Airflow practice, not tied to one specific Astronomer docs page — not independently re-verified on this pass.

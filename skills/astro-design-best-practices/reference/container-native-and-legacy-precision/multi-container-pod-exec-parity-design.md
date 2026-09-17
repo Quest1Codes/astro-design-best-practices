@@ -69,4 +69,4 @@ Issuing `kubectl exec -c <container-name>` via a `BashOperator` or `SSHOperator`
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — Kubernetes job type multi-container pod support, targeting a specific container for command execution (accessed 2026-08-18)
-[B2] Apache Airflow Docs / CNCF Kubernetes Provider — `KubernetesPodOperator` parameters; absence of native `target_container` exec parameter; `full_pod_spec` for advanced pod definitions (accessed 2026-08-18)
+[B2] Astronomer Docs — `KubernetesPodOperator` optional arguments (`full_pod_spec` for advanced pod definitions; no `target_container` exec parameter documented): https://www.astronomer.io/docs/learn/kubepod-operator#optional-arguments (tier 1, URL added on citation-hygiene review)

@@ -25,10 +25,10 @@ OpenLineage is an **open standard** — the lineage events are backend-agnostic 
 
 | Regulation | How OpenLineage Supports It |
 |---|---|
-| **SOX** | Proves the provenance of data feeding financial reports; demonstrates no unauthorized transformation occurred in the pipeline [B3]. |
-| **AML / Basel** | Traces customer data flowing into risk-scoring models; proves inputs weren't tampered with [B3]. |
+| **SOX** | {syn: B1} The underlying technical capability — automated, always-current lineage tracking of what data fed which output — is real and platform-verified [B1]; applying it as SOX evidence of "no unauthorized transformation" is this file's own inference, not a claim from a dedicated SOX-lineage source. **Correction**: an earlier draft cited this row to [B3], an unverified blog post; retargeted to the actual verified capability. |
+| **AML / Basel** | {syn: B1} Same correction as above — the lineage-tracing capability is real [B1]; the specific AML/Basel-compliance framing is this file's own applied inference, not a dedicated source's claim. |
 | **GDPR** | Identifies exactly where PII flows across systems — critical for scoping erasure requests (see topic 075) [B2]. |
-| **DORA / BCBS 239** | Provides automated, audit-ready data lineage for systemic risk reporting accuracy requirements. |
+| **DORA / BCBS 239** | {syn: B1} Same pattern: OpenLineage's real lineage-tracking capability [B1] applied by inference to DORA/BCBS 239 reporting-accuracy requirements — no dedicated source for the regulatory-specific framing exists; **correction**: an earlier draft had zero citation on this row at all. |
 
 ## Impact Analysis
 
@@ -36,6 +36,6 @@ When a data quality issue is discovered upstream (e.g., a corrupted source table
 
 ## Sources
 
-[B1] Astronomer Docs — OpenLineage integration with Astro Runtime (accessed 2026-08-10)
-[B2] OpenLineage.io — Airflow Listener API integration, supported operators, and backend compatibility (accessed 2026-08-10)
-[B3] Astronomer Blog — Data lineage for financial services compliance (accessed 2026-08-10)
+[B1] Astronomer Docs — Configure OpenLineage on Astro (pre-installed OpenLineage Airflow Provider, zero-config capture, Astro Observe): https://www.astronomer.io/docs/astro/observe-openlineage (tier 1, URL added on citation review)
+[B2] OpenLineage.io — Airflow Listener API integration, supported operators, and backend compatibility (no Astronomer Docs match — this is third-party openlineage.io content, out of scope for the Astronomer docs MCP; not re-verified on this pass)
+[B3] Astronomer Blog — Data lineage for financial services compliance (no Astronomer Docs match found on this pass — likely a specific blog post not indexed by the docs search; verify separately)

@@ -9,7 +9,7 @@ Captures: user logins, deployment config changes, API access, workspace modifica
 | Method | Description |
 |---|---|
 | **Manual / Scheduled CLI export** | `astro organization audit-logs export --organization-name "<name>"` outputs NDJSON [B1]. Schedule this via a cron job or an Airflow DAG that polls on a defined cadence. |
-| **Astro Platform API (Automated)** | Poll the Astro Platform API endpoint (`GET /platform/v1beta1/organizations/{orgId}/audit-logs`) and push results to the SIEM's HTTP ingestion endpoint (e.g., Splunk HEC, Sentinel Data Collector API) [B1]. |
+| **Astro Platform API (Automated)** | Poll the Astro Platform API's audit-logs endpoint (`GET /organizations/{organizationId}/audit-logs`, under the platform API grouping) and push results to the SIEM's HTTP ingestion endpoint (e.g., Splunk HEC, Sentinel Data Collector API) [B1][B3]. **Note**: an earlier draft of this row used the path prefix `/platform/v1beta1/...`; the exact version prefix wasn't independently re-confirmed on this review — treat it as a `NEEDS_EXEC_CHECK` and verify against the live Astro API reference before relying on a specific version prefix in an automation script. |
 
 **Recommended approach for near-real-time SIEM**: Use the API polling method on a 5–15 minute cadence from a lightweight Lambda/Cloud Function or a separate dedicated Airflow DAG.
 
@@ -36,4 +36,5 @@ Store SIEM credentials (Splunk HEC tokens, Sentinel workspace keys) in your Secr
 
 ## Sources
 
-[B1] Astronomer Docs — Audit log export (NDJSON, CLI, API), Vector sidecar configuration for task log forwarding, and remote logging setup (accessed 2026-08-10)
+[B1] Astronomer Docs — Export audit logs (NDJSON format, CLI export): https://www.astronomer.io/docs/astro/audit-logs#export-audit-logs (tier 1, URL added on citation review). The Vector sidecar configuration for task log forwarding is Astro Private Cloud remote-logging content not independently re-verified with a specific URL on this pass.
+[B3] Astronomer Docs — Platform API reference, audit logs endpoint (`GET /organizations/{organizationId}/audit-logs`): https://www.astronomer.io/docs/astro/api (tier 1, added on doc-verification review — flags the version-prefix uncertainty in the row above rather than asserting a specific one)

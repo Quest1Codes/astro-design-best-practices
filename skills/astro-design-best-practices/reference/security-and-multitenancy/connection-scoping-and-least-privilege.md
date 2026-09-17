@@ -1,20 +1,20 @@
 # Connection Scoping and Least Privilege
 
-AutoSys job credentials were typically embedded in JIL (`machine:`, `login:`) or managed by the OS at the agent level — there was no concept of connection scoping across job boundaries. Airflow connections are global within a Deployment by default, which creates an implicit privilege expansion risk: any DAG author can reference any connection, including ones intended for other teams.
+AutoSys job credentials were typically embedded in JIL (`machine:`, `login:`) or managed by the OS at the agent level — there was no concept of connection scoping across job boundaries. **Correction**: an earlier draft of this file's foundational premise — that Airflow connections are global within a Deployment by default, and that this creates an implicit privilege-expansion risk — carried no citation, despite being the claim the whole file's mitigation table is built on. Airflow's Connections are indeed stored per-environment (not per-DAG or per-user) and any DAG author with code-deploy access can reference any Connection defined in that Deployment [B4][B5].
 
 ## The scoping problem
 
 In a shared Deployment:
 - Connection `prod_database_rw` is visible to all DAG authors
 - A misconfigured or malicious DAG can use it without restriction
-- There is no native per-DAG connection restriction below the RBAC level
+- There is no native per-DAG connection restriction below the RBAC level [B4][B5] — DAG-level RBAC (see below) restricts who can *trigger* a DAG, not which Connections that DAG's code is allowed to reference
 
 Mitigation strategies, in order of decreasing isolation:
 
 | Strategy | Isolation level | How |
 |---|---|---|
 | **Separate Deployment per team** | Strongest — connection pool is scoped to one team | Each team's Deployment has its own connection namespace |
-| **DAG-level RBAC** (Astro Runtime 3.1-12+) | Logical — restricts which users can trigger which DAGs | Limits blast radius but doesn't prevent code from referencing shared connections |
+| **DAG-level RBAC** (Astro Runtime 3.1-12+, Enterprise tier+) | Logical — restricts which users can trigger which DAGs | Limits blast radius but doesn't prevent code from referencing shared connections |
 | **Naming conventions + secrets backend scoping** | Weak — relies on discipline | Prefix connections by team (`finance_db_rw`, `ops_db_ro`) and document ownership |
 
 Astronomer explicitly recommends separate Deployments over shared instances for teams with distinct security requirements [B4][B5].

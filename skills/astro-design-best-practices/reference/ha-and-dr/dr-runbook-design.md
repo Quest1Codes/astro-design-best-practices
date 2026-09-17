@@ -56,5 +56,5 @@ Once the primary region is restored and verified:
 
 ## Sources
 
-[B1] Astronomer Docs — Astro Disaster Recovery one-click failover and failback (accessed 2026-08-10)
-[B2] Astronomer Docs — DR shared responsibility model and runbook design guidance (accessed 2026-08-10)
+[B1] Astronomer Docs — Trigger failover / failback (one-click failover and failback, replication lag): https://www.astronomer.io/docs/astro/disaster-recovery-failover (tier 1, URL added on citation review)
+[B2] Astronomer Docs — Shared responsibility model: https://www.astronomer.io/docs/astro/shared-responsibility-model (tier 1, URL added on citation review)

@@ -25,6 +25,6 @@ When the same key exists in multiple places, Airflow resolves them in this order
 
 ## Sources
 
-[B1] Astronomer Docs — Managing Secrets and Connections (accessed 2026-08-08)
-[B2, B3] Astronomer Docs — Astro Environment Manager and Secrets Backends (accessed 2026-08-08)
-[B4] Apache Airflow Docs — Environment Variables precedence (accessed 2026-08-08)
+[B1] Astronomer Docs — Manage Airflow connections, variables, and environment variables: https://www.astronomer.io/docs/astro/manage-connections-variables (tier 1, URL added on citation review)
+[B2, B3] Astronomer Docs — Astro Environment Manager overview and Configure a secrets backend: https://www.astronomer.io/docs/astro/manage-connections-variables#astro-environment-manager and https://www.astronomer.io/docs/astro/secrets-backend (tier 1, URLs added on citation review)
+[B4] Astronomer Docs — Secrets backend, "How Airflow finds Connections or Variables" (4-tier resolution order, environment-variable precedence): https://www.astronomer.io/docs/astro/secrets-backend#how-airflow-finds-connections-or-variables (tier 1, URL added on citation review)

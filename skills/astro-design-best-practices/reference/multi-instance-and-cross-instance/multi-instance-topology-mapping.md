@@ -15,7 +15,7 @@ This is the fundamental isolation unit in AutoSys. When migrating to Astro, this
 | **`$AUTOUSER` directory** | Deployment's `Dockerfile` + `requirements.txt` | The Deployment's image definition controls environment configuration [B2]. |
 | **Event Server** (instance DB) | Airflow Metadata DB (per-Deployment, managed by Astro) | Each Deployment has its own isolated metadata DB; there is no cross-Deployment shared state [B2]. |
 | **Instance Scheduler** (`PRD_SCH`) | Deployment Scheduler | Each Deployment runs its own scheduler pod. |
-| **Instance-level security (CA EEM)** | Astro RBAC at Workspace/Deployment level | Access policies are set per Workspace; Deployment-level access inherits from Workspace RBAC [B2]. |
+| **Instance-level security (CA EEM)** | Astro RBAC at Workspace/Deployment level | Access policies are set per Workspace. **Correction**: an earlier draft of this row described Deployment-level access as purely inheriting from Workspace RBAC — that oversimplifies it. Astro's RBAC is hierarchical and *additive*: a Deployment Admin role and custom Deployment roles are assignable independently of Workspace role, and (on Runtime 3.1-12+) DAG-level roles add a further, independently-assignable layer beneath Deployment. A user's effective access is the union of their Workspace role plus any Deployment- and DAG-scoped roles, not a single inherited value [B3]. |
 
 ## Environment Topology Decision
 
@@ -28,4 +28,5 @@ This is the fundamental isolation unit in AutoSys. When migrating to Astro, this
 ## Sources
 
 [B1] Broadcom / CA AutoSys Workload Automation Documentation — Instance model, `$AUTOSERV`, `$AUTOUSER`, per-instance Event Server and Scheduler architecture (accessed 2026-08-11)
-[B2] Astronomer Docs — Organization/Workspace/Deployment hierarchy, per-Deployment isolation (scheduler, metadata DB, image), and RBAC (accessed 2026-08-11)
+[B2] Astronomer Docs — Astro architecture, access control architecture (Organization/Workspace/Deployment hierarchy and RBAC): https://www.astronomer.io/docs/astro/astro-architecture#access-control-architecture (tier 1, added on doc-verification review)
+[B3] Astronomer Docs — Astro user permissions reference (hierarchical, additive RBAC; Deployment Admin and custom Deployment roles; Dag-level roles on Runtime 3.1-12+): https://www.astronomer.io/docs/astro/user-permissions (tier 1, added on doc-verification review — corrects the pure-inheritance framing above)

@@ -40,4 +40,4 @@ Run a **pilot migration of 50–100 non-critical jobs** with the enablement prog
 
 ## Sources
 
-[B1] Astronomer migration guidance & enterprise migration community — Training curriculum design, JIL-to-DAG mental model mapping, and pilot program structure (accessed 2026-08-11)
+[B1] Astronomer migration guidance & enterprise migration community — Training curriculum design, JIL-to-DAG mental model mapping, and pilot program structure (no Astronomer Docs match found on this pass — this reads as general practitioner/migration-consulting guidance rather than a specific documented Astronomer feature; not verifiable via the astronomer-docs MCP. Astronomer does offer official training at https://academy.astronomer.io if a concrete curriculum reference is needed.)

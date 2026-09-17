@@ -73,4 +73,4 @@ Use `mode='reschedule'` on the sensor to avoid blocking a worker slot during the
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — PeopleSoft agent job type, Process Scheduler integration (accessed 2026-08-18)
-[B2] PeopleSoft Integration Broker documentation & Airflow Docs — Custom Hook/Operator design pattern, `PS_PMN_PRCSLIST` process status codes, HTTP sensor with `mode='reschedule'` (accessed 2026-08-18)
+[B2] PeopleSoft Integration Broker documentation & Airflow Docs — Custom Hook/Operator design pattern, `PS_PMN_PRCSLIST` process status codes (no Astronomer Docs match found on this pass — PeopleSoft-specific content, not indexed in the astronomer-docs MCP scope; verify separately). The generic `HttpSensor` reschedule-mode pattern referenced here is documented at https://www.astronomer.io/docs/learn/what-is-a-sensor#commonly-used-sensors (tier 1, added on citation-hygiene review).

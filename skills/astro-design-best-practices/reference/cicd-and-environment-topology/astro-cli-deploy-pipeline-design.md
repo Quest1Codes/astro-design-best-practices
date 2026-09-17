@@ -31,6 +31,6 @@ Regardless of the CI/CD platform, the pipeline steps must be:
 
 ## Sources
 
-[B1, B2] Astronomer Docs & Community — Optimizing deployment speed with `--dags` flag (accessed 2026-08-08)
-[B3] Astronomer Docs — Deployment API tokens (accessed 2026-08-08)
-[B4] Astronomer Docs — Astro CLI parse validation in CI/CD (accessed 2026-08-08)
+[B1, B2] Astronomer Docs — Deploy Dags to Astro (`--dags` flag, Dag-only deploys): https://www.astronomer.io/docs/astro/deploy-dags (tier 1)
+[B3] Astronomer Docs — Deployment API tokens: https://www.astronomer.io/docs/astro/deployment-api-tokens (tier 1)
+[B4] Astronomer Docs — Set up CI/CD, test and validate Dags: https://www.astronomer.io/docs/astro/set-up-ci-cd#test-and-validate-dags-in-your-ci/cd-pipeline (tier 1)

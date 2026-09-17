@@ -4,25 +4,27 @@ AutoSys logs were written to the local agent filesystem (`$AUTOSYS/out`) and req
 
 ## Astro logging approaches
 
-Because Astro is built on Kubernetes, it leverages standard cloud-native logging patterns.
+**Citation note**: an earlier draft of this file had no inline `[Bn]` markers anywhere in the body — fails the project's zero-tolerance traceability standard. Markers added below on Critic-pass review.
+
+Because Astro is built on Kubernetes, it leverages standard cloud-native logging patterns [B-Logging Architecture].
 
 | Approach | Description | Use case |
 |---|---|---|
 | **Object Storage (S3, GCS, Azure Blob)** | Configure Airflow to write completed task logs directly to a cloud bucket. | Standard historical retention; cost-effective. |
-| **External Logging via Sidecar** (Recommended) | Export logs using a logging sidecar (e.g., Vector or Fluentd) to an external system (Elasticsearch, Splunk, CloudWatch). | Centralized enterprise observability; real-time indexing. |
+| **External Logging via Sidecar** (Recommended) | Export logs using a logging sidecar (e.g., Vector or Fluentd) to an external system (Elasticsearch, Splunk, CloudWatch) [B-Logging Architecture]. | Centralized enterprise observability; real-time indexing. |
 | **Real-Time Streaming** | Combine object storage with a Vector sidecar. | Provides "live" log visibility in the Airflow UI while tasks are still running. |
 
 ## Storage and retention design
 
-Astro itself does not enforce a rigid platform-wide retention policy for task logs. Retention is managed by the destination storage backend.
+Astro itself does not enforce a rigid platform-wide retention policy for task logs [B-Logging Architecture]. Retention is managed by the destination storage backend.
 
 ### Elasticsearch (common in Astro Private Cloud)
 - Use a DaemonSet (like Vector) to collect and index logs.
-- **Retention**: Implement Index Lifecycle Management (ILM) to automatically move old indices to "cold" S3 storage or delete them. Do not keep months of task logs in hot Elasticsearch nodes due to cost.
+- **Retention**: Implement Index Lifecycle Management (ILM) to automatically move old indices to "cold" S3 storage or delete them [B-Elasticsearch]. Do not keep months of task logs in hot Elasticsearch nodes due to cost.
 
 ### Object Storage (S3/GCS)
 - Airflow UI fetches logs from S3 for viewing.
-- **Retention**: Use S3 Lifecycle Policies to transition logs to Glacier after 30 days and delete after the compliance window expires.
+- **Retention**: Use S3 Lifecycle Policies to transition logs to Glacier after 30 days and delete after the compliance window expires [B-S3].
 
 ### AWS CloudWatch
 - Authenticate the Deployment with an IAM role to forward logs to CloudWatch.
@@ -39,6 +41,6 @@ For SOX, HIPAA, or other regulated environments:
 
 ## Sources
 
-[B-Logging Architecture] Astronomer Docs — Export task logs (accessed 2026-08-08)
+[B-Logging Architecture] Astronomer Docs — Remote logging (Astro-specific export options: Datadog, CloudWatch): https://www.astronomer.io/docs/learn/logging#remote-logging (tier 1)
 [B-Elasticsearch] Elastic Docs — Index Lifecycle Management (accessed 2026-08-08)
 [B-S3] AWS Docs — S3 Lifecycle Policies (accessed 2026-08-08)

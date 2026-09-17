@@ -64,4 +64,4 @@ Store SAP connection credentials in Airflow Connections (or a Secrets Backend) �
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — SAP Application Job type, RFC-based agent communication with SAP NetWeaver (accessed 2026-08-18)
-[B2] Apache Airflow Docs / SAP Provider Docs — `apache-airflow-providers-sap`, `SAPRfcHook`, `pyrfc` library, SAP NWRFC SDK requirement, SAP Connection configuration (accessed 2026-08-18)
+[B2] Apache Airflow Docs / SAP Provider Docs — `apache-airflow-providers-sap`, `SAPRfcHook`, `pyrfc` library, SAP NWRFC SDK requirement, SAP Connection configuration (no Astronomer Docs match found on this pass — this is Apache Airflow SAP-provider-specific content, not indexed in the astronomer-docs MCP scope; verify separately against the Apache Airflow Registry SAP provider page)

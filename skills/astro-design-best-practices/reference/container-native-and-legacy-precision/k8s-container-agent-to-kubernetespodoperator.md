@@ -55,4 +55,4 @@ run_containerized_job = KubernetesPodOperator(
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — Kubernetes/OpenShift job type, Connection Profile for cluster API endpoint, native K8s Job object creation (accessed 2026-08-18)
-[B2] Apache Airflow Docs / CNCF Kubernetes Provider — `KubernetesPodOperator`, `container_resources`, `env_vars`, `get_logs`, `do_xcom_push`, `kubernetes_conn_id` (accessed 2026-08-18)
+[B2] Astronomer Docs — `KubernetesPodOperator` optional arguments (`container_resources`, `env_vars`, `get_logs`, and related parameters): https://www.astronomer.io/docs/learn/kubepod-operator#optional-arguments (tier 1, URL added on citation-hygiene review). `do_xcom_push` and `kubernetes_conn_id` are documented on the same page but not called out individually there — treat as consistent with the linked reference, not independently re-verified.

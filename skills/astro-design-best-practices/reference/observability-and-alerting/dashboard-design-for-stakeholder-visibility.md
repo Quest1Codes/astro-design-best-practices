@@ -39,9 +39,9 @@ For formal, structured reporting (similar to legacy WCC output):
 
 ## Sources
 
-[B1, B2, B4] Astronomer Docs — Astro Observe Data Products and SLAs (accessed 2026-08-08)
+[B1, B2, B4] Astronomer Docs — Create a data product in Astro Observe / Create an alert (SLAs): https://www.astronomer.io/docs/astro/create-data-products and https://www.astronomer.io/docs/astro/observe-slas (tier 1)
 [B5] DBTA — Astro Observe lineage and health (accessed 2026-08-08)
-[B6, B7] Astronomer Docs — Grafana cluster and deployment dashboards (accessed 2026-08-08)
+[B6, B7] Astronomer Docs — Private Cloud Grafana dashboards: https://www.astronomer.io/docs/astro-private-cloud/v-2-x/configure-metrics#grafana-dashboards (tier 1)
 [B9] Orchestra — Airflow metadata tagging best practices (accessed 2026-08-08)
 [B11] Hoop.dev — Grafana access management (accessed 2026-08-08)
-[B13, B14] Apache Airflow Docs — REST API reference (accessed 2026-08-08)
+[B13, B14] Apache Airflow REST API reference: https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html (tier 2)

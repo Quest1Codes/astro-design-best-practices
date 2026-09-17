@@ -34,6 +34,6 @@ Do not run expensive integration tests if basic parsing fails. Structure your Gi
 
 ## Sources
 
-[B1] Astronomer Docs — Validating and testing DAGs (accessed 2026-08-08)
+[B1] Astronomer Docs — Set up CI/CD, test and validate Dags: https://www.astronomer.io/docs/astro/set-up-ci-cd#test-and-validate-dags-in-your-ci/cd-pipeline (tier 1)
 [B2] Astronomer GitHub (`best_practices_pytests`) — Example testing suites (accessed 2026-08-08)
-[B3] Astronomer Docs — CI/CD ephemeral deployments (accessed 2026-08-08)
+[B3] Astronomer Docs — Automate preview Deployments with any CI/CD tool: https://www.astronomer.io/docs/astro/ci-cd-templates/preview-deployments (tier 1)

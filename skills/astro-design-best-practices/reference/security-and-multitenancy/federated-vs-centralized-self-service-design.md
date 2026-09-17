@@ -18,14 +18,9 @@ This topic covers the self-service and governance model. For the instance-topolo
 
 Astronomer explicitly recommends **per-team isolated Deployments** managed via automated CI/CD rather than a shared monolithic instance, regardless of topology model [B1][B4][B5][B7].
 
-## Airflow 3 Multi-Team mode note
+## Airflow 3 Multi-Team mode note — corrected
 
-Airflow 3.3+ introduced an experimental "Multi-Team" mode that allows logical separation within a single Deployment [B8][B9]. Key properties:
-- Provides team-based access scoping for Connections and Variables
-- Does **not** provide full tenant isolation (shared scheduler, shared metadata DB, shared infrastructure) [B8][B9][B10]
-- Use case: smaller orgs or cost-constrained setups where full per-team Deployment is not feasible [B8]
-
-> `NEEDS_EXEC_CHECK` — Multi-Team mode is marked experimental in Airflow 3.3 docs; confirm production-readiness before adopting for regulated or production estates.
+An earlier draft of this file recommended upstream Airflow 3.3's experimental "Multi-Team" mode as a design option for smaller orgs or cost-constrained setups where a full per-team Deployment isn't feasible. **This was wrong and has been removed as a recommendation**: Astronomer's own docs state plainly that "the Airflow 3 multi-team model isn't supported on Astro" [B13]. Do not design around it. The federated/centralized/hybrid choice above (Workspace and Deployment boundaries) is the actual mechanism for team separation on Astro — Multi-Team mode is not an available substitute for a smaller or cost-constrained org, regardless of what upstream Airflow itself supports.
 
 ## AutoSys topology → Astro design mapping
 
@@ -54,5 +49,6 @@ In regulated estates (SOX, HIPAA), the platform governance model must enforce:
 
 [B1, B4, B5] Astronomer Docs — Multi-tenancy in Airflow: https://www.astronomer.io/docs/learn/airflow-multi-tenancy (accessed 2026-08-08)
 [B7, B11] Astronomer Blog — Platform engineering for Airflow at scale: https://www.astronomer.io/blog/platform-engineering-airflow (accessed 2026-08-08)
-[B8, B9, B10] Apache Airflow Docs — Multi-Team mode (Airflow 3.3): https://airflow.apache.org/docs/apache-airflow/stable/multi-team.html (accessed 2026-08-08)
+[B8, B9, B10] Apache Airflow Docs — Multi-Team mode (Airflow 3.3), upstream OSS capability only — **not applicable on Astro, see B13**: https://airflow.apache.org/docs/apache-airflow/stable/multi-team.html (accessed 2026-08-08)
 [B12] Astronomer Docs — Organization management: https://www.astronomer.io/docs/astro/manage-organization (accessed 2026-08-08)
+[B13] Astronomer Docs — Airflow feature support on Astro ("The Airflow 3 multi-team model isn't supported on Astro"): https://www.astronomer.io/docs/astro/airflow-feature-support (tier 1, added on doc-verification review)

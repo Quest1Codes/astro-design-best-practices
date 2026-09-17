@@ -36,6 +36,6 @@ As the estate scales to hundreds of teams across regions, isolation is critical.
 
 ## Sources
 
-[B-Scale] Astronomer Architecture Guides — Control Plane and Data Plane separation (accessed 2026-08-08)
-[B-Remote] Astronomer Docs — Remote Execution and Hybrid topologies (accessed 2026-08-08)
-[B-DR] Astronomer Docs — Cross-region Disaster Recovery features (accessed 2026-08-08)
+[B-Scale] Astronomer Docs — Astro architecture (control plane / data plane separation): https://www.astronomer.io/docs/astro/astro-architecture (tier 1)
+[B-Remote] Astronomer Docs — Execution mode (Hosted vs. Remote Execution): https://www.astronomer.io/docs/astro/execution-mode (tier 1)
+[B-DR] Astronomer Docs — Disaster recovery: https://www.astronomer.io/docs/astro/disaster-recovery (tier 1)

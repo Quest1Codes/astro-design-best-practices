@@ -36,5 +36,5 @@ This cleanly separates protocol-handling (AS2 gateway) from business logic orche
 
 ## Sources
 
-[B1] Apache Airflow Docs & `apache-airflow-providers-amazon` — `SFTPToS3Operator`, `S3ToSFTPOperator`, `SFTPSensor`, and Sensor modes (accessed 2026-08-10)
-[B2] AWS Docs — AWS Transfer Family AS2 support and S3 integration for EDI workflows (accessed 2026-08-10)
+[B1] Apache Airflow Docs & `apache-airflow-providers-amazon` — `SFTPToS3Operator`, `S3ToSFTPOperator`, `SFTPSensor`, and Sensor modes (no Astronomer Docs match found on this pass — this is Apache Airflow provider content not indexed in the Astronomer docs MCP; verify against the Airflow Registry / provider docs directly)
+[B2] AWS Docs — AWS Transfer Family AS2 support and S3 integration for EDI workflows (no Astronomer Docs match — this is third-party AWS documentation, out of scope for the Astronomer docs MCP; not re-verified on this pass)

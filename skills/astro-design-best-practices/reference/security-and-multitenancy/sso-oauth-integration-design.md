@@ -32,7 +32,7 @@ Prerequisites [B1][B12]:
 - SSO connection must be configured first
 - Organization API token with sufficient permissions to authorize the SCIM connector
 
-Optimized for Okta and Microsoft Entra ID [B1][B11]. Generic OIDC is also supported for non-standard IdP configurations [B14][B15].
+**SCIM provisioning itself is limited to Okta and Microsoft Entra ID** [B1][B11] — there is no generic-OIDC path for SCIM specifically. **Correction**: an earlier draft of this file added "Generic OIDC is also supported for non-standard IdP configurations" directly after the SCIM-scope sentence, citing [B14][B15] — but those citations were never independently confirmed (the file's own Sources note says so), and the claim itself likely conflates two different things: OIDC is an alternative *SSO* protocol to SAML (a separate capability, see the Core Integration section above), not a SCIM provisioning mechanism. If you need SCIM-equivalent provisioning with a non-Okta/Entra IdP, treat that as a gap to design around (SCIM API tokens / manual provisioning), not as something Generic OIDC solves — `NEEDS_EXEC_CHECK` if this needs to be relied on.
 
 ## Deployment model (Axis A — H rating)
 
@@ -60,9 +60,9 @@ For HIPAA/SOX estates:
 
 [B1, B11, B12] Astronomer Docs — Set up SCIM: https://www.astronomer.io/docs/astro/set-up-scim (accessed 2026-08-08)
 [B2, B3] Astronomer Docs — Set up SSO (SAML): https://www.astronomer.io/docs/astro/configure-idp (accessed 2026-08-08)
-[B4, B7, B9, B10, B13] Astronomer Docs — SSO configuration steps (accessed 2026-08-08)
-[B5] CyberArk — SAML integration with Astronomer (accessed 2026-08-08)
-[B6] GitHub — Astronomer SAML setup (accessed 2026-08-08)
-[B8] Astronomer Docs — Domain verification (accessed 2026-08-08)
-[B14, B15] Astronomer Docs — Generic OIDC configuration (accessed 2026-08-08)
-[B16] Astronomer Docs — Astro Private Cloud SSO specifics (accessed 2026-08-08)
+[B4, B7, B9, B10, B13] Astronomer Docs — Set up SSO (SAML), configuration steps (same page as B2/B3): https://www.astronomer.io/docs/astro/configure-idp (tier 1, URL added on citation review)
+[B5] CyberArk — SAML integration with Astronomer (third-party, out of scope for Astronomer docs MCP; not re-verified on this pass)
+[B6] GitHub — Astronomer SAML setup (third-party, out of scope for Astronomer docs MCP; not re-verified on this pass)
+[B8] Astronomer Docs — Set up SSO (SAML) (no dedicated standalone "domain verification" page found; closest confirmed match is the general SSO setup page): https://www.astronomer.io/docs/astro/configure-idp (tier 1, URL added on citation review)
+[B14, B15] Astronomer Docs — Generic OIDC configuration (no confident page match found on this pass — search results for this exact topic were inconclusive; verify separately before relying on this citation)
+[B16] Astronomer Docs — Astro Private Cloud SSO specifics (no confident page match found on this pass; verify separately)

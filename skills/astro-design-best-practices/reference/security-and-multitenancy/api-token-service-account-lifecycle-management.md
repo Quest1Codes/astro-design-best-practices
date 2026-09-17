@@ -68,6 +68,6 @@ For SOX/HIPAA environments:
 ## Sources
 
 [API token lifecycle] Astronomer Docs — API token management: https://www.astronomer.io/docs/astro/api-tokens (accessed 2026-08-08)
-[astro token rotate] Astronomer CLI Docs — `astro deployment token rotate` (accessed 2026-08-08)
+[astro token rotate] Astronomer CLI Docs — `astro deployment token rotate`: https://www.astronomer.io/docs/cli/v1.45/astro-deployment-token-rotate (tier 1, URL added on citation review)
 [B-Workload] Astronomer Docs — Workload Identity: https://www.astronomer.io/docs/astro/authorize-deployments-to-your-cloud (accessed 2026-08-08)
-[Terraform] Astronomer Docs — Astro Terraform Provider (accessed 2026-08-08)
+[Terraform] Astro Terraform Provider (official Terraform Registry, not an astronomer.io page): https://registry.terraform.io/providers/astronomer/astro/latest/docs (tier 2, URL added on citation review)

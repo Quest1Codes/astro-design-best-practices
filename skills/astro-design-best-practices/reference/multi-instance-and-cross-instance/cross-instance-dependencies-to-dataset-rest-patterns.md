@@ -63,4 +63,4 @@ If the two DAGs live in **different Astro Deployments** (isolated metadata DBs),
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — Cross-instance `CHANGE_STATUS` events, remote Event Server communication (accessed 2026-08-11)
-[B2] Apache Airflow Docs — `ExternalTaskSensor` (`execution_delta`, `mode='reschedule'`), Airflow Datasets, `TriggerDagRunOperator` (accessed 2026-08-11)
+[B2] Astronomer Learn — Implement cross-DAG dependencies (`ExternalTaskSensor`, `TriggerDagRunOperator`, dataset/asset-driven scheduling as the three implementation patterns): https://www.astronomer.io/docs/learn/cross-dag-dependencies#implement-cross-dag-dependencies (tier 1, added on doc-verification review); cross-deployment dependencies specifically (Astro Alerts and Airflow Asset REST triggering, since `ExternalTaskSensor`/`TriggerDagRunOperator` only work within one Deployment): https://www.astronomer.io/docs/astro/best-practices/cross-deployment-dependencies (tier 1, added on doc-verification review)

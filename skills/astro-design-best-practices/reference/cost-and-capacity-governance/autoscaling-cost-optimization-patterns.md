@@ -44,5 +44,5 @@ Deferrable Operators release worker slots while waiting for external conditions 
 
 ## Sources
 
-[B1] Astronomer Docs — Worker autoscaling, scale-to-zero behavior, worker queue min/max configuration, Deferrable Operators (accessed 2026-08-11)
-[B2] Apache Airflow Docs — KEDA configuration (`workers.celery.keda.enabled`), HPA/KEDA conflict warning (accessed 2026-08-11)
+[B1] Astronomer Docs — Celery worker autoscaling logic (queued+running/concurrency formula, KEDA-driven scale-to-zero via minimum worker count): https://www.astronomer.io/docs/astro/celery-executor#celery-worker-autoscaling-logic (tier 1, added on doc-verification review); Deferrable Operators: https://www.astronomer.io/docs/learn/deferrable-operators (tier 1, added on doc-verification review)
+[B2] Astronomer Docs — Autoscale workers with KEDA (Private Cloud `updateDeploymentKedaConfig`): https://www.astronomer.io/docs/astro-private-cloud/v-2-x/scale-airflow-resources#autoscale-workers-with-keda (tier 1, added on doc-verification review) — **NEEDS_EXEC_CHECK**: the specific config key `workers.celery.keda.enabled` and an explicit "HPA/KEDA conflict" warning were not found verbatim on this pass; this page is the closest confirmed match for KEDA-based Celery worker autoscaling, but re-verify the exact parameter name before citing it in a config example.

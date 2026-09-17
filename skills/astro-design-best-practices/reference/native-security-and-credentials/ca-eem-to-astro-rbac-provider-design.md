@@ -40,4 +40,4 @@ AutoSys automation used EEM service accounts for cross-system integration. On As
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — CA EEM integration, native OS security provider, LDAP/AD federation, Security Policy model, CA SiteMinder SSO (accessed 2026-08-11)
-[B2] Astronomer Docs — SSO configuration (Okta, Entra ID, OneLogin, Ping), SCIM provisioning, Teams, Astro RBAC roles, API Tokens (accessed 2026-08-11)
+[B2] Astronomer Docs — SSO configuration (identity providers): https://www.astronomer.io/docs/astro/configure-idp ; SCIM provisioning: https://www.astronomer.io/docs/astro/set-up-scim-provisioning ; Astro RBAC / user permissions: https://www.astronomer.io/docs/astro/user-permissions (tier 1, URLs added on citation-hygiene review)

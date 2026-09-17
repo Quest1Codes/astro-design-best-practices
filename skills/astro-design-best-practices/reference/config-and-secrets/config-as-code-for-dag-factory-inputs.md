@@ -31,5 +31,5 @@ Treat your YAML configs as code. Add a validation step in your CI/CD pipeline th
 
 ## Sources
 
-[B1, B2] Astronomer Docs & Community — `dag-factory` best practices and YAML structuring (accessed 2026-08-08)
-[B3] Astronomer Docs — CI/CD validation for generated DAGs (accessed 2026-08-08)
+[B1, B2] Astronomer Docs — Use DAG Factory to create dags (YAML structuring, `dag-factory` package): https://www.astronomer.io/docs/learn/dag-factory (tier 1, URL added on citation review)
+[B3] Astronomer Docs — Set up CI/CD, test and validate dags in your CI/CD pipeline (Astro CLI pytest/parse checks): https://www.astronomer.io/docs/astro/set-up-ci-cd#test-and-validate-dags-in-your-ci/cd-pipeline (tier 1, URL added on citation review)

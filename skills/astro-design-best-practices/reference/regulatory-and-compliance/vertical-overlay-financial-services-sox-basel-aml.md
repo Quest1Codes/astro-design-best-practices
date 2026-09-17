@@ -4,7 +4,7 @@ This file translates the general compliance architecture patterns (Topics 074–
 
 ## SOX — Sarbanes-Oxley Act (Internal Controls over Financial Reporting)
 
-SOX Section 404 requires documented, operating internal controls over financial reporting pipelines. Airflow must be treated as a production financial system.
+SOX Section 404 requires documented, operating internal controls over financial reporting pipelines [B-SOX]. Airflow must be treated as a production financial system.
 
 **Technical Controls to Implement:**
 
@@ -26,12 +26,14 @@ AML transaction monitoring models depend on high-quality, traceable data. The ri
 
 ## Basel III / IV (BCBS 239) — Risk Data Quality
 
-BCBS 239 requires banks to accurately aggregate and report risk data. Principle 6 (Accuracy) and Principle 7 (Completeness) directly apply to Airflow pipelines processing risk data:
+BCBS 239 requires banks to accurately aggregate and report risk data. **Correction**: an earlier draft of this file cited "Principle 6 (Accuracy) and Principle 7 (Completeness)" with no source — both numbers were wrong. BCBS 239's actual numbering is **Principle 3 (Accuracy and Integrity)** and **Principle 4 (Completeness)** [B-BCBS239], and these directly apply to Airflow pipelines processing risk data:
 - Every pipeline feeding a risk report must have **data quality gate tasks** that halt the pipeline if accuracy thresholds are not met (preventative control).
 - OpenLineage lineage graphs provide auditors with automated, always-current evidence of the pipeline-to-report mapping required by BCBS 239's traceability mandate [B3].
 
 ## Sources
 
-[B1] Astronomer Blog — SOX compliance architecture for data pipelines (accessed 2026-08-10)
-[B2] Astronomer Docs — Audit logs, RBAC, and CI/CD for regulated environments (accessed 2026-08-10)
-[B3] Astronomer — OpenLineage for financial services lineage and AML data traceability (accessed 2026-08-10)
+[B1] Astronomer Blog — SOX compliance architecture for data pipelines (no Astronomer Docs match found on this pass — likely a specific blog post not indexed by the docs search; verify separately)
+[B2] Astronomer Docs — Audit logs: https://www.astronomer.io/docs/astro/audit-logs and Astro user permissions reference (RBAC): https://www.astronomer.io/docs/astro/user-permissions (tier 1, URLs added on citation review — CI/CD-specific guidance for regulated environments wasn't independently re-verified on this pass)
+[B3] Astronomer Docs — Configure OpenLineage on Astro: https://www.astronomer.io/docs/astro/observe-openlineage (tier 1, URL added on citation review — covers OpenLineage generally; AML-specific data-traceability framing is a project-internal application of it, not a distinct Astronomer doc page)
+[B-SOX] U.S. Securities and Exchange Commission / SOX legislative text — Sarbanes-Oxley Act Section 404 (internal controls over financial reporting): https://www.sec.gov/spotlight/sarbanes-oxley.htm (tier 3 — external legal/regulatory text, not an Astronomer source; added on Critic-pass review since this is a load-bearing legal claim the original draft left uncited)
+[B-BCBS239] Basel Committee on Banking Supervision — BCBS 239, "Principles for effective risk data aggregation and risk reporting" (Principle 3: Accuracy and Integrity; Principle 4: Completeness): https://www.bis.org/publ/bcbs239.pdf (tier 3 — external regulatory text, not an Astronomer source; added on Critic-pass review, corrects the wrong principle numbers above)

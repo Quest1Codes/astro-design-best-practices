@@ -53,4 +53,4 @@ For SOX, HIPAA, or other regulated environments:
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — Job history tables in the Event Server DB, `DBMaint` utility for history pruning, agent log files at `/opt/CA/WA_AGENT/log/`, audit event records (accessed 2026-08-18)
-[B2] Apache Airflow Docs — `airflow db clean` command, `--clean-before-timestamp` parameter, `dag_run`/`task_instance`/`log`/`xcom` tables as primary metadata tables (accessed 2026-08-18)
+[B2] Astronomer Docs — Airflow metadata database best practices (`db clean`, `--clean-before-timestamp`): https://www.astronomer.io/docs/learn/airflow-database#airflow-metadata-database-best-practices ; DB cleanup DAG tutorial: https://www.astronomer.io/docs/learn/cleanup-dag-tutorial (tier 1, URLs added on citation-hygiene review)

@@ -37,5 +37,5 @@ Astro does not perform GL posting or internal budget transfers. You build this l
 
 ## Sources
 
-[B1] Astronomer Docs — Cost Breakdown Dashboard, Astro API usage export, Workspace-as-cost-center pattern, and FinOps guidance (accessed 2026-08-11)
-[B2] Astronomer Docs — Astro Terraform Provider for Deployment management and naming convention enforcement (accessed 2026-08-11)
+[B1] Astronomer Docs — Attribute Astro spend across teams (Cost Breakdown dashboard, Workspace/Deployment attribution, FOCUS-format export, Billing API): https://www.astronomer.io/docs/astro/best-practices/internal-chargeback (tier 1, added on doc-verification review); Cost Breakdown dashboard: https://www.astronomer.io/docs/astro/organization-dashboard#cost-breakdown (tier 1, added on doc-verification review)
+[B2] Astronomer Docs — Astro Terraform Provider: https://www.astronomer.io/docs/astro/terraform-provider (tier 1, added on doc-verification review)

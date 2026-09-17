@@ -9,8 +9,8 @@ Every AutoSys operation that operators perform today goes through one of several
 | AutoSys Client Surface | What It Does | Astro/Airflow Equivalent |
 |---|---|---|
 | **`jil` CLI** | Define/update/delete job definitions from the command line | Python DAG code in Git (deployed via Astro CLI `astro deploy`) [B2] |
-| **`autorep` CLI** | Read-only reporting: job status, run history, machine/calendar/variable listings | Airflow REST API (`GET /api/v1/...`); `astro` CLI for Deployment queries [B2] |
-| **`sendevent` CLI** | Manually trigger, hold, kill, or change status of jobs | Airflow REST API (`POST /api/v1/dags/{id}/dagRuns`, `PATCH` for state changes) [B2] |
+| **`autorep` CLI** | Read-only reporting: job status, run history, machine/calendar/variable listings | Airflow REST API (`GET /api/v2/...`); `astro` CLI for Deployment queries [B2] |
+| **`sendevent` CLI** | Manually trigger, hold, kill, or change status of jobs | Airflow REST API (`POST /api/v2/dags/{id}/dagRuns`, `PATCH` for state changes) [B2] |
 | **WCC Web UI (Workload Control Center)** | Browser-based GUI for job monitoring, manual intervention, and reporting | Airflow UI (per-Deployment) + Astro Observe for cross-Deployment view [B2] |
 | **AEWS REST API** | Programmatic control-plane access (CI/CD, external triggers) | Airflow REST API + Astro API [B2] |
 | **JIL/SDK** | Programmatic job definition in client applications | Python DAG SDK (Airflow DAG objects, `@dag`, `@task` decorators) [B2] |
@@ -36,4 +36,4 @@ Before migrating a team's jobs, verify:
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — `jil`, `autorep`, `sendevent`, WCC, ECLI, AEWS REST API, SDK — client surfaces and the Application Server as the central broker (accessed 2026-08-18)
-[B2] Astronomer Docs & Apache Airflow Docs — Astro CLI `astro deploy`, Airflow REST API endpoints, Astro Observe, Airflow UI DAG Trigger and task management (accessed 2026-08-18)
+[B2] Astronomer Docs & Apache Airflow Docs — Astro CLI `astro deploy`, Airflow REST API endpoints, Astro Observe, Airflow UI DAG Trigger and task management (accessed 2026-08-18). **Correction**: the REST endpoint paths in the table above were originally cited as `/api/v1/...`; Airflow 3 uses the v2 REST API — see https://www.astronomer.io/docs/astro/airflow-api (tier 1, added on doc-verification review). Confirm the target Deployment's actual Airflow major version before relying on these paths.

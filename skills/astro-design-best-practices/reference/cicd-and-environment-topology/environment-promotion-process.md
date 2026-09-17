@@ -29,5 +29,5 @@ If a promotion to Production causes immediate issues, utilize Astronomer's built
 
 ## Sources
 
-[B1, B2] Astronomer Docs & Architecture Guides — CI/CD image promotion and deploy commands (accessed 2026-08-08)
-[B3] Astronomer Docs — Deploy Rollbacks (accessed 2026-08-08)
+[B1, B2] Astronomer Docs — Choose a CI/CD strategy: https://www.astronomer.io/docs/astro/set-up-ci-cd (tier 1)
+[B3] Astronomer Docs — Deploy history, roll back to a past deploy: https://www.astronomer.io/docs/astro/deploy-history#roll-back-to-a-past-deploy (tier 1)

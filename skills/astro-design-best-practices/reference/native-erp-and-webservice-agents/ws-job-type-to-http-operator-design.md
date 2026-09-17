@@ -83,4 +83,4 @@ For OAuth2 APIs, use the `airflow-providers-http` with a token refresh wrapper i
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — `job_type: WS`, Web Services job type (SOAP and REST, no wrapper script required), JIL `web_service_url` and `soap_action` attributes (accessed 2026-08-18)
-[B2] Apache Airflow Docs — `HttpOperator`, `SimpleHttpOperator`, `HttpSensor`, `apache-airflow-providers-http`, `response_check`, `response_filter`, HTTP Connection (accessed 2026-08-18)
+[B2] Astronomer Docs & Apache Airflow Registry — `HttpSensor` (waits for an API to be available): https://www.astronomer.io/docs/learn/what-is-a-sensor#commonly-used-sensors ; `HttpOperator` usage example (trigger DAG runs across Deployments): https://www.astronomer.io/docs/astro/airflow-api#trigger-dag-runs-across-deployments ; Airflow connection basics: https://www.astronomer.io/docs/learn/connections#airflow-connection-basics (tier 1, URLs added on citation-hygiene review). `response_check`/`response_filter` and the `apache-airflow-providers-http` package itself are documented on the Apache Airflow Registry (not indexed in the astronomer-docs MCP scope — unresolved on this pass).

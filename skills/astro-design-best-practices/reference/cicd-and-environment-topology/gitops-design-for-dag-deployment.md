@@ -20,7 +20,7 @@ Follow the standard Astro structure, separating DAGs from heavy dependencies:
 - `/plugins`: Custom operators and hooks.
 
 ### 2. DAG Hashing
-Ensure DAG hashing is enabled (the default in Astro Agent 1.8.0+). The scheduler computes a hash of the DAG file and skips processing if the file has not changed. This drastically reduces CPU, memory, and network overhead when fetching from Git [B3].
+The Dag processor computes a hash of each Dag and caches it; on each processing cycle it compares the current hash against the cached value — if unchanged, it skips re-sending the Dag to the Astro orchestration plane, lowering memory utilization, network bandwidth, and speeding up Dag updates in Deployments with many Dags [B4]. **Correction history**: an earlier draft of this section cited this as "enabled by default in Astro Agent 1.8.0+"; a subsequent doc-verification pass, searching a different page than the one that actually covers it, couldn't confirm it and marked it as likely fabricated. A follow-up pass found the real source: Dag hashing is confirmed real and **enabled by default starting on Astro Agent client release 1.8.0**, disableable via `ASTRO_AGENT_CLIENT_DAG_PROCESSOR__ENABLE_DAG_CACHING=False` [B4]. The original claim was correct; the "likely fabricated" flag itself was the error. Monitor via the `dag_processor_cache_hits_total`, `dag_processor_cache_misses_total`, and `dag_processor_cache_size` metrics [B4].
 
 ### 3. Pipeline automation
 GitOps requires that Git is the sole source of truth.
@@ -38,5 +38,6 @@ GitOps requires that Git is the sole source of truth.
 
 ## Sources
 
-[B1, B2] Astronomer Docs — Airflow 3 DAG Versioning and Bundles (accessed 2026-08-08)
-[B3] Astronomer Docs — GitOps deployment strategies and DAG hashing (accessed 2026-08-08)
+[B1, B2] Astronomer Docs — Airflow feature support on Astro (Dag Versioning / Dag Bundles): https://www.astronomer.io/docs/astro/airflow-feature-support (tier 1) — NEEDS_EXEC_CHECK: not independently re-verified this page covers Dag Bundles specifically; confirm before relying on it
+[B3] Astronomer Docs — GitOps deployment strategies (Dag-only deploys via Deploy Dags to Astro): https://www.astronomer.io/docs/astro/deploy-dags (tier 1) — pipeline-automation mechanics specifically not independently re-verified against this page; verify separately
+[B4] Astronomer Docs — Configure Dag sources for a Remote Execution Agent, "Dag hashing" (enabled by default starting Astro Agent client release 1.8.0, `ASTRO_AGENT_CLIENT_DAG_PROCESSOR__ENABLE_DAG_CACHING` to disable, cache-hit/miss/size metrics): https://www.astronomer.io/docs/astro/remote-execution/remote-execution-configure-dag-sources#dag-hashing (tier 1, confirmed on follow-up review — restores and correctly sources the original pre-correction claim)

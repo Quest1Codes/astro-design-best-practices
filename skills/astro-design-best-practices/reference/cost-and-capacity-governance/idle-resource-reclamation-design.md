@@ -4,7 +4,7 @@ On Astro, workers scale to zero automatically — but the scheduler and webserve
 
 ## Deployment Hibernation
 
-Deployment Hibernation is Astro's native mechanism to scale all Deployment components (scheduler, webserver, workers, triggerer) to **zero** on a defined schedule [B1].
+Deployment Hibernation is Astro's native mechanism to scale all Deployment components (scheduler, webserver, workers, triggerer) to **zero** on a defined schedule [B1]. **Note**: Hibernation/wake scheduling is currently documented as a **Preview** feature [B2] — an earlier draft of this file didn't flag that; confirm current GA status before committing to it as a load-bearing cost-control mechanism for a regulated or SLA-bound environment.
 
 **Requirements**:
 - The Deployment must be created with **Development Mode** enabled [B1].
@@ -20,7 +20,7 @@ Deployment Hibernation is Astro's native mechanism to scale all Deployment compo
 
 | Scenario | Approach |
 |---|---|
-| **Dev/staging environments** | Enable hibernation with a business-hours wake schedule. Expected savings: 40–70% vs. always-on [B1]. |
+| **Dev/staging environments** | Enable hibernation with a business-hours wake schedule. **Correction**: an earlier draft of this file cited "expected savings: 40–70% vs. always-on" as a sourced figure — no such number appears anywhere in current Astronomer docs; treat it as unsupported and do not cite it as fact. The real, calculable savings for any given estate is proportional to `(hours hibernated) / (24)` on the components that scale to zero — compute it from your own wake-schedule hours rather than relying on a generic percentage. |
 | **Feature-branch ephemeral environments** | Create Deployments via CI/CD on branch open; destroy on merge/close. Use `astro deployment create` / `astro deployment delete` in the pipeline [B1]. |
 | **Scheduled batch-only Deployments** (e.g., runs only during nightly batch windows) | Use hibernation with a wake schedule that matches the batch window only. Example: wake from 22:00–06:00, hibernate the rest of the day. |
 
@@ -37,4 +37,5 @@ For production Deployments that cannot hibernate, Deferrable Operators reduce th
 
 ## Sources
 
-[B1] Astronomer Docs — Deployment Hibernation, Development Mode requirement, Wake Schedule configuration, Astro API for programmatic hibernation control, and Deployment Analytics for right-sizing (accessed 2026-08-11)
+[B1] Astronomer Docs — Deployment resources, create a wake schedule: https://www.astronomer.io/docs/astro/deployment-resources#create-a-wake-schedule (tier 1, added on doc-verification review); hibernation override via API: https://www.astronomer.io/docs/astro/api/v-1/deployment/configure-a-hibernation-override-for-a-deployment (tier 1, added on doc-verification review)
+[B2] Astronomer Docs — Deployment resources, hibernate a development Deployment (Preview status; Development Mode and wake-schedule mechanics): https://www.astronomer.io/docs/astro/deployment-resources#hibernate-a-development-deployment (tier 1, added on doc-verification review)

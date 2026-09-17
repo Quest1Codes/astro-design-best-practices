@@ -40,4 +40,4 @@ For teams accustomed to tracking critical paths in AutoSys (e.g., using Cross-Bo
 
 [B1, B6] Astronomer Docs — Astro Observe overview: https://www.astronomer.io/docs/astro/observe (accessed 2026-08-08)
 [B4, B5, B9] DBTA — Astronomer announces Astro Observe capabilities (accessed 2026-08-08)
-[B7, B8, B10, B11] Astronomer Docs — Data Products and SLAs (accessed 2026-08-08)
+[B7, B8, B10, B11] Astronomer Docs — Create a data product in Astro Observe / Create an alert (SLAs): https://www.astronomer.io/docs/astro/create-data-products and https://www.astronomer.io/docs/astro/observe-slas (tier 1)

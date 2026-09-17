@@ -48,4 +48,4 @@ Does the same resource apply to ALL jobs across all instances/domains?
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — Virtual resource definition (named semaphore counter, independent of machine load), per-job resource acquisition (accessed 2026-08-11)
-[B2] Apache Airflow Docs — Pools, `max_active_tasks_per_dag`, `max_active_runs_per_dag` DAG parameters (accessed 2026-08-11)
+[B2] Astronomer Learn — Airflow Pools (named semaphore-style resource pools, `pool` and `pool_slots` parameters): https://www.astronomer.io/docs/learn/airflow-pools (tier 1, added on doc-verification review). `max_active_tasks_per_dag`/`max_active_runs_per_dag` are general Apache Airflow DAG parameters not tied to one specific Astronomer docs page — not independently re-verified on this pass.

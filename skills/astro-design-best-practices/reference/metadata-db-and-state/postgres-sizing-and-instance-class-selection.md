@@ -34,7 +34,9 @@ On Astro Hosted, DB sizing is not a direct user control. Use Deployment Metrics 
 
 ## Compliance callout (Axis E — M rating)
 
-Regulated verticals (SOX, HIPAA, FedRAMP) may require **BYOD external PostgreSQL** for data residency or sovereignty requirements. When using BYOD, all DB security controls transfer to the user:
+**Citation note (Critic-pass finding)**: an earlier draft of this entire section carried no citation or `{syn:}` tag at all, despite being a load-bearing regulatory-architecture claim. Partially sourced below; the specific "BYOD required for data residency" framing remains this file's own architectural inference from Astro's general BYOD/deployment-model documentation, not a dedicated Astronomer compliance page — flag as `NEEDS_EXEC_CHECK` if this is being used as the basis of an actual compliance decision.
+
+Regulated verticals (SOX, HIPAA, FedRAMP) may require **BYOD external PostgreSQL** for data residency or sovereignty requirements [B7]. When using BYOD, all DB security controls transfer to the user:
 - Encryption-at-rest (configure at the cloud provider or OS level)
 - RBAC / network isolation (VPC, security groups, IAM policies)
 - Audit logging (enable `pgaudit` or cloud-native DB audit logging)
@@ -59,6 +61,7 @@ See `reference/metadata-db-and-state/metadata-retention-and-cleanup-policy.md` f
 [B1] Apache Airflow docs — Set up a Database Backend: https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html (accessed 2026-08-08)
 [B2] Astronomer Learn — Understanding the Airflow metadata database: https://www.astronomer.io/docs/learn/airflow-database (accessed 2026-08-08)
 [B5, A1-1, A1-2] Astronomer Docs — Rightsizing Airflow resources on Astro: https://www.astronomer.io/docs/astro/best-practices/rightsize-airflow-on-astro (accessed 2026-08-08)
-[A1-3, A1-5, B-S2] Astronomer PgBouncer/configuration docs (accessed 2026-08-08)
-[B4] Astronomer PgBouncer configuration docs — SQLAlchemy pool defaults (accessed 2026-08-08)
-[B6, B-S4] Astronomer Learn — airflow-database (high-churn tables) (accessed 2026-08-08)
+[A1-3, A1-5, B-S2] Astronomer Docs — Private Cloud database architecture, pool sizes: https://www.astronomer.io/docs/astro-private-cloud/v-2-x/database-architecture#pool-sizes (tier 1, URL added on citation review)
+[B4] Astronomer Docs — Private Cloud database architecture, pool sizes (SQLAlchemy pool defaults `pool_size: 5`, `max_overflow: 10`): https://www.astronomer.io/docs/astro-private-cloud/v-2-x/database-architecture#pool-sizes (tier 1, URL added on citation review)
+[B6, B-S4] Astronomer Docs — Understanding the Airflow metadata database (high-churn tables): https://www.astronomer.io/docs/learn/airflow-database (tier 1, URL added on citation review)
+[B7] Astronomer Docs — Data protection and dedicated cluster/BYOD deployment options (data residency and sovereignty control): https://www.astronomer.io/docs/astro/data-protection (tier 1, added on Critic-pass review) — this is this file's own architectural inference applied to Astro's general BYOD documentation, not a claim from a dedicated compliance page; treat as `NEEDS_EXEC_CHECK` for an actual regulatory decision

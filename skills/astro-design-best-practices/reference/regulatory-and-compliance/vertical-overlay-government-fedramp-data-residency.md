@@ -32,5 +32,5 @@ Astronomer maintains SOC 2 Type II, HIPAA, PCI-DSS, and GDPR certifications [B1]
 
 ## Sources
 
-[B1] Astronomer Docs & Trust Center — Deployment models (Private Cloud, Remote Execution, Dedicated Cluster), data residency capabilities, and certifications (accessed 2026-08-10)
-[B2] Astronomer Docs — Terraform Provider for infrastructure-as-code management (accessed 2026-08-10)
+[B1] Astronomer Docs — Create a dedicated Astro cluster (single-tenant, region/connectivity options): https://www.astronomer.io/docs/astro/create-dedicated-cluster (tier 1); Data privacy and compliance (SOC 2, GDPR, HIPAA, PCI DSS certifications) and Trust Center: https://www.astronomer.io/docs/astro/security#data-privacy-and-compliance (tier 1) (both URLs added on citation review)
+[B2] Astronomer Docs — Astro Terraform Provider: https://www.astronomer.io/docs/astro/terraform-provider (tier 1, URL added on citation review)

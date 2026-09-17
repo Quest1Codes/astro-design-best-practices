@@ -37,8 +37,8 @@ Enhance productivity by standardizing IDE setups.
 
 ## Sources
 
-[B1, B3, B4] Astronomer Docs & Architecture Guides — Astro CLI local development standards (accessed 2026-08-08)
-[B2, B8, B18] Astronomer Docs & GitHub — `astro dev init` and project structure (accessed 2026-08-08)
-[B6, B7, B10] Astronomer Docs — CLI commands (`start`, `restart`, `kill`, standalone) (accessed 2026-08-08)
-[B11] Astronomer Docs — VS Code Dev Containers integration (accessed 2026-08-08)
-[B16, B17] Astronomer Docs — Local configuration and secrets management (accessed 2026-08-08)
+[B1, B3, B4] Astronomer Docs — Develop your Astro project: https://www.astronomer.io/docs/cli/v1.43/develop-project (tier 1)
+[B2, B8, B18] Astronomer Docs — `astro dev init`: https://www.astronomer.io/docs/cli/v1.42/astro-dev-init (tier 1)
+[B6, B7, B10] Astronomer Docs — Astro CLI command reference: https://www.astronomer.io/docs/cli/v1.43/overview (tier 1) — NEEDS_EXEC_CHECK: not independently re-verified that this overview page still lists start/restart/kill/standalone at this URL; confirm before relying on it
+[B11] Astronomer Docs — VS Code Dev Containers integration (no confident Astronomer Docs match found on this pass — verify separately)
+[B16, B17] Astronomer Docs — Manage Airflow connections, variables, and environment variables: https://www.astronomer.io/docs/astro/manage-connections-variables (tier 1)

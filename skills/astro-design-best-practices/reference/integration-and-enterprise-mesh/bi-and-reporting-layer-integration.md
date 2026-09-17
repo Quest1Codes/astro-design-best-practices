@@ -42,5 +42,5 @@ This ensures the BI layer never sees half-loaded or invalid data [B1][B2].
 
 ## Sources
 
-[B1] Astronomer Docs & Airflow Registry — Looker, Power BI, and Tableau integration patterns (accessed 2026-08-10)
-[B2] Airflow Docs — Write-Audit-Publish pattern and data quality gates (accessed 2026-08-10)
+[B1] Astronomer Docs & Airflow Registry — Looker, Power BI, and Tableau integration patterns (no confident single-page Astronomer Docs match found on this pass — Astronomer Learn covers Tableau only as a downstream visualization step in a Fivetran tutorial, not a dedicated BI-integration guide; see https://www.astronomer.io/docs/learn/airflow-fivetran#step-9-optional-visualize-your-commits-with-tableau (tier 1) for that narrow case; Looker/Power BI specifics not independently verified)
+[B2] Airflow Docs — Write-Audit-Publish pattern and data quality gates (no Astronomer Docs match found on this pass — this is Apache Airflow OSS/community pattern content; verify against airflow.apache.org or the dbt/Cosmos ecosystem directly)

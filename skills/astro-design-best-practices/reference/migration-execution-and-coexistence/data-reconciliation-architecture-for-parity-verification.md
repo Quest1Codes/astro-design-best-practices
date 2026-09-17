@@ -52,5 +52,5 @@ Define a clear, documented definition of "readiness" before you declare a DAG re
 
 ## Sources
 
-[B1] Astronomer Migration Guidance — Parity verification during AutoSys-to-Airflow migration (accessed 2026-08-11)
-[B2] Enterprise migration community — Reconciliation engine architecture, hash-based comparison, and parity report structure (accessed 2026-08-11)
+[B1] Astronomer Migration Guidance — Parity verification during AutoSys-to-Airflow migration (no Astronomer Docs match found on this pass — this is project-internal migration-pattern synthesis, not a citable single Astronomer page)
+[B2] Enterprise migration community — Reconciliation engine architecture, hash-based comparison, and parity report structure (no Astronomer Docs match found on this pass — this is generic data-engineering practice/community guidance, not specific to Astro; not verifiable via this MCP)

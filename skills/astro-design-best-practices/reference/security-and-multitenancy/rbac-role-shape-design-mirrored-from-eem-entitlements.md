@@ -10,7 +10,7 @@ This topic covers the target role shape design. For the EEM-vs-native-provider m
 Organization roles  →  apply across all Workspaces
 Workspace roles     →  apply within one Workspace
 Deployment roles    →  apply to one specific Deployment
-DAG-level roles     →  apply to individual DAGs (Astro Runtime 3.1-12+)
+DAG-level roles     →  apply to individual DAGs (Astro Runtime 3.1-12+, Enterprise tier+)
 ```
 
 Permissions are **additive**: if a user holds multiple roles, the highest permission wins [B2]. Organization Owners inherit Workspace Owner permissions for every Workspace in the org [B4].
@@ -41,7 +41,7 @@ Permissions are **additive**: if a user holds multiple roles, the highest permis
 | Level | Use case |
 |---|---|
 | Deployment role | Restrict individual users to a single Deployment within a shared Workspace |
-| DAG-level role | Restrict access to specific DAGs within a shared Deployment (Astro Runtime 3.1-12+) [B6][B8] |
+| DAG-level role | Restrict access to specific DAGs within a shared Deployment (Astro Runtime 3.1-12+, Enterprise tier+) [B6][B8] |
 
 ## EEM → Astro role mapping pattern
 
@@ -67,6 +67,6 @@ Permissions are **additive**: if a user holds multiple roles, the highest permis
 ## Sources
 
 [B2, B4] Astronomer Docs — Astro user permissions: https://www.astronomer.io/docs/astro/user-permissions (accessed 2026-08-08)
-[B3] Astronomer Docs — Organization roles reference (accessed 2026-08-08)
-[B6, B7] Astronomer Docs — Workspace roles reference (accessed 2026-08-08)
+[B3] Astronomer Docs — Astro user permissions reference, Organization role hierarchy (same page as B2/B4): https://www.astronomer.io/docs/astro/user-permissions (tier 1, URL added on citation review)
+[B6, B7] Astronomer Docs — Astro user permissions reference, Workspace role hierarchy (same page as B2/B4): https://www.astronomer.io/docs/astro/user-permissions (tier 1, URL added on citation review)
 [B8] Astronomer Docs — DAG-level access control: https://www.astronomer.io/docs/astro/dag-level-permissions (accessed 2026-08-08)

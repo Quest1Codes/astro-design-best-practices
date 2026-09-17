@@ -44,5 +44,5 @@ If COBOL programs have been rehosted to a distributed runtime (e.g., Micro Focus
 
 ## Sources
 
-[B1] BatchFoundry / Airflow mainframe integration community guidance — Orchestration Swap vs. Replatforming patterns, Zowe CLI integration, JCL concept mapping (accessed 2026-08-10)
-[B2] Zowe.org — Zowe CLI and REST API for z/OS job submission, JES queue query, and dataset access (accessed 2026-08-10)
+[B1] BatchFoundry / Airflow mainframe integration community guidance — Orchestration Swap vs. Replatforming patterns, Zowe CLI integration, JCL concept mapping (out of scope for the Astronomer docs MCP — third-party/community content, not on astronomer.io; not verified on this pass)
+[B2] Zowe.org — Zowe CLI and REST API for z/OS job submission, JES queue query, and dataset access (out of scope for the Astronomer docs MCP — third-party zowe.org content, not on astronomer.io; not verified on this pass)

@@ -10,7 +10,7 @@ AutoSys used OS/RDBMS-level encryption (TDE on Oracle/SQL Server for the Event S
 |---|---|
 | All control plane ↔ data plane traffic | mTLS mesh |
 | Internal data plane service communication | TLS 1.2 + strong ciphers |
-| External client ↔ Astro (UI, CLI, API) | TLS 1.2/1.3 |
+| External client ↔ Astro (UI, CLI, API) | TLS 1.2. **Correction**: an earlier draft of this row also claimed TLS 1.3; Astro's own data-protection documentation only confirms TLS 1.2 across control/data plane and internal-mesh traffic — don't cite 1.3 as confirmed unless re-verified [B-transit2] |
 | Certificates | Auto-renewed every 90 days by Astronomer's certificate management platform |
 
 Astro enforces encryption for all data in motion across control and data planes [B-transit].
@@ -69,6 +69,7 @@ For regulated environments requiring customer ownership of encryption keys:
 ## Sources
 
 [B-transit, B-rest] Astronomer Docs — Security overview (encryption): https://www.astronomer.io/docs/astro/security (accessed 2026-08-08)
+[B-transit2] Astronomer Docs — Data protection (TLS 1.2 confirmed for control/data plane and internal mesh traffic; no TLS 1.3 claim found): https://www.astronomer.io/docs/astro/data-protection (tier 1, added on doc-verification review — corrects the TLS 1.2/1.3 claim above)
 [Fernet] Apache Airflow Docs — Fernet key: https://airflow.apache.org/docs/apache-airflow/stable/security/secrets/fernet.html (accessed 2026-08-08)
 [B-cert] Astronomer Docs — Compliance certifications: https://www.astronomer.io/docs/astro/compliance (accessed 2026-08-08)
-[BYOK] Cloud provider KMS docs — AWS KMS CMK for RDS / GCP CMEK for Cloud SQL / Azure CMK for PostgreSQL (accessed 2026-08-08)
+[BYOK] Cloud provider KMS docs — AWS KMS CMK for RDS / GCP CMEK for Cloud SQL / Azure CMK for PostgreSQL (third-party cloud provider docs, out of scope for Astronomer docs MCP; not re-verified on this pass)

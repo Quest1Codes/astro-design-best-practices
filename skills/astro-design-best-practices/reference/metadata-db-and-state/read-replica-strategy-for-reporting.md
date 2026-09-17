@@ -31,5 +31,5 @@ Heavy analytics queries (e.g., calculating historical task duration trends acros
 
 ## Sources
 
-[B1] Astronomer Docs & Best Practices — Metadata database reporting and replication strategies (accessed 2026-08-08)
-[B2] Apache Airflow Docs — Airflow 3 architecture and database isolation (accessed 2026-08-08)
+[B1] Astronomer Docs — Understanding the Airflow metadata database (PostgreSQL read-replica recommendation for reporting): https://www.astronomer.io/docs/learn/airflow-database (tier 1, URL added on citation review)
+[B2] Apache Airflow Docs — Airflow 3 architecture and database isolation (no confident Astronomer/Airflow doc match found on this pass — likely general Airflow 3 architecture content spread across multiple pages rather than one canonical source; verify separately before citing a specific page)

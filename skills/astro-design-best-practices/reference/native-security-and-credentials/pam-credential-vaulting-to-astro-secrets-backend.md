@@ -26,10 +26,11 @@ Store the Vault authentication token or IAM role binding separately via Astro's 
 
 ## Airflow Secret Resolution Order (Cascading Lookup)
 
-When a task requests `conn_id="finance_db"`, Airflow resolves it in this order [B2]:
+When a task requests `conn_id="finance_db"`, Airflow resolves it in this order [B2][B3]:
 1. **Secrets Backend** (Vault / Secrets Manager — this is where PAM-vaulted creds live)
-2. **Environment Variables** (`AIRFLOW_CONN_FINANCE_DB=...`)
-3. **Airflow Metadata DB** (Connections stored via Airflow UI)
+2. **Astro Environment Manager** — an Astro-specific tier between the Secrets Backend and raw environment variables. **Correction**: an earlier draft of this file listed only 3 tiers and omitted this one; current Astronomer docs confirm 4 tiers in this exact order [B3].
+3. **Environment Variables** (`AIRFLOW_CONN_FINANCE_DB=...`)
+4. **Airflow Metadata DB** (Connections stored via Airflow UI)
 
 For production PAM-equivalent security: credentials must live **exclusively in the Secrets Backend**. Do not store production credentials in the Airflow UI or environment variables.
 
@@ -45,4 +46,5 @@ For production PAM-equivalent security: credentials must live **exclusively in t
 ## Sources
 
 [B1] Broadcom AutoSys / Symantec PAM Documentation — PAM credential vaulting for AutoSys job-execution credentials (accessed 2026-08-11)
-[B2] Astronomer Docs & Apache Airflow Docs — Secrets Backend configuration, supported backends (Vault, AWS Secrets Manager, GCP Secret Manager, Azure Key Vault), `AIRFLOW__SECRETS__BACKEND` env var, resolution order, read-only behavior of `Variable.set()` (accessed 2026-08-11)
+[B2] Astronomer Docs — Configure a Secrets Backend on Astro (supported backends, `AIRFLOW__SECRETS__BACKEND` env var, read-only behavior of `Variable.set()`): https://www.astronomer.io/docs/astro/secrets-backend (tier 1, URL added on citation-hygiene review)
+[B3] Astronomer Docs — Secrets backend, "How Airflow finds Connections or Variables" (4-tier resolution order: Secrets Backend → Astro Environment Manager → Environment Variables → Metadata DB): https://www.astronomer.io/docs/astro/secrets-backend#how-airflow-finds-connections-or-variables (tier 1, added on doc-verification review — corrects the 3-tier claim above, and is consistent with `config-and-secrets/environment-specific-connection-management.md` elsewhere in this skill)

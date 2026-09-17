@@ -49,5 +49,5 @@ If your callback code throws an exception, **the error does not appear in standa
 
 [B1] Data Engineer Things — Airflow callbacks: https://dataengineerthings.org (accessed 2026-08-08)
 [B2, B3] DataCamp — Airflow alerting best practices (accessed 2026-08-08)
-[B4, B10, B11] Astronomer Docs — Airflow notifications (accessed 2026-08-08)
-[B6] Apache Airflow Docs — Callbacks (accessed 2026-08-08)
+[B4, B10, B11] Astronomer Docs — Manage Apache Airflow Dag notifications: https://www.astronomer.io/docs/learn/error-notifications-in-airflow (tier 1)
+[B6] Apache Airflow Docs — Callbacks: https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html (tier 2)

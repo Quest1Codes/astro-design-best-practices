@@ -6,11 +6,11 @@ This proprietary messaging layer has no direct equivalent in Astro. The migratio
 
 ## CAICCI Architecture → Airflow Replacement
 
-{syn: CAICCI `sendevent` → Airflow REST API `POST /api/v1/dags/{dag_id}/dagRuns`}
+{syn: CAICCI `sendevent` → Airflow REST API `POST /api/v2/dags/{dag_id}/dagRuns`}
 
 | AutoSys Mechanism | Airflow / Astro Replacement | Notes |
 |---|---|---|
-| **CAICCI `sendevent CHANGE_STATUS`** | Airflow REST API: `POST /api/v1/dags/{dag_id}/dagRuns` | HTTP-authenticated DAG trigger from an upstream system [B2]. |
+| **CAICCI `sendevent CHANGE_STATUS`** | Airflow REST API: `POST /api/v2/dags/{dag_id}/dagRuns` | HTTP-authenticated DAG trigger from an upstream system [B2]. |
 | **Cross-instance wait (status polling)** | `ExternalTaskSensor` with `mode='reschedule'` | Polls the status of a task in another DAG (same Astro deployment or reachable Airflow instance) [B2]. |
 | **CA-XPS (z/OS cross-platform scheduling)** | Zowe CLI / SSH + Airflow sensor (see topic 086) | Mainframe boundary integration pattern. |
 | **CAICCI-mediated inbound triggers** | Airflow REST API + bearer token auth | Any external system (AutoSys remaining, mainframe, third-party) can trigger an Airflow DAG via REST [B2]. |
@@ -30,7 +30,7 @@ trigger_downstream = SimpleHttpOperator(
     task_id="trigger_downstream_deployment",
     http_conn_id="downstream_airflow_api",  # Connection pointing to downstream Deployment URL
     method="POST",
-    endpoint="/api/v1/dags/downstream_dag_id/dagRuns",
+    endpoint="/api/v2/dags/downstream_dag_id/dagRuns",
     headers={"Content-Type": "application/json"},
     data='{"conf": {"upstream_run_id": "{{ run_id }}"}}',
 )
@@ -43,4 +43,5 @@ If the cross-Deployment dependency is really about data readiness (not just job 
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — CAICCI architecture, cross-instance `sendevent`, Application Server event routing (accessed 2026-08-11)
-[B2] Apache Airflow REST API Docs — `POST /api/v1/dags/{dag_id}/dagRuns`, `ExternalTaskSensor`, Airflow Datasets (accessed 2026-08-11)
+[B2] Astronomer Docs — Airflow API on Astro (Airflow 3 uses the `/api/v2/` REST API): https://www.astronomer.io/docs/astro/airflow-api (tier 1, added on doc-verification review). **Correction**: this file's REST paths were originally `/api/v1/` throughout (`{syn}` note, table row, and the Pattern 1 code example) — corrected to `/api/v2/` above. Confirm the target Deployment's actual Airflow major version before relying on this path; Airflow 2.x Deployments still use `/api/v1/`.
+[B3] Astronomer Learn — Implement cross-DAG dependencies (`ExternalTaskSensor`, `TriggerDagRunOperator`, Airflow Datasets/Assets as cross-DAG dependency mechanisms): https://www.astronomer.io/docs/learn/cross-dag-dependencies#implement-cross-dag-dependencies (tier 1, added on doc-verification review)

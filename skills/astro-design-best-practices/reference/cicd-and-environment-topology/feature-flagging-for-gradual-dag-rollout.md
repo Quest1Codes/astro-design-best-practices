@@ -45,8 +45,8 @@ If a feature rollout in production fails, rely on Astronomer's **Deploy Rollback
 
 ## Sources
 
-[B1, B2, B3, B4] Astronomer Docs — Airflow 3.0 DAG Versioning (accessed 2026-08-08)
-[B5] Astronomer Docs — Using Airflow Variables for dynamic logic (accessed 2026-08-08)
-[B6] Astronomer Docs — DAG-only deploys (accessed 2026-08-08)
-[B7, B8, B9] Astronomer Docs — Deploy Rollbacks (accessed 2026-08-08)
-[B10, B11] Apache Airflow Docs — Testing DAGs natively (accessed 2026-08-08)
+[B1, B2, B3, B4] Astronomer Docs — Airflow feature support on Astro (Dag versioning): https://www.astronomer.io/docs/astro/airflow-feature-support (tier 1) — NEEDS_EXEC_CHECK: not independently re-verified this page covers Dag Versioning specifically; confirm before relying on it
+[B5] Astronomer Docs — Create Airflow variables in the Astro UI: https://www.astronomer.io/docs/astro/create-and-link-variables (tier 1)
+[B6] Astronomer Docs — Deploy Dags to Astro: https://www.astronomer.io/docs/astro/deploy-dags (tier 1)
+[B7, B8, B9] Astronomer Docs — Deploy history, roll back to a past deploy: https://www.astronomer.io/docs/astro/deploy-history#roll-back-to-a-past-deploy (tier 1)
+[B10, B11] Apache Airflow Docs — Best practices, testing a DAG: https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html (tier 2)

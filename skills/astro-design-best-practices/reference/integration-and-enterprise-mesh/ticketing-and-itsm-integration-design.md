@@ -54,5 +54,5 @@ Enable the official **PagerDuty for ServiceNow** integration from the ServiceNow
 
 ## Sources
 
-[B1] `apache-airflow-providers-pagerduty` Docs — `send_pagerduty_notification`, `dedup_key` parameter (accessed 2026-08-10)
-[B2] PagerDuty Docs — PagerDuty-ServiceNow ITSM Integration, Auto-sync, and field mapping (accessed 2026-08-10)
+[B1] `apache-airflow-providers-pagerduty` Docs — `send_pagerduty_notification`, `dedup_key` parameter (out of scope for the Astronomer docs MCP — Apache Airflow provider content, not on astronomer.io; not verified on this pass)
+[B2] PagerDuty Docs — PagerDuty-ServiceNow ITSM Integration, Auto-sync, and field mapping (out of scope for the Astronomer docs MCP — third-party PagerDuty content, not on astronomer.io; not verified on this pass)

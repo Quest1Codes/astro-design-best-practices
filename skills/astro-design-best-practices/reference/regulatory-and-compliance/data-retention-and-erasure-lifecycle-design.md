@@ -33,5 +33,5 @@ In analytical environments, full deletion is often destructive to model history.
 
 ## Sources
 
-[B1] Apache Airflow Docs — `airflow db clean` command and metadata retention (accessed 2026-08-10)
-[B2] GDPR compliance guidance for Airflow — Erasure DAG patterns, cryptographic erasure, OpenLineage for PII discovery (accessed 2026-08-10)
+[B1] Apache Airflow Docs — `airflow db clean` command and metadata retention (no Astronomer Docs match found on this pass — this is Apache Airflow OSS CLI content not indexed in the Astronomer docs MCP; verify against airflow.apache.org's CLI reference directly)
+[B2] GDPR compliance guidance for Airflow — Erasure DAG patterns, cryptographic erasure, OpenLineage for PII discovery. OpenLineage portion: https://www.astronomer.io/docs/astro/observe-openlineage (tier 1, URL added on citation review). The GDPR-specific erasure-DAG and cryptographic-erasure guidance is general practice, not a specific Astronomer doc page, and wasn't independently verified on this pass — see also Astronomer's own GDPR compliance page for the platform-level (not DAG-pattern-level) claims: https://www.astronomer.io/docs/astro/gdpr-compliance (tier 1, added on citation review)

@@ -35,5 +35,5 @@ Astronomer provides a native GitHub integration that dramatically simplifies thi
 
 ## Sources
 
-[B1, B2] Astronomer Docs — CI/CD branching strategies and Native GitHub Integration (accessed 2026-08-08)
-[B3] Astronomer Docs — Local development workflow (accessed 2026-08-08)
+[B1, B2] Astronomer Docs — Deploy code with the Astro GitHub integration / Choose a CI/CD strategy: https://www.astronomer.io/docs/astro/deploy-github-integration and https://www.astronomer.io/docs/astro/set-up-ci-cd (tier 1)
+[B3] Astronomer Docs — Astro CLI, `astro dev init`: https://www.astronomer.io/docs/cli/v1.42/astro-dev-init (tier 1)

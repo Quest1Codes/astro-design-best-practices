@@ -10,7 +10,7 @@ On Astro, there is no single named "EP_ROLLOVER" event — Airflow's multi-sched
 
 | AutoSys Alarm | Astro/Airflow Equivalent | Alert Mechanism |
 |---|---|---|
-| **`EP_ROLLOVER`** (shadow takes over) | Scheduler replica count drops below 2 OR `scheduler.heartbeats == 0` | Astro Deployment alert + Prometheus alert on `scheduler.heartbeats` metric [B2] |
+| **`EP_ROLLOVER`** (shadow takes over) | Scheduler replica count drops below 2 OR `airflow_scheduler_heartbeat == 0` | Astro Deployment alert + Prometheus alert on `airflow_scheduler_heartbeat` metric [B2][B3] |
 | **`DB_ROLLOVER`** (Event Server DB failover) | Metadata DB connection failure | Astro platform alert (infrastructure-level); Airflow health endpoint returns `unhealthy` [B2] |
 | **Scheduler process crash** | Scheduler pod `CrashLoopBackOff` or restart | Kubernetes pod restart alert via Astro + PagerDuty/Opsgenie integration [B2] |
 
@@ -53,4 +53,5 @@ AutoSys `EP_ROLLOVER` involves a **brief job processing pause** while the shadow
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — `EP_ROLLOVER` alarm definition, `DB_ROLLOVER` alarm, SNMP trap routing, HADS dual Event Server failover behavior, `sendevent -E STOP_DEMON -v FAILOVER` (accessed 2026-08-18)
-[B2] Astronomer Docs & Apache Airflow Docs — Deployment alerts, scheduler health endpoint (`GET /api/v1/health`), `scheduler.heartbeats` StatsD metric, Prometheus alerting integration (accessed 2026-08-18)
+[B2] Astronomer Docs — Airflow API on Astro (scheduler health endpoint `GET /api/v2/health`, corrected from `/api/v1/health` — Airflow 3 uses the v2 REST API): https://www.astronomer.io/docs/astro/airflow-api ; Private Cloud built-in Prometheus alerts (`AirflowSchedulerUnhealthy` and related deployment alerts): https://www.astronomer.io/docs/astro-private-cloud/v-2-x/platform-alerts (tier 1, URLs added on citation-hygiene review)
+[B3] Astronomer Docs — Private Cloud built-in Prometheus alerts, real metric name `airflow_scheduler_heartbeat`: https://www.astronomer.io/docs/astro-private-cloud/v-2-x/platform-alerts (tier 1, added on doc-verification review — corrects the `scheduler.heartbeats` StatsD-style name used above)

@@ -27,6 +27,6 @@ Never use `Variable.get()` or `os.getenv()` at the top level of your DAG file (o
 
 ## Sources
 
-[B1] Astronomer Docs — Astro Environment Manager and variable scoping (accessed 2026-08-08)
-[B2, B3] Apache Airflow Docs — Best practices for Variables and Jinja templating (accessed 2026-08-08)
-[B4] Astronomer Docs — Local development configuration (accessed 2026-08-08)
+[B1] Astronomer Docs — Manage Airflow connections, variables, and environment variables, Astro Environment Manager section (per-Deployment scoping): https://www.astronomer.io/docs/astro/manage-connections-variables#astro-environment-manager (tier 1, URL added on citation review)
+[B2, B3] Astronomer Docs — Best practices for storing information in Airflow (Variables) and Template variables in Airflow (Jinja templating): https://www.astronomer.io/docs/learn/airflow-variables and https://www.astronomer.io/docs/learn/templating (tier 1, URLs added on citation review)
+[B4] Astronomer Docs — Use connections locally (`astro dev start`, syncing Environment Manager objects to local development): https://www.astronomer.io/docs/cli/v1.45/local-connections (tier 1, URL added on citation review)

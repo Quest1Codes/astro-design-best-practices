@@ -8,7 +8,7 @@ AutoSys instances were typically massive, shared environments. "Dev" and "Prod" 
 
 | Environment | Purpose | Infrastructure Strategy |
 |---|---|---|
-| **Development** | Sandbox for active building | **Permanent**: Single small deployment linked to a `develop` branch. Enable *Deployment Hibernation* to scale resources to zero when not in use, saving costs [B3].<br>**Ephemeral**: CI/CD spins up a temporary preview deployment per PR, destroyed on merge [B4]. |
+| **Development** | Sandbox for active building | **Permanent**: Single small deployment linked to a `develop` branch. Enable *Deployment Hibernation* (currently a **Preview** feature [B3]) to scale resources to zero when not in use, saving costs.<br>**Ephemeral**: CI/CD spins up a temporary preview deployment per PR, destroyed on merge [B4]. |
 | **Staging** | UAT, integration testing, dry-runs | **Permanent**: Matches production scale and configuration (minus production secrets). Mapped to `staging` or `release` branch. |
 | **Production** | Live workloads | **Permanent**: High-availability setup, highly optimized autoscaling. Mapped strictly to the `main` branch. |
 
@@ -25,7 +25,7 @@ Do not hardcode environment differences in your DAG code (e.g., `if env == 'prod
 
 ## Sources
 
-[B1, B2, B5] Astronomer Docs & Architecture Guides — Isolated Deployments and multi-tenancy (accessed 2026-08-08)
-[B3] Astronomer Docs — Deployment Hibernation for Dev environments (accessed 2026-08-08)
-[B4] Astronomer Docs — Ephemeral preview deployments (accessed 2026-08-08)
-[B6] Astronomer Docs — Environment variable and connection management (accessed 2026-08-08)
+[B1, B2, B5] Astronomer Docs — Multi-tenancy in Airflow: https://www.astronomer.io/docs/learn/airflow-multi-tenancy (tier 1)
+[B3] Astronomer Docs — Deployment resources, hibernate a development Deployment: https://www.astronomer.io/docs/astro/deployment-resources#hibernate-a-development-deployment (tier 1)
+[B4] Astronomer Docs — Automate preview Deployments with any CI/CD tool: https://www.astronomer.io/docs/astro/ci-cd-templates/preview-deployments (tier 1)
+[B6] Astronomer Docs — Manage Airflow connections, variables, and environment variables: https://www.astronomer.io/docs/astro/manage-connections-variables (tier 1)

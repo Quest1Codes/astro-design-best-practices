@@ -8,7 +8,8 @@ Astronomer provides a native **Deploy Rollbacks** feature in the Astro UI. It ac
 
 ### How it works
 - You can instantly revert a Deployment to any previously successful deploy state from the last 90 days [B1][B2].
-- A rollback reverts **everything**: DAG code, `requirements.txt`, environment variables (if part of the deploy), and the Astro Runtime version [B1].
+- A rollback reverts DAG code, `requirements.txt`/dependencies, and the Astro Runtime version [B1].
+- **Correction**: an earlier draft of this file claimed a rollback also reverts environment variables. This is wrong, not just imprecise — Astro's own deploy-history documentation explicitly lists environment variable values under what **isn't** rolled back [B11]. If a bad deploy changed an environment variable, a rollback will not undo that change; it must be reverted manually and separately.
 - It bypasses the CI/CD pipeline, resolving outages in seconds rather than minutes [B4].
 
 ## Rollback strategy and best practices
@@ -26,7 +27,8 @@ Rolling back across major Airflow versions (e.g., Airflow 3 down to Airflow 2) i
 
 ## Sources
 
-[B1, B2, B3] Astronomer Docs — Deploy Rollbacks overview (accessed 2026-08-08)
-[B4, B5, B6] Astronomer Docs — Rollback permissions and behavior (accessed 2026-08-08)
-[B8] Apache Airflow Docs — Idempotency (accessed 2026-08-08)
-[B9, B10] Astronomer Docs — Identifying deploy history and DB migrations (accessed 2026-08-08)
+[B1, B2, B3] Astronomer Docs — Deploy history, roll back to a past deploy: https://www.astronomer.io/docs/astro/deploy-history#roll-back-to-a-past-deploy (tier 1)
+[B4, B5, B6] Astronomer Docs — Deploy history: https://www.astronomer.io/docs/astro/deploy-history (tier 1)
+[B8] Apache Airflow Docs — Idempotency (no confident Astronomer Docs match found on this pass — this is Apache Airflow OSS content; verify against airflow.apache.org directly)
+[B9, B10] Astronomer Docs — Deploy history: https://www.astronomer.io/docs/astro/deploy-history (tier 1)
+[B11] Astronomer Docs — Deploy history (environment variable values explicitly listed under "isn't rolled back"): https://www.astronomer.io/docs/astro/deploy-history (tier 1, added on doc-verification review to correct the environment-variables claim above)

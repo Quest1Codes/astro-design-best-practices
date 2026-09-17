@@ -49,4 +49,4 @@ light_task = BashOperator(
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — `max_load` and `job_load` JIL attributes, `QUE_WAIT` status when machine capacity exceeded, arbitrary unit definition (accessed 2026-08-11)
-[B2] Apache Airflow Docs — Pools, `pool_slots` parameter, `priority_weight`, `airflow pools set` CLI command (accessed 2026-08-11)
+[B2] Astronomer Learn — Airflow Pools (`default_pool` 128-slot default, `pool` parameter, `pool_slots`, `priority_weight`, custom `weight_rule`): https://www.astronomer.io/docs/learn/airflow-pools (tier 1, added on doc-verification review)

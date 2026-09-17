@@ -14,7 +14,7 @@ Astro has no native access-certification automation equivalent. The Astro period
 | **Workspace level** | Workspace Owners, Operators, Authors | Astro UI → Workspace → Members |
 | **Deployment level** | Deployment Admins, custom Deployment roles | Astro UI → Deployment → Members |
 | **API Tokens** | Scoped tokens in use for CI/CD | Astro UI → API Tokens |
-| **DAG-level access** (if Runtime 3.1-12+) | DAG-tag role assignments | Airflow UI → DAG-level permissions |
+| **DAG-level access** (if Runtime 3.1-12+, Enterprise tier+) | DAG-tag role assignments | Airflow UI → DAG-level permissions |
 
 ### Review Cadence (by Risk Level)
 
@@ -58,4 +58,4 @@ For SOC 2 / ISO 27001 audit evidence, document:
 ## Sources
 
 [B1] RSA Identity Governance (RSA IG) documentation — ACL access certification campaigns, CA EEM integration for AutoSys access review (accessed 2026-08-11)
-[B2] Astronomer Docs — Astro RBAC hierarchy (Org/Workspace/Deployment/DAG), Astro CLI `user list` commands, SCIM provisioning, API Token management (accessed 2026-08-11)
+[B2] Astronomer Docs — Astro RBAC / user permissions reference: https://www.astronomer.io/docs/astro/user-permissions ; Astro CLI `astro organization user list`: https://www.astronomer.io/docs/cli/v1.45/astro-organization-user-list ; SCIM provisioning: https://www.astronomer.io/docs/astro/set-up-scim-provisioning ; `astro organization token list`: https://www.astronomer.io/docs/cli/v1.45/astro-organization-token-list (tier 1, URLs added on citation-hygiene review)

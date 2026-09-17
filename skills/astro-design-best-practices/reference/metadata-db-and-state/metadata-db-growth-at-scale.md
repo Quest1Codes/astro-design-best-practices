@@ -6,7 +6,7 @@ At the scale of thousands of DAGs, Airflow's metadata database (PostgreSQL) is p
 
 Airflow does **not** automatically delete historical data. Tables like `task_instance`, `dag_run`, `log`, and `xcom` will grow infinitely [B3].
 
-*   **Action**: Implement an automated "Cleanup DAG" using the `airflow db clean` CLI command to purge records older than a specific retention period (e.g., 30–90 days) [B3][B4]. (See topic 027 for detailed retention policies).
+*   **Action**: Implement an automated "Cleanup DAG" using the `airflow db clean` CLI command to purge records older than a specific retention period (e.g., 30–90 days) [B3][B4]. **Correction (cross-file consistency)**: on **Astro Hosted**, this isn't a plain CLI call from a DAG task — tasks in Airflow 3 cannot access the metadata DB directly, so `airflow db clean` must be wrapped in an Airflow plugin that exposes it; running it as written here would silently fail on Hosted. See `reference/metadata-db-and-state/metadata-retention-and-cleanup-policy.md` in this skill for the correct per-deployment-model mechanism (Astro Hosted vs. self-managed Astronomer Software). (See topic 027 for detailed retention policies).
 *   **Database grooming**: Regularly run `VACUUM ANALYZE` on PostgreSQL to reclaim space and update query planner statistics [B2].
 
 ## 2. DAG authoring optimizations for DB load
@@ -27,8 +27,8 @@ At scale, poor DAG authoring directly degrades database performance:
 
 ## Sources
 
-[B1, B3, B4] Astronomer Docs & Best Practices — Metadata database maintenance and cleanup (accessed 2026-08-08)
-[B2, B8] Reintech — Managing Airflow at scale and database optimization (accessed 2026-08-08)
-[B5, B6] Apache Airflow Docs — Best practices for DAG authoring (accessed 2026-08-08)
-[B7, B10] Medium / Community articles — Airflow database tuning at scale (accessed 2026-08-08)
-[B9] Astronomer Docs — Multiple schedulers (accessed 2026-08-08)
+[B1, B3, B4] Astronomer Docs — Understanding the Airflow metadata database (maintenance and cleanup): https://www.astronomer.io/docs/learn/airflow-database (tier 1, URL added on citation review)
+[B2, B8] Reintech — Managing Airflow at scale and database optimization (third-party blog, out of scope for Astronomer docs MCP; not re-verified on this pass)
+[B5, B6] Apache Airflow Docs — Best practices (DAG authoring): https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html (tier 2, URL added on citation review)
+[B7, B10] Medium / Community articles — Airflow database tuning at scale (third-party, out of scope for Astronomer docs MCP; not re-verified on this pass)
+[B9] Astronomer Docs — Airflow system components, horizontal scaling (multiple schedulers): https://www.astronomer.io/docs/astro-private-cloud/v-2-x/airflow-system-components#horizontal-scaling (tier 1, URL added on citation review)

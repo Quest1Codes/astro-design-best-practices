@@ -35,4 +35,5 @@ Set the following in the Airflow environment:
 
 ## Sources
 
-[B1, B2] Astronomer Best Practices & Apache Airflow Docs — Custom XCom Backends and Object Storage integration (accessed 2026-08-08)
+[B1] Astronomer Docs — Strategies for custom XCom backends in Airflow (Object Storage XCom Backend, Common IO provider, `AIRFLOW__CORE__XCOM_BACKEND` config): https://www.astronomer.io/docs/learn/custom-xcom-backend-strategies (tier 1, URL added on citation review)
+[B2] Astronomer Docs — Set up a custom XCom backend using object storage (step-by-step tutorial): https://www.astronomer.io/docs/learn/custom-xcom-backends-tutorial (tier 1, URL added on citation review)

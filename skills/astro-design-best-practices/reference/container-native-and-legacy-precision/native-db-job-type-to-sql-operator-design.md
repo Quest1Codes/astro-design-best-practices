@@ -10,10 +10,12 @@ In Airflow, the equivalent is the database-specific SQL operators from the provi
 
 | AutoSys DB Target | Airflow Operator | Provider Package |
 |---|---|---|
-| **Any (unified)** | `SQLExecuteQueryOperator` | `apache-airflow-providers-common-sql` [B2] |
-| **PostgreSQL** | `PostgresOperator` | `apache-airflow-providers-postgres` [B2] |
-| **Oracle** | `OracleOperator` | `apache-airflow-providers-oracle` [B2] |
-| **SQL Server** | `MsSqlOperator` | `apache-airflow-providers-microsoft-mssql` [B2] |
+| **Any (unified) — Recommended** | `SQLExecuteQueryOperator` | `apache-airflow-providers-common-sql` [B2] |
+| **PostgreSQL** | ~~`PostgresOperator`~~ — **legacy, superseded by `SQLExecuteQueryOperator`** | `apache-airflow-providers-postgres` [B2] |
+| **Oracle** | ~~`OracleOperator`~~ — **legacy, superseded by `SQLExecuteQueryOperator`** | `apache-airflow-providers-oracle` [B2] |
+| **SQL Server** | ~~`MsSqlOperator`~~ — **legacy, superseded by `SQLExecuteQueryOperator`** | `apache-airflow-providers-microsoft-mssql` [B2] |
+
+**Correction**: an earlier draft of this table listed all four operators as parallel, equally-current options — the deprecation status was only noted in this file's internal Sources annotation, never surfaced to the reader. `PostgresOperator`/`OracleOperator`/`MsSqlOperator` are legacy per-database operators now superseded by the unified `SQLExecuteQueryOperator` [B2]; a team following this table without reading the footnotes could pick a deprecated operator. Use `SQLExecuteQueryOperator` with the appropriate `conn_id` for new pipelines regardless of target database — see the Recommended pattern below.
 
 ## SQL Operator Pattern (Recommended)
 
@@ -62,4 +64,4 @@ This pattern has no AutoSys equivalent — it is Airflow-native value-add.
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — Native DB job type, `db_connection_string`, `sql_command`, `sql_script_file` JIL attributes (accessed 2026-08-18)
-[B2] Apache Airflow Docs — `SQLExecuteQueryOperator`, `PostgresOperator`, `OracleOperator`, `MsSqlOperator`, `SQLColumnCheckOperator`, `sql` parameter file path support (accessed 2026-08-18)
+[B2] Astronomer Docs — `SQLExecuteQueryOperator` usage (`sql` parameter accepting a file path via `template_searchpath`): https://www.astronomer.io/docs/learn/airflow-sql#example-1-execute-a-query ; `SQLColumnCheckOperator`: https://www.astronomer.io/docs/learn/airflow-sql-data-quality#sqlcolumncheckoperator ; when to use each SQL check operator: https://www.astronomer.io/docs/learn/data-quality#when-to-use-each-operator (tier 1, URLs added on citation-hygiene review). `PostgresOperator`/`OracleOperator`/`MsSqlOperator` are legacy per-database operators now superseded by `SQLExecuteQueryOperator` — not independently re-verified on this pass.

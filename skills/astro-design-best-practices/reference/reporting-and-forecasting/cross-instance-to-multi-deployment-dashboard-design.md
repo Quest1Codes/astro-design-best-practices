@@ -9,7 +9,7 @@ In Airflow, each Deployment has its own isolated Airflow UI (webserver). Without
 | AutoSys WCC Feature | Astro Equivalent | Notes |
 |---|---|---|
 | **Cross-instance job status overview** | **Astro Observe** — cross-Deployment DAG health dashboard | Aggregates status across all Deployments in an Organization [B2]. |
-| **Organization-level summary** | **Astro Organization Dashboard** | High-level view of all Workspaces and Deployments; identifies unexpected activity or resource anomalies [B2]. |
+| **Organization-level summary** | **Astro Organization Dashboard** | High-level view of all Workspaces and Deployments; identifies unexpected activity or resource anomalies. **Requires the Enterprise tier or above** — an earlier draft of this table didn't state that gate, even though it was already noted in this file's own citation; corrected here [B2]. |
 | **Per-instance drill-down** | Individual Deployment Airflow UI | Click through from the Organization Dashboard to a specific Deployment's Airflow UI. |
 | **Cross-instance SLA tracking** | **Astro Observe** + Astro Alerts | Configure SLA-miss alerts that fire across all Deployments [B2]. |
 
@@ -46,4 +46,4 @@ There is no Astro feature that lets you search for "all task instances in state 
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — Workload Control Center (WCC), cross-instance status aggregation, multi-instance GUI management (accessed 2026-08-18)
-[B2] Astronomer Docs — Astro Observe, Organization Dashboard, Workspace/Deployment-level health views, Deployment Telemetry export, cross-Deployment alert configuration (accessed 2026-08-18)
+[B2] Astronomer Docs — Astro Observe (cross-Deployment data products, dependencies, SLAs): https://www.astronomer.io/docs/astro/astro-observe ; Organization dashboards (Enterprise tier+): https://www.astronomer.io/docs/astro/organization-dashboard (tier 1, URLs added on citation-hygiene review). **Note**: Organization dashboards require the Enterprise tier or above — the file body didn't state this gate; worth adding if this file is revisited for content, not just citations.

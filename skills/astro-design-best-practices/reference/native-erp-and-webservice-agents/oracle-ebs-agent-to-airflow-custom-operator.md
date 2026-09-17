@@ -83,4 +83,4 @@ wait_for_concurrent_request = OracleSqlSensor(
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — Oracle EBS agent job type, Concurrent Manager integration (accessed 2026-08-18)
-[B2] Oracle E-Business Suite Technical Reference / Airflow Docs — `fnd_request.submit_request`, `fnd_global.apps_initialize`, `fnd_concurrent_requests` status codes, `OracleHook`, `OracleSqlSensor` (accessed 2026-08-18)
+[B2] Oracle E-Business Suite Technical Reference / Airflow Docs — `fnd_request.submit_request`, `fnd_global.apps_initialize`, `fnd_concurrent_requests` status codes, `OracleHook`, `OracleSqlSensor` (no Astronomer Docs match found on this pass — this is Oracle EBS technical-reference and Apache Airflow Oracle-provider content, not indexed in the astronomer-docs MCP scope; verify separately)

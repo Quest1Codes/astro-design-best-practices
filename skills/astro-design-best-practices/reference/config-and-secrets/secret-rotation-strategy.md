@@ -25,9 +25,9 @@ Airflow is designed to integrate seamlessly with external secrets managers.
 
 ## Sources
 
-[B1, B2] Astronomer Docs — Integrating Secrets Backends (accessed 2026-08-08)
-[B3, B4] Apache Airflow Docs — Secrets Backend retrieval mechanics (accessed 2026-08-08)
-[B5] AWS Docs — Secrets Manager automated rotation (accessed 2026-08-08)
-[B6] HashiCorp Vault Docs — Dynamic Secrets integration with Airflow (accessed 2026-08-08)
-[B7, B8] Astronomer Architecture Guides — Least privilege and Workload Identity (accessed 2026-08-08)
-[B9] Astronomer Docs — Local development best practices (accessed 2026-08-08)
+[B1, B2] Astronomer Docs — Configure a secrets backend: https://www.astronomer.io/docs/astro/secrets-backend (tier 1, URL added on citation review)
+[B3, B4] Apache Airflow Docs — Secrets backend (retrieval mechanics): https://airflow.apache.org/docs/apache-airflow/stable/security/secrets/secrets-backend/ (tier 2, URL added on citation review)
+[B5] AWS Docs — Secrets Manager automated rotation (third-party cloud provider docs, out of scope for Astronomer docs MCP; not re-verified on this pass)
+[B6] HashiCorp Vault Docs — Dynamic Secrets integration with Airflow (third-party docs, out of scope for Astronomer docs MCP; not re-verified on this pass)
+[B7, B8] Astronomer Docs — Authorize Deployments to your cloud, Workload Identity (least-privilege authentication to secrets backends): https://www.astronomer.io/docs/astro/authorize-deployments-to-your-cloud (tier 1, URL added on citation review)
+[B9] Astronomer Docs — Use connections locally (`astro dev start`, local development with Environment Manager objects): https://www.astronomer.io/docs/cli/v1.45/local-connections (tier 1, URL added on citation review)

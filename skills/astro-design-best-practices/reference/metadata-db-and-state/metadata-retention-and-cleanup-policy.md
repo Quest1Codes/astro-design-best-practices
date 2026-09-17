@@ -77,6 +77,6 @@ Before cleaning `dag_run` and `task_instance` tables in regulated environments (
 ## Sources
 
 [B1, B7, B8, B9, A1-2] Astronomer Learn — airflow-database: https://www.astronomer.io/docs/learn/airflow-database (accessed 2026-08-08)
-[B2, B3, B4, B6, E1] Apache Airflow CLI docs — `airflow db clean` (accessed 2026-08-08)
-[B5] PostgreSQL VACUUM docs / Airflow Summit DB maintenance talk (accessed 2026-08-08)
-[B-S1, B-S2, B-S3, A1-1] Astronomer DB maintenance / Software Helm chart docs (accessed 2026-08-08)
+[B2, B3, B4, B6, E1] Apache Airflow CLI reference — `airflow db clean`: https://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.html#clean (tier 2, URL added on citation review)
+[B5] PostgreSQL VACUUM docs: https://www.postgresql.org/docs/current/sql-vacuum.html (tier 2/3rd-party official Postgres docs, URL added on citation review) / Airflow Summit DB maintenance talk (not independently verified)
+[B-S1, B-S2, B-S3, A1-1] Astronomer Docs — Understanding the Airflow metadata database (closest available match for general DB maintenance guidance; the Software/Helm-chart-specific portion of this claim was not independently re-verified): https://www.astronomer.io/docs/learn/airflow-database (tier 1, URL added on citation review)

@@ -21,7 +21,7 @@ Organization
 | Scenario | Recommendation | Rationale |
 |---|---|---|
 | Different teams with different code dependencies or security domains | One Deployment per team | Blast radius isolation — one team's buggy DAG cannot corrupt another's metadata DB [B4] |
-| Shared infrastructure, low sensitivity | Multiple teams in one Deployment, using DAG-level RBAC (Astro Runtime 3.1-12+) | Reduces Deployment count but provides only logical separation [B5][B6] |
+| Shared infrastructure, low sensitivity | Multiple teams in one Deployment, using DAG-level RBAC (Astro Runtime 3.1-12+, Enterprise tier+) | Reduces Deployment count but provides only logical separation [B5][B6] |
 | High compliance or data residency requirements | Dedicated cluster per Workspace | Physical network/infra isolation; required for VPC peering, PrivateLink [B2][B3] |
 
 > **Astronomer's explicit recommendation**: avoid sharing a single Airflow instance across teams with different security or blast-radius requirements; shared deployments create noisy-neighbor risk and allow privileged DAG code to access the shared metadata DB [B4][B5].

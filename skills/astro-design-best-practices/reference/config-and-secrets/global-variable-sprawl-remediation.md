@@ -32,6 +32,6 @@ For the variables that genuinely need to remain as global Airflow Variables:
 
 ## Sources
 
-[B1, B2] Apache Airflow Docs — Best practices for DAG authoring, XComs, and JSON variables (accessed 2026-08-08)
-[B3] Astronomer Docs — Managing configurations across environments (accessed 2026-08-08)
-[B4] Astronomer Docs — Secrets Backends integration (accessed 2026-08-08)
+[B1, B2] Astronomer Docs — DAG writing best practices in Apache Airflow (top-level code, templated variables) and Best practices for storing information in Airflow (variables vs. XComs vs. params): https://www.astronomer.io/docs/learn/dag-best-practices and https://www.astronomer.io/docs/learn/airflow-variables (tier 1, URLs added on citation review)
+[B3] Astronomer Docs — Manage Airflow connections, variables, and environment variables, Astro Environment Manager section (closest match for "managing configurations across environments"): https://www.astronomer.io/docs/astro/manage-connections-variables#astro-environment-manager (tier 1, URL added on citation review)
+[B4] Astronomer Docs — Configure a secrets backend: https://www.astronomer.io/docs/astro/secrets-backend (tier 1, URL added on citation review)

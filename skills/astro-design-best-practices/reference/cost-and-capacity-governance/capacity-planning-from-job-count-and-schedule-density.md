@@ -16,8 +16,8 @@ All resource allocation on Astro (scheduler, webserver, triggerer, workers) is e
 |---|---|---|
 | **Small** | ~50 DAGs | Single scheduler + single DAG Processor [B1]. |
 | **Medium** | ~250 DAGs | Scheduler and DAG Processor are separated. Astronomer recommends **Medium as the minimum for production** [B1]. |
-| **Large** | ~1,000 DAGs | Single scheduler + 3 DAG Processors [B1]. |
-| **Extra Large** | ~2,000 DAGs | Single scheduler + 2 DAG Processors with increased resource overhead [B1]. |
+| **Large** | ~1,000 DAGs | Single scheduler; **1 DAG Processor pod, sized at 3 vCPU** — a resource-allocation figure, not a pod count. **Correction**: an earlier draft of this file described this as "3 DAG Processors" (i.e., 3 separate pods), which current docs don't support [B2]. |
+| **Extra Large** | ~2,000 DAGs | Single scheduler + **2 separate DAG Processor pods** — this tier is the one that actually runs multiple Dag processor pods [B2]. |
 
 > **Important**: These are starting templates, not hard limits. Monitor actual parse time and scheduler lag in Deployment Analytics and resize accordingly [B1].
 
@@ -39,4 +39,5 @@ All resource allocation on Astro (scheduler, webserver, triggerer, workers) is e
 
 ## Sources
 
-[B1] Astronomer Docs — Deployment size templates (Small/Medium/Large/Extra Large), AU definition (1 AU = 0.1 vCPU + 0.375 GiB), Triggerer capacity, and Deployment Analytics for right-sizing (accessed 2026-08-11)
+[B1] Astronomer Docs — Deployment resources, Triggerer (default 1 replica, ~1000 concurrent trigger capacity): https://www.astronomer.io/docs/astro/deployment-resources#triggerer (tier 1, added on doc-verification review); AU definition (1 AU = 0.1 vCPU + 0.375 GiB): https://www.astronomer.io/docs/astro-private-cloud/v-0-37/configure-deployment#select-a-resource-strategy (tier 1, added on doc-verification review)
+[B2] Astronomer Docs — Deployment resources, size options (Large = 1 Dag Processor pod at 3 vCPU; Extra Large = 2 Dag Processor pods): https://www.astronomer.io/docs/astro/deployment-resources#size-options (tier 1, added on doc-verification review — corrects the "3 DAG Processors" claim for Large above)

@@ -25,7 +25,7 @@ For any downstream boxes in AutoSys that depended on the completion of this box:
 
 ### Step 3: Unpause the Airflow DAG
 
-- Set the Airflow DAG's `is_paused = False` (via Airflow UI or API: `PATCH /api/v1/dags/{dag_id}`) [B3].
+- Set the Airflow DAG's `is_paused = False` (via Airflow UI or API: `PATCH /api/v2/dags/{dag_id}`) [B3].
 - Ensure the DAG is now writing to the **production target** (not the shadow path).
 - Confirm the first production Airflow run completes successfully.
 
@@ -47,6 +47,6 @@ When Box A (in Airflow) depends on Box B (still in AutoSys):
 
 ## Sources
 
-[B1] Enterprise migration guidance — AutoSys `ON_HOLD` state management, cross-domain dependency handling (accessed 2026-08-11)
-[B2] Apache Airflow Docs — Datasets, ExternalTaskSensor, and cross-DAG dependency patterns (accessed 2026-08-11)
-[B3] Apache Airflow REST API Docs — `PATCH /api/v1/dags/{dag_id}` for programmatic pause/unpause (accessed 2026-08-11)
+[B1] Enterprise migration guidance — AutoSys `ON_HOLD` state management, cross-domain dependency handling (no Astronomer Docs match found on this pass — this is project-internal migration-pattern synthesis, not a citable single Astronomer page; the AutoSys-side `ON_HOLD` semantics are also out of scope for the Astronomer docs MCP)
+[B2] Apache Airflow Docs — Datasets, ExternalTaskSensor, and cross-DAG dependency patterns. Astronomer Learn covers this directly: https://www.astronomer.io/docs/learn/cross-dag-dependencies (tier 1, URL added on citation review — covers `ExternalTaskSensor` including its deferrable mode)
+[B3] Apache Airflow REST API Docs — `PATCH /api/v2/dags/{dag_id}` for programmatic pause/unpause (accessed 2026-08-11). **Correction**: originally cited as `/api/v1/`; Airflow 3 uses the v2 REST API — see https://www.astronomer.io/docs/astro/airflow-api (tier 1, added on doc-verification review). Confirm the target Deployment's actual Airflow major version before relying on this path.

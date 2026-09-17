@@ -65,11 +65,11 @@ This is the K8s equivalent of routing to a specific machine group in AutoSys.
 |---|---|
 | Fixed pool of persistent agents; high task throughput; low cold-start tolerance | **CeleryExecutor** with named queues |
 | Strong isolation per task; varied resource profiles; burst compute | **KubernetesExecutor** with node selectors |
-| Mix of high-frequency light tasks + isolated heavy tasks | **CeleryKubernetesExecutor** hybrid |
+| Mix of high-frequency light tasks + isolated heavy tasks | ~~`CeleryKubernetesExecutor` hybrid~~ — **correction (now resolved)**: `CeleryKubernetesExecutor` is not even a selectable Deployment executor on Astro (the only three options are Astro, Celery, Kubernetes) and Astronomer's own docs separately call the pattern "rarely used" and "no longer recommended" as of Airflow 2.10+. Use a **dedicated worker queue with its own worker type** under the Astro executor or Celery executor instead, or `KubernetesPodOperator` for individual heavy tasks. See `reference/executor-and-worker/hybrid-executor-strategy.md`, which has now been rewritten to cover this. |
 
 On Astro, the underlying executor is managed — but worker queue segregation is fully configurable via Deployment worker queue settings [B2].
 
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — Virtual machine (machine group) definition, load-balanced job routing among real machines using `max_load`/`job_load` (accessed 2026-08-11)
-[B2] Apache Airflow Docs — CeleryExecutor worker queues, `queue` parameter on operators, KubernetesExecutor `executor_config` and node selectors (accessed 2026-08-11)
+[B2] Astronomer Docs — Configure worker queues (Celery/Astro executor `queue` parameter, worker types): https://www.astronomer.io/docs/astro/configure-worker-queues (tier 1, added on doc-verification review); Kubernetes executor (`executor_config`, node affinity/selectors): https://www.astronomer.io/docs/astro/kubernetes-executor (tier 1, added on doc-verification review)

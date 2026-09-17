@@ -9,7 +9,7 @@ AutoSys's Event Server RDBMS (Oracle, SQL Server, or Sybase) was backed up by a 
 | Deployment model | Backup ownership | User action |
 |---|---|---|
 | **Astro Hosted** | Astronomer-managed | Use Astronomer's built-in DR features; do not manually modify the DB [A1-1][A1-3] |
-| **Astro Hosted — dedicated cluster** | Astronomer-managed with DR failover | Enable multi-region DR in Astro UI; contact Astronomer for specific RPO/RTO SLAs [A1-2] |
+| **Astro Hosted — dedicated cluster** | Astronomer-managed with DR failover | Enable multi-region DR in Astro UI; contact Astronomer for specific RPO/RTO SLAs. **Requires the Enterprise Business Critical tier** — this is a hard gate, not available on lower tiers or shared clusters [A1-2][A1-6] |
 | **Self-managed / BYOD — cloud-managed PostgreSQL** | Cloud provider | Enable automated backups and PITR in your cloud DB console (RDS, Cloud SQL, Azure DB) [A1-5] |
 | **Self-managed / BYOD — self-hosted PostgreSQL** | User-owned | Configure WAL archiving + base backups + PITR manually [A1-4] |
 
@@ -48,7 +48,7 @@ For AWS RDS, GCP Cloud SQL, or Azure Database for PostgreSQL [A1-5]:
 
 ## Compliance callout (Axis E — M rating)
 
-For SOX/HIPAA/FedRAMP verticals, backup retention periods (SOX commonly requires 7 years for financial audit trails) may exceed what Airflow's metadata DB retains operationally [E1]. Before running `airflow db clean` or `airflow db drop-archived`, export archived records to a compliance-designated, immutable storage location using `airflow db export-archived` [E1].
+For SOX/HIPAA/FedRAMP verticals, backup retention periods (SOX audit-trail retention is commonly cited as around 7 years, per SOX Section 802 [B-SOX]) may exceed what Airflow's metadata DB retains operationally. **Correction**: an earlier draft cited the "7 years" figure to [E1], the Airflow CLI reference for `export-archived` — a technical doc that says nothing about SOX retention law; retargeted to an actual legal source below. Before running `airflow db clean` or `airflow db drop-archived`, export archived records to a compliance-designated, immutable storage location using `airflow db export-archived` [E1].
 
 ## Key risks
 
@@ -61,7 +61,9 @@ For SOX/HIPAA/FedRAMP verticals, backup retention periods (SOX commonly requires
 ## Sources
 
 [B1, B2] Astronomer Learn — airflow-database: https://www.astronomer.io/docs/learn/airflow-database (accessed 2026-08-08)
-[A1-1, A1-2, A1-3] Astronomer Astro Hosted Disaster Recovery docs (accessed 2026-08-08)
+[A1-1, A1-2, A1-3] Astronomer Docs — Disaster recovery: https://www.astronomer.io/docs/astro/disaster-recovery (tier 1, URL added on citation review)
+[A1-6] Astronomer Docs — Disaster recovery (RTO < 1hr / RPO < 15min targets, Enterprise Business Critical tier requirement, dedicated clusters only): https://www.astronomer.io/docs/astro/disaster-recovery (tier 1, added on doc-verification review — the tier gate was missing from the table row above)
 [A1-4, B-S1] PostgreSQL continuous archiving docs: https://www.postgresql.org/docs/current/continuous-archiving.html (accessed 2026-08-08)
-[A1-5, B-S2] Cloud provider managed PostgreSQL docs — AWS RDS / GCP Cloud SQL / Azure Database for PostgreSQL (accessed 2026-08-08)
-[E1] Apache Airflow CLI docs — `airflow db export-archived` (accessed 2026-08-08)
+[A1-5, B-S2] Cloud provider managed PostgreSQL docs — AWS RDS / GCP Cloud SQL / Azure Database for PostgreSQL (out of scope for Astronomer docs MCP — these are third-party cloud provider docs, not Astronomer content; not re-verified on this pass)
+[E1] Apache Airflow CLI reference — `airflow db export-archived`: https://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.html#export-archived (tier 2, URL added on citation review)
+[B-SOX] U.S. Securities and Exchange Commission / SOX legislative text — Sarbanes-Oxley Act Section 802 (record retention): https://www.sec.gov/spotlight/sarbanes-oxley.htm (tier 3 — external legal source, not an Astronomer product doc; added on Critic-pass review to separate the legal retention claim from the Airflow CLI mechanics it was previously bundled under)

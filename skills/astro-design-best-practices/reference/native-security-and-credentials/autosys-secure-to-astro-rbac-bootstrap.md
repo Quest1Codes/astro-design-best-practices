@@ -52,4 +52,4 @@ Store the token in your CI/CD secrets manager (not in code) [B2].
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — `autosys_secure` command, security database initialization, EEM bootstrap (accessed 2026-08-11)
-[B2] Astronomer Docs — SSO configuration, SCIM prerequisite (Org API token with Owner permissions), Astro Terraform Provider, Deployment-scoped API Tokens, SSO enforcement (accessed 2026-08-11)
+[B2] Astronomer Docs — SSO configuration: https://www.astronomer.io/docs/astro/configure-idp ; SCIM provisioning: https://www.astronomer.io/docs/astro/set-up-scim-provisioning ; Astro Terraform Provider: https://www.astronomer.io/docs/astro/terraform-provider ; Deployment API tokens: https://www.astronomer.io/docs/astro/deployment-api-tokens (tier 1, URLs added on citation-hygiene review)
