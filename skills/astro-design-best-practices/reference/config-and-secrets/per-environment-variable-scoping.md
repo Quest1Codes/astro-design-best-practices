@@ -1,3 +1,15 @@
+---
+topic: per-environment-variable-scoping
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Per-Environment Variable Scoping
 
 Managing variables across Dev, Staging, and Prod environments is critical for preventing cross-environment contamination. Hardcoding environment-specific logic (`if env == 'dev': path = 'x'`) inside DAG files is a major anti-pattern.
@@ -17,7 +29,7 @@ Astronomer provides specific scoping mechanisms to handle environment variables 
 ## Masking Sensitive Variables
 
 If you must use Airflow Variables (via the UI or environment variables) instead of a Secrets Backend, you can instruct Airflow to mask their values in the UI and logs.
-- Include a sensitive substring in the variable name, such as `_KEY`, `_SECRET`, `_PASSWORD`, or `_TOKEN`. Airflow automatically redacts these from plain text view [B3].
+- Include a sensitive substring in the variable name — the default `hide_sensitive_var_conn_fields` list matches `access_token`, `api_key`, `apikey`, `authorization`, `passphrase`, `passwd`, `password`, `private_key`, `secret`, and `token`. A bare `_KEY` suffix does **not** trigger masking (only `api_key`/`private_key` do); `_SECRET`, `_PASSWORD`, and `_TOKEN` do match. Airflow automatically redacts matching names from plain text view [B3].
 
 ## The "Top-Level Code" Anti-Pattern
 

@@ -1,3 +1,16 @@
+---
+topic: multi-timezone-autotimezone-to-pendulum-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - multi_instance
+---
+
 # Multi-Timezone Distributed Agent Scheduling (autotimezone) → Airflow pendulum Timezone Design
 
 AutoSys managed multi-timezone scheduling through the `autotimezone` command (which maintained the `ujo_timezones` table) and the per-job `timezone` JIL attribute. AutoSys agents ran in their local timezone; the scheduler translated job start times relative to the agent's timezone using IANA timezone name resolution [B1].

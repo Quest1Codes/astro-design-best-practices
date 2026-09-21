@@ -1,0 +1,5 @@
+/* extracted from PDF p.2434: Run a Visual Basic Script on Windows */
+insert_job: win_vbjob
+job_type: CMD
+machine: winagent
+command: "c:\winnt\system32\wscript.exe" "c:\programs\vbs\notify.vbs"

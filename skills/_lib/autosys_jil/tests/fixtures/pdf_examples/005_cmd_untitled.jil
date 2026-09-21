@@ -1,0 +1,5 @@
+/* extracted from PDF p.2405: (untitled) */
+insert_job:jobExample
+command:echo
+machine: machine_name
+condition: s(old_job_name)

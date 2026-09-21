@@ -1,0 +1,11 @@
+/* extracted from PDF p.2731: Specify the Remote Operating System */
+insert_job: scp_download
+job_type: scp
+machine: localhost
+owner:ftpuser@ftpserver
+scp_local_name: "c:\temp\scp.out"
+scp_remote_dir: /etc
+scp_remote_name: profile.CA
+scp_server_name: ftpserver
+scp_target_os: unix
+scp_transfer_direction: download

@@ -1,0 +1,10 @@
+/* extracted from PDF p.2463: Monitor Disk Space on Windows */
+insert_job: omd_win
+job_type: OMD
+machine: winagent
+disk_drive: C
+disk_format: PERCENT
+lower_boundary: 16
+upper_boundary: 95
+inside_range: FALSE
+disk_space: USED

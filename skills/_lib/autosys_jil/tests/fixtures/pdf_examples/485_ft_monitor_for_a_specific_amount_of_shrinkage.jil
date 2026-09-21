@@ -1,0 +1,8 @@
+/* extracted from PDF p.2818: Monitor for a Specific Amount of Shrinkage */
+insert_job: ft_win_shrink
+job_type: FT
+machine: winagt
+watch_file: "c:\cost\cash"
+watch_file_type: SHRINK
+watch_file_change_type: DELTA
+watch_file_change_value: 10

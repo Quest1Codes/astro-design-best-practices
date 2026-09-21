@@ -1,0 +1,5 @@
+/* extracted from PDF p.2431: Run a Command on UNIX */
+insert_job: unix_cmd
+job_type: CMD
+machine: unixagent
+command: /bin/date

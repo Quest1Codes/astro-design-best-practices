@@ -1,3 +1,16 @@
+---
+topic: autosys-secure-to-astro-rbac-bootstrap
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - credential_hits
+---
+
 # autosys_secure Security Bootstrap → Astro Workspace/Deployment RBAC Bootstrap Design
 
 `autosys_secure` is the AutoSys command used to perform system-level security configuration — setting up the security database, initializing encryption keys, and bootstrapping the security provider (EEM or native) for a new AutoSys instance [B1]. It is the one-time setup step that makes the instance security-aware.

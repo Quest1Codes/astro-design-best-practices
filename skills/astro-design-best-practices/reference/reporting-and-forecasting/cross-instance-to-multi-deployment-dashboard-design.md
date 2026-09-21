@@ -1,3 +1,16 @@
+---
+topic: cross-instance-to-multi-deployment-dashboard-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - multi_instance
+---
+
 # Cross-Instance Enterprise Console Visibility → Astronomer Multi-Deployment Dashboard Design
 
 AutoSys provided cross-instance visibility through its **Workload Control Center (WCC)** — a single GUI that could aggregate status views across multiple AutoSys instances. Operations teams could see job statuses from `PRD`, `UAT`, and `DEV` instances without switching contexts [B1].

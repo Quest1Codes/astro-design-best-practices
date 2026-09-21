@@ -1,0 +1,8 @@
+/* extracted from PDF p.2708: Specify the User for an SAP Process */
+insert_job: PMTEST
+job_type: SAPPM
+machine: SAPHTAGENT
+sap_process_status: RUNNING
+sap_proc_type: BGD
+sap_proc_user: user14
+sap_recipients: rcp_type=type[,keyword=value...]

@@ -1,0 +1,23 @@
+/* extracted from PDF p.2685: Perform a HTTP Query Using the HTTP POST Method */
+insert_job: httppost
+job_type: HTTP
+machine: localhost
+invocation_type: POST
+provider_url: "http://google.com/search"
+j2ee_no_global_proxy_defaults: 1
+j2ee_authentication_order: BASIC, DIGEST, NTLM
+j2ee_proxy_port: 80
+j2ee_parameter: q="pangea"
+media_type: text/plain
+headers: Pragma="no-cache"
+headers: X-Forwarded-For="129.78.138.66, \"129.78.64.103\""
+header_filter: gr[ae]y
+retry_on_failure_count: 2
+retry_on_failure_delay: 10
+retry_on_failure_details: yes
+results_file: /tmp/results_file.txt
+results_file_overwrite: false
+fail_codes: 201
+success_codes: 400-401
+payload_uri: "file://host/path"
+retry_on_failure_count: attempts

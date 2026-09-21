@@ -1,3 +1,15 @@
+---
+topic: dashboard-design-for-stakeholder-visibility
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Dashboard Design for Stakeholder Visibility
 
 AutoSys provided stakeholder reporting through the Workload Control Center (WCC), generating operational status reports. Airflow's native UI is highly technical and designed for data engineers, making it unsuitable for business stakeholders. To bridge this gap, organizations must adopt a tiered dashboarding strategy.

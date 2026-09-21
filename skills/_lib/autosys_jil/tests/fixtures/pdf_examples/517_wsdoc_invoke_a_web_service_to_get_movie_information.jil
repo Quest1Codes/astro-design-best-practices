@@ -1,0 +1,5 @@
+/* extracted from PDF p.2841: Invoke a Web Service to Get Movie Information */
+insert_job: showing
+job_type: WSDOC
+machine: wsagent
+endpoint_URL: "http://www.ignyte.com/webservices/ignyte.whatsshowing.webservice/

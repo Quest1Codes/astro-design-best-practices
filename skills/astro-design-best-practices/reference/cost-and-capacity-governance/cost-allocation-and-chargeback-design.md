@@ -1,3 +1,15 @@
+---
+topic: cost-allocation-and-chargeback-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Cost Allocation and Chargeback Design Across Workspaces/Deployments
 
 Astro's platform provides a native showback layer; the actual financial chargeback transaction (GL posting, internal cross-charge) happens in your finance system, not in Astro. The design challenge is building the bridge between Astro's usage data and your internal cost accounting process.
@@ -8,13 +20,13 @@ Astro's platform provides a native showback layer; the actual financial chargeba
 
 | Astro Object | Cost Attribution Role |
 |---|---|
-| **Deployment** | The fundamental cost unit. Each Deployment has dedicated compute (scheduler, workers, webserver). Costs accrue per AU consumed by each component [B1]. |
+| **Deployment** | The fundamental cost unit. Each Deployment has dedicated compute (scheduler, workers, webserver). **Correction**: an earlier draft of this file said costs accrue "per AU consumed" — the AU (Astronomer Unit) model has been removed from current Astro Hosted docs, which size and cost components directly in vCPU/GiB instead [B1]. |
 | **Workspace** | Groups Deployments belonging to a team, department, or cost center. Primary aggregation level for showback reporting [B1]. |
 
 ## Showback: What Astro Provides Natively
 
-- **Cost Breakdown Dashboard**: Available in the Astro UI, showing consumption by Workspace and Deployment broken down by component (scheduler, worker, webserver) [B1].
-- **Astro API Export**: Programmatically pull usage metrics from the Astro Platform API to feed into your internal FinOps tooling or BI dashboard [B1].
+- **Cost Breakdown Dashboard**: Available in the Astro UI, showing consumption by Workspace and Deployment broken down by **Deployment, Cluster, Compute, Network, Remote Execution, AI Tokens, Observe, and Triggerer** (and, per the internal-chargeback guidance, further by compute type, worker queue, and dedicated cluster). **Correction**: an earlier draft of this file described the breakdown as by "scheduler, worker, webserver" — that is not how the dashboard categorizes cost [B1].
+- **Astro API / Billing API Export**: Programmatically pull usage metrics from the Astro Platform API, or export in FOCUS format via the Billing API, to feed into your internal FinOps tooling or BI dashboard. The Billing API is a **Labs (early-access) feature limited to Enterprise+ organizations** — note this constraint before depending on it for production chargeback automation [B1].
 
 ## Chargeback: What You Build
 

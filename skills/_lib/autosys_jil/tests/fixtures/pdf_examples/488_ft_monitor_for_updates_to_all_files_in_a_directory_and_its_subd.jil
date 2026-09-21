@@ -1,0 +1,8 @@
+/* extracted from PDF p.2819: Monitor for Updates to All Files in a Directory and its Subdirectories */
+insert_job: ft_unix_update
+job_type: FT
+machine: unixagt
+watch_file: "/usr/data/*"
+watch_file_type: UPDATE
+watch_file_recursive: Y
+watch_no_change: 30

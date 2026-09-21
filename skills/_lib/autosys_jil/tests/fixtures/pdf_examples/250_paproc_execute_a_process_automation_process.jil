@@ -1,0 +1,10 @@
+/* extracted from PDF p.2634: Execute a Process Automation Process */
+insert_job: execproc
+job_type: PAPROC
+machine: localhost
+endpoint_URL: "http://capamach:8080/itpam/soap"
+pa_name: "/CAWAAE/Test Process"
+owner: pamadmin@capamach
+pa_monitor_progress: Y
+pa_parameter: param_name="strTestName", param_value="PA Test"
+pa_parameter: param_name=name, param_value=value

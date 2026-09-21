@@ -1,0 +1,8 @@
+/* extracted from PDF p.2706: Monitor for Jobs Running in the Background */
+insert_job: PMTEST
+job_type: SAPPM
+machine: SAPHTAGENT
+sap_process_status: RUNNING
+sap_proc_type: BGD
+sap_proc_user: user14
+sap_proc_type: BGD | DIA | ENQ | SPO | UPD | UP2

@@ -1,0 +1,7 @@
+/* extracted from PDF p.2427: Specify Java Class to Instantiate in a POJO Job */
+insert_job: ignore
+job_type: POJO
+machine: appagent
+class_name: java.lang.Integer
+method_name: parseInt
+j2ee_parameter: java.lang.String=5

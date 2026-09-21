@@ -1,0 +1,8 @@
+/* extracted from PDF p.2773: Define a Job to Check Stored Procedure's Return Code as Success Criteria */
+insert_job: test_db_proc_success_return_10_to_10_check
+job_type: DBPROC
+machine: localhost
+result_type: INTEGER
+sp_name: ujo_sample_procedure
+success_criteria: ""return=10""
+success_criteria_json: json_path

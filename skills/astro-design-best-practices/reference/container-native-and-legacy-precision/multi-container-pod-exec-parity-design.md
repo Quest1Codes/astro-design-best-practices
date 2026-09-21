@@ -1,3 +1,16 @@
+---
+topic: multi-container-pod-exec-parity-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - brownfield_astro
+---
+
 # Multi-Container Pod Targeted-Execution → Airflow K8s Exec-Into-Container Design
 
 AutoSys's Kubernetes job type supports targeting a specific container within a multi-container pod — a feature useful when running a sidecar-pattern pod where the primary container is a long-running service and the AutoSys job needs to exec a command into the secondary (sidecar) container [B1].

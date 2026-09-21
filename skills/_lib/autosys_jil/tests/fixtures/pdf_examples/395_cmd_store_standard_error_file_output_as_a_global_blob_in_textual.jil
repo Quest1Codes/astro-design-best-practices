@@ -1,0 +1,8 @@
+/* extracted from PDF p.2763: Store Standard Error File Output as a Global Blob in Textual Format */
+insert_job: report_job2
+job_type: CMD
+machine: localhost
+command: myapplication
+std_err_file: $$globt.some_stderr_data
+std_in_file: file_name [environment_variable]|blob_name
+Limits: Up to 255 characters

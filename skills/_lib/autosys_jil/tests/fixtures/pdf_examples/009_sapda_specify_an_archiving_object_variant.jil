@@ -1,0 +1,12 @@
+/* extracted from PDF p.2410: Specify an Archiving Object Variant */
+insert_job: test_SAPDA
+job_class: SAP
+job_type: SAPDA
+machine: localhost
+owner: WAAESAP@waae-jobstest
+arc_obj_name: BC_ARCHIVE
+arc_obj_variant: PRODUKTIVMODUS
+sap_print_parms: prt_arc_mode=BOTH,dest=LP01,title="testing"
+arc_parms: arc_doc_type=ar01, arc_info=ar1, arc_obj_type=obj01, arc_client=202
+auth_string: string
+Limits: Up to 80 characters

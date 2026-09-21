@@ -1,0 +1,19 @@
+/* synthetic fixture: Windows-hosted jobs [plan §11.11] -- .bat/.ps1, mapped drive, UNC path,
+   DOMAIN\user owner. Exercises commands.py os_hint detection. */
+insert_job: win_nightly_extract
+job_type: CMD
+machine: winapp01
+command: cmd /c C:\jobs\extract\run_extract.bat
+owner: CORP\svc_autosys
+permission:
+date_conditions: 1
+days_of_week: all
+start_times: "01:00"
+
+insert_job: win_powershell_report
+job_type: CMD
+machine: winapp01
+command: powershell.exe -File \\fileserver01\share\reports\build_report.ps1
+owner: CORP\svc_autosys
+permission:
+condition: success(win_nightly_extract)

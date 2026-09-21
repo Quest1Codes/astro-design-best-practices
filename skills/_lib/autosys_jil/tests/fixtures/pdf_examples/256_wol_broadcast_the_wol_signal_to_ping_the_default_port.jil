@@ -1,0 +1,7 @@
+/* extracted from PDF p.2643: Broadcast the WOL Signal to Ping the Default Port */
+insert_job: wol_default_job
+job_type: WOL
+machine: agentnme
+broadcast_address: 172.16.255.255
+mac_address: 00-11-43-73-38-DC
+ping_host: 172.16.1.101

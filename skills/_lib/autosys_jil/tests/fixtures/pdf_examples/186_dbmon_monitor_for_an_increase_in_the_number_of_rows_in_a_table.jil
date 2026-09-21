@@ -1,0 +1,9 @@
+/* extracted from PDF p.2575: Monitor for an Increase in the Number of Rows in a Table */
+insert_job: dbmon_job1
+job_type: DBMON
+machine: dbagt
+tablename: Inventory_List
+monitor_type: INCREASE
+connect_string: "jdbc:db2://172.31.255.255:50000/SAMPLE"
+must_complete_times: "hh:mm[, hh:mm...]"
+must_complete_times: +minutes

@@ -1,0 +1,8 @@
+/* extracted from PDF p.2661: Distribute a Report to Email Addresses Instead of a Distribution List */
+insert_job: ps_nousers
+job_type: PS
+machine: psagt
+ps_process_name: XRFWIN
+ps_process_type: Crystal
+ps_dest_type: WEB
+ps_dest_format: PDF

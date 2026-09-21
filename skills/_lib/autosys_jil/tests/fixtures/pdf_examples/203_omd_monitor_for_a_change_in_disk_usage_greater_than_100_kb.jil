@@ -1,0 +1,12 @@
+/* extracted from PDF p.2587: Monitor for a Change in Disk Usage Greater than 100 KB */
+insert_job: omd_job
+job_type: OMD
+machine: winagent
+disk_drive: C
+disk_space: FREE
+disk_format: KB
+lower_boundary: 35000000
+upper_boundary: 36000000
+inside_range: TRUE
+no_change: 100
+monitor_mode: CONTINUOUS

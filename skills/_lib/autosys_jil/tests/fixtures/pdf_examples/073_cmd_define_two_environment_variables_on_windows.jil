@@ -1,0 +1,7 @@
+/* extracted from PDF p.2471: Define Two Environment Variables on Windows */
+insert_job: cmd_job1
+job_type: CMD
+machine: winprod
+command: "c:\cmds\processrun.exe"
+envvars: PATH="c:\windows\system32"
+envvars: TEMP="c:\temp"

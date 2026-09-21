@@ -1,3 +1,15 @@
+---
+topic: dr-runbook-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # DR Runbook Design
 
 AutoSys dual-Event-Server / Shadow-Scheduler runbooks were complex: they documented manual promotion steps, `autosys_secure` commands, and tie-breaker reconfiguration. Astro's managed DR significantly simplifies execution steps, but a formal runbook remains essential for organizational readiness, RTO accountability, and audit trails.

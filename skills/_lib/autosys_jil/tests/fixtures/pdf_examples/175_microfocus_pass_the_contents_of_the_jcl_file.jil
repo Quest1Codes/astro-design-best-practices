@@ -1,0 +1,9 @@
+/* extracted from PDF p.2567: Pass the Contents of the JCL File */
+insert_job: mf_job_jcl_by_content
+job_type: MICROFOCUS
+machine: mfagent
+mf_server_address_type: ADDRESS
+mf_server: "tcp:172.31.255.255:2222"
+mf_jcl_type: CONTENT
+mf_jcl_name: "C:\Program Files\micro focus\es-jcldemo\if.jcl"
+mf_server: server_name | "tcp:ip_address:port"

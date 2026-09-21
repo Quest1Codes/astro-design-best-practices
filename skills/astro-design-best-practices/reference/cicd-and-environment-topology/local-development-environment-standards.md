@@ -1,3 +1,15 @@
+---
+topic: local-development-environment-standards
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Local Development Environment Standards (`astro dev`)
 
 AutoSys development often occurred directly against a shared development database, causing conflicts and preventing offline work. The industry standard for Airflow development is to use the **Astro CLI** to run containerized, isolated environments locally on developer machines [B1][B2].
@@ -39,6 +51,6 @@ Enhance productivity by standardizing IDE setups.
 
 [B1, B3, B4] Astronomer Docs — Develop your Astro project: https://www.astronomer.io/docs/cli/v1.43/develop-project (tier 1)
 [B2, B8, B18] Astronomer Docs — `astro dev init`: https://www.astronomer.io/docs/cli/v1.42/astro-dev-init (tier 1)
-[B6, B7, B10] Astronomer Docs — Astro CLI command reference: https://www.astronomer.io/docs/cli/v1.43/overview (tier 1) — NEEDS_EXEC_CHECK: not independently re-verified that this overview page still lists start/restart/kill/standalone at this URL; confirm before relying on it
+[B6, B7, B10] Astronomer Docs — Astro CLI command reference: https://www.astronomer.io/docs/cli/v1.43/overview (tier 1) — **confirmed**: `astro dev start`, `restart`, `stop`, `kill`, and the `--standalone` flag (including standalone-specific `astro dev stop --standalone`/`restart --standalone` behavior) are all current and documented, verified via astronomer-docs against the current CLI reference (https://www.astronomer.io/docs/cli/v1.45/astro-dev-start#standalone-mode)
 [B11] Astronomer Docs — VS Code Dev Containers integration (no confident Astronomer Docs match found on this pass — verify separately)
 [B16, B17] Astronomer Docs — Manage Airflow connections, variables, and environment variables: https://www.astronomer.io/docs/astro/manage-connections-variables (tier 1)

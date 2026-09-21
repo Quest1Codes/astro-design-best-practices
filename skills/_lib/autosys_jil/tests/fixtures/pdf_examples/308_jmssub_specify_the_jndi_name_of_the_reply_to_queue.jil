@@ -1,0 +1,12 @@
+/* extracted from PDF p.2679: Specify the JNDI Name of the Reply to Queue */
+insert_job: subscriber2
+job_type: JMSSUB
+machine: jms
+connection_factory: ConnectionFactory
+initial_context_factory: com.ibm.websphere.naming.WsnInitialContextFactory
+use_topic: false
+provider_url: "iiop://172.24.0.0:2809"
+destination_name: Queue2
+j2ee_user: cyberuser@host
+correlation_id: publisher2
+request_id: request_id

@@ -1,3 +1,15 @@
+---
+topic: rollback-architecture-during-cutover
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Rollback Architecture During Cutover
 
 A production cutover without a pre-tested, documented rollback plan is a critical risk. The rollback architecture must be executable in **minutes**, not hours — especially for financial batch workloads with hard SLA deadlines.

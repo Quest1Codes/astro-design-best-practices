@@ -1,3 +1,16 @@
+---
+topic: workspace-and-deployment-boundary-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - multi_owner
+---
+
 # Workspace and Deployment Boundary Design
 
 AutoSys classified jobs using two orthogonal JIL attributes: `group` (the owning team / functional domain) and `application` (the cross-cutting business application). Neither maps directly to a folder hierarchy or a security boundary — they were classification tags, not isolation containers. Astro introduces a proper three-level hierarchy that replaces this model with genuine security and resource isolation.
@@ -21,7 +34,7 @@ Organization
 | Scenario | Recommendation | Rationale |
 |---|---|---|
 | Different teams with different code dependencies or security domains | One Deployment per team | Blast radius isolation — one team's buggy DAG cannot corrupt another's metadata DB [B4] |
-| Shared infrastructure, low sensitivity | Multiple teams in one Deployment, using DAG-level RBAC (Astro Runtime 3.1-12+, Enterprise tier+) | Reduces Deployment count but provides only logical separation [B5][B6] |
+| Shared infrastructure, low sensitivity | Multiple teams in one Deployment, using DAG-level RBAC (Astro Runtime 3.1+, Enterprise tier+) | Reduces Deployment count but provides only logical separation [B5][B6] |
 | High compliance or data residency requirements | Dedicated cluster per Workspace | Physical network/infra isolation; required for VPC peering, PrivateLink [B2][B3] |
 
 > **Astronomer's explicit recommendation**: avoid sharing a single Airflow instance across teams with different security or blast-radius requirements; shared deployments create noisy-neighbor risk and allow privileged DAG code to access the shared metadata DB [B4][B5].

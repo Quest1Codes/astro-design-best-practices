@@ -1,3 +1,16 @@
+---
+topic: ticketing-and-itsm-integration-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - svcdesk
+---
+
 # Ticketing and ITSM Integration Design (ServiceNow / PagerDuty)
 
 Replacing AutoSys's built-in alarm/notification system with an enterprise-grade ITSM integration is a common migration requirement. The recommended architecture uses a **hub-and-spoke model**: Airflow fires events to PagerDuty, and PagerDuty syncs to ServiceNow. This avoids brittle point-to-point integration between Airflow and ServiceNow.

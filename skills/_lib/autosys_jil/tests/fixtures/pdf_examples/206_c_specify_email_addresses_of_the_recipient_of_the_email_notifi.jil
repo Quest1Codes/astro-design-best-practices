@@ -1,0 +1,11 @@
+/* extracted from PDF p.2590: Specify Email Addresses of the Recipient of the Email Notification When an Alarm is Raised */
+insert_job: alarm_notification
+machine: localhost
+job_type: c
+command: as_test -t 2
+send_notification:y
+notification_alarm_types: JOBFAILURE, MAXRUNALARM
+notification_template: emailtemplate
+notification_emailaddress_on_alarm :admin@example.com
+notification_emailaddress: email@example.com
+notification_emailaddress_on_failure: email_failure

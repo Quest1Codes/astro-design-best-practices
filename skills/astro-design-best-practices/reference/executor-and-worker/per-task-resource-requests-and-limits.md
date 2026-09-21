@@ -1,3 +1,15 @@
+---
+topic: per-task-resource-requests-and-limits
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Per-Task Resource Requests/Limits (`executor_config`)
 
 AutoSys has no per-job resource request/limit concept comparable to Kubernetes — a job either ran on a machine sized adequately for it (an operational/provisioning concern, decided once per machine) or it didn't. Under KubernetesExecutor, resource sizing becomes a per-task, per-DAG-code concern, which is a real design shift, not just a syntax change.

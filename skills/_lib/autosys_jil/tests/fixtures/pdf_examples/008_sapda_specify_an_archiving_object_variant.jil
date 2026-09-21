@@ -1,0 +1,8 @@
+/* extracted from PDF p.2410: Specify an Archiving Object Variant */
+insert_job: SAPDA_job
+job_type: SAPDA
+machine: sapagent
+owner: WAAESAP@sapagent
+arc_obj_name: BC_ARCHIVE
+arc_obj_variant: BC_ARCVARIANT
+sap_print_parms: dest=LP01,prt_arc_mode=PRINT

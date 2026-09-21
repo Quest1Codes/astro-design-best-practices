@@ -1,0 +1,11 @@
+/* extracted from PDF p.2480: Download a Single File */
+insert_job: FTPDL_SINGLE
+job_type: FTP
+machine: ftpagent
+ftp_server_name: hprsupp
+ftp_server_port: 5222
+ftp_transfer_direction: DOWNLOAD
+ftp_transfer_type: A
+ftp_remote_name: u1/files/ftpdata/textfile
+ftp_local_name: /export/home/ftpfiles/ftpdata/Folder/textfile
+owner: ftpuser@hprsupp

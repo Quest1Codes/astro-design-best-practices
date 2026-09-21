@@ -1,0 +1,9 @@
+/* extracted from PDF p.2705: Specify Print Parameters */
+insert_job: test_SAPDA
+job_class: SAP
+job_type: SAPDA
+machine: sapagent
+owner: WAAESAP@sapserver
+arc_obj_name: BC_ARCHIVE
+arc_obj_variant: PRODUKTIVMODUS
+sap_print_parms: dest=INHYPR502,prt_arc_mode=PRINT,title="testing", num_lines=65,

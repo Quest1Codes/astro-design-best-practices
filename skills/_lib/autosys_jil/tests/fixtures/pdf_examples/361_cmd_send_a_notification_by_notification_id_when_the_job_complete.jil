@@ -1,0 +1,6 @@
+/* extracted from PDF p.2734: Send a Notification by Notification ID When the Job Completes */
+insert_job: email_job_1
+machine: localhost job_type: c
+command: as_test -t 2
+send_notification: 1
+notification_msg: The server appears to be down.

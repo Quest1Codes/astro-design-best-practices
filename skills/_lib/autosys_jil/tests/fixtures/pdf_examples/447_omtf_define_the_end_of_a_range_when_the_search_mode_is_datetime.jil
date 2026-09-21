@@ -1,0 +1,13 @@
+/* extracted from PDF p.2799: Define the End of a Range When the Search Mode is DateTime */
+insert_job: omtf_timedate
+job_type: OMTF
+machine: monagt
+text_file_name: /export/home/logs/transmitter.log
+text_file_filter: transmitted
+text_file_mode: DATETIME
+lower_boundary: "Thu May 20 00:00:00.000 EDT 2010"
+upper_boundary: "Thu May 27 23:59:59.999 EDT 2010"
+time_format: "EEE MMM dd HH:mm:ss.SSS zzz yyyy"
+time_position: 12
+monitor_mode: NOW
+upper_boundary: max_percent

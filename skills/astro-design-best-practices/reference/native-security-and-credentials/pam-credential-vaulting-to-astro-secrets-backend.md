@@ -1,3 +1,16 @@
+---
+topic: pam-credential-vaulting-to-astro-secrets-backend
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - credential_hits
+---
+
 # PAM Credential-Vaulting Integration → Astro Secrets-Backend Design
 
 AutoSys integrated with **Symantec/Broadcom PAM (Privileged Access Manager)** as its credential vault for job-execution credentials. PAM stored the privileged passwords used by AutoSys agent processes to authenticate to databases, APIs, and remote systems during job execution — preventing credentials from being embedded in JIL or shell scripts [B1].

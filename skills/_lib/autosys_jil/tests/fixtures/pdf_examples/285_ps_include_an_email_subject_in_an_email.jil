@@ -1,0 +1,12 @@
+/* extracted from PDF p.2664: Include an Email Subject in an Email */
+insert_job: ps_email
+job_type: PS
+machine: psagt
+ps_process_name: XRFWIN
+ps_process_type: Crystal
+ps_dest_type: EMAIL
+ps_dest_format: PDF
+ps_operator_id: VP2@ps1
+ps_email_address: user1@example.com;user2@example.com
+ps_email_subject: PeopleSoft Report Status
+ps_email_text: This report is available for distribution.

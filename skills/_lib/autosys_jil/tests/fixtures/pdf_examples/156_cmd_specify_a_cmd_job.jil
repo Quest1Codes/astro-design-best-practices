@@ -1,0 +1,6 @@
+/* extracted from PDF p.2552: Specify a CMD Job */
+insert_job: cmd_job1
+job_type: CMD
+machine: unixprod
+command: "/usr/scripts/calcproc.sh"
+lower_boundary: start_range

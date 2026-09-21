@@ -1,0 +1,7 @@
+/* extracted from PDF p.2516: Specify the Printer and Output Queue for an i5/OS Job */
+insert_job: i5job_lib
+job_type: I5
+machine: i5agent
+i5_action: RUN_PROGRAM
+i5_name: PAYJOB
+i5_others: PRTDEV=*JOBD,OUTQ=*JOBD

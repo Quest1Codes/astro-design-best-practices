@@ -1,3 +1,16 @@
+---
+topic: variables-vs-connections-vs-secrets-backend-decision-framework
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - credential_hits
+---
+
 # Variables vs. Connections vs. Secrets Backend Decision Framework
 
 In AutoSys, everything from file paths to database passwords was often stored in global variables (`%%VAR%%`), leading to security and management issues. Airflow distinguishes between configuration and credentials, and Astronomer adds enterprise-grade secrets management.
@@ -18,8 +31,9 @@ Use this decision table to map legacy global variables to the correct Airflow me
 
 When the same key exists in multiple places, Airflow resolves them in this order (highest to lowest):
 1. **Secrets Backend**
-2. **Environment Variables**
-3. **Airflow Metadata Database** (Variables/Connections set in the UI) [B1]
+2. **Astro Environment Manager**
+3. **Environment Variables**
+4. **Airflow Metadata Database** (Variables/Connections set in the UI) [B4]
 
 > **Security Callout**: While you *can* store Connections and Variables in the Airflow UI, doing so stores them in the metadata database. For production, **always** use a Secrets Backend for sensitive data [B2].
 

@@ -1,3 +1,15 @@
+---
+topic: dag-parsing-performance-budget
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # DAG Parsing Performance Budget
 
 AutoSys has no equivalent concept — job/box definitions live in the Event Server as data and are read on demand by the scheduler, not re-parsed as code on a fixed interval. Every AutoSys estate migrating to Airflow inherits a genuinely new operational concern: DAG files are Python, and Python gets re-executed on a schedule just to discover what DAGs exist.
@@ -25,4 +37,4 @@ This directly follows from the DAG-factory pattern (`dag-factory-pattern-for-lar
 
 - [F1] Astronomer Docs — DAG writing best practices (`min_file_process_interval`): https://www.astronomer.io/docs/learn/dag-best-practices (tier 1)
 - [F2] Apache Airflow docs — Best Practices (top-level code / external-call guidance): https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html (tier 2)
-- [F3] Astronomer Docs — rightsizing Airflow on Astro (`parsing_processes` sizing, ~2x vCPUs) — corrected citation, per Critic pass: not on the `dag-best-practices` page it was originally attributed to: https://www.astronomer.io/docs/astro/best-practices/rightsize-airflow-on-astro (tier 1)
+- [F3] Astronomer Docs — Airflow scaling: workers/scheduler settings ("Astronomer recommends setting a value that is twice your available vCPUs" for `parsing_processes`) — corrected citation: this claim lives on the scaling-workers page, not the rightsize-Airflow-on-Astro page it was previously attributed to: https://www.astronomer.io/docs/learn/airflow-scaling-workers#scheduler-settings (tier 1, confirmed via astronomer-docs verification)

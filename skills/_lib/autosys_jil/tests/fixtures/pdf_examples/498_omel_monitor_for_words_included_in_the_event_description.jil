@@ -1,0 +1,8 @@
+/* extracted from PDF p.2827: Monitor for Words Included in the Event Description */
+insert_job: eventlog_job2
+job_type: OMEL
+machine: monagt
+win_log_name: Application
+win_event_type: INFO
+win_event_description: "Normal shutdown"
+win_event_id: id

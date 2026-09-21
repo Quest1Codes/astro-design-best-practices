@@ -1,0 +1,8 @@
+/* extracted from PDF p.2627: Copy a Single Request Job and Override the User Name */
+insert_job: oacopy_single
+job_type: oacopy
+machine: oaagent
+request_id: 2255470
+oracle_user: SYSADMIN
+oracle_resp: System Administrator
+os_user: os_userid@identifier

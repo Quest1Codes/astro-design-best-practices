@@ -1,0 +1,5 @@
+/* extracted from PDF p.2434: Remove All Files from a Subdirectory on Windows */
+insert_job: win_remove
+job_type: CMD
+machine: winagent
+command: c\:\WINDOWS\system32\cmd.exe "/c del /s /q $${MY_BACKUPS}\tmp\*.*"

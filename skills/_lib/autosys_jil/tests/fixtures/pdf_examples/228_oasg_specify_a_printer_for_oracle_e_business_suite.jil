@@ -1,0 +1,13 @@
+/* extracted from PDF p.2611: Specify a Printer for Oracle E-Business Suite */
+insert_job: oasg_short
+job_type: oasg
+machine: oaagent
+oracle_appl_name_type: SHORT
+oracle_appl_name: ACCOUNTS
+oracle_program: FNDSCARU
+oracle_user: SYSADMIN
+oracle_resp: System Administrator
+oracle_printer:Q_DEVELOPMENT
+oracle_print_style: PORTRAIT
+oracle_print_copies: 15
+oracle_program: program_short_name | program_display_name

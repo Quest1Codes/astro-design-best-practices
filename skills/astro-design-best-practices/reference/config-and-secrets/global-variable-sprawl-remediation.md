@@ -1,3 +1,15 @@
+---
+topic: global-variable-sprawl-remediation
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Global-Variable-Sprawl Remediation
 
 AutoSys deployments often heavily relied on global `%%VAR%%` patterns. A common migration trap is executing a "lift-and-shift," creating thousands of Airflow Variables to replicate this flat, global state. 

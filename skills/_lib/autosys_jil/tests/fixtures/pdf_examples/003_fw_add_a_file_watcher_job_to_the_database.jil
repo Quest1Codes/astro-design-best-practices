@@ -1,0 +1,5 @@
+/* extracted from PDF p.2403: Add a File Watcher Job to the Database */
+insert_job: EOD_batch_watch
+job_type: fw
+machine: prod
+watch_file: "C:\myapps\EOD_batch.bat"

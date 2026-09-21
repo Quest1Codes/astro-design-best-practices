@@ -1,0 +1,6 @@
+/* extracted from PDF p.2543: Specify a JCL Member Using a Fully Qualified Partitioned Data Set Name */
+insert_job: ZOS_TAPE_JOB
+job_type: ZOS
+machine: ZOS1
+jcl_library: CYBDL01.JCLLIB(CYBBR14)
+jcl_member: CYBTS004

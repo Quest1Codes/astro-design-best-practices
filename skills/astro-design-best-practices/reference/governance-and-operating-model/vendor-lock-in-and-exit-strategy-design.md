@@ -1,3 +1,15 @@
+---
+topic: vendor-lock-in-and-exit-strategy-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Vendor Lock-In and Exit-Strategy Design
 
 Choosing Airflow was partly motivated by avoiding AutoSys's proprietary lock-in. But "Airflow" is not the same as "portable Airflow." Astronomer-specific features, cloud-native operator dependencies, and managed metadata create their own lock-in vectors. An explicit exit strategy preserves negotiating leverage and protects the investment in pipeline code.

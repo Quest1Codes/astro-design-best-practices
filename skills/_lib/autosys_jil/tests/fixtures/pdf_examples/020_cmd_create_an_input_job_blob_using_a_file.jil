@@ -1,0 +1,8 @@
+/* extracted from PDF p.2419: Create an Input Job Blob Using a File */
+insert_job: test_blob
+job_type: CMD
+machine: unixagent
+command: cat
+blob_file: /blob_input_file.txt
+std_in_file: $$blobt
+owner: produser@unixagent

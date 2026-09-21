@@ -1,0 +1,19 @@
+/* synthetic fixture: insert -> update -> override on the same job, exercising
+   parser.py's provenance/modified_by/overrides semantics [AS p.2400 override_job]. */
+insert_job: monthly_close
+job_type: CMD
+machine: fin-app01
+command: /scripts/fin/monthly_close.sh
+owner: fin_ops@bank.com
+permission:
+n_retrys: 1
+date_conditions: 1
+days_of_week: all
+start_times: "23:00"
+
+update_job: monthly_close
+n_retrys: 3
+max_run_alarm: 120
+
+override_job: monthly_close
+command: /scripts/fin/monthly_close.sh --skip-reconciliation

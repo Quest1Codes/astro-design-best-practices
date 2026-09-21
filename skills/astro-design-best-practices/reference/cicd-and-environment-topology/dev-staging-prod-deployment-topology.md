@@ -1,3 +1,15 @@
+---
+topic: dev-staging-prod-deployment-topology
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Dev/Staging/Prod Deployment Topology
 
 AutoSys instances were typically massive, shared environments. "Dev" and "Prod" were entirely different physical servers, often shared by the entire enterprise. Airflow is not natively multi-tenant; a single bad DAG in a shared environment can crash the scheduler for everyone.

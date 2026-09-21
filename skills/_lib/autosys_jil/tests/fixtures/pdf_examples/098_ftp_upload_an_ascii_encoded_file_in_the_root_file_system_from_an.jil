@@ -1,0 +1,11 @@
+/* extracted from PDF p.2488: Upload an ASCII-encoded File in the Root File System from an i5/OS System to a UNIX System */
+insert_job: UPLOAD_i5
+job_type: FTP
+machine: I5AGENT
+ftp_server_name: hpunix
+ftp_server_port: 5222
+ftp_transfer_direction: UPLOAD
+ftp_transfer_type: A
+ftp_remote_name: /u1/ftpfiles/ftpdata/textdoc
+ftp_local_name: /home/ftp/textdoc
+owner: test@hpunix

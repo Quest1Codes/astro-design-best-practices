@@ -1,0 +1,6 @@
+/* extracted from PDF p.2506: Specify the Interval for a Job that Sends a Heartbeat Every Two Minutes */
+insert_job: cplusplus_program
+job_type: CMD
+machine: unixagent
+command: /usr/common/backup
+heartbeat_interval: 2

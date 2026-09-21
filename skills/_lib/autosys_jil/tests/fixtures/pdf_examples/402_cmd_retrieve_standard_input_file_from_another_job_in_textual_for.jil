@@ -1,0 +1,6 @@
+/* extracted from PDF p.2765: Retrieve Standard Input File from Another Job in Textual Format */
+insert_job: report_post_job1
+job_type: CMD
+command: my_other_application
+machine: WinProd1
+std_in_file: $$blobt.report_job1

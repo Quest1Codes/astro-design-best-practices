@@ -1,3 +1,15 @@
+---
+topic: job-history-audit-trail-to-metadata-db-migration
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Job-History/Audit-Trail Source Inventory → Astro Metadata-DB Audit/History Migration Design
 
 AutoSys job history and audit trails live in the Event Server database (Oracle, SQL Server, Sybase, or PostgreSQL). The primary tables are job run history records (status, start/end time, exit code, run machine) and audit log entries (who did what via `jil`, `sendevent`, WCC). This data is managed by the **`DBMaint` utility**, which prunes old records on a configurable retention schedule [B1].

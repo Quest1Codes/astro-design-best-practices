@@ -1,3 +1,15 @@
+---
+topic: edi-and-file-transfer-integration-patterns
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # EDI and File-Transfer Integration Patterns
 
 EDI (Electronic Data Interchange) and managed file transfer (MFT) were core batch workloads in AutoSys environments — typically manifesting as JCL steps running FTP/SFTP transfers followed by downstream processing. In Airflow, Airflow handles the orchestration and monitoring; a dedicated MFT layer or cloud-native transfer service handles the actual file mechanics.

@@ -1,3 +1,15 @@
+---
+topic: autoscaling-cost-optimization-patterns
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Autoscaling Cost-Optimization Patterns
 
 Astro's worker autoscaling is a managed, built-in capability — you do not configure KEDA manually on Astro Cloud. Understanding how the autoscaler behaves and how to design around its edge cases is essential for both cost optimization and pipeline reliability.
@@ -9,7 +21,7 @@ Astro's worker autoscaling is a managed, built-in capability — you do not conf
 - You set **minimum** and **maximum** worker counts per worker queue in the Deployment configuration [B1].
 - KEDA is the underlying mechanism on Astro's Kubernetes infrastructure, but it is fully managed — no user configuration required [B1].
 
-> **Note for Astro Private Cloud / Self-Hosted**: If you manage your own Kubernetes deployment, enable KEDA via `workers.celery.keda.enabled=true` in your Helm values. Do **not** enable both KEDA and HPA for the same workload — they will compete and cause erratic scaling [B2].
+> **Note for Astro Private Cloud / Self-Hosted**: If you manage your own Kubernetes deployment, KEDA-based worker autoscaling is enabled via the **`updateDeploymentKedaConfig` GraphQL mutation** — not a Helm value. **Correction**: an earlier draft of this file cited a Helm value (`workers.celery.keda.enabled=true`) as the enablement mechanism; this is wrong and has been removed. Do **not** enable both KEDA and HPA for the same workload — they will compete and cause erratic scaling [B2].
 
 ## Cost-Optimization Patterns
 
@@ -45,4 +57,4 @@ Deferrable Operators release worker slots while waiting for external conditions 
 ## Sources
 
 [B1] Astronomer Docs — Celery worker autoscaling logic (queued+running/concurrency formula, KEDA-driven scale-to-zero via minimum worker count): https://www.astronomer.io/docs/astro/celery-executor#celery-worker-autoscaling-logic (tier 1, added on doc-verification review); Deferrable Operators: https://www.astronomer.io/docs/learn/deferrable-operators (tier 1, added on doc-verification review)
-[B2] Astronomer Docs — Autoscale workers with KEDA (Private Cloud `updateDeploymentKedaConfig`): https://www.astronomer.io/docs/astro-private-cloud/v-2-x/scale-airflow-resources#autoscale-workers-with-keda (tier 1, added on doc-verification review) — **NEEDS_EXEC_CHECK**: the specific config key `workers.celery.keda.enabled` and an explicit "HPA/KEDA conflict" warning were not found verbatim on this pass; this page is the closest confirmed match for KEDA-based Celery worker autoscaling, but re-verify the exact parameter name before citing it in a config example.
+[B2] Astronomer Docs — Autoscale workers with KEDA (Private Cloud, enabled via the `updateDeploymentKedaConfig` GraphQL mutation, confirmed — not a Helm value): https://www.astronomer.io/docs/astro-private-cloud/v-2-x/scale-airflow-resources#autoscale-workers-with-keda (tier 1, confirmed via astronomer-docs verification, corrects the earlier Helm-key claim above)

@@ -1,3 +1,15 @@
+---
+topic: sso-oauth-integration-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # SSO / OAuth Integration Design
 
 AutoSys authentication was typically OS-level (PAM, LDAP, or AD) or EEM-managed. Astro uses a cloud-native identity model: SAML 2.0 for SSO and SCIM 2.0 for automated user lifecycle management.

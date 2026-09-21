@@ -1,0 +1,5 @@
+/* extracted from PDF p.2431: Run a Script on UNIX */
+insert_job: unix_script
+job_type: CMD
+machine: unixagent
+command: /usr/common/backup

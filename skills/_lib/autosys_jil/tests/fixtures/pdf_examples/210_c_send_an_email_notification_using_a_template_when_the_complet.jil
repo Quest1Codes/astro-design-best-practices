@@ -1,0 +1,9 @@
+/* extracted from PDF p.2596: Send an Email Notification Using a Template When the Completes Successfully */
+insert_job: email_job_2
+machine: localhost
+job_type: c
+command: as_test -t 2
+send_notification: y
+notification_emailaddress: admin@example.com
+notification_emailaddress_on_success: user@example.com
+notification_template: emailtemplate

@@ -1,0 +1,9 @@
+/* extracted from PDF p.2782: Monitor a File for a String */
+insert_job: textfile_job1
+job_type: OMTF
+machine: monagt
+text_file_name: DATA SOURCE NAME
+text_file_filter: "EVENT ""COMPUTER() "
+text_file_mode: LINE
+lower_boundary: 123
+upper_boundary: 876

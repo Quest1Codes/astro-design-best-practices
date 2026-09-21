@@ -1,3 +1,16 @@
+---
+topic: audit-trail-immutability-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - sox
+---
+
 # Audit-Trail Immutability Design
 
 Airflow's metadata database tracks every task run, DAG run, and user action — but this data is mutable by default. For SOX, AML, and other regulatory frameworks, "immutability" must be achieved architecturally, not assumed from the platform. This file describes how to design a defensible, tamper-proof audit trail on Astro.

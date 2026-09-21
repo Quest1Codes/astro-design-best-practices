@@ -1,0 +1,12 @@
+/* extracted from PDF p.2555: Specify a Lower Boundary of 8 GB for Monitoring Available Disk Space */
+insert_job: omd_unix
+job_type: OMD
+machine: unixagt
+disk_drive: /export/home
+disk_space: FREE
+disk_format: GB
+lower_boundary: 8
+upper_boundary: 10
+inside_range: TRUE
+no_change: 15
+mac_address: xx-xx-xx-xx-xx-xx

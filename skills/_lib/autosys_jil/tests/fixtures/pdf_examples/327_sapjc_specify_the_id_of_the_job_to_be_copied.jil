@@ -1,0 +1,8 @@
+/* extracted from PDF p.2699: Specify the ID of the Job to be Copied */
+insert_job: SAPJC_job
+job_type: SAPJC
+owner: WAAESAP@sapagent
+machine: sapagent
+sap_job_name: AM
+sap_job_count: 113315AM
+sap_job_name: job_name

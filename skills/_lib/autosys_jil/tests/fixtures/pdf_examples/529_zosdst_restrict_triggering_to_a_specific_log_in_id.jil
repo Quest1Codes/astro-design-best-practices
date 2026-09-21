@@ -1,0 +1,10 @@
+/* extracted from PDF p.2853: Restrict Triggering to a Specific Log In ID */
+insert_job: CYBER.XFER
+job_type: ZOSDST
+machine: ZOS1
+owner: CYBDL01
+zos_dataset: CYBER.XFER.001
+zos_ftp_direction: RECEIVE
+zos_ftp_host: 172.16.0.0
+zos_ftp_userid: CYBER005
+zos_jobname: name

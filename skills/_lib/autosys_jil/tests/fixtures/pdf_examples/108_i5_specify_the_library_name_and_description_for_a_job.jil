@@ -1,0 +1,9 @@
+/* extracted from PDF p.2510: Specify the Library Name and Description for a Job */
+insert_job: i5job_lib
+job_type: I5
+machine: i5agent
+i5_action: RUN_PROGRAM
+i5_name: MFGDATA
+i5_curr_lib: PAY1
+i5_job_desc: CYB1/DFTJOBD
+i5_job_name: job_name

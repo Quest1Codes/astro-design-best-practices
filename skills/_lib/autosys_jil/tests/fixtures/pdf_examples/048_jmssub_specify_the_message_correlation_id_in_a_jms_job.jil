@@ -1,0 +1,11 @@
+/* extracted from PDF p.2450: Specify the Message Correlation ID in a JMS Job */
+insert_job: jmssub3
+job_type: JMSSUB
+machine: jms
+owner: weblogic@mach
+connection_factory: weblogic.examples.jms.QueueConnectionFactory
+initial_context_factory: weblogic.jndi.WLInitialContextFactory
+use_topic: false
+provider_url: "t3://jms_server:7001"
+destination_name: weblogic.examples.jms.exampleQueue
+correlation_id: jms_corr_id

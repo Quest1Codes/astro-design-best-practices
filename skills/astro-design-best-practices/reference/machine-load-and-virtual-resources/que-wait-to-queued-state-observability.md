@@ -1,3 +1,16 @@
+---
+topic: que-wait-to-queued-state-observability
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - job_load_present
+---
+
 # QUE_WAIT Visibility and Queue-Depth Monitoring → Airflow Queued-State Observability
 
 In AutoSys, `QUE_WAIT` is an explicit, named job status that appears in the UI and `autorep` output — it tells an operator immediately that a specific job is waiting because the target machine has no available load capacity. The operator can also use `autorep -Q <job_name> -n` to see *why* the job is queued (which machine, which resource) [B1].

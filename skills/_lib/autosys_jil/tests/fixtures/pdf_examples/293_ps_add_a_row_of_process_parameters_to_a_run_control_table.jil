@@ -1,0 +1,11 @@
+/* extracted from PDF p.2671: Add a Row of Process Parameters to a Run Control Table */
+insert_job: ps_params
+job_type: ps
+machine: psagent
+ps_process_name: XYZ
+ps_process_type: Application Engine
+owner: VP1@server01
+ps_run_cntrl_id: TEST
+ps_run_control_table: PS_AEREQUESTTBL
+ps_run_cntrl_args: BI_WF_0001, 0, O, N, 0, N, , "b\", sysdate
+ps_run_cntrl_id: control_id

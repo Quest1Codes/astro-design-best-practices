@@ -1,0 +1,12 @@
+/* extracted from PDF p.2720: Specify the Name of a Job to Copy */
+insert_job: test_SAPJC_2
+job_class: SAP
+job_type: SAPJC
+machine: sapagent
+owner: WAAESAP@sapserver
+sap_job_name: AM
+sap_job_count: 11331500
+sap_release_option: I
+sap_target_jobname: "SAPJC_DUP"
+group: SAPJC
+sap_target_sys: application_server

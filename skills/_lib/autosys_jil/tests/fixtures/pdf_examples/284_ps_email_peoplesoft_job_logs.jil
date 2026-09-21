@@ -1,0 +1,13 @@
+/* extracted from PDF p.2663: Email PeopleSoft Job Logs */
+insert_job: ps_logs
+job_type: PS
+machine: psagt
+ps_process_name: XRFWIN
+ps_process_type: Crystal
+ps_dest_type: EMAIL
+ps_dest_format: PDF
+ps_dlist_users: VP1
+owner: VP2@server01
+ps_email_subject: PeopleSoft Report Logs
+ps_email_text: This report is available for distribution.
+ps_email_log: YES

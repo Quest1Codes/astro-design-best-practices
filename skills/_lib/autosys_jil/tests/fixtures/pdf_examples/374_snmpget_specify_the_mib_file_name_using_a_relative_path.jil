@@ -1,0 +1,11 @@
+/* extracted from PDF p.2742: Specify the MIB File Name Using a Relative Path */
+insert_job: getvarv2
+job_type: SNMPGET
+machine: snmpagent
+snmp_mib: cybermation.mib
+snmp_host: host.example.com
+snmp_oid: agentVersion
+port: 161
+snmp_version: 2
+snmp_comm_string: public
+snmp_oid: oid

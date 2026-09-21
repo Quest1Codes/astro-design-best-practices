@@ -1,3 +1,15 @@
+---
+topic: environment-promotion-process
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Environment Promotion Process
 
 In legacy schedulers like AutoSys, promoting a job meant extracting JIL from the dev environment and importing it into prod, often requiring manual tweaks to machine names or file paths. In Astro, promotion relies on immutable container images and strict Git-based promotion.

@@ -1,0 +1,8 @@
+/* extracted from PDF p.2820: Monitor a Remote Windows File */
+insert_job: ft_job
+job_type: FT
+machine: winagent
+watch_file: \\CYBNT\MyDesktop\notify.txt
+watch_file_type: EXIST
+watch_file_win_user: CYBDOM\JDOE
+watch_interval: seconds

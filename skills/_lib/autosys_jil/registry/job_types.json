@@ -1,0 +1,521 @@
+{
+  "BOX": {
+    "aliases": [
+      "b"
+    ],
+    "family": "core",
+    "in_12_0_doc": true,
+    "name": "Box",
+    "pdf_page": 2551,
+    "translation_ref": "core-cmd-box.md"
+  },
+  "CMD": {
+    "aliases": [
+      "c"
+    ],
+    "family": "core",
+    "in_12_0_doc": true,
+    "name": "Command",
+    "pdf_page": 2551,
+    "translation_ref": "core-cmd-box.md"
+  },
+  "CMDMACHINE": {
+    "aliases": [],
+    "family": "core",
+    "in_12_0_doc": false,
+    "name": "Command (machine-selected at run time)",
+    "pdf_page": null,
+    "translation_ref": "core-cmd-box.md"
+  },
+  "DBMON": {
+    "aliases": [],
+    "family": "database",
+    "in_12_0_doc": true,
+    "name": "Database Monitor",
+    "pdf_page": 2551,
+    "translation_ref": "database-sql-dbproc-dbmon-dbtrig-sqlagent.md"
+  },
+  "DBPROC": {
+    "aliases": [],
+    "family": "database",
+    "in_12_0_doc": true,
+    "name": "Database Stored Procedure",
+    "pdf_page": 2551,
+    "translation_ref": "database-sql-dbproc-dbmon-dbtrig-sqlagent.md"
+  },
+  "DBTRIG": {
+    "aliases": [],
+    "family": "database",
+    "in_12_0_doc": true,
+    "name": "Database Trigger",
+    "pdf_page": 2551,
+    "translation_ref": "database-sql-dbproc-dbmon-dbtrig-sqlagent.md"
+  },
+  "ENTYBEAN": {
+    "aliases": [],
+    "family": "java",
+    "in_12_0_doc": true,
+    "name": "Entity Bean",
+    "pdf_page": 2551,
+    "translation_ref": "java-pojo-ejb-rmi.md"
+  },
+  "FT": {
+    "aliases": [],
+    "family": "file-watch",
+    "in_12_0_doc": true,
+    "name": "File Trigger",
+    "pdf_page": 2551,
+    "translation_ref": "file-watch-and-trigger-fw-ft.md"
+  },
+  "FTP": {
+    "aliases": [],
+    "family": "file-transfer",
+    "in_12_0_doc": true,
+    "name": "File Transfer Protocol",
+    "pdf_page": 2551,
+    "translation_ref": "file-transfer-ftp-scp.md"
+  },
+  "FW": {
+    "aliases": [
+      "f"
+    ],
+    "family": "file-watch",
+    "in_12_0_doc": true,
+    "name": "File Watcher",
+    "pdf_page": 2551,
+    "translation_ref": "file-watch-and-trigger-fw-ft.md"
+  },
+  "HDFS": {
+    "aliases": [],
+    "family": "hadoop",
+    "in_12_0_doc": true,
+    "name": "Hadoop HDFS",
+    "pdf_page": 2551,
+    "translation_ref": "hadoop-hdfs-hive-pig-oozie-sqoop.md"
+  },
+  "HIVE": {
+    "aliases": [],
+    "family": "hadoop",
+    "in_12_0_doc": true,
+    "name": "Hadoop Hive",
+    "pdf_page": 2551,
+    "translation_ref": "hadoop-hdfs-hive-pig-oozie-sqoop.md"
+  },
+  "HTTP": {
+    "aliases": [],
+    "family": "web-messaging",
+    "in_12_0_doc": true,
+    "name": "HTTP",
+    "pdf_page": 2551,
+    "translation_ref": "web-and-messaging-http-wbsvc-wsdoc-jms-jmx-snmp.md"
+  },
+  "I5": {
+    "aliases": [],
+    "family": "platform",
+    "in_12_0_doc": true,
+    "name": "i5/OS",
+    "pdf_page": 2551,
+    "translation_ref": "platform-i5-zos-microfocus-proxy-wol.md"
+  },
+  "INFORMATICA": {
+    "aliases": [],
+    "family": "pam-informatica",
+    "in_12_0_doc": true,
+    "name": "Informatica",
+    "pdf_page": 2551,
+    "translation_ref": "pam-and-informatica.md"
+  },
+  "JAVARMI": {
+    "aliases": [],
+    "family": "java",
+    "in_12_0_doc": true,
+    "name": "Java Remote Method Invocation",
+    "pdf_page": 2551,
+    "translation_ref": "java-pojo-ejb-rmi.md"
+  },
+  "JMSPUB": {
+    "aliases": [],
+    "family": "web-messaging",
+    "in_12_0_doc": true,
+    "name": "JMS Publish",
+    "pdf_page": 2551,
+    "translation_ref": "web-and-messaging-http-wbsvc-wsdoc-jms-jmx-snmp.md"
+  },
+  "JMSSUB": {
+    "aliases": [],
+    "family": "web-messaging",
+    "in_12_0_doc": true,
+    "name": "JMS Subscribe",
+    "pdf_page": 2551,
+    "translation_ref": "web-and-messaging-http-wbsvc-wsdoc-jms-jmx-snmp.md"
+  },
+  "JMXMAG": {
+    "aliases": [],
+    "family": "web-messaging",
+    "in_12_0_doc": true,
+    "name": "JMX-MBean Attribute Get",
+    "pdf_page": 2551,
+    "translation_ref": "web-and-messaging-http-wbsvc-wsdoc-jms-jmx-snmp.md"
+  },
+  "JMXMAS": {
+    "aliases": [],
+    "family": "web-messaging",
+    "in_12_0_doc": true,
+    "name": "JMX-MBean Attribute Set",
+    "pdf_page": 2551,
+    "translation_ref": "web-and-messaging-http-wbsvc-wsdoc-jms-jmx-snmp.md"
+  },
+  "JMXMC": {
+    "aliases": [],
+    "family": "web-messaging",
+    "in_12_0_doc": true,
+    "name": "JMX-MBean Create Instance",
+    "pdf_page": 2551,
+    "translation_ref": "web-and-messaging-http-wbsvc-wsdoc-jms-jmx-snmp.md"
+  },
+  "JMXMOP": {
+    "aliases": [],
+    "family": "web-messaging",
+    "in_12_0_doc": true,
+    "name": "JMX-MBean Operation",
+    "pdf_page": 2551,
+    "translation_ref": "web-and-messaging-http-wbsvc-wsdoc-jms-jmx-snmp.md"
+  },
+  "JMXMREM": {
+    "aliases": [],
+    "family": "web-messaging",
+    "in_12_0_doc": true,
+    "name": "JMX-MBean Remove Instance",
+    "pdf_page": 2551,
+    "translation_ref": "web-and-messaging-http-wbsvc-wsdoc-jms-jmx-snmp.md"
+  },
+  "JMXSUB": {
+    "aliases": [],
+    "family": "web-messaging",
+    "in_12_0_doc": true,
+    "name": "JMX-MBean Subscribe",
+    "pdf_page": 2551,
+    "translation_ref": "web-and-messaging-http-wbsvc-wsdoc-jms-jmx-snmp.md"
+  },
+  "K8S": {
+    "aliases": [],
+    "family": "platform",
+    "in_12_0_doc": false,
+    "name": "Kubernetes container job (12.1+)",
+    "note": "Introduced after 12.0; see astro-design-best-practices cluster 19 (confidence: mixed).",
+    "pdf_page": null,
+    "translation_ref": "platform-i5-zos-microfocus-proxy-wol.md"
+  },
+  "MICROFOCUS": {
+    "aliases": [],
+    "family": "platform",
+    "in_12_0_doc": true,
+    "name": "Micro Focus",
+    "pdf_page": 2551,
+    "translation_ref": "platform-i5-zos-microfocus-proxy-wol.md"
+  },
+  "OACOPY": {
+    "aliases": [],
+    "family": "erp",
+    "in_12_0_doc": true,
+    "name": "Oracle E-Business Suite Copy Single Request",
+    "pdf_page": 2551,
+    "translation_ref": "erp-sap-ps-oracle-ebs.md"
+  },
+  "OASET": {
+    "aliases": [],
+    "family": "erp",
+    "in_12_0_doc": true,
+    "name": "Oracle E-Business Suite Request Set",
+    "pdf_page": 2551,
+    "translation_ref": "erp-sap-ps-oracle-ebs.md"
+  },
+  "OASG": {
+    "aliases": [],
+    "family": "erp",
+    "in_12_0_doc": true,
+    "name": "Oracle E-Business Suite Single Request",
+    "pdf_page": 2551,
+    "translation_ref": "erp-sap-ps-oracle-ebs.md"
+  },
+  "OMCPU": {
+    "aliases": [],
+    "family": "os-monitor",
+    "in_12_0_doc": true,
+    "name": "CPU Monitoring",
+    "pdf_page": 2551,
+    "translation_ref": "os-monitors-om.md"
+  },
+  "OMD": {
+    "aliases": [],
+    "family": "os-monitor",
+    "in_12_0_doc": true,
+    "name": "Disk Monitoring",
+    "pdf_page": 2551,
+    "translation_ref": "os-monitors-om.md"
+  },
+  "OMEL": {
+    "aliases": [],
+    "family": "os-monitor",
+    "in_12_0_doc": true,
+    "name": "Windows Event Log Monitoring",
+    "pdf_page": 2551,
+    "translation_ref": "os-monitors-om.md"
+  },
+  "OMIP": {
+    "aliases": [],
+    "family": "os-monitor",
+    "in_12_0_doc": true,
+    "name": "IP Monitoring",
+    "pdf_page": 2551,
+    "translation_ref": "os-monitors-om.md"
+  },
+  "OMP": {
+    "aliases": [],
+    "family": "os-monitor",
+    "in_12_0_doc": true,
+    "name": "Process Monitoring",
+    "pdf_page": 2551,
+    "translation_ref": "os-monitors-om.md"
+  },
+  "OMS": {
+    "aliases": [],
+    "family": "os-monitor",
+    "in_12_0_doc": true,
+    "name": "Windows Service Monitoring",
+    "pdf_page": 2551,
+    "translation_ref": "os-monitors-om.md"
+  },
+  "OMTF": {
+    "aliases": [],
+    "family": "os-monitor",
+    "in_12_0_doc": true,
+    "name": "Text File Reading and Monitoring",
+    "pdf_page": 2551,
+    "translation_ref": "os-monitors-om.md"
+  },
+  "OOZIE": {
+    "aliases": [],
+    "family": "hadoop",
+    "in_12_0_doc": true,
+    "name": "Hadoop Oozie Workflow",
+    "pdf_page": 2551,
+    "translation_ref": "hadoop-hdfs-hive-pig-oozie-sqoop.md"
+  },
+  "PAPROC": {
+    "aliases": [],
+    "family": "pam-informatica",
+    "in_12_0_doc": true,
+    "name": "Process Automation Process Execution",
+    "pdf_page": 2551,
+    "translation_ref": "pam-and-informatica.md"
+  },
+  "PAREQ": {
+    "aliases": [],
+    "family": "pam-informatica",
+    "in_12_0_doc": true,
+    "name": "Process Automation Start Request Form",
+    "pdf_page": 2551,
+    "translation_ref": "pam-and-informatica.md"
+  },
+  "PIG": {
+    "aliases": [],
+    "family": "hadoop",
+    "in_12_0_doc": true,
+    "name": "Hadoop Pig",
+    "pdf_page": 2551,
+    "translation_ref": "hadoop-hdfs-hive-pig-oozie-sqoop.md"
+  },
+  "POJO": {
+    "aliases": [],
+    "family": "java",
+    "in_12_0_doc": true,
+    "name": "Plain Old Java Object",
+    "pdf_page": 2551,
+    "translation_ref": "java-pojo-ejb-rmi.md"
+  },
+  "PROXY": {
+    "aliases": [],
+    "family": "platform",
+    "in_12_0_doc": true,
+    "name": "Remote Execution",
+    "pdf_page": 2551,
+    "translation_ref": "platform-i5-zos-microfocus-proxy-wol.md"
+  },
+  "PS": {
+    "aliases": [],
+    "family": "erp",
+    "in_12_0_doc": true,
+    "name": "PeopleSoft",
+    "pdf_page": 2551,
+    "translation_ref": "erp-sap-ps-oracle-ebs.md"
+  },
+  "SAP": {
+    "aliases": [],
+    "family": "erp",
+    "in_12_0_doc": true,
+    "name": "SAP R/3",
+    "pdf_page": 2551,
+    "translation_ref": "erp-sap-ps-oracle-ebs.md"
+  },
+  "SAPBDC": {
+    "aliases": [],
+    "family": "erp",
+    "in_12_0_doc": true,
+    "name": "SAP Batch Input Session",
+    "pdf_page": 2551,
+    "translation_ref": "erp-sap-ps-oracle-ebs.md"
+  },
+  "SAPBWIP": {
+    "aliases": [],
+    "family": "erp",
+    "in_12_0_doc": true,
+    "name": "SAP BW InfoPackage",
+    "pdf_page": 2551,
+    "translation_ref": "erp-sap-ps-oracle-ebs.md"
+  },
+  "SAPBWPC": {
+    "aliases": [],
+    "family": "erp",
+    "in_12_0_doc": true,
+    "name": "SAP BW Process Chain",
+    "pdf_page": 2551,
+    "translation_ref": "erp-sap-ps-oracle-ebs.md"
+  },
+  "SAPDA": {
+    "aliases": [],
+    "family": "erp",
+    "in_12_0_doc": true,
+    "name": "SAP Data Archiving",
+    "pdf_page": 2551,
+    "translation_ref": "erp-sap-ps-oracle-ebs.md"
+  },
+  "SAPEVT": {
+    "aliases": [],
+    "family": "erp",
+    "in_12_0_doc": true,
+    "name": "SAP Event Monitor",
+    "pdf_page": 2551,
+    "translation_ref": "erp-sap-ps-oracle-ebs.md"
+  },
+  "SAPJC": {
+    "aliases": [],
+    "family": "erp",
+    "in_12_0_doc": true,
+    "name": "SAP Job Copy",
+    "pdf_page": 2551,
+    "translation_ref": "erp-sap-ps-oracle-ebs.md"
+  },
+  "SAPPM": {
+    "aliases": [],
+    "family": "erp",
+    "in_12_0_doc": true,
+    "name": "SAP Process Monitor",
+    "pdf_page": 2551,
+    "translation_ref": "erp-sap-ps-oracle-ebs.md"
+  },
+  "SCP": {
+    "aliases": [],
+    "family": "file-transfer",
+    "in_12_0_doc": true,
+    "name": "Secure Copy",
+    "pdf_page": 2551,
+    "translation_ref": "file-transfer-ftp-scp.md"
+  },
+  "SESSBEAN": {
+    "aliases": [],
+    "family": "java",
+    "in_12_0_doc": true,
+    "name": "Session Bean",
+    "pdf_page": 2551,
+    "translation_ref": "java-pojo-ejb-rmi.md"
+  },
+  "SNMPGET": {
+    "aliases": [],
+    "family": "web-messaging",
+    "in_12_0_doc": true,
+    "name": "SNMP Value Get",
+    "pdf_page": 2551,
+    "translation_ref": "web-and-messaging-http-wbsvc-wsdoc-jms-jmx-snmp.md"
+  },
+  "SNMPSET": {
+    "aliases": [],
+    "family": "web-messaging",
+    "in_12_0_doc": true,
+    "name": "SNMP Value Set",
+    "pdf_page": 2551,
+    "translation_ref": "web-and-messaging-http-wbsvc-wsdoc-jms-jmx-snmp.md"
+  },
+  "SQL": {
+    "aliases": [],
+    "family": "database",
+    "in_12_0_doc": false,
+    "name": "SQL",
+    "pdf_page": null,
+    "translation_ref": "database-sql-dbproc-dbmon-dbtrig-sqlagent.md"
+  },
+  "SQLAGENT": {
+    "aliases": [],
+    "family": "database",
+    "in_12_0_doc": false,
+    "name": "SQL Server Agent Job",
+    "pdf_page": null,
+    "translation_ref": "database-sql-dbproc-dbmon-dbtrig-sqlagent.md"
+  },
+  "SQOOP": {
+    "aliases": [],
+    "family": "hadoop",
+    "in_12_0_doc": false,
+    "name": "Hadoop Sqoop",
+    "pdf_page": null,
+    "translation_ref": "hadoop-hdfs-hive-pig-oozie-sqoop.md"
+  },
+  "WBSVC": {
+    "aliases": [],
+    "family": "web-messaging",
+    "in_12_0_doc": false,
+    "name": "Web Service (SOAP)",
+    "pdf_page": null,
+    "translation_ref": "web-and-messaging-http-wbsvc-wsdoc-jms-jmx-snmp.md"
+  },
+  "WOL": {
+    "aliases": [],
+    "family": "platform",
+    "in_12_0_doc": false,
+    "name": "Wake on LAN",
+    "pdf_page": null,
+    "translation_ref": "platform-i5-zos-microfocus-proxy-wol.md"
+  },
+  "WSDOC": {
+    "aliases": [],
+    "family": "web-messaging",
+    "in_12_0_doc": false,
+    "name": "Web Service Document",
+    "pdf_page": null,
+    "translation_ref": "web-and-messaging-http-wbsvc-wsdoc-jms-jmx-snmp.md"
+  },
+  "ZOS": {
+    "aliases": [],
+    "family": "platform",
+    "in_12_0_doc": false,
+    "name": "z/OS Regular",
+    "pdf_page": null,
+    "translation_ref": "platform-i5-zos-microfocus-proxy-wol.md"
+  },
+  "ZOSDST": {
+    "aliases": [],
+    "family": "platform",
+    "in_12_0_doc": false,
+    "name": "z/OS Data Set Trigger",
+    "pdf_page": null,
+    "translation_ref": "platform-i5-zos-microfocus-proxy-wol.md"
+  },
+  "ZOSM": {
+    "aliases": [],
+    "family": "platform",
+    "in_12_0_doc": false,
+    "name": "z/OS Manual",
+    "pdf_page": null,
+    "translation_ref": "platform-i5-zos-microfocus-proxy-wol.md"
+  }
+}

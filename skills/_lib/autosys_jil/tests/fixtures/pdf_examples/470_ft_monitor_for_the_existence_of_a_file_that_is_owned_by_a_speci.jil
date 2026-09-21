@@ -1,0 +1,7 @@
+/* extracted from PDF p.2810: Monitor for the Existence of a File that Is Owned by a Specified UNIX Group */
+insert_job: ft_unixgroup
+job_type: FT
+machine: unixagent
+watch_file: /data/payroll.dat
+watch_file_type: EXIST
+watch_file_groupname: ACCTS

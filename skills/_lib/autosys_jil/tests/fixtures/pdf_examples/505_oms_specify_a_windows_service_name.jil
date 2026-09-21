@@ -1,0 +1,7 @@
+/* extracted from PDF p.2831: Specify a Windows Service Name */
+insert_job: oms_job1
+job_type: OMS
+machine: winagt
+win_service_name: Proc Server
+win_service_status: PAUSED
+monitor_mode: NOW

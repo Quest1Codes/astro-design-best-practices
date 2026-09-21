@@ -1,3 +1,15 @@
+---
+topic: secrets-backend-selection
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Secrets-Backend Selection
 
 AutoSys stored job credentials in its RDBMS (encrypted at the DB level, managed by the DBA team) or in OS-level keystores. Airflow's connection and variable storage has four tiers on Astro; the choice of tier is a security architecture decision, not a convenience choice.

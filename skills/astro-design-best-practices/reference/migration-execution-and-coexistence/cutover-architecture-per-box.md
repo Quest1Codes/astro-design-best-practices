@@ -1,3 +1,16 @@
+---
+topic: cutover-architecture-per-box
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - deep_boxes
+---
+
 # Cutover Architecture Per Box
 
 An AutoSys "box" represents a group of jobs with shared dependencies that execute as a logical unit. In Airflow, the equivalent is typically a DAG (or a set of DAGs within a domain). Cutover must be planned at the box/domain level — not job-by-job — to avoid leaving broken cross-job dependencies in a half-migrated state.
@@ -21,7 +34,7 @@ A domain/box is eligible for cutover only when all of the following are true:
 
 For any downstream boxes in AutoSys that depended on the completion of this box:
 - **Option A** (AutoSys dependency remains): Create a custom Airflow operator or sensor that polls AutoSys's API or status file to confirm the AutoSys upstream job state. Use an `ExternalTaskSensor` pattern pointing at a proxy task [B1].
-- **Option B** (Dependency migrated together): If the downstream box is also being cut over in the same window, use Airflow **Datasets** or `ExternalTaskSensor` to wire the Airflow-to-Airflow dependency [B1][B2].
+- **Option B** (Dependency migrated together): If the downstream box is also being cut over in the same window, use Airflow **Assets (formerly Datasets)** or `ExternalTaskSensor` to wire the Airflow-to-Airflow dependency [B1][B2].
 
 ### Step 3: Unpause the Airflow DAG
 
@@ -48,5 +61,5 @@ When Box A (in Airflow) depends on Box B (still in AutoSys):
 ## Sources
 
 [B1] Enterprise migration guidance — AutoSys `ON_HOLD` state management, cross-domain dependency handling (no Astronomer Docs match found on this pass — this is project-internal migration-pattern synthesis, not a citable single Astronomer page; the AutoSys-side `ON_HOLD` semantics are also out of scope for the Astronomer docs MCP)
-[B2] Apache Airflow Docs — Datasets, ExternalTaskSensor, and cross-DAG dependency patterns. Astronomer Learn covers this directly: https://www.astronomer.io/docs/learn/cross-dag-dependencies (tier 1, URL added on citation review — covers `ExternalTaskSensor` including its deferrable mode)
+[B2] Apache Airflow Docs — Assets, ExternalTaskSensor, and cross-DAG dependency patterns. Astronomer Learn covers this directly: https://www.astronomer.io/docs/learn/cross-dag-dependencies (tier 1, URL added on citation review — covers `ExternalTaskSensor` including its deferrable mode)
 [B3] Apache Airflow REST API Docs — `PATCH /api/v2/dags/{dag_id}` for programmatic pause/unpause (accessed 2026-08-11). **Correction**: originally cited as `/api/v1/`; Airflow 3 uses the v2 REST API — see https://www.astronomer.io/docs/astro/airflow-api (tier 1, added on doc-verification review). Confirm the target Deployment's actual Airflow major version before relying on this path.

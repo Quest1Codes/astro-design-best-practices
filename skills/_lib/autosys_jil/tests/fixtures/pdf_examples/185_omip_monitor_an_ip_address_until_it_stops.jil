@@ -1,0 +1,7 @@
+/* extracted from PDF p.2575: Monitor an IP Address Until It Stops */
+insert_job: omip_job
+job_type: OMIP
+machine: monagt
+ip_host: myhost
+ip_status: STOPPED
+monitor_mode: WAIT

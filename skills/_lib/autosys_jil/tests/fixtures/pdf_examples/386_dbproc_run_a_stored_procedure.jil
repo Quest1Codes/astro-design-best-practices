@@ -1,0 +1,8 @@
+/* extracted from PDF p.2753: Run a Stored Procedure */
+insert_job: SPJOB
+job_type: DBPROC
+machine: DB_agent
+connect_string: "jdbc:sqlserver://myhost:1433;DatabaseName=ORDERS"
+sp_name: PAYROLL
+success_criteria: ename=John.*
+sp_arg: name=ename, argtype=INOUT, datatype=VARCHAR, value=John Evans

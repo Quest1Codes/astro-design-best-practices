@@ -1,0 +1,9 @@
+/* extracted from PDF p.2711: Specify the SAP Destination */
+insert_job: InfoBW2
+job_type: SAPBWIP
+machine: sapagent
+owner: WAAESAP@sapagent
+sap_job_name: InfoBW2
+sap_rfc_dest: SM1
+sap_info_pack: 0PAK_D2XZMZ1HD5WFVFL3EN1NVIT4V
+sap_step_num: step

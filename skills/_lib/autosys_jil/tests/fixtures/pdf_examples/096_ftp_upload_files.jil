@@ -1,0 +1,11 @@
+/* extracted from PDF p.2487: Upload Files */
+insert_job: FTPUPLOAD
+job_type: FTP
+machine: ftpagent
+ftp_server_name: hprsupp
+ftp_server_port: 5222
+ftp_transfer_direction: UPLOAD
+ftp_transfer_type: A
+ftp_remote_name: /tmp
+ftp_local_name: /export/home/ftpfiles/ftpdata/text*
+owner: ftpuser@hprsupp

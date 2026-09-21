@@ -1,0 +1,11 @@
+/* extracted from PDF p.2661: Specify Multiple Operator IDs */
+insert_job: ps_users
+job_type: PS
+machine: psagt
+ps_process_name: XRFWIN
+ps_process_type: Crystal
+ps_dest_type: EMAIL
+ps_dest_format: PDF
+ps_dlist_users: VP1,VP2,VP3
+ps_operator_id: VP3@ps1
+ps_run_cntrl_id: test

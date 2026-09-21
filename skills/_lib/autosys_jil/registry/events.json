@@ -1,0 +1,157 @@
+{
+  "AGGREGATE": {
+    "category": "admin",
+    "hidden_control_flow": false,
+    "pdf_page": 2399
+  },
+  "ALARM": {
+    "category": "admin",
+    "hidden_control_flow": false,
+    "pdf_page": 2299
+  },
+  "CHANGE_PRIORITY": {
+    "category": "state",
+    "hidden_control_flow": true,
+    "pdf_page": 2299
+  },
+  "CHANGE_STATUS": {
+    "category": "state",
+    "hidden_control_flow": true,
+    "pdf_page": 2299
+  },
+  "CHK_BOX_TERM": {
+    "category": "control",
+    "hidden_control_flow": true,
+    "pdf_page": null
+  },
+  "COMMENT": {
+    "category": "admin",
+    "hidden_control_flow": false,
+    "pdf_page": 2299
+  },
+  "DELETEJOB": {
+    "category": "control",
+    "hidden_control_flow": true,
+    "pdf_page": 2334
+  },
+  "FORCE_STARTJOB": {
+    "category": "control",
+    "hidden_control_flow": true,
+    "pdf_page": 2299
+  },
+  "JOB_OFF_HOLD": {
+    "category": "hold-ice",
+    "hidden_control_flow": true,
+    "pdf_page": 2299
+  },
+  "JOB_OFF_ICE": {
+    "category": "hold-ice",
+    "hidden_control_flow": true,
+    "pdf_page": 2299
+  },
+  "JOB_OFF_NOEXEC": {
+    "category": "hold-ice",
+    "hidden_control_flow": true,
+    "pdf_page": 2299
+  },
+  "JOB_ON_HOLD": {
+    "category": "hold-ice",
+    "hidden_control_flow": true,
+    "pdf_page": 2299
+  },
+  "JOB_ON_ICE": {
+    "category": "hold-ice",
+    "hidden_control_flow": true,
+    "pdf_page": 2299
+  },
+  "JOB_ON_NOEXEC": {
+    "category": "hold-ice",
+    "hidden_control_flow": true,
+    "pdf_page": 2299
+  },
+  "KILLJOB": {
+    "category": "control",
+    "hidden_control_flow": true,
+    "pdf_page": 2299
+  },
+  "MACH_OFFLINE": {
+    "category": "machine-resource",
+    "hidden_control_flow": false,
+    "pdf_page": 2299
+  },
+  "MACH_ONLINE": {
+    "category": "machine-resource",
+    "hidden_control_flow": false,
+    "pdf_page": 2299
+  },
+  "MACH_UNQUAL_OFFLINE": {
+    "category": "machine-resource",
+    "hidden_control_flow": false,
+    "pdf_page": null
+  },
+  "REFRESH_AUTH_HOST": {
+    "category": "admin",
+    "hidden_control_flow": false,
+    "pdf_page": null
+  },
+  "REFRESH_BROKER": {
+    "category": "admin",
+    "hidden_control_flow": false,
+    "pdf_page": null
+  },
+  "REFRESH_EXTINST": {
+    "category": "state",
+    "hidden_control_flow": true,
+    "pdf_page": null
+  },
+  "RELEASE_RESOURCE": {
+    "category": "machine-resource",
+    "hidden_control_flow": false,
+    "pdf_page": 2299
+  },
+  "REPLY_RESPONSE": {
+    "category": "state",
+    "hidden_control_flow": true,
+    "pdf_page": 2299
+  },
+  "RESEND_EXTERNAL_STATUS": {
+    "category": "state",
+    "hidden_control_flow": true,
+    "pdf_page": null
+  },
+  "RESTARTJOB": {
+    "category": "control",
+    "hidden_control_flow": true,
+    "pdf_page": 2299
+  },
+  "RESUMEJOB": {
+    "category": "control",
+    "hidden_control_flow": true,
+    "pdf_page": 2299
+  },
+  "SEND_SIGNAL": {
+    "category": "control",
+    "hidden_control_flow": true,
+    "pdf_page": 2299
+  },
+  "SET_GLOBAL": {
+    "category": "global",
+    "hidden_control_flow": true,
+    "pdf_page": 2299
+  },
+  "STARTJOB": {
+    "category": "control",
+    "hidden_control_flow": true,
+    "pdf_page": 2264
+  },
+  "STOP_DEMON": {
+    "category": "admin",
+    "hidden_control_flow": false,
+    "pdf_page": 2282
+  },
+  "SUSPENDJOB": {
+    "category": "control",
+    "hidden_control_flow": true,
+    "pdf_page": 2299
+  }
+}

@@ -1,0 +1,12 @@
+# PLACEHOLDER pricing dimensions for estimate_cost.py. These are NOT a verified Astronomer price
+# list -- this project did not have live access to Astronomer's current pricing when this file
+# was authored (see skills/docs/HANDOFF.md §5, no MCP access this session). Replace with real,
+# dated figures from Astronomer before using this for anything a customer will see, and update
+# `source_date` whenever the figures are refreshed.
+source_date: null
+currency: USD
+au_hourly_rate:
+  small: 0.10
+  medium: 0.20
+  large: 0.40
+worker_au_hourly_rate: 0.05

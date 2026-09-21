@@ -1,0 +1,8 @@
+/* extracted from PDF p.2854: Restrict the Trigger to Specific Data Sets Created by a Particular Job */
+insert_job: PROD.PAY_DATA
+job_type: ZOSDST
+machine: ZOS1
+owner: CYBDL01
+zos_dataset: USER1.PAYROLL.G-
+zos_trigger_type: zos_job_name
+zos_trigger_by: ABC

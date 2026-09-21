@@ -1,3 +1,15 @@
+---
+topic: encryption-at-rest-and-in-transit-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Encryption at Rest and in Transit Design
 
 AutoSys used OS/RDBMS-level encryption (TDE on Oracle/SQL Server for the Event Server DB; OS-level TLS for agent-to-server communications). Astro enforces encryption by default at the platform level; user design decisions are limited to key management and Fernet key rotation in self-managed contexts.

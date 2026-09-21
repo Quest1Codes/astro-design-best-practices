@@ -1,0 +1,6 @@
+/* extracted from PDF p.2734: Send a Notification by Notification ID Only When the Job Completes with a FAILURE Status */
+insert_job: email_job_1
+machine: localhost job_type: c
+command: as_test -t 2
+send_notification: f
+notification_msg: "notify_job_1 has failed."

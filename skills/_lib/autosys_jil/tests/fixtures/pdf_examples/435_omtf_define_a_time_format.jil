@@ -1,0 +1,11 @@
+/* extracted from PDF p.2790: Define a Time Format */
+insert_job: timeformat_job
+job_type: OMTF
+machine: monagt
+text_file_name: /export/home/agentdir/log/transmitter.log
+text_file_filter: UNAGR
+text_file_mode: DATETIME
+time_format: "MM/dd/yyyy HH:mm:ss.SSS zZ"
+lower_boundary: "08/17/2010 00:00:00.000 EST-0500"
+upper_boundary: "08/25/2010 23:59:59.999 EST-0500"
+monitor_mode: now

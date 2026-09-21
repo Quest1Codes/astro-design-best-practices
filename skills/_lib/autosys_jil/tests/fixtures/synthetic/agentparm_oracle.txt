@@ -1,0 +1,9 @@
+# synthetic fixture: agentparm.txt for an agent with the Oracle and FTP plugins installed.
+# format is java-properties style key=value; "#" and "!" both comment [AS: Workload
+# Automation Agents guide -- not in the ingested 12.0 PDF corpus, see config.py docstring].
+agent.name=winapp01
+agent.port=7501
+plugin.oracle.enabled=true
+plugin.oracle.home=/opt/oracle/client
+plugin.ftp.enabled=true
+oscomponent.jobs.ulimit=unlimited

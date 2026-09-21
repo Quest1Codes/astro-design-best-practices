@@ -1,3 +1,16 @@
+---
+topic: virtual-machine-groups-to-executor-queue-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - virtual_resources
+---
+
 # Virtual Machine (Load-Balancing Machine-Group) Definitions → KubernetesExecutor/CeleryExecutor Queue-Group Design
 
 AutoSys "virtual machines" (also called machine groups) are named, logical groupings of real agent machines. When a job is submitted to a virtual machine, AutoSys's scheduler selects one of the underlying real machines based on `max_load`/`job_load` capacity rules — effectively providing load-balanced job routing across a homogeneous pool of agents [B1].
@@ -65,7 +78,7 @@ This is the K8s equivalent of routing to a specific machine group in AutoSys.
 |---|---|
 | Fixed pool of persistent agents; high task throughput; low cold-start tolerance | **CeleryExecutor** with named queues |
 | Strong isolation per task; varied resource profiles; burst compute | **KubernetesExecutor** with node selectors |
-| Mix of high-frequency light tasks + isolated heavy tasks | ~~`CeleryKubernetesExecutor` hybrid~~ — **correction (now resolved)**: `CeleryKubernetesExecutor` is not even a selectable Deployment executor on Astro (the only three options are Astro, Celery, Kubernetes) and Astronomer's own docs separately call the pattern "rarely used" and "no longer recommended" as of Airflow 2.10+. Use a **dedicated worker queue with its own worker type** under the Astro executor or Celery executor instead, or `KubernetesPodOperator` for individual heavy tasks. See `reference/executor-and-worker/hybrid-executor-strategy.md`, which has now been rewritten to cover this. |
+| Mix of high-frequency light tasks + isolated heavy tasks | ~~`CeleryKubernetesExecutor` hybrid~~ — **correction (now resolved)**: `CeleryKubernetesExecutor` is not even a selectable Deployment executor on Astro (the only three options are Astro, Celery, Kubernetes), and Astronomer's current docs state hybrid executors have been **removed in Airflow 3** (an earlier draft of this file cited the archived Airflow-2.x wording — "rarely used... no longer recommended as of 2.10" — instead). Use a **dedicated worker queue with its own worker type** under the Astro executor or Celery executor instead, or `KubernetesPodOperator` for individual heavy tasks. See `reference/executor-and-worker/hybrid-executor-strategy.md`, which has now been rewritten to cover this. |
 
 On Astro, the underlying executor is managed — but worker queue segregation is fully configurable via Deployment worker queue settings [B2].
 

@@ -1,0 +1,6 @@
+/* extracted from PDF p.2797: Specify Multiple ulimit Values */
+insert_job: cmd_job
+job_type: CMD
+machine: unixagent
+command: /u1/procrun.sh
+ulimit: c=”100,200”, s=”250,300”, t=”4000,unlimited”, m=”3332,unlimited”

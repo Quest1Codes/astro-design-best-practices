@@ -1,0 +1,5 @@
+/* extracted from PDF p.2693: Run a Process Chain */
+insert_job: BWPCTEST
+job_type: SAPBWPC
+machine: SAPHTAGENT
+sap_chain_id: PC_7A3929SH

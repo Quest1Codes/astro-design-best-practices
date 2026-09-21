@@ -1,0 +1,7 @@
+/* extracted from PDF p.2769: Store Standard Output File Output as a Global Blob in Textual Format */
+insert_job: report_job1
+job_type: CMD
+machine: localhost
+command: myapplication
+std_out_file: $$globt.some_stdout_data
+submit_modifier: Option1=”value1”[,Option2=”value2”… , OptionN=”valueN”]

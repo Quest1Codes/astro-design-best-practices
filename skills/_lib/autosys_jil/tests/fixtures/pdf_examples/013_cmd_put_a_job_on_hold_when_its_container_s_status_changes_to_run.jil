@@ -1,0 +1,8 @@
+/* extracted from PDF p.2415: Put a Job on Hold when its Container’s Status Changes to RUNNING */
+insert_job: autohold
+job_type: CMD
+box_name: holdBox
+command: ls
+machine: localhost
+owner: root@localhost
+auto_hold: y

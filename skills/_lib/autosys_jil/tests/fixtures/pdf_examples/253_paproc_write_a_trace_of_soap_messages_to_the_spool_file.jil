@@ -1,0 +1,11 @@
+/* extracted from PDF p.2636: Write a Trace of SOAP Messages to the Spool File */
+insert_job: execproc
+job_type: PAPROC
+machine: localhost
+endpoint_URL: "http://capamach:8080/itpam/soap"
+pa_name: "Test Process"
+owner: pamadmin@capamach
+pa_monitor_progress: Y
+pa_trace: Y
+pa_parameter: Name="strTestName", Value="PA Test"
+payload_uri: data

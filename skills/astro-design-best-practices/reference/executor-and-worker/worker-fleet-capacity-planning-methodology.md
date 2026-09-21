@@ -1,3 +1,16 @@
+---
+topic: worker-fleet-capacity-planning-methodology
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - job_load_present
+---
+
 # Worker Fleet Capacity-Planning Methodology
 
 This file is about sizing the **worker fleet** — how many workers, what worker type, what min/max autoscaling bounds — from aggregate estate-wide job count and schedule density. It is **not** about per-machine unit translation (`max_load`/`job_load` → Pool slots, already covered in `reference/machine-load-and-virtual-resources/max-load-job-load-to-airflow-pools-sizing.md`) or scheduler/DAG-Processor sizing (already covered in `reference/cost-and-capacity-governance/capacity-planning-from-job-count-and-schedule-density.md`, the Small/Medium/Large/XL Deployment templates). Read this file for "how many workers, what type," not "how many pool slots" or "what scheduler tier."

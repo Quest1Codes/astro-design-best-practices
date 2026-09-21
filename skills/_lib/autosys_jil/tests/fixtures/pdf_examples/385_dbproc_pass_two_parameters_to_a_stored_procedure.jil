@@ -1,0 +1,8 @@
+/* extracted from PDF p.2752: Pass Two Parameters to a Stored Procedure */
+insert_job: SPJOB
+job_type: DBPROC
+machine: DB_agent
+connect_string: "jdbc:oracle:thin:@172.31.255.255:1433:ORDERS"
+sp_name: UPDATE_INV
+sp_arg: name=QUANTITY, argtype=IN, datatype=INTEGER, value=3000
+sp_arg: name=NEW_INV, argtype=OUT, datatype=INTEGER

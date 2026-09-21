@@ -1,0 +1,10 @@
+/* extracted from PDF p.2463: Monitor Disk Space on i5/OS */
+insert_job: omd_i5
+job_type: OMD
+machine:i5agent
+disk_drive: /
+disk_format: PERCENT
+lower_boundary: 90
+upper_boundary: 100
+inside_range: TRUE
+disk_space: USED

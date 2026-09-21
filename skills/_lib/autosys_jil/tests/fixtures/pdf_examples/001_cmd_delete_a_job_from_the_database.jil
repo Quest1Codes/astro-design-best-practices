@@ -1,0 +1,2 @@
+/* extracted from PDF p.2402: Delete a Job from the Database */
+insert_job: job_name

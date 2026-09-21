@@ -1,0 +1,11 @@
+/* extracted from PDF p.2718: Define an SAP R/3 Job With Multiple Steps */
+insert_job: TEST_1
+job_type: SAP
+machine: localhost
+job_class: c
+sap_job_name: "SAP 3 STEPS_@#$"
+sap_release_option: I
+sap_step_parms:abap_name=BTCTEST,variant=test,arc_printer=LP01,copies=2,prt_arc_mode=BOTH,arc_ob
+sap_step_parms:abap_name=BTCTEST,variant=test2,arc_printer=LP01,copies=3,prt_arc_mode=BOTH,print
+sap_step_parms:abap_name=BTCTEST,variant=test,arc_printer=LP01,copies=1,prt_arc_mode=BOTH,sap_ba
+sap_success_msg: message

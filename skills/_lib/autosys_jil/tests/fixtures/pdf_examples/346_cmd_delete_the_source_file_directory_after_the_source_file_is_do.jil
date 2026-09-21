@@ -1,0 +1,12 @@
+/* extracted from PDF p.2722: Delete the Source File Directory After the Source File is Downloaded From the Remote FTP Server */
+insert_job: sftp_download
+machine: AGENT_SFTP
+scp_transfer_direction: DOWNLOAD
+scp_server_name: abcde01-i12345
+scp_remote_dir: /ftproot/download
+scp_remote_name: abc.txt
+scp_local_name: "C:\temp"
+scp_protocol: SFTP
+scp_delete_sourcefile: T
+scp_delete_sourcedir: T
+owner: causer@AGENT_SFTP

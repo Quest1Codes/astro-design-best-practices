@@ -1,3 +1,16 @@
+---
+topic: centralized-vs-federated-operating-model
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - multi_owner
+---
+
 # Centralized vs. Federated Operating Model Design
 
 AutoSys was almost always run as a centralized service: one operations team owned all job definitions, schedules, and incidents. Airflow on Astro supports both models, but large-scale enterprises migrating from AutoSys inevitably encounter a design choice about who owns what in the new world.

@@ -1,0 +1,6 @@
+/* extracted from PDF p.2765: Specify a File Name that Contains a Global Variable on Windows */
+insert_job: win_globalvar
+job_type: CMD
+machine: winagent
+command: “C:\COMMON\Backup”
+std_in_file: "C:\tmp\$$Today.in"

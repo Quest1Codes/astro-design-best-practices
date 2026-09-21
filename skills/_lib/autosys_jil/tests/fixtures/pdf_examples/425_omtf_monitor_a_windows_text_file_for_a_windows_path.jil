@@ -1,0 +1,10 @@
+/* extracted from PDF p.2783: Monitor a Windows Text File for a Windows Path */
+insert_job: textfile_job4
+job_type: OMTF
+machine: monagt
+text_file_name: /export/home/agentdir/agentparm.txt
+text_file_filter: "C:\\\\Program Files"
+text_file_mode: LINE
+lower_boundary: 1
+upper_boundary: 200
+monitor_mode: now

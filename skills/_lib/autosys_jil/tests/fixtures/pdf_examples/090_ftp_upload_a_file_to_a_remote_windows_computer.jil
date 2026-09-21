@@ -1,0 +1,11 @@
+/* extracted from PDF p.2484: Upload a File to a Remote Windows Computer */
+insert_job: FTP_REMOTE
+job_type: FTP
+machine: unixagent
+ftp_server_name: 172.16.0.0
+ftp_server_port: 123
+ftp_transfer_direction: UPLOAD
+ftp_transfer_type: A
+ftp_remote_name: "/C:/Temp/textfile"
+ftp_local_name: /export/home/ftpfiles/ftpdata/textfile
+owner: test@172.16.0.0

@@ -1,0 +1,5 @@
+/* extracted from PDF p.2431: Remove All Files from a Subdirectory on UNIX */
+insert_job: unix_remove
+job_type: CMD
+machine: unixagent
+command: rm $${MY_BACKUPS}/tmp/*

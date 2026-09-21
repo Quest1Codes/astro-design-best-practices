@@ -1,3 +1,16 @@
+---
+topic: node-affinity-and-taints-for-specialized-jobs
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - virtual_resources
+---
+
 # Node Affinity and Taints for Specialized Jobs
 
 The closest AutoSys equivalent to Kubernetes node affinity/taints is `machine:` pinning to a specific host — but AutoSys pinning is a hard assignment (this job runs on this machine, full stop), while Kubernetes affinity/taints give a spectrum from soft preference to hard requirement, which is a genuinely more expressive tool than what it's replacing.

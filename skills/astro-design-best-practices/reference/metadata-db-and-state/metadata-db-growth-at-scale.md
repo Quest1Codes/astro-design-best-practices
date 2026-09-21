@@ -1,3 +1,16 @@
+---
+topic: metadata-db-growth-at-scale
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - job_load_present
+---
+
 # Metadata DB Growth at Scale (Thousands of DAGs)
 
 At the scale of thousands of DAGs, Airflow's metadata database (PostgreSQL) is placed under extreme load. Without proactive tuning, this manifests as slow task scheduling, sluggish DAG parsing, and UI timeouts [B1][B2].

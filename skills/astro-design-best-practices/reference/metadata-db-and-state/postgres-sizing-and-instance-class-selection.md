@@ -1,3 +1,15 @@
+---
+topic: postgres-sizing-and-instance-class-selection
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: mixed
+signals: []
+---
+
 # Postgres Sizing and Instance-Class Selection
 
 AutoSys stored job state in its Event Server RDBMS (Oracle, SQL Server, or Sybase), managed by a DBA team under standard enterprise DB procedures. {syn: B4-autosys-comparison — this is a practitioner-level mapping from AutoSys architecture documentation and industry knowledge; no single public tier-1 source explicitly documents the Event Server RDBMS types in detail.} Airflow's metadata database replaces that role: it is the scheduler's sole source of truth for DAG run history, task instance status, XComs, connections, and variables [B2]. Every Airflow component writes to it continuously; it is not a reporting store — it is a live operational dependency.

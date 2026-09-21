@@ -1,0 +1,149 @@
+# Versioned pattern library consumed by autosys_jil.commands.analyze() (and, for
+# credential_patterns, reused by autosys_jil.manifest.redact()). Hand-curated; reviewed by the
+# Critic stage per REFACTOR-PLAN.md §8 ("any formula/heuristic in prose has a corresponding
+# tested function" -- these patterns are the data half of that function).
+#
+# Changing a pattern here changes `command_summary.interpreters` / `credential_exposure` /
+# `hidden_control_flow` counts in every assessment report; treat edits like a scoring-rule change.
+version: 1
+
+# Interpreter/runtime detection [plan §11.2]. Matched in order against the command string;
+# first match wins. `unix_prefix` patterns tolerate an absolute interpreter path
+# (e.g. /usr/bin/ksh, /opt/app/bin/python3) before the bare name.
+interpreters:
+  - name: powershell
+    pattern: '(?i)^\s*(powershell(\.exe)?|pwsh)\b'
+  - name: cmd
+    pattern: '(?i)^\s*cmd(\.exe)?\s*/c\b'
+  - name: bat
+    pattern: '(?i)\.bat\b'
+  - name: ps1
+    pattern: '(?i)\.ps1\b'
+  - name: ksh
+    pattern: '(?i)^\s*(\S*/)?ksh\b'
+  - name: bash
+    pattern: '(?i)^\s*(\S*/)?bash\b'
+  - name: csh
+    pattern: '(?i)^\s*(\S*/)?csh\b'
+  - name: sh
+    pattern: '(?i)^\s*(\S*/)?sh\b'
+  - name: perl
+    pattern: '(?i)^\s*(\S*/)?perl\b'
+  - name: python
+    pattern: '(?i)^\s*(\S*/)?python[23]?\b'
+  - name: java
+    pattern: '(?i)^\s*(\S*/)?java\b'
+  - name: sqlplus
+    pattern: '(?i)^\s*(\S*/)?sqlplus\b'
+  - name: bcp
+    pattern: '(?i)^\s*(\S*/)?bcp\b'
+  - name: isql
+    pattern: '(?i)^\s*(\S*/)?isql\b'
+  - name: osql
+    pattern: '(?i)^\s*(\S*/)?osql\b'
+  - name: pmcmd
+    pattern: '(?i)^\s*(\S*/)?pmcmd\b'
+  - name: sftp
+    pattern: '(?i)^\s*(\S*/)?sftp\b'
+  - name: scp
+    pattern: '(?i)^\s*(\S*/)?scp\b'
+  - name: ftp
+    pattern: '(?i)^\s*(\S*/)?ftp\b'
+  - name: curl
+    pattern: '(?i)^\s*(\S*/)?curl\b'
+  - name: wget
+    pattern: '(?i)^\s*(\S*/)?wget\b'
+  # Extension-based fallbacks: AutoSys commands are very often a bare script path relying on
+  # the shebang at runtime (`/scripts/x/fetch.sh --date %%DATE%%`), not an explicit interpreter
+  # invocation. Lower priority than the explicit-prefix rules above (first match wins).
+  - name: python
+    pattern: '(?i)\.py\b'
+  - name: perl
+    pattern: '(?i)\.pl\b'
+  - name: sh
+    pattern: '(?i)\.sh\b'
+  - name: ksh
+    pattern: '(?i)\.ksh\b'
+  - name: sql
+    pattern: '(?i)\.sql\b'
+  - name: jar
+    pattern: '(?i)\.jar\b'
+
+# %%GLOBAL_NAME%% template references [AS p.2400 global variables].
+global_var_ref:
+  pattern: '%%([A-Za-z_][A-Za-z0-9_]*)%%'
+
+# Hidden control-flow: a command invoking the AutoSys CLI itself creates a dependency edge
+# invisible to the condition graph [plan §11.2, the "#1 source of surprise" item].
+hidden_control_flow:
+  sendevent:
+    pattern: '(?i)\bsendevent\b[^|;&\n]*'
+    event_flag_pattern: '-E\s+(\S+)'
+    job_flag_pattern: '-J\s+(\S+)'
+  autorep:
+    pattern: '(?i)\bautorep\b[^|;&\n]*'
+  jil:
+    pattern: '(?i)\bjil\b[^|;&\n]*'
+  autosyslog:
+    pattern: '(?i)\bautosyslog\b[^|;&\n]*'
+
+# Environment-coupling signals [plan §11.2].
+hosts:
+  pattern: '(?i)\b((?:[a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,})\b'
+ips:
+  pattern: '\b(?:(?:25[0-5]|2[0-4]\d|1?\d?\d)\.){3}(?:25[0-5]|2[0-4]\d|1?\d?\d)\b'
+abs_paths_unix:
+  pattern: '(?<![\w/])(/(?:[\w.\-]+/)+[\w.\-]+)'
+unc_paths:
+  pattern: '(\\\\[\w.\-]+\\[\w$.\-\\]+)'
+mapped_drives:
+  pattern: '\b([A-Za-z]:\\[\w$.\-\\]*)'
+
+# Credential-value redaction [plan §11.6]. `group` names which capturing group holds the secret
+# value itself (never the last group by default -- e.g. a user/pass@host connect string's last
+# group is the hostname, which is not sensitive). Shared verbatim by manifest.redact().
+credential_patterns:
+  password_flag:
+    pattern: '(?i)(-p|--password|/password)(\s+|=)(\S+)'
+    group: 3
+  password_kv:
+    pattern: '(?i)\b(password|passwd|pwd)\s*=\s*(\S+)'
+    group: 2
+  connect_string:
+    pattern: '(?i)\b([A-Za-z0-9_.]+)/([^@\s"'']+)@([A-Za-z0-9_.:/\\-]+)'
+    group: 2
+  bearer_token:
+    pattern: '(?i)\b(bearer|token)\s*[:=]\s*(\S+)'
+    group: 2
+  basic_auth_url:
+    pattern: '(?i)\b(https?://)([^:/\s]+):([^@/\s]+)@'
+    group: 3
+  userpass_flag:
+    pattern: '(?i)(-u|--user)\s+(\S+):(\S+)'
+    group: 3
+
+# os_hint detection [plan §11.11].
+os_hint_windows:
+  pattern: '(?i)(\.bat\b|\.ps1\b|^\s*cmd(\.exe)?\s*/c\b|\\\\[\w.\-]+\\|\b[A-Za-z]:\\|DOMAIN\\\\)'
+os_hint_unix:
+  # Shebang, a known FHS prefix anywhere, or the command simply starting with an absolute
+  # unix path (very common: `/scripts/x/fetch.sh ...`) -- Windows commands never start with
+  # a bare `/`.
+  pattern: '(^\s*#!/|(?<![\w/])/usr/|(?<![\w/])/opt/|(?<![\w/])/bin/|(?<![\w/])/etc/|^\s*/[\w.\-]+/)'
+
+# Normalization for template_hash clustering [plan §11.2]: literal spans replaced by a
+# placeholder before hashing, so two commands differing only in a date/job-name argument
+# cluster together.
+normalize_placeholders:
+  - name: date_yyyymmdd
+    pattern: '\b\d{4}-\d{2}-\d{2}\b'
+    placeholder: '<DATE>'
+  - name: date_mmddyyyy
+    pattern: '\b\d{1,2}/\d{1,2}/\d{4}\b'
+    placeholder: '<DATE>'
+  - name: number
+    pattern: '\b\d+\b'
+    placeholder: '<N>'
+  - name: global_var
+    pattern: '%%[A-Za-z_][A-Za-z0-9_]*%%'
+    placeholder: '<VAR>'

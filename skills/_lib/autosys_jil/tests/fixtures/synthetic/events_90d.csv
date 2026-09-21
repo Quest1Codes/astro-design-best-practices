@@ -1,0 +1,8 @@
+job,event,status,time,source_user,source_host,machine
+nightly_extract,STARTING,Processed,09/04/2026 01:00:02,,,winapp01
+nightly_extract,FAILURE,Processed,09/04/2026 01:03:58,,,winapp01
+nightly_extract,FORCE_STARTJOB,Processed,09/04/2026 01:10:00,ops_bob,ops-desktop01,
+nightly_extract,STARTING,Processed,09/04/2026 01:10:02,,,winapp01
+nightly_extract,SUCCESS,Processed,09/04/2026 01:14:20,,,winapp01
+monthly_close,JOB_ON_HOLD,Processed,09/15/2026 09:00:00,ops_alice,ops-desktop02,
+monthly_close,JOB_OFF_HOLD,Processed,09/15/2026 09:30:00,ops_alice,ops-desktop02,

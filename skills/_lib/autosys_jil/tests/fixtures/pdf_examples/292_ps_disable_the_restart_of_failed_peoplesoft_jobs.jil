@@ -1,0 +1,9 @@
+/* extracted from PDF p.2670: Disable the Restart of Failed PeopleSoft Jobs */
+insert_job: ps_norestart
+job_type: PS
+machine: psagt
+ps_process_name: XRFWIN
+ps_process_type: Application Engine
+ps_restarts: Yes
+ps_run_cntrl_args: argument[, argument...]
+Limits: Case-sensitive; each argument can be up to 1024 characters.

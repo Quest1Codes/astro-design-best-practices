@@ -1,0 +1,9 @@
+/* extracted from PDF p.2793: Monitor a SQL Server Database Table for Added Rows with a Trigger Condition */
+insert_job: dbtrig3
+job_type: DBTRIG
+machine: DB_agent
+dbtype: MSSQL
+trigger_type: INSERT
+trigger_cond: (select QTY from INSERTED where TITLE_ID='TC7777')>=20
+tablename: sales
+owner: sa@myhost

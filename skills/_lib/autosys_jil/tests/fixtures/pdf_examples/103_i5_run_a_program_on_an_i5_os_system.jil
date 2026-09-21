@@ -1,0 +1,8 @@
+/* extracted from PDF p.2507: Run a Program on an i5/OS System */
+insert_job: i5job_runprog
+job_type: I5
+machine: i5agent
+i5_action: RUN_PROGRAM
+i5_name: PARAM
+i5_params: "ABC C1 P"
+owner: ASYSOPR

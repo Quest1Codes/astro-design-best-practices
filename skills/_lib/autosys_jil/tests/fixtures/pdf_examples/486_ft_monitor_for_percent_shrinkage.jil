@@ -1,0 +1,9 @@
+/* extracted from PDF p.2819: Monitor for Percent Shrinkage */
+insert_job: ft_win_percent
+job_type: FT
+machine: winagt
+watch_file: "c:\amount\test"
+watch_file_type: SHRINK
+watch_file_change_type: PERCENT
+watch_file_change_value: 65
+watch_no_change: 30

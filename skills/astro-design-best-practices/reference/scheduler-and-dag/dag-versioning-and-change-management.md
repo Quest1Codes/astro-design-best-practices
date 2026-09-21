@@ -1,3 +1,15 @@
+---
+topic: dag-versioning-and-change-management
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # DAG Versioning and Change-Management Strategy
 
 JIL's change model is in-place mutation: `insert_job`/`update_job`/`delete_job` edit the live definition in the Event Server, and AutoSys has no native concept of "the version of this job that a given run actually executed under." Airflow 3's DAG-versioning model is structurally different and closer to what a git-based estate actually needs.

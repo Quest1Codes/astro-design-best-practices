@@ -1,3 +1,16 @@
+---
+topic: vertical-overlay-financial-services-sox-basel-aml
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - sox
+---
+
 # Vertical Overlay: Financial Services (SOX / Basel / AML)
 
 This file translates the general compliance architecture patterns (Topics 074–077) into specific design decisions for financial services pipelines. It focuses on the three most common regulatory frameworks: SOX (internal controls), Basel III/IV (risk data quality), and AML (transaction monitoring).

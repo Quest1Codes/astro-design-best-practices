@@ -1,3 +1,15 @@
+---
+topic: hybrid-executor-strategy
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Hybrid Execution Strategy (Outlier Isolation Within a Deployment)
 
 Most AutoSys estates have a large mass of similar, lightweight jobs and a small number of genuine outliers (unusually heavy, needing isolation, or needing specific hardware). Forcing the whole estate onto one executor to accommodate the outliers — or accepting the outliers' poor fit under a single-executor setup — are both worse than routing the minority of unusual jobs differently.
@@ -6,8 +18,8 @@ Most AutoSys estates have a large mass of similar, lightweight jobs and a small 
 
 **This file originally framed `CeleryKubernetesExecutor` as a live, recommended mechanism.** A Critic-pass review found two problems with that, confirmed against current docs:
 
-1. **`CeleryKubernetesExecutor` is not a selectable Deployment executor on Astro at all.** Astro's Deployment-executor options — via the Astro UI, CLI `--executor` flag, API `executor` parameter, or Terraform provider — are exactly three: **Astro, Celery, Kubernetes** [F4]. `CeleryKubernetesExecutor` doesn't appear as a fourth option anywhere in that list. It exists as an upstream Apache Airflow concept [F1], but nothing in Astro's own documentation describes configuring it on a Deployment; `NEEDS_EXEC_CHECK` if you need to confirm definitively whether a self-managed Astronomer Software install could still wire it in via custom Helm values.
-2. **Astronomer's own docs separately describe it as legacy**: "Two statically coded hybrid executors exist, the CeleryKubernetes Executor and the LocalKubernetes Executor... these executors are rarely used and as of Airflow 2.10 no longer recommended" [F7].
+1. **`CeleryKubernetesExecutor` is not a selectable Deployment executor on Astro at all.** Astro's Deployment-executor options — via the Astro UI, CLI `--executor` flag, API `executor` parameter, or Terraform provider — are exactly three: **Astro, Celery, Kubernetes** [F4]. `CeleryKubernetesExecutor` doesn't appear as a fourth option anywhere in that list. It exists as an upstream Apache Airflow concept [F1], but nothing in Astro's own documentation describes configuring it on a Deployment. For self-managed Astronomer Software specifically: self-hosted Airflow selects its executor via the plain upstream `core.executor` config value, not an Astronomer-specific Helm gate — so nothing Astronomer-specific blocks setting it on an Airflow 2.x self-managed install. This is moot on Airflow 3, since the hybrid executors have been removed upstream regardless of platform.
+2. **Astronomer's own docs separately describe it as legacy**: the current (non-versioned) docs page states hybrid executors **have been removed in Airflow 3** — a stronger statement than the archived Airflow-2.x wording ("rarely used... as of Airflow 2.10 no longer recommended") this file originally cited [F7].
 
 Combined, that means the "queue-level routing via `CeleryKubernetesExecutor`" recommendation below is not a live option to design toward on Astro. It's kept in this file only as historical/upstream-Airflow context — do not recommend it for a new AutoSys migration.
 
@@ -40,4 +52,4 @@ AutoSys handled "most jobs run anywhere, a few need a specific machine" the same
 - [F4] Astronomer Docs — Deployment executor (Astro's only three selectable Deployment-executor options: Astro, Celery, Kubernetes — via UI, CLI `--executor`, API `executor`, or Terraform): https://www.astronomer.io/docs/astro/deployment-resources#deployment-executor and https://www.astronomer.io/docs/learn/airflow-executors-explained#configure-an-executor-on-astro (tier 1, added on Critic-pass review)
 - [F5] Astronomer Docs — Astro executor overview (default for Airflow 3.x Deployments): https://www.astronomer.io/docs/astro/astro-executor#overview (tier 1, added on Critic-pass review)
 - [F6] Astronomer Docs — Configure worker queues (per-queue worker type, usable under Astro or Celery executor): https://www.astronomer.io/docs/astro/configure-worker-queues (tier 1, added on Critic-pass review)
-- [F7] Astronomer Docs — Apache Airflow Executors ("Two statically coded hybrid executors exist, the CeleryKubernetes Executor and the LocalKubernetes Executor... rarely used and as of Airflow 2.10 no longer recommended"): https://www.astronomer.io/docs/learn/airflow-executors-explained#choose-an-executor (tier 1, added on Critic-pass review)
+- [F7] Astronomer Docs — Apache Airflow Executors ("Hybrid executors... have been removed in Airflow 3"; the "rarely used... as of Airflow 2.10 no longer recommended" wording appears only on the archived 2.x version of this page): https://www.astronomer.io/docs/learn/airflow-executors-explained#choose-an-executor (current) and https://www.astronomer.io/docs/learn/2.x/airflow-executors-explained (archived 2.x wording) (tier 1, confirmed via astronomer-docs verification)

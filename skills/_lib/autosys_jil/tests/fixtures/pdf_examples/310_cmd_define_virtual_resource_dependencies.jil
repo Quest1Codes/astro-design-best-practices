@@ -1,0 +1,6 @@
+/* extracted from PDF p.2682: Define Virtual Resource Dependencies */
+insert_job: res_dep_job
+job_type: CMD
+machine: unixagent
+command: /u1/procrun.sh
+resources: (D1, QUANTITY=1) AND (T1, QUANTITY=3) AND

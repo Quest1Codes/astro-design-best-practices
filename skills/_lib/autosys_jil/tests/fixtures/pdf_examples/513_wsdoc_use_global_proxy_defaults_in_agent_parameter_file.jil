@@ -1,0 +1,11 @@
+/* extracted from PDF p.2836: Use Global Proxy Defaults in Agent Parameter File */
+insert_job: execws
+job_type: WSDOC
+machine: wsmach
+endpoint_URL: "https://s3.amazonaws.com/soap"
+WSDL_URL: "http://s3.amazonaws.com/doc/2006-03-01/AmazonS3.wsdl"
+service_name: AmazonS3
+port_name: AmazonS3
+wsdl_operation: ListAllMyBuckets
+ws_parameter: param_name="/ListAllMyBuckets", param_value=""
+ws_parameter: param_name="/ListAllMyBuckets/AWSAccessKeyId",

@@ -1,3 +1,15 @@
+---
+topic: audit-log-design-for-access-and-actions
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Audit-Log Design for Access and Actions
 
 AutoSys audit trails were typically managed at the OS/RDBMS level — DBA-controlled DB audit logs or OS-level login records. Astro provides a native, exportable audit log for platform-level events; Airflow's own task execution history in the metadata DB provides the operational data lineage layer.

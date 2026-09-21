@@ -1,0 +1,11 @@
+/* extracted from PDF p.2463: Monitor Disk Space on UNIX */
+insert_job: omd_unix
+job_type: OMD
+machine: unixagt
+disk_drive: /export/home
+disk_space: FREE
+disk_format: GB
+lower_boundary: 8
+upper_boundary: 10
+inside_range: TRUE
+no_change: 15

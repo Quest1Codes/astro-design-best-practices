@@ -1,0 +1,8 @@
+/* extracted from PDF p.2765: Retrieve Standard Input File from a Job Blob in Textual Format */
+insert_job: report_job1
+job_type: CMD
+command: myapplication
+machine: localhost
+std_in_file: $$blobt
+insert_blob: report_job1
+blob_file: my_args.txt

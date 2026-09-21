@@ -1,3 +1,15 @@
+---
+topic: data-lineage-for-regulatory-reporting
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Data Lineage for Regulatory Reporting
 
 Regulatory auditors increasingly require organizations to demonstrate not just *that* data was processed, but *how*: where did it originate, what transformations occurred, and which reports consumed it? OpenLineage is the industry standard for answering these questions automatically within Airflow pipelines.

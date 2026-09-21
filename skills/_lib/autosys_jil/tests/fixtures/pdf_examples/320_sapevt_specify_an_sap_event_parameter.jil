@@ -1,0 +1,8 @@
+/* extracted from PDF p.2695: Specify an SAP Event Parameter */
+insert_job: SAPTRIG
+job_type: SAPEVT
+machine: SAPAGENT
+sap_event_id: SAP_Event
+sap_is_trigger: Y
+sap_event_parm: 2
+sap_ext_table: field_name=field, object_name=object, sign=I|E, operation=BT|EQ,

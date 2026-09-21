@@ -1,3 +1,15 @@
+---
+topic: chaos-and-failure-testing-strategy
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Chaos and Failure-Testing Strategy
 
 AutoSys's HA had deterministic failure modes: if the primary scheduler's heartbeat missed a threshold, the shadow promoted itself. Airflow's distributed architecture has different, less obvious failure paths. Proactive chaos testing is required to validate assumptions about resilience before a real incident exposes them.

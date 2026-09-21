@@ -1,0 +1,8 @@
+/* extracted from PDF p.2449: Store a Working Copy of the JCL that You Submitted */
+insert_job: CYBDL01A
+job_type: ZOS
+machine: ZOS1
+jcl_library: CYBDL01.JCLLIB
+jcl_member: CYBDL01A
+owner: CYBDL01
+copy_jcl: CYBDL01.COPY.JCLLIB

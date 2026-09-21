@@ -1,3 +1,15 @@
+---
+topic: event-server-rdbms-to-metadata-db-migration-source
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Source Event-Server RDBMS Dialect Considerations → Astro Metadata-DB Migration-Source Design
 
 AutoSys's Event Server database has historically been backed by **Oracle, Microsoft SQL Server, or Sybase** [B1]. Broadcom also introduced the **AutoSys DataMigrator utility** to migrate Event Server data to PostgreSQL [B1]. Understanding which RDBMS dialect backs your AutoSys instance is a pre-migration input — it affects the job-history export strategy and the data shape of any legacy audit archive.

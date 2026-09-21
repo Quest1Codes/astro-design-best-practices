@@ -1,3 +1,18 @@
+---
+topic: erp-batch-integration-patterns
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - erp_sap
+  - erp_ps
+  - erp_oracle
+---
+
 # Generic and Homegrown ERP Batch-Integration Patterns
 
 AutoSys frequently served as the glue layer between mainframe batch processes and homegrown ERP systems via flat-file drops, database triggers, or proprietary APIs. When migrating to Astro, Airflow becomes the orchestrator — but the external system's behavior does not change. This file covers the architectural patterns for Airflow's side of these integrations.

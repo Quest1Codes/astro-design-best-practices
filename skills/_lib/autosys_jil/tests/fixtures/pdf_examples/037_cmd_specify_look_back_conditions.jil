@@ -1,0 +1,5 @@
+/* extracted from PDF p.2441: Specify Look-Back Conditions */
+insert_job: test_sample_04
+machine: localhost
+command: sleep 10
+condition: success(test_sample_01,12.00) AND failure(test_sample_02,24.00) AND

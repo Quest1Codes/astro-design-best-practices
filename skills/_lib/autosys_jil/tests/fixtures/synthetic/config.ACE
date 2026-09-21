@@ -1,0 +1,16 @@
+# synthetic fixture: $AUTOUSER/config.ACE [AS p.853] -- Key=Value, "#" is a real comment here
+# (unlike JIL, where "#" is NOT a comment -- see lexer.py).
+AUTOSERV=ACE
+AUTOUSER=/opt/CA/WorkloadAutomationAE/ACE
+MaxRestartTrys=5
+RestartConstant=30
+RestartFactor=15
+MaxRestartWait=600
+GlobalAutoHold=0
+RepeatAlarmNotification=FIRST
+HAPollInterval=10
+DBEventReconnect=5
+Check_Heartbeat=1
+EnableFIPSMode=0
+EvaluateQueuedJobStarts=1
+CrossPlatformScheduling=1

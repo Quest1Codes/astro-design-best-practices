@@ -1,0 +1,20 @@
+/* synthetic fixture: a command that issues sendevent itself -- creates a dependency edge
+   invisible to the condition graph [plan §11.2, the "#1 source of surprise" item]. */
+insert_job: nightly_trigger
+job_type: CMD
+machine: prod01
+command: /scripts/ops/kick_downstream.sh && sendevent -E FORCE_STARTJOB -J downstream_reconcile
+owner: ops@bank.com
+permission:
+date_conditions: 1
+days_of_week: all
+start_times: "22:00"
+
+insert_job: downstream_reconcile
+job_type: CMD
+machine: prod01
+command: /scripts/ops/reconcile.sh
+owner: ops@bank.com
+permission:
+/* no `condition:` here -- this job is only ever started by the sendevent hidden inside
+   nightly_trigger's command, not by a JIL-visible dependency. */

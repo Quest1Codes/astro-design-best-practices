@@ -1,0 +1,7 @@
+/* extracted from PDF p.2508: Send an OPM COBOL Program’s Return Code as the Job’s Exit Code */
+insert_job: i5job_returnOPM
+job_type: I5
+machine: i5agent
+i5_action: RUN_PROGRAM
+i5_name: PAYROLL
+i5_cc_exit: *PROGRAM

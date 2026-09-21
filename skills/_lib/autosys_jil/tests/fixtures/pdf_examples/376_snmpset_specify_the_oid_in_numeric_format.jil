@@ -1,0 +1,12 @@
+/* extracted from PDF p.2744: Specify the OID in Numeric Format */
+insert_job: setvarip
+job_type: SNMPSET
+machine: localhost
+owner: Administrator@localhost
+snmp_oid: .1.3.1.1.2.1.9.3
+snmp_host: snmp
+snmp_value: addr=172.24.2.20
+snmp_version: 3
+snmp_auth_protocol: MD5
+snmp_privacy: DES
+snmp_privacy_user: user1

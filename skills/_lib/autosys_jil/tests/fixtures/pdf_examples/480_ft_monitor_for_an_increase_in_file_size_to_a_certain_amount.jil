@@ -1,0 +1,8 @@
+/* extracted from PDF p.2816: Monitor for an Increase in File Size to a Certain Amount */
+insert_job: ft_unix_size
+job_type: FT
+machine: unixagt
+watch_file: /data/test
+watch_file_type: EXPAND
+watch_file_change_type: SIZE
+watch_file_change_value: 100

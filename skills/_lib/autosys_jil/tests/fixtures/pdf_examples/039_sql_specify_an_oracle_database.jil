@@ -1,0 +1,8 @@
+/* extracted from PDF p.2444: Specify an Oracle Database */
+insert_job: QRY1
+job_type: SQL
+machine: DB_agent
+owner: sys@orcl
+sql_command: SELECT * from NEWORDS
+destination_file: "c:\log\qry1.txt"
+connect_string: "jdbc:oracle:thin:@172.31.255.255:1433:ORDERS"

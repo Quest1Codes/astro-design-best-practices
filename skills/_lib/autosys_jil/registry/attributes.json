@@ -1,0 +1,5856 @@
+{
+  "URL": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2800,
+    "requirement": "required",
+    "supported_job_types": [
+      "JMXMAG",
+      "JMXMAS",
+      "JMXMC",
+      "JMXMOP",
+      "JMXMREM",
+      "JMXSUB"
+    ],
+    "syntax": "URL: \"url\"",
+    "title": "Specify the URL of the JMX Server",
+    "value_type": "str"
+  },
+  "WSDL_URL": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters (Web Service RPC/Encoded) and up to 2048 characters (Web Service Document/",
+    "object": "job",
+    "pdf_page": 2847,
+    "requirement": "required",
+    "supported_job_types": [
+      "WBSVC",
+      "WSDOC"
+    ],
+    "syntax": "WSDL_URL: wsdl_url",
+    "title": "Specify a WSDL URL",
+    "value_type": "str"
+  },
+  "alarm_if_fail": {
+    "default": null,
+    "family": "alerting",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2407,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "alarm_if_fail: y | n",
+    "title": "Specify Whether to Post an Alarm for FAILURE Status",
+    "value_type": "bool"
+  },
+  "alarm_if_terminated": {
+    "default": null,
+    "family": "alerting",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2408,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "alarm_if_terminated: y | n",
+    "title": "Specify Whether to Post the JOBTERMINATED for",
+    "value_type": "bool"
+  },
+  "application": {
+    "default": null,
+    "family": "identity",
+    "limits": "Up to 64 characters; valid characters are a-z, A-Z, 0-9, period (.), underscore (_), pound (#), and hyphen (-); do not",
+    "object": "job",
+    "pdf_page": 2409,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "application: application_name",
+    "title": "Associate a Job with an Application",
+    "value_type": "str"
+  },
+  "arc_obj_name": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2409,
+    "requirement": "required",
+    "supported_job_types": [
+      "SAPDA"
+    ],
+    "syntax": "arc_obj_name: object_name",
+    "title": "Identify Name of SAP Archiving Object",
+    "value_type": "str"
+  },
+  "arc_obj_variant": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2410,
+    "requirement": "required",
+    "supported_job_types": [
+      "SAPDA"
+    ],
+    "syntax": "arc_obj_variant: object_variant",
+    "title": "Identify Name of SAP Archiving Object Variant",
+    "value_type": "str"
+  },
+  "arc_parms": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "Up to 10 valid SAP characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2410,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAPDA"
+    ],
+    "syntax": "arc_parms: arc_doc_type=value,arc_info=value,arc_obj_type=value",
+    "title": "Specify Archive Parameters",
+    "value_type": "str"
+  },
+  "auth_string": {
+    "default": null,
+    "family": "identity",
+    "limits": "Up to 80 characters",
+    "object": "job",
+    "pdf_page": 2413,
+    "requirement": "optional",
+    "supported_job_types": [
+      "ZOSM"
+    ],
+    "syntax": "auth_string: string",
+    "title": "Define an Authorization String",
+    "value_type": "str"
+  },
+  "auto_delete": {
+    "default": null,
+    "family": "identity",
+    "limits": "1-17520",
+    "object": "job",
+    "pdf_page": 2414,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "auto_delete: hours | 0 | -1",
+    "title": "Automatically Delete a Job on Completion",
+    "value_type": "int"
+  },
+  "auto_hold": {
+    "default": null,
+    "family": "identity",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2414,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "auto_hold: y | n",
+    "title": "Put a Job on Hold when Its Container's Status Changes to RUNNING",
+    "value_type": "bool"
+  },
+  "avg_runtime": {
+    "default": "0",
+    "family": "identity",
+    "limits": "Up to 527040",
+    "object": "job",
+    "pdf_page": 2415,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "avg_runtime: value",
+    "title": "Define Average Run Time for a New Job",
+    "value_type": "int"
+  },
+  "bdc_err_rate": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "0-100",
+    "object": "job",
+    "pdf_page": 2416,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAPBDC"
+    ],
+    "syntax": "bdc_err_rate: percent",
+    "title": "Specify the Maximum Acceptable Error Rate",
+    "value_type": "int"
+  },
+  "bdc_ext_log": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2416,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAPBDC"
+    ],
+    "syntax": "bdc_ext_log: Y | N | T | F | YES | NO | TRUE | FALSE",
+    "title": "Generate Advanced Logging of the Batch Input Session",
+    "value_type": "bool"
+  },
+  "bdc_proc_rate": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "0-100",
+    "object": "job",
+    "pdf_page": 2417,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAPBDC"
+    ],
+    "syntax": "bdc_proc_rate: percent",
+    "title": "Specify Minimum Acceptable Process Rate",
+    "value_type": "int"
+  },
+  "bdc_system": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "Up to 256 valid SAP characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2418,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAPBDC"
+    ],
+    "syntax": "bdc_system: destination",
+    "title": "Specify the Name of a Background Server",
+    "value_type": "str"
+  },
+  "bean_name": {
+    "default": null,
+    "family": "java",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2418,
+    "requirement": "required",
+    "supported_job_types": [
+      "ENTYBEAN",
+      "SESSBEAN"
+    ],
+    "syntax": "bean_name: bean",
+    "title": "Specify the JNDI Name of the Bean",
+    "value_type": "str"
+  },
+  "blob_file": {
+    "default": null,
+    "family": "io",
+    "limits": "Up to 255 characters",
+    "object": "job",
+    "pdf_page": 2419,
+    "requirement": "optional",
+    "supported_job_types": [
+      "CMD"
+    ],
+    "syntax": "blob_file: file",
+    "title": "Specify File for the Blob",
+    "value_type": "str"
+  },
+  "blob_input": {
+    "default": null,
+    "family": "io",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2420,
+    "requirement": "optional",
+    "supported_job_types": [
+      "CMD",
+      "HTTP",
+      "WSDOC"
+    ],
+    "syntax": "blob_input: <auto_blobt>input</auto_blobt>",
+    "title": "Specify Input for the Blob",
+    "value_type": "str"
+  },
+  "box_failure": {
+    "default": null,
+    "family": "sla",
+    "limits": "Up to 4096 characters",
+    "object": "job",
+    "pdf_page": 2421,
+    "requirement": "optional",
+    "supported_job_types": [
+      "TODAY"
+    ],
+    "syntax": "box_failure: conditions",
+    "title": "Define Criteria for Box Job Failure",
+    "value_type": "str"
+  },
+  "box_name": {
+    "default": null,
+    "family": "identity",
+    "limits": "Up to 64 characters",
+    "object": "job",
+    "pdf_page": 2422,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "box_name: name",
+    "title": "Identify a Box as Container for a Job",
+    "value_type": "str"
+  },
+  "box_success": {
+    "default": null,
+    "family": "sla",
+    "limits": "Up to 4096 characters",
+    "object": "job",
+    "pdf_page": 2423,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "box_success: conditions",
+    "title": "Define Criteria for Box Job Success",
+    "value_type": "str"
+  },
+  "broadcast_address": {
+    "default": null,
+    "family": "identity",
+    "limits": "Up to 45 characters",
+    "object": "job",
+    "pdf_page": 2425,
+    "requirement": "required",
+    "supported_job_types": [
+      "WOL"
+    ],
+    "syntax": "broadcast_address: ip_address",
+    "title": "Specify the Broadcast Address",
+    "value_type": "str"
+  },
+  "chk_files": {
+    "default": null,
+    "family": "io",
+    "limits": "Any integer",
+    "object": "job",
+    "pdf_page": 2426,
+    "requirement": "optional",
+    "supported_job_types": [
+      "CMD"
+    ],
+    "syntax": "chk_files: locationsize [locationsize...]",
+    "title": "Verify File Space Required to Start a Job",
+    "value_type": "str"
+  },
+  "class_name": {
+    "default": null,
+    "family": "java",
+    "limits": "Up to 1024 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2427,
+    "requirement": "required",
+    "supported_job_types": [
+      "JMXMC"
+    ],
+    "syntax": "class_name: class",
+    "title": "Specify a Class Name",
+    "value_type": "str"
+  },
+  "command": {
+    "default": null,
+    "family": "io",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2428,
+    "requirement": "required",
+    "supported_job_types": [
+      "CMD"
+    ],
+    "syntax": "command: commandargument...",
+    "title": "Specify a Command or Script to Run",
+    "value_type": "str"
+  },
+  "compatibility": {
+    "default": "11",
+    "family": "identity",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2435,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": null,
+    "title": "Specify the Agent Compatibility Version",
+    "value_type": "int"
+  },
+  "condition": {
+    "default": null,
+    "family": "dependency",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2435,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": null,
+    "title": "Define Starting Conditions for a Job",
+    "value_type": "condition"
+  },
+  "condition_code": {
+    "default": null,
+    "family": "identity",
+    "limits": "Up to 9 characters",
+    "object": "job",
+    "pdf_page": 2442,
+    "requirement": "optional",
+    "supported_job_types": [
+      "ZOS"
+    ],
+    "syntax": "condition_code: rc=return_code",
+    "title": "Specify a Code to Indicate Success or Failure",
+    "value_type": "str"
+  },
+  "connect_string": {
+    "default": null,
+    "family": "db",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2443,
+    "requirement": "optional",
+    "supported_job_types": [
+      "DBMON",
+      "DBPROC",
+      "DBTRIG"
+    ],
+    "syntax": "connect_string: \"dburl\"",
+    "title": "Specify Database Resource Location",
+    "value_type": "str"
+  },
+  "connection_factory": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2446,
+    "requirement": "required",
+    "supported_job_types": [
+      "JMSPUB",
+      "JMSSUB"
+    ],
+    "syntax": "connection_factory: factory",
+    "title": "Specify the JNDI Name of the Connection Factory",
+    "value_type": "str"
+  },
+  "connection_retry": {
+    "default": "3",
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2447,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "connection_retry: number_of_retries",
+    "title": "Specify the Number of Times to Retry a Connection Failure",
+    "value_type": "int"
+  },
+  "connection_timeout": {
+    "default": "0",
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2447,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "connection_timeout: time_in_seconds",
+    "title": "Defines When the Connection Times Out",
+    "value_type": "int"
+  },
+  "continuous": {
+    "default": null,
+    "family": "io",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2447,
+    "requirement": "optional",
+    "supported_job_types": [
+      "DBMON",
+      "DBTRIG",
+      "FT",
+      "JMSSUB",
+      "JMXSUB",
+      "SAPEVT",
+      "SAPPM"
+    ],
+    "syntax": "continuous: Y | N",
+    "title": "Specify Whether the Job Monitors Continuously",
+    "value_type": "bool"
+  },
+  "copy_jcl": {
+    "default": null,
+    "family": "misc",
+    "limits": "Up to 44 characters",
+    "object": "job",
+    "pdf_page": 2449,
+    "requirement": "optional",
+    "supported_job_types": [
+      "ZOS"
+    ],
+    "syntax": "copy_jcl: data_set_name",
+    "title": "Specify a Data Set Name that Receives the Copy JCL",
+    "value_type": "str"
+  },
+  "correlation_id": {
+    "default": null,
+    "family": "misc",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2450,
+    "requirement": "optional",
+    "supported_job_types": [
+      "JMSPUB",
+      "JMSSUB"
+    ],
+    "syntax": "correlation_id: correlation_id",
+    "title": "Specify a Message Correlation ID",
+    "value_type": "str"
+  },
+  "cpu_usage": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2454,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMCPU"
+    ],
+    "syntax": "cpu_usage: FREE | USED",
+    "title": "Specify Whether to Monitor Available or Used CPU",
+    "value_type": "enum"
+  },
+  "create_method": {
+    "default": "create",
+    "family": "java",
+    "limits": "Up to 256 characters; case-sensitive; it must always begin with create",
+    "object": "job",
+    "pdf_page": 2452,
+    "requirement": "required",
+    "supported_job_types": [
+      "SESSBEAN"
+    ],
+    "syntax": "create_method: create_method",
+    "title": "Specify a Create Method",
+    "value_type": "str"
+  },
+  "create_name": {
+    "default": "create",
+    "family": "java",
+    "limits": "Up to 256 characters; case-sensitive; it must always begin with create",
+    "object": "job",
+    "pdf_page": 2452,
+    "requirement": "optional",
+    "supported_job_types": [
+      "ENTYBEAN"
+    ],
+    "syntax": "create_name: create_method",
+    "title": "Specify a Create Method",
+    "value_type": "str"
+  },
+  "create_parameter": {
+    "default": null,
+    "family": "java",
+    "limits": "Up to 1024 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2453,
+    "requirement": "optional",
+    "supported_job_types": [
+      "ENTYBEAN",
+      "SESSBEAN"
+    ],
+    "syntax": "create_parameter: type=value | payload_job=job_name[, type=value |",
+    "title": "Specify the Create Parameters",
+    "value_type": "enum"
+  },
+  "date_conditions": {
+    "default": null,
+    "family": "scheduling",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2455,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "date_conditions: y | n",
+    "title": "Base Job Start on Date and Time Attribute Values",
+    "value_type": "bool"
+  },
+  "days_of_week": {
+    "default": "No days are selected.",
+    "family": "scheduling",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2456,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": null,
+    "title": "Specify which Days of the Week to Run a Job",
+    "value_type": "list"
+  },
+  "dbtype": {
+    "default": null,
+    "family": "identity",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2457,
+    "requirement": "required",
+    "supported_job_types": [
+      "DBTRIG"
+    ],
+    "syntax": "dbtype: Oracle | MSSQL | DB2 | SYBASE | POSTGRESQL | TERADATA",
+    "title": "Specify the Type of Database",
+    "value_type": "enum"
+  },
+  "description": {
+    "default": null,
+    "family": "identity",
+    "limits": "Up to 500 alphanumeric characters (including spaces)",
+    "object": "job",
+    "pdf_page": 2458,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "description: \"text\"",
+    "title": "Define a Text Description for a Job",
+    "value_type": "str"
+  },
+  "destination_file": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2458,
+    "requirement": "optional",
+    "supported_job_types": [
+      "HTTP",
+      "JAVARMI",
+      "JMSSUB",
+      "SESSBEAN",
+      "SNMPGET",
+      "SNMPSET",
+      "WBSVC",
+      "WSDOC"
+    ],
+    "syntax": "destination_file: destination",
+    "title": "Specify an Output Destination File",
+    "value_type": "str"
+  },
+  "destination_name": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2460,
+    "requirement": "required",
+    "supported_job_types": [
+      "JMSPUB",
+      "JMSSUB"
+    ],
+    "syntax": "destination_name: destination",
+    "title": "Specify the JNDI Name of the Topic or Queue",
+    "value_type": "str"
+  },
+  "destination_user": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2461,
+    "requirement": "optional",
+    "supported_job_types": [
+      "JMSPUB",
+      "JMSSUB"
+    ],
+    "syntax": "destination_user: user@queue",
+    "title": "Specify the User Name to Connect to the Topic or Queue",
+    "value_type": "str"
+  },
+  "disk_drive": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 256 characters; case-sensitive Example: /dev/QASP02",
+    "object": "job",
+    "pdf_page": 2462,
+    "requirement": "required",
+    "supported_job_types": [
+      "OMD"
+    ],
+    "syntax": "disk_drive: drive",
+    "title": "Specify the Disk Space to Monitor",
+    "value_type": "str"
+  },
+  "disk_format": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2463,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMD"
+    ],
+    "syntax": "disk_format: PERCENT | GB | MB | KB | B",
+    "title": "Specify the Unit of Measurement Used to Monitor Disk Space",
+    "value_type": "enum"
+  },
+  "disk_space": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2464,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMD"
+    ],
+    "syntax": "disk_space: FREE | USED",
+    "title": "Specify Whether to Monitor Available or Used Disk Space",
+    "value_type": "enum"
+  },
+  "elevated": {
+    "default": null,
+    "family": "identity",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2466,
+    "requirement": "optional",
+    "supported_job_types": [
+      "CMD"
+    ],
+    "syntax": "elevated: y | n",
+    "title": "Specify Whether to Run a Command Job in Elevated Mode on Windows",
+    "value_type": "bool"
+  },
+  "encoding": {
+    "default": "US-ASCII",
+    "family": "identity",
+    "limits": "Up to 42 characters",
+    "object": "job",
+    "pdf_page": 2467,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMTF"
+    ],
+    "syntax": "encoding: char_set_name",
+    "title": "Specify the Character Encoding of a File",
+    "value_type": "str"
+  },
+  "endpoint_URL": {
+    "default": null,
+    "family": "misc",
+    "limits": "Up to 256 characters (Web Service RPC/Encoded ) and up to 2048 characters (Process Automation and Web",
+    "object": "job",
+    "pdf_page": 2468,
+    "requirement": "required",
+    "supported_job_types": [
+      "PAPROC",
+      "PAREQ",
+      "WBSVC",
+      "WSDOC"
+    ],
+    "syntax": "endpoint_URL: endpoint_url",
+    "title": "Specify a Target Endpoint URL",
+    "value_type": "str"
+  },
+  "envvars": {
+    "default": null,
+    "family": "identity",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2469,
+    "requirement": "optional",
+    "supported_job_types": [
+      "CMD",
+      "MICROFOCUS",
+      "PROXY",
+      "PS",
+      "ZOS"
+    ],
+    "syntax": "envvars: parm_name=parm_value[, parm_name=parm_value...]",
+    "title": "Specify a Job's Environment Variables",
+    "value_type": "str"
+  },
+  "exclude_calendar": {
+    "default": "No calendar is used.",
+    "family": "scheduling",
+    "limits": "Up to 64 alphanumeric characters",
+    "object": "job",
+    "pdf_page": 2471,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "exclude_calendar: calendar_name",
+    "title": "Define Days to Exclude a Job from Running",
+    "value_type": "str"
+  },
+  "external_os_user": {
+    "default": null,
+    "family": "identity",
+    "limits": "80 characters",
+    "object": "job",
+    "pdf_page": 2472,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SCP"
+    ],
+    "syntax": "external_os_user: OS_user",
+    "title": "Specify an External User",
+    "value_type": "str"
+  },
+  "fail_codes": {
+    "default": "Any exit code other than 0 (zero) indicates job failure",
+    "family": "identity",
+    "limits": "Up to 256 characters. The exit code must be an integer in the range -2147483647 to 2147483647.",
+    "object": "job",
+    "pdf_page": 2472,
+    "requirement": "optional",
+    "supported_job_types": [
+      "CMD",
+      "HTTP",
+      "I5",
+      "MICROFOCUS",
+      "PROXY",
+      "WSDOC"
+    ],
+    "syntax": "fail_codes: exit_codes",
+    "title": "Define Exit Codes to Indicate Job Failure",
+    "value_type": "str"
+  },
+  "filter": {
+    "default": null,
+    "family": "identity",
+    "limits": "Case-sensitive",
+    "object": "job",
+    "pdf_page": 2473,
+    "requirement": "required",
+    "supported_job_types": [
+      "JMSSUB",
+      "JMXSUB"
+    ],
+    "syntax": "• For the JMSSUB and HTTP job types:",
+    "title": "Specify a Filter Using Regular Expression Logic",
+    "value_type": "str"
+  },
+  "filter_type": {
+    "default": null,
+    "family": "identity",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2475,
+    "requirement": "optional",
+    "supported_job_types": [
+      "JMXSUB"
+    ],
+    "syntax": "filter_type: Attributes | Types",
+    "title": "Specify the Filter Type",
+    "value_type": "enum"
+  },
+  "finder_name": {
+    "default": null,
+    "family": "java",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2476,
+    "requirement": "required",
+    "supported_job_types": [
+      "ENTYBEAN"
+    ],
+    "syntax": "finder_name: finder_method",
+    "title": "Specify a Finder Method",
+    "value_type": "str"
+  },
+  "finder_parameter": {
+    "default": null,
+    "family": "java",
+    "limits": "Up to 1024 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2476,
+    "requirement": "required",
+    "supported_job_types": [
+      "ENTYBEAN"
+    ],
+    "syntax": "finder_parameter: type=value | payload_job=job_name[, type=value |",
+    "title": "Specify Finder Parameters",
+    "value_type": "enum"
+  },
+  "form_parameter": {
+    "default": null,
+    "family": "pam",
+    "limits": "Upto 4000 characters; case sensitive",
+    "object": "job",
+    "pdf_page": 2477,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "name=value",
+    "title": "Specify Input Parameters",
+    "value_type": "str"
+  },
+  "ftp_compression": {
+    "default": "0",
+    "family": "file-transfer",
+    "limits": "0-9 (0 is no data compression and 9 is the highest data compression)",
+    "object": "job",
+    "pdf_page": 2478,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "ftp_compression: level",
+    "title": "Specify the Data Compression Level",
+    "value_type": "int"
+  },
+  "ftp_local_name": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": "Case-sensitive",
+    "object": "job",
+    "pdf_page": 2479,
+    "requirement": "required",
+    "supported_job_types": [],
+    "syntax": "ftp_local_name: file_name[; file_name...]",
+    "title": "Specify Local Filenames within an FTP Job",
+    "value_type": "str"
+  },
+  "ftp_local_user": {
+    "default": "The user who inserted the job",
+    "family": "file-transfer",
+    "limits": "Up to 80 characters",
+    "object": "job",
+    "pdf_page": 2481,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "ftp_local_user: user",
+    "title": "Specify the Local User ID on the Agent",
+    "value_type": "str"
+  },
+  "ftp_remote_name": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": "Case-sensitive",
+    "object": "job",
+    "pdf_page": 2482,
+    "requirement": "required",
+    "supported_job_types": [],
+    "syntax": "ftp_remote_name: file_name[; file_name...]",
+    "title": "Specify Remote Filename within an FTP Job",
+    "value_type": "str"
+  },
+  "ftp_server_name": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2484,
+    "requirement": "required",
+    "supported_job_types": [],
+    "syntax": "ftp_server_name: server_address",
+    "title": "Specify FTP Server Name within an FTP Job",
+    "value_type": "str"
+  },
+  "ftp_server_port": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": "0-65535",
+    "object": "job",
+    "pdf_page": 2486,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "ftp_server_port: port",
+    "title": "Specify the Server Port of a Remote FTP Server",
+    "value_type": "int"
+  },
+  "ftp_transfer_direction": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2486,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "ftp_transfer_direction: UPLOAD | DOWNLOAD",
+    "title": "Specify Transfer Direction within an FTP Job",
+    "value_type": "enum"
+  },
+  "ftp_transfer_type": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2487,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "ftp_transfer_type: A |B | E",
+    "title": "Specify Data Code Type within an FTP Job",
+    "value_type": "enum"
+  },
+  "ftp_use_SSL": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2489,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "ftp_use_SSL: TRUE | FALSE",
+    "title": "Specify SSL FTP or Regular FTP",
+    "value_type": "enum"
+  },
+  "ftp_user_type": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2490,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "ftp_user_type: Simple | Windows | Qualified",
+    "title": "Specify How the Owner Attribute Value is Passed to the FTP Server",
+    "value_type": "enum"
+  },
+  "group": {
+    "default": null,
+    "family": "identity",
+    "limits": "Up to 64 characters; valid characters are a-z, A-Z, 0-9, period (.), underscore (_), pound (#), and hyphen (-); do",
+    "object": "job",
+    "pdf_page": 2491,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "group: group_name",
+    "title": "Associate a Job with a Group",
+    "value_type": "str"
+  },
+  "hadoop_hdfs_create_parentdir": {
+    "default": null,
+    "family": "hadoop",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2492,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "hadoop_hdfs_create_parentdir: true | false",
+    "title": "Specify Whether to Create a Parent Directory",
+    "value_type": "enum"
+  },
+  "hadoop_hdfs_destination": {
+    "default": null,
+    "family": "hadoop",
+    "limits": "Up to 255 characters",
+    "object": "job",
+    "pdf_page": 2492,
+    "requirement": "required",
+    "supported_job_types": [],
+    "syntax": "hadoop_hdfs_destination: destinationpath",
+    "title": "Specify the Destination Path of the File or Directory",
+    "value_type": "str"
+  },
+  "hadoop_hdfs_overwrite": {
+    "default": null,
+    "family": "hadoop",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2492,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "hadoop_hdfs_overwrite: true | false",
+    "title": "Specify Whether to Overwrite a File or Directory",
+    "value_type": "enum"
+  },
+  "hadoop_hdfs_path": {
+    "default": null,
+    "family": "hadoop",
+    "limits": "Up to 1024 characters.",
+    "object": "job",
+    "pdf_page": 2493,
+    "requirement": "required",
+    "supported_job_types": [],
+    "syntax": "hadoop_hdfs_path: path",
+    "title": "Specify the Path to the HDFS Home Directory",
+    "value_type": "str"
+  },
+  "hadoop_hdfs_recursive": {
+    "default": null,
+    "family": "hadoop",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2494,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "hadoop_hdfs_recursive: true | false",
+    "title": "Specify Whether to Invoke the File Operation Recursively",
+    "value_type": "enum"
+  },
+  "hadoop_hdfs_skiptrash": {
+    "default": null,
+    "family": "hadoop",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2494,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "hadoop_hdfs_skiptrash: true | false",
+    "title": "Specify Whether to Skip Trash",
+    "value_type": "enum"
+  },
+  "hadoop_hdfs_source": {
+    "default": null,
+    "family": "hadoop",
+    "limits": "Up to 1024 characters",
+    "object": "job",
+    "pdf_page": 2494,
+    "requirement": "required",
+    "supported_job_types": [],
+    "syntax": "hadoop_hdfs_source: sourcepath",
+    "title": "Specify the Source Path of the File or Directory",
+    "value_type": "str"
+  },
+  "hadoop_hdfs_type": {
+    "default": "anonymous (the Hive default user)",
+    "family": "hadoop",
+    "limits": "Up to 255 characters",
+    "object": "job",
+    "pdf_page": 2495,
+    "requirement": "required",
+    "supported_job_types": [],
+    "syntax": "hadoop_hdfs_type: TOUCH | MKDIR | REMOVE | COPY | COPYFROMLOCAL | COPYTOLOCAL | MOVE |",
+    "title": "Specify the File Operation Performed on HDFS",
+    "value_type": "enum"
+  },
+  "hadoop_oozie_cfgfile": {
+    "default": null,
+    "family": "hadoop",
+    "limits": "Up to 255 characters.",
+    "object": "job",
+    "pdf_page": 2498,
+    "requirement": "required",
+    "supported_job_types": [],
+    "syntax": "hadoop_oozie_cfgfile: path",
+    "title": "Specify the Path to the Job Configuration File",
+    "value_type": "str"
+  },
+  "hadoop_pollinterval": {
+    "default": "60",
+    "family": "hadoop",
+    "limits": "1-86400",
+    "object": "job",
+    "pdf_page": 2491,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "hadoop_pollinterval: time",
+    "title": "Specify the Number of Seconds to Wait Between Job Status",
+    "value_type": "int"
+  },
+  "hadoop_sqoop_clearstagingtable": {
+    "default": null,
+    "family": "hadoop",
+    "limits": "Up to 1024 characters",
+    "object": "job",
+    "pdf_page": 2501,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "hadoop_sqoop_clearstagingtable: true | false",
+    "title": "Specify Whether to Delete Data in the Staging",
+    "value_type": "enum"
+  },
+  "hadoop_sqoop_nullnonstring": {
+    "default": null,
+    "family": "hadoop",
+    "limits": "Up to 20 characters",
+    "object": "job",
+    "pdf_page": 2502,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "hadoop_sqoop_nullnonstring: null_nonstring",
+    "title": "Specify a Null String for Non-string Columns",
+    "value_type": "str"
+  },
+  "hadoop_sqoop_nullstring": {
+    "default": null,
+    "family": "hadoop",
+    "limits": "Up to 20 characters",
+    "object": "job",
+    "pdf_page": 2503,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "hadoop_sqoop_nullstring: null_string",
+    "title": "Specify a Null String for String Columns",
+    "value_type": "str"
+  },
+  "hadoop_sqoop_stagingtable": {
+    "default": null,
+    "family": "hadoop",
+    "limits": "Up to 128 characters",
+    "object": "job",
+    "pdf_page": 2503,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "hadoop_sqoop_stagingtable: staging_table",
+    "title": "Specify the Table that Stages Data",
+    "value_type": "str"
+  },
+  "header_filter": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters",
+    "object": "job",
+    "pdf_page": 2504,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "header_filter: filter",
+    "title": "Specify a Filter on the Header",
+    "value_type": "str"
+  },
+  "headers": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 4000 characters for each name=\"value\" format",
+    "object": "job",
+    "pdf_page": 2505,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "headers: name1=\"value1\", name2=\"value2\"",
+    "title": "Specify a Header",
+    "value_type": "str"
+  },
+  "heartbeat_interval": {
+    "default": "0; the scheduler does not monitor heartbeats from the job",
+    "family": "io",
+    "limits": "0-2147483647",
+    "object": "job",
+    "pdf_page": 2505,
+    "requirement": "optional",
+    "supported_job_types": [
+      "CMD"
+    ],
+    "syntax": "heartbeat_interval: mins",
+    "title": "Set the Monitoring Frequency for a Job",
+    "value_type": "int"
+  },
+  "i5_action": {
+    "default": null,
+    "family": "i5",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2506,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "i5_action: RUN_PROGRAM | RUN_PROG_IN_FILE | COMMAND",
+    "title": "Specify Whether to Run a Program or Issue a Command",
+    "value_type": "enum"
+  },
+  "i5_cc_exit": {
+    "default": null,
+    "family": "i5",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2507,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "i5_cc_exit: *SEVERITY | *USER | *PROGRAM",
+    "title": "Specify the Type of Exit Code to Return",
+    "value_type": "enum"
+  },
+  "i5_curr_lib": {
+    "default": null,
+    "family": "i5",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2508,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": null,
+    "title": "Specify the Name of the Current Library",
+    "value_type": "str"
+  },
+  "i5_job_desc": {
+    "default": null,
+    "family": "i5",
+    "limits": "Up to 10 characters; the first character must be one of the following: A-Z, $, #, or @; the second to tenth",
+    "object": "job",
+    "pdf_page": 2509,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": null,
+    "title": "Specify the Job Description",
+    "value_type": "str"
+  },
+  "i5_job_name": {
+    "default": null,
+    "family": "i5",
+    "limits": "Up to 10 characters; the first character must be one of the following: A-Z, $, #, or @; the second to tenth",
+    "object": "job",
+    "pdf_page": 2510,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "i5_job_name: job_name",
+    "title": "Specify the Job Name",
+    "value_type": "str"
+  },
+  "i5_job_queue": {
+    "default": null,
+    "family": "i5",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2510,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": null,
+    "title": "Specify the Job Queue for a Program",
+    "value_type": "str"
+  },
+  "i5_lda": {
+    "default": null,
+    "family": "i5",
+    "limits": "Up to 1024 characters; case-sensitive.",
+    "object": "job",
+    "pdf_page": 2511,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "i5_lda: \"data\" | X'hh...'",
+    "title": "Specify the Data for the Local Data Area",
+    "value_type": "enum"
+  },
+  "i5_lib": {
+    "default": null,
+    "family": "i5",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2512,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": null,
+    "title": "Specify the Name of a Library",
+    "value_type": "str"
+  },
+  "i5_library_list": {
+    "default": null,
+    "family": "i5",
+    "limits": "Up to 10 characters; it cannot contain delimiters (such as spaces)",
+    "object": "job",
+    "pdf_page": 2512,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "i5_library_list: \"library...\"",
+    "title": "Specify the Libraries for an i5/OS Job",
+    "value_type": "str"
+  },
+  "i5_name": {
+    "default": null,
+    "family": "i5",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2513,
+    "requirement": "required",
+    "supported_job_types": [],
+    "syntax": null,
+    "title": "Specify a CL Program, Source File, or Command",
+    "value_type": "str"
+  },
+  "i5_others": {
+    "default": null,
+    "family": "i5",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2515,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "i5_others: keyword=value[,keyword=value...]",
+    "title": "Pass Keyword Parameters to SBMJOB",
+    "value_type": "str"
+  },
+  "i5_params": {
+    "default": null,
+    "family": "i5",
+    "limits": "Up to 64 parameters; each parameter can be up to 1024 characters.",
+    "object": "job",
+    "pdf_page": 2516,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "i5_params: value[value...]",
+    "title": "Pass Positional Parameters",
+    "value_type": "str"
+  },
+  "i5_process_priority": {
+    "default": null,
+    "family": "i5",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2517,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "i5_process_priority: HIGH | ABOVE_NORMAL | NORMAL | BELOW_NORMAL | IDLE",
+    "title": "Specify the Process Priority of an i5/OS Job",
+    "value_type": "enum"
+  },
+  "informatica_folder_name": {
+    "default": null,
+    "family": "informatica",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2518,
+    "requirement": "required",
+    "supported_job_types": [],
+    "syntax": "informatica_folder_name: foldername",
+    "title": "Specify the Informatica PowerCenter Repository Folder",
+    "value_type": "str"
+  },
+  "informatica_param_file": {
+    "default": null,
+    "family": "informatica",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2518,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "informatica_param_file: paramfile",
+    "title": "Specify the Path and Name of the Parameter File",
+    "value_type": "str"
+  },
+  "informatica_pass_on_success": {
+    "default": null,
+    "family": "informatica",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2519,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "informatica_pass_on_success: 0 | 1",
+    "title": "Specify Whether the Status of the Workflow is",
+    "value_type": "enum"
+  },
+  "informatica_repository_name": {
+    "default": null,
+    "family": "informatica",
+    "limits": "Up to 128 characters",
+    "object": "job",
+    "pdf_page": 2520,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "informatica_repository_name: repositoryname",
+    "title": "Specify the Name of the Repository",
+    "value_type": "str"
+  },
+  "informatica_security_domain": {
+    "default": null,
+    "family": "informatica",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2520,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "informatica_security_domain: ldap_security_domain",
+    "title": "Specify the Name of the LDAP Security Domain",
+    "value_type": "str"
+  },
+  "informatica_target_name": {
+    "default": null,
+    "family": "informatica",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2521,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "informatica_target_name: targetname",
+    "title": "Specify the Name of the Informatica Target",
+    "value_type": "str"
+  },
+  "informatica_task_name": {
+    "default": null,
+    "family": "informatica",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2521,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "informatica_task_name: taskname",
+    "title": "Specify the Name of the Task",
+    "value_type": "str"
+  },
+  "informatica_user": {
+    "default": null,
+    "family": "informatica",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2522,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "informatica_user: informatica_user@token",
+    "title": "Specify the Informatica Server User Name",
+    "value_type": "str"
+  },
+  "informatica_workflow_inst_name": {
+    "default": null,
+    "family": "informatica",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2522,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "informatica_workflow_inst_name: workflow_instname",
+    "title": "Specify the Name of the Workflow Instance",
+    "value_type": "str"
+  },
+  "informatica_workflow_name": {
+    "default": null,
+    "family": "informatica",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2522,
+    "requirement": "required",
+    "supported_job_types": [],
+    "syntax": "informatica_workflow_name: workflowname",
+    "title": "Specify the Name of the Informatica PowerCenter",
+    "value_type": "str"
+  },
+  "initial_context_factory": {
+    "default": null,
+    "family": "misc",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2523,
+    "requirement": "required",
+    "supported_job_types": [
+      "ENTYBEAN",
+      "JMSPUB",
+      "JMSSUB",
+      "SESSBEAN"
+    ],
+    "syntax": "initial_context_factory: factory",
+    "title": "Specify an Initial Context Factory",
+    "value_type": "str"
+  },
+  "input_cookies": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2524,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "input_cookies: jobname",
+    "title": "Input the Cookies in the Database",
+    "value_type": "str"
+  },
+  "inside_range": {
+    "default": null,
+    "family": "misc",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2524,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMCPU",
+      "OMD"
+    ],
+    "syntax": "inside_range: TRUE | FALSE",
+    "title": "Specify Whether to Monitor for CPU or Disk Usage Within or Outside",
+    "value_type": "enum"
+  },
+  "interactive": {
+    "default": null,
+    "family": "identity",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2526,
+    "requirement": "optional",
+    "supported_job_types": [
+      "CMD"
+    ],
+    "syntax": "interactive: y | n",
+    "title": "Specify Whether to Run a Command Job in Interactive Mode on",
+    "value_type": "bool"
+  },
+  "invocation_type": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2527,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "invocation_type: GET | POST | PUT | DELETE",
+    "title": "Specify the HTTP Method Type",
+    "value_type": "enum"
+  },
+  "ip_host": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 100 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2527,
+    "requirement": "required",
+    "supported_job_types": [
+      "OMIP"
+    ],
+    "syntax": "ip_host: ip_address",
+    "title": "Specify the IP Address to Monitor",
+    "value_type": "str"
+  },
+  "ip_port": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": "0-65535",
+    "object": "job",
+    "pdf_page": 2528,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMIP"
+    ],
+    "syntax": "ip_port: ip_port",
+    "title": "Specify the Port Number at the IP Address to Monitor",
+    "value_type": "int"
+  },
+  "ip_status": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2529,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMIP"
+    ],
+    "syntax": "ip_status: RUNNING | STOPPED",
+    "title": "Specify the Status of the IP Address to Monitor",
+    "value_type": "enum"
+  },
+  "j2ee_authentication_order": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2529,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": null,
+    "title": "Specify Authentication Protocols",
+    "value_type": "str"
+  },
+  "j2ee_conn_domain": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 80 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2530,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "j2ee_conn_domain: origin_domain",
+    "title": "Specify a Domain for NTLM Connection Authentication",
+    "value_type": "str"
+  },
+  "j2ee_conn_origin": {
+    "default": "The computer name where the agent is running",
+    "family": "web",
+    "limits": "Up to 80 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2531,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "j2ee_conn_origin: origin_host",
+    "title": "Specify an Origin Host Name for NTLM Connection",
+    "value_type": "str"
+  },
+  "j2ee_conn_user": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 145 characters",
+    "object": "job",
+    "pdf_page": 2532,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "j2ee_conn_user: authenticated_user@connhost",
+    "title": "Specify a User Name for Connection Authentication",
+    "value_type": "str"
+  },
+  "j2ee_no_global_proxy_defaults": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2533,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "j2ee_no_global_proxy_defaults: Y | N",
+    "title": "Specify Whether to Use Global Proxy Defaults",
+    "value_type": "bool"
+  },
+  "j2ee_parameter": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 4000 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2534,
+    "requirement": "required",
+    "supported_job_types": [
+      "JAVARMI",
+      "JMSPUB",
+      "SESSBEAN"
+    ],
+    "syntax": "j2ee_parameter: type=value | payload_job=job_name[, type=value |",
+    "title": "Specify Input Parameters",
+    "value_type": "enum"
+  },
+  "j2ee_proxy_domain": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2536,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "j2ee_proxy_domain: proxy_domain",
+    "title": "Specify a Domain for Proxy Authentication",
+    "value_type": "str"
+  },
+  "j2ee_proxy_host": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2536,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "j2ee_proxy_host: proxy_host",
+    "title": "Specify a Proxy Host",
+    "value_type": "str"
+  },
+  "j2ee_proxy_origin_host": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters; case-sensitiveDefault: The computer name where the agent is running",
+    "object": "job",
+    "pdf_page": 2537,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "j2ee_proxy_origin_host: proxy_origin",
+    "title": "Specify an Origin Host Name for Proxy Authentication",
+    "value_type": "str"
+  },
+  "j2ee_proxy_port": {
+    "default": null,
+    "family": "web",
+    "limits": "0-65535",
+    "object": "job",
+    "pdf_page": 2538,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "j2ee_proxy_port: proxy_port",
+    "title": "Specify a Proxy Port",
+    "value_type": "int"
+  },
+  "j2ee_proxy_user": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 80 characters; case-sensitive; it cannot contain delimiters",
+    "object": "job",
+    "pdf_page": 2539,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "j2ee_proxy_user: proxy_user",
+    "title": "Specify a User for Proxy Authentication",
+    "value_type": "str"
+  },
+  "j2ee_user": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 145 characters; case-sensitive; it cannot contain delimiters",
+    "object": "job",
+    "pdf_page": 2540,
+    "requirement": "optional",
+    "supported_job_types": [
+      "ENTYBEAN",
+      "JMSPUB",
+      "JMSSUB",
+      "SESSBEAN"
+    ],
+    "syntax": "j2ee_user: user_name",
+    "title": "Specify a JNDI User Name",
+    "value_type": "str"
+  },
+  "jcl_library": {
+    "default": null,
+    "family": "zos",
+    "limits": "Up to 44 characters",
+    "object": "job",
+    "pdf_page": 2541,
+    "requirement": "required",
+    "supported_job_types": [
+      "ZOS"
+    ],
+    "syntax": "jcl_library: library",
+    "title": "Specify a JCL Library",
+    "value_type": "str"
+  },
+  "jcl_member": {
+    "default": null,
+    "family": "zos",
+    "limits": "Up to 8 characters",
+    "object": "job",
+    "pdf_page": 2542,
+    "requirement": "required",
+    "supported_job_types": [
+      "ZOS"
+    ],
+    "syntax": "jcl_member: member",
+    "title": "Specify a JCL Member",
+    "value_type": "str"
+  },
+  "jmx_parameter": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 1024 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2543,
+    "requirement": "optional",
+    "supported_job_types": [
+      "JMXMAS",
+      "JMXMC",
+      "JMXMOP"
+    ],
+    "syntax": "jmx_parameter: type=value | payload_job=job_name[, type=value | payload_job=job_name...]",
+    "title": "Specify JMX Parameters",
+    "value_type": "enum"
+  },
+  "jmx_user": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 145 characters",
+    "object": "job",
+    "pdf_page": 2545,
+    "requirement": "optional",
+    "supported_job_types": [
+      "JMXMAG",
+      "JMXMAS",
+      "JMXMC",
+      "JMXMOP",
+      "JMXMREM",
+      "JMXSUB"
+    ],
+    "syntax": "jmx_user: user_name",
+    "title": "Specify a JMX User Name",
+    "value_type": "str"
+  },
+  "job_class": {
+    "default": null,
+    "family": "identity",
+    "limits": "Up to 32 characters; it cannot contain delimiters (such as spaces)",
+    "object": "job",
+    "pdf_page": 2545,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "job_class: class",
+    "title": "Assign a Job Class to a Job",
+    "value_type": "str"
+  },
+  "job_criteria": {
+    "default": null,
+    "family": "misc",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2546,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WSDOC"
+    ],
+    "syntax": "job_criteria: [criteria_xpath=\"xpath expression\"]criteria_filter=\"filter expression\"",
+    "title": "Defines Optional Success Criteria",
+    "value_type": "str"
+  },
+  "job_load": {
+    "default": "0 (unrestricted)",
+    "family": "load",
+    "limits": "Up to 10 digits",
+    "object": "job",
+    "pdf_page": 2547,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "job_load: load_units",
+    "title": "Define a Job's Relative Processing Load",
+    "value_type": "int"
+  },
+  "job_terminator": {
+    "default": null,
+    "family": "sla",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2548,
+    "requirement": "optional",
+    "supported_job_types": [
+      "BOX",
+      "CMD",
+      "DBMON",
+      "DBPROC",
+      "DBTRIG",
+      "FT",
+      "FW",
+      "JMSSUB",
+      "JMXSUB",
+      "MICROFOCUS",
+      "OACOPY",
+      "OASET",
+      "OASG",
+      "OMCPU",
+      "OMD",
+      "OMEL",
+      "OMIP",
+      "OMP",
+      "OMS",
+      "OMTF",
+      "PAPROC",
+      "PS",
+      "SAP",
+      "SAPBDC",
+      "SAPBWIP",
+      "SAPBWPC",
+      "SAPDA",
+      "SAPEVT",
+      "SAPJC",
+      "SAPPM",
+      "ZOS",
+      "ZOSM"
+    ],
+    "syntax": "job_terminator: Y | N",
+    "title": "Kill a Job if Its Box Fails",
+    "value_type": "bool"
+  },
+  "job_type": {
+    "default": "CMD",
+    "family": "identity",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2550,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "job_type: type",
+    "title": "Specify Job Type",
+    "value_type": "str"
+  },
+  "lower_boundary": {
+    "also_pdf_pages": [
+      2554
+    ],
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 256 characters; case-sensitive. When the search mode is LINE, the upper limit is",
+    "object": "job",
+    "pdf_page": 2552,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMCPU",
+      "OMD",
+      "OMTF"
+    ],
+    "syntax": "lower_boundary: start_range",
+    "title": "Define the Start of the Range to be Searched (OMTF Jobs)",
+    "value_type": "str"
+  },
+  "mac_address": {
+    "default": null,
+    "family": "identity",
+    "limits": "Up to 17 characters",
+    "object": "job",
+    "pdf_page": 2555,
+    "requirement": "required",
+    "supported_job_types": [
+      "WOL"
+    ],
+    "syntax": "mac_address: xx-xx-xx-xx-xx-xx",
+    "title": "Specify the Media Access Control (MAC) Address",
+    "value_type": "str"
+  },
+  "machine": {
+    "default": null,
+    "family": "load",
+    "limits": "Up to 80 alphanumeric characters",
+    "object": "job",
+    "pdf_page": 2556,
+    "requirement": "required",
+    "supported_job_types": "ALL",
+    "syntax": "machine: {machine_name [, machine_name]...| `machine chooser`}",
+    "title": "Define the Client Where a Job Runs",
+    "value_type": "machine_list"
+  },
+  "machine_method": {
+    "default": null,
+    "family": "misc",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2557,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMCPU"
+    ],
+    "syntax": "machine_method: cpu_mon|rstatd|job_load|roundrobin|roundrobin_jobload",
+    "title": "Specify the Method to Achieve Load Balancing",
+    "value_type": "enum"
+  },
+  "max_exit_success": {
+    "default": "0",
+    "family": "sla",
+    "limits": "0-2147483647 (CMD and i5); 0-999999999 (Micro Focus)",
+    "object": "job",
+    "pdf_page": 2560,
+    "requirement": "optional",
+    "supported_job_types": [
+      "CMD",
+      "I5",
+      "MICROFOCUS"
+    ],
+    "syntax": "max_exit_success: exit_code",
+    "title": "Specify Maximum Exit Code for Success",
+    "value_type": "int"
+  },
+  "max_run_alarm": {
+    "default": "No maximum set.",
+    "family": "sla",
+    "limits": "0-2147483647; must be an integer.",
+    "object": "job",
+    "pdf_page": 2561,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "max_run_alarm: mins",
+    "title": "Define the Maximum Run Time for a Job",
+    "value_type": "int"
+  },
+  "mbean_attr": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2561,
+    "requirement": "required",
+    "supported_job_types": [
+      "JMXMAG",
+      "JMXMAS"
+    ],
+    "syntax": "mbean_attr: attribute",
+    "title": "Specify the MBean Attribute to Query or Set",
+    "value_type": "str"
+  },
+  "mbean_name": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 715 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2562,
+    "requirement": "required",
+    "supported_job_types": [
+      "JMXMAG",
+      "JMXMAS",
+      "JMXMC",
+      "JMXMOP",
+      "JMXMREM",
+      "JMXSUB"
+    ],
+    "syntax": "mbean_name: \"domain_name:key=value[,key=value...]\"",
+    "title": "Specify the Name of the MBean",
+    "value_type": "str"
+  },
+  "mbean_operation": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2563,
+    "requirement": "required",
+    "supported_job_types": [
+      "JMXMOP"
+    ],
+    "syntax": "mbean_operation: operation",
+    "title": "Specify the Operation to be Invoked",
+    "value_type": "str"
+  },
+  "media_type": {
+    "default": null,
+    "family": "misc",
+    "limits": "Up to 128 characters",
+    "object": "job",
+    "pdf_page": 2563,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "media_type: type",
+    "title": "Specify the Type of Payload",
+    "value_type": "str"
+  },
+  "message_class": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2564,
+    "requirement": "required",
+    "supported_job_types": [
+      "JMSPUB"
+    ],
+    "syntax": "message_class: class",
+    "title": "Specify the Java Class of the JMS Message",
+    "value_type": "str"
+  },
+  "method_name": {
+    "default": null,
+    "family": "java",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2565,
+    "requirement": "required",
+    "supported_job_types": [
+      "ENTYBEAN",
+      "JAVARMI",
+      "SESSBEAN"
+    ],
+    "syntax": "method_name: method",
+    "title": "Specify the Method or Operation to be Invoked",
+    "value_type": "str"
+  },
+  "mf_jcl_name": {
+    "default": null,
+    "family": "platform-microfocus",
+    "limits": "Up to 256 characters",
+    "object": "job",
+    "pdf_page": 2566,
+    "requirement": "required",
+    "supported_job_types": [
+      "MICROFOCUS"
+    ],
+    "syntax": "mf_jcl_name: jcl_file",
+    "title": "Specify the Path to and Name of a JCL File",
+    "value_type": "str"
+  },
+  "mf_jcl_type": {
+    "default": null,
+    "family": "platform-microfocus",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2566,
+    "requirement": "required",
+    "supported_job_types": [
+      "MICROFOCUS"
+    ],
+    "syntax": "mf_jcl_type: CONTENT | REFERENCE",
+    "title": "Specify Whether to Pass the JCL by Content or by Reference",
+    "value_type": "enum"
+  },
+  "mf_server": {
+    "default": null,
+    "family": "platform-microfocus",
+    "limits": "Up to 256 characters",
+    "object": "job",
+    "pdf_page": 2567,
+    "requirement": "required",
+    "supported_job_types": [
+      "MICROFOCUS"
+    ],
+    "syntax": "mf_server: server_name | \"tcp:ip_address:port\"",
+    "title": "Specify the Server Name or IP Address of a Micro Focus Server",
+    "value_type": "enum"
+  },
+  "mf_server_address_type": {
+    "default": null,
+    "family": "platform-microfocus",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2568,
+    "requirement": "required",
+    "supported_job_types": [
+      "MICROFOCUS"
+    ],
+    "syntax": "mf_server_address_type: NAME | ADDRESS",
+    "title": "Specify Whether the Micro Focus Server Value is a Server",
+    "value_type": "enum"
+  },
+  "mf_user": {
+    "default": null,
+    "family": "platform-microfocus",
+    "limits": "Up to 80 characters",
+    "object": "job",
+    "pdf_page": 2569,
+    "requirement": "optional",
+    "supported_job_types": [
+      "MICROFOCUS"
+    ],
+    "syntax": "mf_user: user_id@identifier",
+    "title": "Specify a Micro Focus User ID",
+    "value_type": "str"
+  },
+  "mf_version": {
+    "default": null,
+    "family": "platform-microfocus",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2569,
+    "requirement": "optional",
+    "supported_job_types": [
+      "MICROFOCUS"
+    ],
+    "syntax": "mf_version: VSE/POWER | JES2 | JES3",
+    "title": "Specify the Mainframe Environment",
+    "value_type": "enum"
+  },
+  "min_run_alarm": {
+    "default": "No minimum set.",
+    "family": "sla",
+    "limits": "This value can be any integer.",
+    "object": "job",
+    "pdf_page": 2570,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "min_run_alarm: mins",
+    "title": "Define the Minimum Run Time for a Job",
+    "value_type": "int"
+  },
+  "modify_parameter": {
+    "default": null,
+    "family": "misc",
+    "limits": "Up to 1024 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2571,
+    "requirement": "optional",
+    "supported_job_types": [
+      "ENTYBEAN"
+    ],
+    "syntax": "modify_parameter: type=value | payload_job=job_name[, type=value |",
+    "title": "Specify Modify Parameters",
+    "value_type": "enum"
+  },
+  "monitor_cond": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 500 characters; case-sensitive.",
+    "object": "job",
+    "pdf_page": 2572,
+    "requirement": "optional",
+    "supported_job_types": [
+      "DBMON"
+    ],
+    "syntax": "monitor_cond: condition",
+    "title": "Specify a Condition to Monitor For",
+    "value_type": "str"
+  },
+  "monitor_mode": {
+    "default": null,
+    "family": "io",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2572,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMCPU",
+      "OMD",
+      "OMEL",
+      "OMIP",
+      "OMP",
+      "OMS",
+      "OMTF"
+    ],
+    "syntax": "• To specify a mode for OMIP, OMP, and OMS jobs:",
+    "title": "Specify Whether to Monitor Conditions Immediately or",
+    "value_type": "str"
+  },
+  "monitor_type": {
+    "default": null,
+    "family": "db",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2575,
+    "requirement": "optional",
+    "supported_job_types": [
+      "DBMON"
+    ],
+    "syntax": "mon_type: INCREASE | DECREASE | VARIANCE",
+    "title": "Specify the Type of Database Change to Monitor For",
+    "value_type": "enum"
+  },
+  "must_complete_times": {
+    "default": null,
+    "family": "scheduling",
+    "limits": "00:00-71:59 (2 calendar days ahead of the current calendar day)",
+    "object": "job",
+    "pdf_page": 2576,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": null,
+    "title": "Specify the Time a Job Must Complete By",
+    "value_type": "hhmm_list"
+  },
+  "must_start_times": {
+    "default": null,
+    "family": "scheduling",
+    "limits": "00:00-71:59 (2 calendar days ahead of the current calendar day)",
+    "object": "job",
+    "pdf_page": 2579,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": null,
+    "title": "Specify the Time a Job Must Start By",
+    "value_type": "hhmm_list"
+  },
+  "n_retrys": {
+    "default": "0",
+    "family": "sla",
+    "limits": "This value can be any integer in the range 0 to 20.",
+    "object": "job",
+    "pdf_page": 2585,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "n_retrys: attempts",
+    "title": "Define the Number of Times to Restart a Job After a Failure",
+    "value_type": "int"
+  },
+  "no_change": {
+    "default": null,
+    "family": "misc",
+    "limits": "1-100",
+    "object": "job",
+    "pdf_page": 2586,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMCPU",
+      "OMD"
+    ],
+    "syntax": "• To specify a no_change value for CPU usage:",
+    "title": "Define the Minimum Change Required in CPU or Disk Usage",
+    "value_type": "int"
+  },
+  "notification_alarm_types": {
+    "default": null,
+    "family": "alerting",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2587,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "notification_alarm_types: alarm_type",
+    "title": "Specify the Alarm For Which to Send the Email",
+    "value_type": "str"
+  },
+  "notification_emailaddress": {
+    "default": null,
+    "family": "alerting",
+    "limits": "Up to 1024 characters including alphanumeric and special characters (@ . , ; _ -) for each line.",
+    "object": "job",
+    "pdf_page": 2589,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "notification_emailaddress: address",
+    "title": "Identify the Recipient of the Email Notification by Email",
+    "value_type": "str"
+  },
+  "notification_emailaddress_on_alarm": {
+    "default": null,
+    "family": "alerting",
+    "limits": "Up to 1024 characters including alphanumeric and special characters (@ . , ; _ -) for each line.",
+    "object": "job",
+    "pdf_page": 2590,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "notification_emailaddress_on_alarm: email_alarm",
+    "title": "Specify the Email Address of the Recipient of",
+    "value_type": "str"
+  },
+  "notification_emailaddress_on_failure": {
+    "default": null,
+    "family": "alerting",
+    "limits": "Up to 1024 characters including alphanumeric and special characters (@ . , ; _ -) for each line.",
+    "object": "job",
+    "pdf_page": 2591,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": null,
+    "title": "Specify the Email Address of the Recipient of",
+    "value_type": "str"
+  },
+  "notification_emailaddress_on_success": {
+    "default": null,
+    "family": "alerting",
+    "limits": "Up to 1024 characters including alphanumeric and special characters (@ . , ; _ -)",
+    "object": "job",
+    "pdf_page": 2592,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": null,
+    "title": "Specify the Email Address of the Recipient",
+    "value_type": "str"
+  },
+  "notification_emailaddress_on_terminated": {
+    "default": null,
+    "family": "alerting",
+    "limits": "Up to 1024 characters including alphanumeric and special characters (@ . , ; _ -)",
+    "object": "job",
+    "pdf_page": 2593,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "notification_emailaddress_on_terminated: email_terminate",
+    "title": "Specify the Email Address of the",
+    "value_type": "str"
+  },
+  "notification_msg": {
+    "default": null,
+    "family": "alerting",
+    "limits": "Up to 255 alphanumeric characters",
+    "object": "job",
+    "pdf_page": 2594,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "notification_msg: value",
+    "title": "Define the Message to Include in the Notification",
+    "value_type": "str"
+  },
+  "one_way": {
+    "default": null,
+    "family": "misc",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2597,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WBSVC"
+    ],
+    "syntax": "one_way: TRUE | FALSE",
+    "title": "Specify Whether to Invoke the Service One Way",
+    "value_type": "enum"
+  },
+  "operation_type": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2598,
+    "requirement": "required",
+    "supported_job_types": [
+      "ENTYBEAN"
+    ],
+    "syntax": "operation_type: CREATE | UPDATE | REMOVE",
+    "title": "Specify the Operation Type",
+    "value_type": "enum"
+  },
+  "oracle_appl_name": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "Up to 50 characters; case-sensitive.",
+    "object": "job",
+    "pdf_page": 2600,
+    "requirement": "required",
+    "supported_job_types": [
+      "OASET",
+      "OASG"
+    ],
+    "syntax": "oracle_appl_name: short_name | display_name",
+    "title": "Specify the Name of an Oracle Applications Application",
+    "value_type": "enum"
+  },
+  "oracle_appl_name_type": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2598,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASET",
+      "OASG"
+    ],
+    "syntax": "oracle_appl_name_type: SHORT | DISPLAY",
+    "title": "Specify the Type of Oracle Applications Name",
+    "value_type": "enum"
+  },
+  "oracle_args": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2601,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASG"
+    ],
+    "syntax": "oracle_args: argument[,argument...]",
+    "title": "Define Argument Values to Pass to a Single Request",
+    "value_type": "str"
+  },
+  "oracle_custom_property": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2602,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASET",
+      "OASG"
+    ],
+    "syntax": "oracle_custom_property: prop_key=expression, prop_value=value",
+    "title": "Specify Value Set Expressions for Default Values",
+    "value_type": "str"
+  },
+  "oracle_desc": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "Up to 30 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2603,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASG"
+    ],
+    "syntax": "oracle_desc: description",
+    "title": "Describe a Single Request Job",
+    "value_type": "str"
+  },
+  "oracle_mon_children": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2604,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OACOPY",
+      "OASET",
+      "OASG"
+    ],
+    "syntax": "oracle_mon_children: Y | N | T | F | YES | NO | TRUE | FALSE",
+    "title": "Specify Whether to Monitor the Children Programs",
+    "value_type": "bool"
+  },
+  "oracle_mon_children_delay": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "0-99999",
+    "object": "job",
+    "pdf_page": 2605,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OACOPY",
+      "OASET",
+      "OASG"
+    ],
+    "syntax": "oracle_mon_children_delay: seconds",
+    "title": "Define the Time to Wait Before Monitoring Children",
+    "value_type": "int"
+  },
+  "oracle_notify_display_users": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "case-sensitive",
+    "object": "job",
+    "pdf_page": 2606,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASG"
+    ],
+    "syntax": "oracle_notify_display_users: 'display_user' [,'display_user'...]",
+    "title": "Specify Users to Notify Using Display Names",
+    "value_type": "str"
+  },
+  "oracle_notify_users": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "case-sensitive",
+    "object": "job",
+    "pdf_page": 2606,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASG"
+    ],
+    "syntax": "oracle_notify_users: 'short_user'[,'short_user'...]",
+    "title": "Specify Users to Notify Using Short Names",
+    "value_type": "str"
+  },
+  "oracle_oprunit": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "Up to 240 bytes",
+    "object": "job",
+    "pdf_page": 2607,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASG"
+    ],
+    "syntax": "oracle_oprunit: oprunit_name",
+    "title": "Specify Operating Unit Name for a Single Request",
+    "value_type": "str"
+  },
+  "oracle_output_format": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "Up to 10 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2608,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASET",
+      "OASG"
+    ],
+    "syntax": "oracle_output_format: output_format",
+    "title": "Specify Output Format for a Single Request or Request Set",
+    "value_type": "str"
+  },
+  "oracle_print_copies": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "Up to six numeric digits.",
+    "object": "job",
+    "pdf_page": 2609,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASET",
+      "OASG"
+    ],
+    "syntax": "oracle_print_copies: num_copies",
+    "title": "Specify the Number of Copies to Print",
+    "value_type": "str"
+  },
+  "oracle_print_style": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "Up to 30 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2610,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASET",
+      "OASG"
+    ],
+    "syntax": "oracle_print_style: print_style",
+    "title": "Specify a Print Style",
+    "value_type": "str"
+  },
+  "oracle_printer": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "Up to 30 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2611,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASET",
+      "OASG"
+    ],
+    "syntax": "oracle_printer: printer_name",
+    "title": "Specify a Printer",
+    "value_type": "str"
+  },
+  "oracle_program": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "Up to 30 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2612,
+    "requirement": "required",
+    "supported_job_types": [
+      "OASG"
+    ],
+    "syntax": "oracle_program: program_short_name | program_display_name",
+    "title": "Specify the Name of a Single Request Program",
+    "value_type": "enum"
+  },
+  "oracle_program_name_type": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2613,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASG"
+    ],
+    "syntax": "oracle_program_name_type: SHORT | DISPLAY",
+    "title": "Specify the Type of Oracle Applications Program",
+    "value_type": "enum"
+  },
+  "oracle_programdata": {
+    "default": "0",
+    "family": "erp-oracle",
+    "limits": "Integer",
+    "object": "job",
+    "pdf_page": 2614,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASET"
+    ],
+    "syntax": "oracle_programdata: index=number,",
+    "title": "Specify Data for a Program in a Request Set",
+    "value_type": "int"
+  },
+  "oracle_quote_in_default": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2618,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASG"
+    ],
+    "syntax": "oracle_quote_in_default: Y | N | T | F | YES | NO | TRUE | FALSE",
+    "title": "Specify Whether to Quote Resolved Expressions in",
+    "value_type": "bool"
+  },
+  "oracle_req_set": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "Up to 30 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2618,
+    "requirement": "required",
+    "supported_job_types": [
+      "OASET"
+    ],
+    "syntax": "oracle_req_set: request_set_short_name | request_set_display_name",
+    "title": "Specify the Name of a Request Set",
+    "value_type": "enum"
+  },
+  "oracle_req_set_type": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "Up to 30 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2619,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASET"
+    ],
+    "syntax": "oracle_req_set_type: SHORT | DISPLAY",
+    "title": "Specify the Type of Request Set Name",
+    "value_type": "enum"
+  },
+  "oracle_resp": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "Up to 100 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2620,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OACOPY",
+      "OASET",
+      "OASG"
+    ],
+    "syntax": "oracle_resp: responsibility_name",
+    "title": "Specify a Responsibility Name",
+    "value_type": "str"
+  },
+  "oracle_save_output": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2621,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASET",
+      "OASG"
+    ],
+    "syntax": "oracle_save_output: Y | N | T | F | YES | NO | TRUE | FALSE",
+    "title": "Specify Whether to Save Output",
+    "value_type": "bool"
+  },
+  "oracle_template_language": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "Up to ten characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2622,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASG"
+    ],
+    "syntax": "oracle_template_language: template_language",
+    "title": "Specify the Template Language for a Single Request",
+    "value_type": "str"
+  },
+  "oracle_template_name": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "Up to 120 characters; case-sensitiveExample: OraTemplate",
+    "object": "job",
+    "pdf_page": 2623,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASG"
+    ],
+    "syntax": "oracle_template_name: template_name",
+    "title": "Specify the Template Name for a Single Request",
+    "value_type": "str"
+  },
+  "oracle_template_territory": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "Up to ten characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2624,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASG"
+    ],
+    "syntax": "oracle_template_territory: template_territory",
+    "title": "Specify the Template Territory for a Single Request",
+    "value_type": "str"
+  },
+  "oracle_use_arg_def": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2625,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASET",
+      "OASG"
+    ],
+    "syntax": "oracle_use_arg_def: Y | N | T | F | YES | NO | TRUE | FALSE",
+    "title": "Specify Whether to Use Argument Defaults",
+    "value_type": "bool"
+  },
+  "oracle_use_set_defaults_first": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2626,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OASET"
+    ],
+    "syntax": "oracle_use_set_defaults_first: Y | N | T | F | YES | NO | TRUE | FALSE",
+    "title": "Specify Whether Request Set Defaults Take",
+    "value_type": "bool"
+  },
+  "oracle_user": {
+    "default": null,
+    "family": "erp-oracle",
+    "limits": "Up to 100 characters; case-sensitive; it cannot contain delimiters (such as spaces)",
+    "object": "job",
+    "pdf_page": 2626,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OACOPY",
+      "OASET",
+      "OASG"
+    ],
+    "syntax": "oracle_user: user_name",
+    "title": "Specify a User Name",
+    "value_type": "str"
+  },
+  "os_user": {
+    "default": null,
+    "family": "security",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2628,
+    "requirement": "optional",
+    "supported_job_types": [
+      "MICROFOCUS"
+    ],
+    "syntax": "os_user: os_userid@identifier",
+    "title": "Specify an Operating System User ID",
+    "value_type": "str"
+  },
+  "output_var": {
+    "default": null,
+    "family": "io",
+    "limits": "Up to 256 characters",
+    "object": "job",
+    "pdf_page": 2628,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "output_var: var_name=\"var\", var_value=\"value\", var_format=\"regex|xpath|jsonpath\",",
+    "title": "Specify the Output Variables",
+    "value_type": "enum"
+  },
+  "owner": {
+    "default": "user@host, where user is the user who invokes jil to define the job and host is the real machine that user is",
+    "family": "identity",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2630,
+    "requirement": "required",
+    "supported_job_types": "ALL",
+    "syntax": "owner: user@host",
+    "title": "Define the Owner of the Job",
+    "value_type": "owner"
+  },
+  "pa_monitor_progress": {
+    "default": null,
+    "family": "pam",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2633,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PAPROC",
+      "PAREQ"
+    ],
+    "syntax": "pa_monitor_progress: y | n",
+    "title": "Indicate Whether to Track the Process to Completion",
+    "value_type": "bool"
+  },
+  "pa_name": {
+    "default": null,
+    "family": "pam",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2634,
+    "requirement": "required",
+    "supported_job_types": [
+      "PAPROC",
+      "PAREQ"
+    ],
+    "syntax": "pa_name: name",
+    "title": "Specify the Name of the Process or Start Request Form",
+    "value_type": "str"
+  },
+  "pa_parameter": {
+    "default": null,
+    "family": "pam",
+    "limits": "Up to 2048 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2634,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PAPROC",
+      "PAREQ"
+    ],
+    "syntax": "pa_parameter: param_name=name, param_value=value",
+    "title": "Specify Process Parameters",
+    "value_type": "str"
+  },
+  "pa_path": {
+    "default": null,
+    "family": "pam",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2635,
+    "requirement": "required",
+    "supported_job_types": [
+      "PAREQ"
+    ],
+    "syntax": "pa_path: path",
+    "title": "Specify the Path of the Start Request Form",
+    "value_type": "str"
+  },
+  "pa_trace": {
+    "default": null,
+    "family": "pam",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2636,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PAPROC",
+      "PAREQ"
+    ],
+    "syntax": "pa_trace: y | n",
+    "title": "Indicate Whether to Write SOAP Messages to the Spool File",
+    "value_type": "bool"
+  },
+  "payload_uri": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters",
+    "object": "job",
+    "pdf_page": 2637,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "payload_uri: data",
+    "title": "Specify the Payload Data",
+    "value_type": "str"
+  },
+  "permission": {
+    "default": "Machine permissions are turned off.",
+    "family": "identity",
+    "limits": "This value can be up to 30 alphanumeric characters in length.",
+    "object": "job",
+    "pdf_page": 2637,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "permission: permission [, permission]",
+    "title": "Specify the Users with Edit and Execute Permissions",
+    "value_type": "permission"
+  },
+  "persist_output_cookies": {
+    "default": "false",
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2640,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "persist_output_cookies: true | false",
+    "title": "Persist the Cookies Output in the Database",
+    "value_type": "enum"
+  },
+  "persist_output_header": {
+    "default": "false",
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2640,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "persist_output_header: true | false",
+    "title": "Persist the Header Output in the Database",
+    "value_type": "enum"
+  },
+  "persist_output_payload": {
+    "default": "false",
+    "family": "web",
+    "limits": "Up to 80 characters",
+    "object": "job",
+    "pdf_page": 2641,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "persist_output_payload: true | false",
+    "title": "Persist the Payload Output in the Database",
+    "value_type": "enum"
+  },
+  "ping_ports": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2642,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WOL"
+    ],
+    "syntax": "ping_ports: port | port,port,...",
+    "title": "Specify the Ports to Contact",
+    "value_type": "enum"
+  },
+  "ping_timeout": {
+    "default": "120 seconds",
+    "family": "os-monitor",
+    "limits": "Up to 5 digits",
+    "object": "job",
+    "pdf_page": 2643,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WOL"
+    ],
+    "syntax": "ping_timeout: timeout",
+    "title": "Specify the Timeout for the Ping",
+    "value_type": "str"
+  },
+  "poll_interval": {
+    "default": "10",
+    "family": "io",
+    "limits": "1-2147483647",
+    "object": "job",
+    "pdf_page": 2644,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMCPU",
+      "OMD"
+    ],
+    "syntax": "poll_interval: seconds",
+    "title": "Define the Frequency to Poll CPU or Disk Usage",
+    "value_type": "int"
+  },
+  "port": {
+    "default": "161",
+    "family": "misc",
+    "limits": "Up to 10 digits",
+    "object": "job",
+    "pdf_page": 2645,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SNMPGET",
+      "SNMPSET"
+    ],
+    "syntax": "port: port",
+    "title": "Specify an SNMP Port",
+    "value_type": "int"
+  },
+  "port_name": {
+    "default": null,
+    "family": "misc",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2645,
+    "requirement": "required",
+    "supported_job_types": [
+      "WBSVC",
+      "WSDOC"
+    ],
+    "syntax": "port_name: portname",
+    "title": "Specify the Port Name Within the Namespace",
+    "value_type": "str"
+  },
+  "preemptive_authentication": {
+    "default": "false",
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2646,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "preemptive_authentication: false",
+    "title": "Authenticate Application Credentials",
+    "value_type": "str"
+  },
+  "priority": {
+    "default": "0",
+    "family": "identity",
+    "limits": "Any integer 0 or greater",
+    "object": "job",
+    "pdf_page": 2647,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "priority: priority_level",
+    "title": "Define the Queue Priority of the Job",
+    "value_type": "int"
+  },
+  "process_name": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2648,
+    "requirement": "required",
+    "supported_job_types": [
+      "OMP"
+    ],
+    "syntax": "process_name: process_name",
+    "title": "Specify the Name of the Process to be Monitored",
+    "value_type": "str"
+  },
+  "process_status": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2650,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMP"
+    ],
+    "syntax": "process_status: RUNNING | STOPPED",
+    "title": "Specify the Status of the Process to be Monitored (11.3.6 SP6)",
+    "value_type": "enum"
+  },
+  "profile": {
+    "default": null,
+    "family": "io",
+    "limits": "Up to 255 characters",
+    "object": "job",
+    "pdf_page": 2651,
+    "requirement": "required",
+    "supported_job_types": [
+      "CMD",
+      "FW"
+    ],
+    "syntax": "profile: path_name",
+    "title": "Specify a Job Profile",
+    "value_type": "str"
+  },
+  "provider_url": {
+    "also_pdf_pages": [
+      2655
+    ],
+    "default": "Examples:",
+    "family": "web",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2653,
+    "requirement": "required",
+    "supported_job_types": [
+      "ENTYBEAN",
+      "JMSPUB",
+      "JMSSUB",
+      "SESSBEAN"
+    ],
+    "syntax": "provider_url: \"location\"",
+    "title": "Specify a Service Provider URL (EJB and JMS Jobs)",
+    "value_type": "str"
+  },
+  "ps_args": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "Case-sensitive",
+    "object": "job",
+    "pdf_page": 2656,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_args: argument ...",
+    "title": "Pass Additional Parameters for the PeopleSoft Report",
+    "value_type": "str"
+  },
+  "ps_dest_format": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "Up to 8 characters; case-sensitive; it cannot contain delimiters (such as spaces)",
+    "object": "job",
+    "pdf_page": 2656,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_dest_format: output_format",
+    "title": "Specify the Output Format for a PeopleSoft Report",
+    "value_type": "str"
+  },
+  "ps_dest_type": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2658,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_dest_type: NONE | FILE | PRINTER | EMAIL | WEB",
+    "title": "Specify the Output Type for a PeopleSoft Report",
+    "value_type": "enum"
+  },
+  "ps_detail_folder": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "Up to 18 characters; it cannot contain delimiters (such as spaces)",
+    "object": "job",
+    "pdf_page": 2659,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_detail_folder: folder_name",
+    "title": "Specify the Name of a PeopleSoft Distribution Detail Folder",
+    "value_type": "str"
+  },
+  "ps_dlist_roles": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "Case-sensitive",
+    "object": "job",
+    "pdf_page": 2659,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_dlist_roles: role[,role...]",
+    "title": "Specify a Distribution List of Roles",
+    "value_type": "str"
+  },
+  "ps_dlist_users": {
+    "default": "The operator ID specified in the owner attribute",
+    "family": "erp-ps",
+    "limits": "Case-sensitive",
+    "object": "job",
+    "pdf_page": 2660,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_dlist_users: operator_id[,operator_id...]",
+    "title": "Specify a Distribution List of Operator IDs",
+    "value_type": "str"
+  },
+  "ps_email_address": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "Case-sensitive",
+    "object": "job",
+    "pdf_page": 2662,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_email_address: address[;address...]",
+    "title": "Specify the Email Addresses on a Distribution List",
+    "value_type": "str"
+  },
+  "ps_email_address_expanded": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "Case-sensitive",
+    "object": "job",
+    "pdf_page": 2663,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_email_address_expanded: address[;address...]",
+    "title": "Specify Additional Email Addresses on a Distribution",
+    "value_type": "str"
+  },
+  "ps_email_log": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2663,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_email_log: YES | NO",
+    "title": "Specify Whether to Email PeopleSoft Job Logs",
+    "value_type": "bool"
+  },
+  "ps_email_subject": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2664,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_email_subject: subject_text",
+    "title": "Define an Email Subject",
+    "value_type": "str"
+  },
+  "ps_email_text": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "Up to 1000 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2665,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_email_text: email_text",
+    "title": "Define the Body Text of an Email",
+    "value_type": "str"
+  },
+  "ps_email_web_report": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2665,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_email_web_report: YES | NO",
+    "title": "Specify Whether to Email a PeopleSoft Web Report",
+    "value_type": "bool"
+  },
+  "ps_operator_id": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "– For r11.3, up to 30 characters total; psopr is restricted to five characters.",
+    "object": "job",
+    "pdf_page": 2666,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_operator_id: psopr@tag",
+    "title": "Specify a PeopleSoft Operator ID",
+    "value_type": "str"
+  },
+  "ps_output_dest": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "Up to 127 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2667,
+    "requirement": "required",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_output_dest: file_path | printer_path",
+    "title": "Specify an Output Path for a PeopleSoft Job",
+    "value_type": "enum"
+  },
+  "ps_process_name": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "Up to 12 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2668,
+    "requirement": "required",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_process_name: process_name",
+    "title": "Specify a PeopleSoft Process to Run",
+    "value_type": "str"
+  },
+  "ps_process_type": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "Up to 30 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2669,
+    "requirement": "required",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_process_type: process_type",
+    "title": "Specify the Type of PeopleSoft Process to Run",
+    "value_type": "str"
+  },
+  "ps_restarts": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2670,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_restarts: YES | NO",
+    "title": "Specify Whether to Disable the Restart of Failed PeopleSoft Jobs",
+    "value_type": "bool"
+  },
+  "ps_run_cntrl_args": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "Case-sensitive; each argument can be up to 1024 characters.",
+    "object": "job",
+    "pdf_page": 2670,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_run_cntrl_args: argument[, argument...]",
+    "title": "Specify the Arguments for a PeopleSoft Run Control Table",
+    "value_type": "str"
+  },
+  "ps_run_cntrl_id": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "Up to 30 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2672,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_run_cntrl_id: control_id",
+    "title": "Specify PeopleSoft Run Parameters",
+    "value_type": "str"
+  },
+  "ps_run_control_table": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "Up to 50 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2673,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_run_control_table: control_table",
+    "title": "Specify the Table that Contains the PeopleSoft Run",
+    "value_type": "str"
+  },
+  "ps_server_name": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "Up to 8 characters; cannot contain delimiters (such as spaces)",
+    "object": "job",
+    "pdf_page": 2674,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_server_name: server_name",
+    "title": "Specify a Server to Run the PeopleSoft Job",
+    "value_type": "str"
+  },
+  "ps_skip_parm_updates": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2674,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_skip_parm_updates: YES | NO",
+    "title": "Specify Whether to Update Job Parameters",
+    "value_type": "bool"
+  },
+  "ps_time_zone": {
+    "default": null,
+    "family": "erp-ps",
+    "limits": "Up to 9 characters; cannot contain delimiters (such as spaces)",
+    "object": "job",
+    "pdf_page": 2676,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PS"
+    ],
+    "syntax": "ps_time_zone: time_zone",
+    "title": "Specify a Time Zone",
+    "value_type": "str"
+  },
+  "remote_command": {
+    "default": null,
+    "family": "java",
+    "limits": "Up to 1024 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2676,
+    "requirement": "required",
+    "supported_job_types": [
+      "PROXY"
+    ],
+    "syntax": "remote_command: command",
+    "title": "Specify a Remote Command or Script",
+    "value_type": "str"
+  },
+  "remote_name": {
+    "default": "local host",
+    "family": "java",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2677,
+    "requirement": "required",
+    "supported_job_types": [
+      "JAVARMI"
+    ],
+    "syntax": "remote_name: \"remote_class\"",
+    "title": "Specify a Remote Class Name",
+    "value_type": "str"
+  },
+  "remote_target": {
+    "default": null,
+    "family": "java",
+    "limits": "Up to 128 alphanumeric characters; case-sensitive; must start with an alpha character; cannot contain pound",
+    "object": "job",
+    "pdf_page": 2678,
+    "requirement": "required",
+    "supported_job_types": [
+      "PROXY"
+    ],
+    "syntax": "remote_target: name",
+    "title": "Specify the Name of the Custom Properties File for the Remote",
+    "value_type": "str"
+  },
+  "reply_to": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2679,
+    "requirement": "optional",
+    "supported_job_types": [
+      "JMSPUB"
+    ],
+    "syntax": "reply_to: replyname",
+    "title": "Specify the JNDI Name of the Reply to Queue",
+    "value_type": "str"
+  },
+  "request_id": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 20 numeric digits",
+    "object": "job",
+    "pdf_page": 2681,
+    "requirement": "required",
+    "supported_job_types": [
+      "OACOPY"
+    ],
+    "syntax": "request_id: request_id",
+    "title": "Specify Request ID of the Oracle E-Business Suite Request to Copy",
+    "value_type": "str"
+  },
+  "resources": {
+    "default": "Y",
+    "family": "dependency",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2681,
+    "requirement": "required",
+    "supported_job_types": [],
+    "syntax": null,
+    "title": "Define or Update Virtual Resource Dependencies in a Job",
+    "value_type": "resources"
+  },
+  "result_type": {
+    "default": null,
+    "family": "db",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2683,
+    "requirement": "optional",
+    "supported_job_types": [
+      "DBPROC"
+    ],
+    "syntax": "result_type: data_type",
+    "title": "Specify the Data Type to be Returned from the Stored Procedure",
+    "value_type": "str"
+  },
+  "results_file": {
+    "default": null,
+    "family": "db",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2684,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "results_file: path",
+    "title": "Specify the Path to the Results File",
+    "value_type": "str"
+  },
+  "results_file_overwrite": {
+    "default": null,
+    "family": "db",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2684,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "results_file_overwrite: true | false",
+    "title": "Specify Whether to Overwrite the Results File",
+    "value_type": "enum"
+  },
+  "retry_on_failure_count": {
+    "default": "0 (no retries)",
+    "family": "sla",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2685,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "retry_on_failure_count: attempts",
+    "title": "Define the Number of Times an HTTP Request is Retried",
+    "value_type": "int"
+  },
+  "retry_on_failure_delay": {
+    "default": "10",
+    "family": "sla",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2686,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "retry_on_failure_delay: delay",
+    "title": "Specify the Number of Seconds to Wait Between Retrying",
+    "value_type": "int"
+  },
+  "retry_on_failure_details": {
+    "default": "FALSE",
+    "family": "sla",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2686,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "retry_on_failure_details: TRUE | FALSE",
+    "title": "Specify Whether to Send the Failure Details",
+    "value_type": "enum"
+  },
+  "return_class_name": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 1024 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2687,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WBSVC"
+    ],
+    "syntax": "return_class_name: return_class",
+    "title": "Specify a Return Class Name",
+    "value_type": "str"
+  },
+  "return_namespace": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2688,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WBSVC"
+    ],
+    "syntax": "return_namespace: return_namespace",
+    "title": "Specify an XML Namespace",
+    "value_type": "str"
+  },
+  "return_xml_name": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2689,
+    "requirement": "required",
+    "supported_job_types": [
+      "WBSVC"
+    ],
+    "syntax": "return_xml_name: XML_type",
+    "title": "Specify an XML Type",
+    "value_type": "str"
+  },
+  "run_calendar": {
+    "default": "No calendar is used.",
+    "family": "scheduling",
+    "limits": "Up to 64 alphanumeric characters",
+    "object": "job",
+    "pdf_page": 2690,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "run_calendar: calendar_name",
+    "title": "Identify a Custom Calendar",
+    "value_type": "str"
+  },
+  "run_external": {
+    "default": "F",
+    "family": "identity",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2690,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SCP"
+    ],
+    "syntax": "run_external: T|F",
+    "title": "Specify Whether to Define a User ID",
+    "value_type": "bool"
+  },
+  "run_window": {
+    "default": "No run window is used.",
+    "family": "scheduling",
+    "limits": "Up to 20 alphanumeric characters",
+    "object": "job",
+    "pdf_page": 2691,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "run_window: \"time-time\"",
+    "title": "Define an Interval for a Job to Start",
+    "value_type": "time_range"
+  },
+  "sap_abap_name": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "Up to 40 valid SAP characters",
+    "object": "job",
+    "pdf_page": 2692,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAPPM"
+    ],
+    "syntax": "sap_abap_name: abap",
+    "title": "Run ABAP Steps Within an SAP Job",
+    "value_type": "str"
+  },
+  "sap_chain_id": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "Up to 30 valid SAP characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2692,
+    "requirement": "required",
+    "supported_job_types": [
+      "SAPBWPC"
+    ],
+    "syntax": "sap_chain_id: process_chain",
+    "title": "Identify Name of Business Warehouse Process Chain on SAP",
+    "value_type": "str"
+  },
+  "sap_client": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "Up to three digits",
+    "object": "job",
+    "pdf_page": 2693,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAP",
+      "SAPBDC",
+      "SAPBWIP",
+      "SAPBWPC",
+      "SAPDA",
+      "SAPEVT",
+      "SAPJC",
+      "SAPPM"
+    ],
+    "syntax": "sap_client: client_number",
+    "title": "Specify SAP Client Number",
+    "value_type": "str"
+  },
+  "sap_ext_table": {
+    "default": "Uses the SAP default.",
+    "family": "erp-sap",
+    "limits": "Up to 100 characters",
+    "object": "job",
+    "pdf_page": 2695,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAPBWIP"
+    ],
+    "syntax": "sap_ext_table: field_name=field, object_name=object, sign=I|E, operation=BT|EQ,",
+    "title": "Specify Data Selection Criteria",
+    "value_type": "enum"
+  },
+  "sap_fail_msg": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "Up to 128 valid SAP characters; case-sensitive.",
+    "object": "job",
+    "pdf_page": 2696,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAP",
+      "SAPJC"
+    ],
+    "syntax": "sap_fail_msg: message",
+    "title": "Specify Failure Message for SAP Job",
+    "value_type": "str"
+  },
+  "sap_info_pack": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "Up to 30 valid SAP characters; case sensitive",
+    "object": "job",
+    "pdf_page": 2697,
+    "requirement": "required",
+    "supported_job_types": [
+      "SAPBWIP"
+    ],
+    "syntax": "sap_info_pack: infopackage",
+    "title": "Identify Name of Business Warehouse InfoPackage on SAP System",
+    "value_type": "str"
+  },
+  "sap_job_class": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "One character",
+    "object": "job",
+    "pdf_page": 2698,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAP",
+      "SAPBDC"
+    ],
+    "syntax": "sap_job_class: class",
+    "title": "Specify SAP Job Class",
+    "value_type": "str"
+  },
+  "sap_job_count": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "Up to 8 alphanumeric characters",
+    "object": "job",
+    "pdf_page": 2698,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAPJC"
+    ],
+    "syntax": "sap_job_count: count",
+    "title": "Specify the Job ID of the SAP Job to Copy",
+    "value_type": "str"
+  },
+  "sap_job_name": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "Up to 32 characters",
+    "object": "job",
+    "pdf_page": 2699,
+    "requirement": "required",
+    "supported_job_types": [
+      "SAP",
+      "SAPBDC",
+      "SAPBWIP",
+      "SAPJC"
+    ],
+    "syntax": "sap_job_name: job_name",
+    "title": "Specify SAP Job Name",
+    "value_type": "str"
+  },
+  "sap_lang": {
+    "default": "The SAP system language",
+    "family": "erp-sap",
+    "limits": "Up to two characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2700,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAP",
+      "SAPBDC",
+      "SAPBWIP",
+      "SAPBWPC",
+      "SAPDA",
+      "SAPEVT",
+      "SAPJC",
+      "SAPPM"
+    ],
+    "syntax": "sap_lang: language",
+    "title": "Specify SAP Language for Login",
+    "value_type": "str"
+  },
+  "sap_mon_child": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2701,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAP",
+      "SAPCP"
+    ],
+    "syntax": "sap_mon_child: Y | N | T | F | YES | NO | TRUE | FALSE",
+    "title": "Enable Monitoring of Children Jobs",
+    "value_type": "bool"
+  },
+  "sap_office": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2702,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAP",
+      "SAPBDC"
+    ],
+    "syntax": "sap_office: Y | N | T | F | YES | NO | TRUE | FALSE",
+    "title": "Save Outgoing Documents to SAPoffice Outbox",
+    "value_type": "bool"
+  },
+  "sap_print_parms": {
+    "default": "N",
+    "family": "erp-sap",
+    "limits": "Up to four characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2703,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAPDA"
+    ],
+    "syntax": "sap_print_parms: dest=value[,keyword=value...]",
+    "title": "Specify Print Parameters",
+    "value_type": "str"
+  },
+  "sap_proc_type": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2707,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAPPM"
+    ],
+    "syntax": "sap_proc_type: BGD | DIA | ENQ | SPO | UPD | UP2",
+    "title": "Specify the SAP Process Type to Monitor",
+    "value_type": "enum"
+  },
+  "sap_process_client": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "Up to three digits",
+    "object": "job",
+    "pdf_page": 2706,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAPPM"
+    ],
+    "syntax": "sap_process_client: client",
+    "title": "Specify the Client to Monitor for a Specified Process",
+    "value_type": "str"
+  },
+  "sap_process_status": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2706,
+    "requirement": "required",
+    "supported_job_types": [
+      "SAPPM"
+    ],
+    "syntax": "sap_process_status: RUNNING | STOPPED | WAITING",
+    "title": "Specify the SAP Process Status to Monitor",
+    "value_type": "enum"
+  },
+  "sap_recipients": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "Up to 256 characters",
+    "object": "job",
+    "pdf_page": 2708,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAP",
+      "SAPBDC"
+    ],
+    "syntax": "sap_recipients: rcp_type=type[,keyword=value...]",
+    "title": "Specify SAP Spool Recipient",
+    "value_type": "str"
+  },
+  "sap_release_option": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2710,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAP",
+      "SAPBDC",
+      "SAPJC"
+    ],
+    "syntax": "sap_release_option: I | A",
+    "title": "Specify Release Option for a Job",
+    "value_type": "enum"
+  },
+  "sap_rfc_dest": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2710,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAP",
+      "SAPBDC",
+      "SAPBWIP",
+      "SAPBWPC",
+      "SAPDA",
+      "SAPEVT",
+      "SAPJC",
+      "SAPPM"
+    ],
+    "syntax": "sap_rfc_dest: destination",
+    "title": "Specify SAP Destination",
+    "value_type": "str"
+  },
+  "sap_step_num": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "0-highest step number",
+    "object": "job",
+    "pdf_page": 2711,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAPJC"
+    ],
+    "syntax": "sap_step_num: step",
+    "title": "Specify the Number of the First Step to Copy",
+    "value_type": "str"
+  },
+  "sap_step_parms": {
+    "default": "The SAP system default log in language",
+    "family": "erp-sap",
+    "limits": "Up to 40 valid SAP characters",
+    "object": "job",
+    "pdf_page": 2712,
+    "requirement": "required",
+    "supported_job_types": [
+      "SAP",
+      "SAPBDC"
+    ],
+    "syntax": "sap_step_parms: abap_name=abap[,keyword=value...]",
+    "title": "Specify SAP R/3 Step Specifications",
+    "value_type": "str"
+  },
+  "sap_success_msg": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "Up to 128 valid SAP characters; case-sensitive.",
+    "object": "job",
+    "pdf_page": 2719,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAP",
+      "SAPJC"
+    ],
+    "syntax": "sap_success_msg: message",
+    "title": "Specify Success Message for SAP Job",
+    "value_type": "str"
+  },
+  "sap_target_jobname": {
+    "default": "The name of the source job",
+    "family": "erp-sap",
+    "limits": "Up to 32 valid SAP characters",
+    "object": "job",
+    "pdf_page": 2719,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAPJC"
+    ],
+    "syntax": "sap_target_jobname: name",
+    "title": "Specify Job Name to Copy",
+    "value_type": "str"
+  },
+  "sap_target_sys": {
+    "default": null,
+    "family": "erp-sap",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2720,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SAP",
+      "SAPBDC",
+      "SAPDA",
+      "SAPJC",
+      "SAPPM"
+    ],
+    "syntax": "sap_target_sys: application_server",
+    "title": "Specify SAP Application Server",
+    "value_type": "str"
+  },
+  "scp_create_targetdir": {
+    "default": "F",
+    "family": "file-transfer",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2721,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SCP"
+    ],
+    "syntax": "scp_create_targetdir: T | F",
+    "title": "Create Target Directory",
+    "value_type": "enum"
+  },
+  "scp_delete_sourcedir": {
+    "default": "F",
+    "family": "file-transfer",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2722,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SCP"
+    ],
+    "syntax": "scp_delete_sourcedir: T | F",
+    "title": "Specify Whether to Delete the Directory That Contains",
+    "value_type": "enum"
+  },
+  "scp_delete_sourcefile": {
+    "default": "F",
+    "family": "file-transfer",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2723,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SCP"
+    ],
+    "syntax": "scp_delete_sourcefile: T | F",
+    "title": "Specify Whether to Delete Source Files",
+    "value_type": "enum"
+  },
+  "scp_local_name": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2723,
+    "requirement": "required",
+    "supported_job_types": [
+      "SCP"
+    ],
+    "syntax": "scp_local_name: file_name",
+    "title": "Specify the Local File to Transfer",
+    "value_type": "str"
+  },
+  "scp_local_user": {
+    "default": "The user ID that defined the SCP job",
+    "family": "file-transfer",
+    "limits": "Up to 80 characters; case-sensitive; cannot contain delimiters",
+    "object": "job",
+    "pdf_page": 2725,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SCP"
+    ],
+    "syntax": "scp_local_user: user_id",
+    "title": "Specify a User ID on the Agent Computer",
+    "value_type": "str"
+  },
+  "scp_protocol": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2726,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SCP"
+    ],
+    "syntax": "scp_protocol: SCP | SFTP",
+    "title": "Specify the SCP Transfer Protocol to Use",
+    "value_type": "enum"
+  },
+  "scp_remote_dir": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2727,
+    "requirement": "required",
+    "supported_job_types": [
+      "SCP"
+    ],
+    "syntax": "scp_remote_dir: directory",
+    "title": "Specify a Remote Directory",
+    "value_type": "str"
+  },
+  "scp_remote_name": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2727,
+    "requirement": "required",
+    "supported_job_types": [
+      "SCP"
+    ],
+    "syntax": "scp_remote_name: file_name",
+    "title": "Specify a Remote File Name",
+    "value_type": "str"
+  },
+  "scp_rename_sourcefile": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": "256 characters",
+    "object": "job",
+    "pdf_page": 2728,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SCP"
+    ],
+    "syntax": "scp_rename_sourcefile: sourcefilename",
+    "title": "Specify the Name That the Source File Must be Renamed to",
+    "value_type": "str"
+  },
+  "scp_server_name": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2729,
+    "requirement": "required",
+    "supported_job_types": [
+      "SCP"
+    ],
+    "syntax": "scp_server_name: server",
+    "title": "Specify a Remote Server Name",
+    "value_type": "str"
+  },
+  "scp_server_port": {
+    "default": "22",
+    "family": "file-transfer",
+    "limits": "0-65535",
+    "object": "job",
+    "pdf_page": 2730,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SCP"
+    ],
+    "syntax": "scp_server_port: port",
+    "title": "Specify a Remote Server Port",
+    "value_type": "int"
+  },
+  "scp_target_os": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2730,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SCP"
+    ],
+    "syntax": "scp_target_os: UNIX | Windows | OpenVMS | Tandem | I5OS | MVS",
+    "title": "Specify the Remote Operating System Type",
+    "value_type": "enum"
+  },
+  "scp_transfer_direction": {
+    "default": null,
+    "family": "file-transfer",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2731,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SCP"
+    ],
+    "syntax": "scp_transfer_direction: UPLOAD | DOWNLOAD",
+    "title": "Specify the File Transfer Direction",
+    "value_type": "enum"
+  },
+  "scp_transfer_mode": {
+    "default": "B",
+    "family": "file-transfer",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2732,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SCP"
+    ],
+    "syntax": null,
+    "title": "Specify the Type of Data to Transfer",
+    "value_type": "str"
+  },
+  "search_bw": {
+    "default": null,
+    "family": "misc",
+    "limits": "Up to 5 numeric digits",
+    "object": "job",
+    "pdf_page": 2732,
+    "requirement": "optional",
+    "supported_job_types": [
+      "ZOSM"
+    ],
+    "syntax": "search_btw: hours",
+    "title": "Define the Time Used to Search Backwards for a z/OS Manual Job",
+    "value_type": "str"
+  },
+  "send_notification": {
+    "default": null,
+    "family": "alerting",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2733,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "send_notification: y | n | f",
+    "title": "Specify Whether to Send a Notification",
+    "value_type": "bool"
+  },
+  "service_desk": {
+    "default": null,
+    "family": "alerting",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2735,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "service_desk: y | n",
+    "title": "Specify Whether to Open a CA Service Desk Ticket When a Job Fails",
+    "value_type": "bool"
+  },
+  "service_name": {
+    "default": null,
+    "family": "misc",
+    "limits": "Up to 255 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2736,
+    "requirement": "required",
+    "supported_job_types": [
+      "WBSVC",
+      "WSDOC"
+    ],
+    "syntax": "service_name: service",
+    "title": "Specify the Web Service Name Within the Target Namespace",
+    "value_type": "str"
+  },
+  "shell": {
+    "default": null,
+    "family": "identity",
+    "limits": "Up to 20 characters",
+    "object": "job",
+    "pdf_page": 2737,
+    "requirement": "optional",
+    "supported_job_types": [
+      "CMD"
+    ],
+    "syntax": "shell: shell_name",
+    "title": "Specify a UNIX Shell to Run a Script or Command",
+    "value_type": "str"
+  },
+  "snmp_auth_protocol": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2738,
+    "requirement": "required",
+    "supported_job_types": [
+      "SNMPGET",
+      "SNMPSET"
+    ],
+    "syntax": "snmp_auth_protocol: MD5 | SHA",
+    "title": "Specify the SNMP v3 Authentication Protocol",
+    "value_type": "enum"
+  },
+  "snmp_comm_string": {
+    "default": "public",
+    "family": "web",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2739,
+    "requirement": "required",
+    "supported_job_types": [
+      "SNMPGET",
+      "SNMPSET"
+    ],
+    "syntax": "snmp_comm_string: community",
+    "title": "Specify the SNMP v1 or v2 Read or Write Community String",
+    "value_type": "str"
+  },
+  "snmp_context_engine_id": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 12 hexadecimal digits (24 characters)",
+    "object": "job",
+    "pdf_page": 2739,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SNMPGET",
+      "SNMPSET"
+    ],
+    "syntax": "snmp_context_engine_id: context_engine_id'",
+    "title": "Specify the SNMP v3 Context Engine ID",
+    "value_type": "str"
+  },
+  "snmp_context_name": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2740,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SNMPGET",
+      "SNMPSET"
+    ],
+    "syntax": "snmp_context_name: context_name",
+    "title": "Specify a SNMP v3 Context Name",
+    "value_type": "str"
+  },
+  "snmp_host": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2741,
+    "requirement": "required",
+    "supported_job_types": [
+      "SNMPGET",
+      "SNMPSET"
+    ],
+    "syntax": "snmp_host: host",
+    "title": "Specify an SNMP Host Name or IP Address",
+    "value_type": "str"
+  },
+  "snmp_mib": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2742,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SNMPGET",
+      "SNMPSET"
+    ],
+    "syntax": "snmp_mib: file_name",
+    "title": "Specify the Name of the MIB File",
+    "value_type": "str"
+  },
+  "snmp_oid": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 80 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2743,
+    "requirement": "required",
+    "supported_job_types": [
+      "SNMPGET",
+      "SNMPSET"
+    ],
+    "syntax": "snmp_oid: oid",
+    "title": "Specify an SNMP OID",
+    "value_type": "str"
+  },
+  "snmp_privacy": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2744,
+    "requirement": "required",
+    "supported_job_types": [
+      "SNMPGET",
+      "SNMPSET"
+    ],
+    "syntax": "snmp_privacy: DES | AES",
+    "title": "Specify the SNMP v3 Privacy Protocol",
+    "value_type": "enum"
+  },
+  "snmp_privacy_user": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 145 characters; case-sensitive; it cannot contain delimiters (such as spaces)",
+    "object": "job",
+    "pdf_page": 2745,
+    "requirement": "required",
+    "supported_job_types": [
+      "SNMPGET",
+      "SNMPSET"
+    ],
+    "syntax": "snmp_privacy_user: user_name",
+    "title": "-- Specify the SNMP v3 User Name",
+    "value_type": "str"
+  },
+  "snmp_subtree": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2746,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SNMPGET"
+    ],
+    "syntax": "snmp_subtree: y | n",
+    "title": "Specify the SNMP Subtree Value",
+    "value_type": "bool"
+  },
+  "snmp_table_view": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2746,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SNMPGET"
+    ],
+    "syntax": "snmp_table_view: y | n",
+    "title": "Specify the Format for MIB Data",
+    "value_type": "bool"
+  },
+  "snmp_value": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 1024 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2747,
+    "requirement": "required",
+    "supported_job_types": [
+      "SNMPSET"
+    ],
+    "syntax": "snmp_value: type=value[, type=value...]",
+    "title": "Specify the SNMP Parameter Type and Value",
+    "value_type": "str"
+  },
+  "snmp_version": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2749,
+    "requirement": "optional",
+    "supported_job_types": [
+      "SNMPGET",
+      "SNMPSET"
+    ],
+    "syntax": "snmp_version: 1 | 2 | 3",
+    "title": "Specify the SNMP Version",
+    "value_type": "enum"
+  },
+  "soap_action": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2750,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "soap_action: webmethod/soapaction",
+    "title": "Defines the SOAP HTTP Request",
+    "value_type": "str"
+  },
+  "soap_version": {
+    "default": "1.1",
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2750,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "soap_version: 1.2",
+    "title": "Displays the SOAP Version",
+    "value_type": "str"
+  },
+  "sp_arg": {
+    "default": null,
+    "family": "db",
+    "limits": "Up to 64 characters",
+    "object": "job",
+    "pdf_page": 2750,
+    "requirement": "optional",
+    "supported_job_types": [
+      "DBPROC"
+    ],
+    "syntax": "sp_arg: [ignore=TRUE|FALSE, ]name=arg_name, argtype=IN|OUT|INOUT, datatype=type,",
+    "title": "Specify a Parameter to Pass to a Stored Procedure",
+    "value_type": "enum"
+  },
+  "sp_name": {
+    "default": null,
+    "family": "db",
+    "limits": "Up to 300 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2753,
+    "requirement": "required",
+    "supported_job_types": [
+      "DBPROC"
+    ],
+    "syntax": "sp_name: stored_procedure",
+    "title": "Specify Stored Procedure or Stored Function to Run",
+    "value_type": "str"
+  },
+  "spool_file": {
+    "default": null,
+    "family": "db",
+    "limits": "Up to 256 characters; can contain any characters and delimiters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2754,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PROXY"
+    ],
+    "syntax": "spool_file: path",
+    "title": "Specify the Path and File Name of the Spool File",
+    "value_type": "str"
+  },
+  "sql_command": {
+    "default": null,
+    "family": "db",
+    "limits": "Up to 2048 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2755,
+    "requirement": "required",
+    "supported_job_types": [],
+    "syntax": "sql_command: sql_statement",
+    "title": "Specify a SQL Statement to Run",
+    "value_type": "str"
+  },
+  "sqlagent_domain_name": {
+    "default": null,
+    "family": "db",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2756,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "sqlagent_domain_name: domain_name",
+    "title": "Specify the Windows Domain Name",
+    "value_type": "str"
+  },
+  "sqlagent_jobid": {
+    "default": null,
+    "family": "db",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2756,
+    "requirement": "required",
+    "supported_job_types": [],
+    "syntax": "sqlagent_jobid: jobid",
+    "title": "Specify the Job Identification Number",
+    "value_type": "str"
+  },
+  "sqlagent_jobname": {
+    "default": null,
+    "family": "db",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2756,
+    "requirement": "required",
+    "supported_job_types": [],
+    "syntax": "sqlagent_jobname: jobname",
+    "title": "Specify the Job Name",
+    "value_type": "str"
+  },
+  "sqlagent_server_name": {
+    "default": null,
+    "family": "db",
+    "limits": "Up to 128 characters",
+    "object": "job",
+    "pdf_page": 2757,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "sqlagent_server_name: mssql_server",
+    "title": "Specify the MSSQL Server",
+    "value_type": "str"
+  },
+  "sqlagent_step_name": {
+    "default": null,
+    "family": "db",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2757,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "sqlagent_step_name: step_name",
+    "title": "Specify the Name of the Job Step",
+    "value_type": "str"
+  },
+  "sqlagent_target_db": {
+    "default": null,
+    "family": "db",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2758,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "sqlagent_target_db : target_db",
+    "title": "Specify the Target Server Database",
+    "value_type": "str"
+  },
+  "sqlagent_user_name": {
+    "default": null,
+    "family": "db",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2758,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "sqlagent_user_name: sqlagent_user@token",
+    "title": "Specify the sqlagent User Name",
+    "value_type": "str"
+  },
+  "start_mins": {
+    "default": "No start time is set.",
+    "family": "scheduling",
+    "limits": "This value can be a number in the range 0 to 59. This value can contain up to 255 characters, and you can use",
+    "object": "job",
+    "pdf_page": 2759,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "start_mins: mins [, mins]...",
+    "title": "Define the Minutes to Run a Job",
+    "value_type": "int_list"
+  },
+  "start_times": {
+    "default": null,
+    "family": "scheduling",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2759,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "start_times: \"time [, time]...\"",
+    "title": "Define the Time of the Day to Run a Job",
+    "value_type": "hhmm_list"
+  },
+  "std_err_file": {
+    "default": null,
+    "family": "io",
+    "limits": "Up to 255 characters; cannot contain spaces between the > or >> characters and the full path or file name",
+    "object": "job",
+    "pdf_page": 2761,
+    "requirement": "optional",
+    "supported_job_types": [
+      "CMD"
+    ],
+    "syntax": "std_err_file: file_name [environment_variable]| blob_name",
+    "title": "Redirect the Standard Error File",
+    "value_type": "enum"
+  },
+  "std_in_file": {
+    "default": "Do not redirect standard input.",
+    "family": "io",
+    "limits": "Up to 255 characters",
+    "object": "job",
+    "pdf_page": 2763,
+    "requirement": "optional",
+    "supported_job_types": [
+      "CMD"
+    ],
+    "syntax": "std_in_file: file_name [environment_variable]|blob_name",
+    "title": "Redirect the Standard Input File",
+    "value_type": "enum"
+  },
+  "std_out_file": {
+    "default": "/dev/null (UNIX) or NULL (Windows)",
+    "family": "io",
+    "limits": "Up to 255 characters; cannot contain spaces between the > or >> characters and the full path or file name",
+    "object": "job",
+    "pdf_page": 2766,
+    "requirement": "optional",
+    "supported_job_types": [
+      "CMD"
+    ],
+    "syntax": "std_out_file: file_name [environment_variable]|blob_name",
+    "title": "Redirect the Standard Output File",
+    "value_type": "enum"
+  },
+  "submit_modifier": {
+    "default": null,
+    "family": "zos",
+    "limits": "Up to 600 characters for each value; case-sensitive; can contain alphanumeric characters and delimiters.",
+    "object": "job",
+    "pdf_page": 2769,
+    "requirement": "optional",
+    "supported_job_types": [
+      "PROXY"
+    ],
+    "syntax": "submit_modifier: Option1=”value1”[,Option2=”value2”… , OptionN=”valueN”]",
+    "title": "Specify Variables and Flags for Remote Execution Jobs",
+    "value_type": "str"
+  },
+  "success_codes": {
+    "default": "0",
+    "family": "sla",
+    "limits": "Up to 256 characters. The exit code must be an integer in the range -2147483647 to 2147483647.",
+    "object": "job",
+    "pdf_page": 2771,
+    "requirement": "optional",
+    "supported_job_types": [
+      "CMD",
+      "HTTP",
+      "I5",
+      "MICROFOCUS",
+      "PROXY",
+      "WSDOC"
+    ],
+    "syntax": "success_codes: exitcodes",
+    "title": "Define Exit Codes to Indicate Job Success",
+    "value_type": "int_list"
+  },
+  "success_criteria": {
+    "default": null,
+    "family": "io",
+    "limits": "Up to 500 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2771,
+    "requirement": "optional",
+    "supported_job_types": [
+      "DBPROC"
+    ],
+    "syntax": "success_criteria: regexp",
+    "title": "Define the Evaluation Criteria for a Return String",
+    "value_type": "str"
+  },
+  "success_criteria_json": {
+    "default": null,
+    "family": "io",
+    "limits": "Up to 256 characters",
+    "object": "job",
+    "pdf_page": 2773,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "success_criteria_json: json_path",
+    "title": "Specify the JSON Path",
+    "value_type": "str"
+  },
+  "success_criteria_regex": {
+    "default": null,
+    "family": "io",
+    "limits": "Up to 256 characters, case-sensitive.",
+    "object": "job",
+    "pdf_page": 2774,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "success_criteria_regex: regex_expression",
+    "title": "Specify the Regex Expression",
+    "value_type": "str"
+  },
+  "success_criteria_value": {
+    "default": null,
+    "family": "io",
+    "limits": "Up to 256 characters",
+    "object": "job",
+    "pdf_page": 2774,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "success_criteria_value: regexp",
+    "title": "Specify the Success Criteria",
+    "value_type": "str"
+  },
+  "success_criteria_xpath": {
+    "default": null,
+    "family": "io",
+    "limits": "Up to 256 characters",
+    "object": "job",
+    "pdf_page": 2775,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": "success_criteria_xpath: xpath_expression",
+    "title": "Specify the xpath Expression",
+    "value_type": "str"
+  },
+  "success_pattern": {
+    "default": null,
+    "family": "io",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2775,
+    "requirement": "optional",
+    "supported_job_types": [
+      "JMXMAG",
+      "JMXMAS",
+      "JMXMOP",
+      "WBSVC"
+    ],
+    "syntax": "success_pattern: pattern",
+    "title": "Specify a Success Pattern Using Regular Expression Logic",
+    "value_type": "str"
+  },
+  "svcdesk_attr": {
+    "default": null,
+    "family": "alerting",
+    "limits": "The svcdesk_attr value can be up to 255 alphanumeric characters in length. You must use a slash to separate",
+    "object": "job",
+    "pdf_page": 2776,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "svcdesk_attr: attribute/value[,attribute/value,attribute/value...]",
+    "title": "Define Service Desk Request Attributes",
+    "value_type": "str"
+  },
+  "svcdesk_desc": {
+    "default": null,
+    "family": "alerting",
+    "limits": "Up to 255 alphanumeric characters",
+    "object": "job",
+    "pdf_page": 2777,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "svcdesk_desc: value",
+    "title": "Define the Message to Include in the CA Service Desk Request",
+    "value_type": "str"
+  },
+  "svcdesk_imp": {
+    "default": null,
+    "family": "alerting",
+    "limits": "This value is one of the following:",
+    "object": "job",
+    "pdf_page": 2778,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "svcdesk_imp: level",
+    "title": "Specify the Impact Level of the Service Desk Request",
+    "value_type": "str"
+  },
+  "svcdesk_pri": {
+    "default": null,
+    "family": "alerting",
+    "limits": "Set this value to one of the following:",
+    "object": "job",
+    "pdf_page": 2778,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "svcdesk_pri: level",
+    "title": "Specify the Priority Level of the Service Desk Request",
+    "value_type": "str"
+  },
+  "svcdesk_sev": {
+    "default": null,
+    "family": "alerting",
+    "limits": "This value is one of the following:",
+    "object": "job",
+    "pdf_page": 2779,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "svcdesk_sev: level",
+    "title": "Specify the Severity Level of the Service Desk Request",
+    "value_type": "str"
+  },
+  "tablename": {
+    "default": null,
+    "family": "db",
+    "limits": "Up to 300 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2780,
+    "requirement": "required",
+    "supported_job_types": [
+      "DBMON",
+      "DBTRIG"
+    ],
+    "syntax": "tablename: table",
+    "title": "Specify the Database Table to Monitor",
+    "value_type": "str"
+  },
+  "target_namespace": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2780,
+    "requirement": "required",
+    "supported_job_types": [
+      "WBSVC"
+    ],
+    "syntax": "target_namespace: target_namespace",
+    "title": "Specify a Target Namespace",
+    "value_type": "str"
+  },
+  "term_run_time": {
+    "default": "0 (the job is allowed to run forever)",
+    "family": "sla",
+    "limits": "0-527040",
+    "object": "job",
+    "pdf_page": 2781,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "term_run_time: mins",
+    "title": "Specify the Maximum Runtime",
+    "value_type": "int"
+  },
+  "text_file_filter": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 1024 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2782,
+    "requirement": "required",
+    "supported_job_types": [
+      "OMTF"
+    ],
+    "syntax": "text_file_filter: textstring",
+    "title": "Specify a Text String to Search For",
+    "value_type": "str"
+  },
+  "text_file_filter_exists": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2784,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMTF"
+    ],
+    "syntax": "text_file_filter_exists: TRUE | FALSE",
+    "title": "Specify Whether to Monitor for the Existence of Text",
+    "value_type": "enum"
+  },
+  "text_file_mode": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2785,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMTF"
+    ],
+    "syntax": "text_file_mode: LINE | REGEX | DATETIME",
+    "title": "Specify the Search Mode",
+    "value_type": "enum"
+  },
+  "text_file_name": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2787,
+    "requirement": "required",
+    "supported_job_types": [
+      "OMTF"
+    ],
+    "syntax": "text_file_name: file_name",
+    "title": "Specify a Text File Name and Location",
+    "value_type": "str"
+  },
+  "time_format": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 256 characters; case-sensitive.",
+    "object": "job",
+    "pdf_page": 2788,
+    "requirement": "required",
+    "supported_job_types": [
+      "OMTF"
+    ],
+    "syntax": "time_format: time_format",
+    "title": "Define a Time Format",
+    "value_type": "str"
+  },
+  "time_position": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 5 digits",
+    "object": "job",
+    "pdf_page": 2790,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMTF"
+    ],
+    "syntax": "time_position: timepos",
+    "title": "Specify the First Column of a Time Stamp",
+    "value_type": "str"
+  },
+  "timezone": {
+    "default": null,
+    "family": "scheduling",
+    "limits": "Up to 50 characters; valid characters are a-z, A-Z, decimal digits, slash (/), hyphen (-), and underscore (_); not",
+    "object": "job",
+    "pdf_page": 2791,
+    "requirement": "optional",
+    "supported_job_types": "ALL",
+    "syntax": "timezone: zone",
+    "title": "Define the Time Zone",
+    "value_type": "str"
+  },
+  "trigger_cond": {
+    "default": null,
+    "family": "file-watch",
+    "limits": "Up to 500 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2792,
+    "requirement": "optional",
+    "supported_job_types": [
+      "DBTRIG"
+    ],
+    "syntax": "trigger_cond: condition",
+    "title": "Specify a Condition to Monitor For",
+    "value_type": "str"
+  },
+  "trigger_type": {
+    "default": null,
+    "family": "file-watch",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2794,
+    "requirement": "optional",
+    "supported_job_types": [
+      "DBTRIG"
+    ],
+    "syntax": null,
+    "title": "Specify the Type of Database Change to Monitor For",
+    "value_type": "str"
+  },
+  "ulimit": {
+    "default": null,
+    "family": "identity",
+    "limits": "Any numeric digits or you can specify unlimited; the value must be less than or equal to the hard limit",
+    "object": "job",
+    "pdf_page": 2796,
+    "requirement": "optional",
+    "supported_job_types": [
+      "CMD"
+    ],
+    "syntax": "ulimit: resource_type=\"soft_value,hard_value\"",
+    "title": "Specify UNIX Resource Limits",
+    "value_type": "str"
+  },
+  "upper_boundary": {
+    "also_pdf_pages": [
+      2799
+    ],
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2797,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMCPU",
+      "OMD",
+      "OMTF"
+    ],
+    "syntax": "upper_boundary: end_range",
+    "title": "Define the End of the Range to be Searched",
+    "value_type": "str"
+  },
+  "use_topic": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2801,
+    "requirement": "optional",
+    "supported_job_types": [
+      "JMSPUB",
+      "JMSSUB"
+    ],
+    "syntax": "use_topic: TRUE | FALSE",
+    "title": "Publish or Subscribe to a Topic or Queue",
+    "value_type": "enum"
+  },
+  "user_role": {
+    "default": null,
+    "family": "security",
+    "limits": "Up to 30 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2802,
+    "requirement": "optional",
+    "supported_job_types": [
+      "DBMON",
+      "DBPROC",
+      "DBTRIG"
+    ],
+    "syntax": "user_role: user_type",
+    "title": "Specify Database Resource Location",
+    "value_type": "str"
+  },
+  "wake_password": {
+    "default": null,
+    "family": "security",
+    "limits": "Up to 17 characters",
+    "object": "job",
+    "pdf_page": 2803,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WOL"
+    ],
+    "syntax": null,
+    "title": "Specify the Wake on LAN Password",
+    "value_type": "str"
+  },
+  "watch_file": {
+    "default": null,
+    "family": "file-watch",
+    "limits": "Up to 255 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2804,
+    "requirement": "required",
+    "supported_job_types": [
+      "FT",
+      "FW"
+    ],
+    "syntax": "watch_file: file",
+    "title": "Specify a File to Monitor",
+    "value_type": "str"
+  },
+  "watch_file_change_type": {
+    "default": null,
+    "family": "file-watch",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2808,
+    "requirement": "optional",
+    "supported_job_types": [
+      "FT"
+    ],
+    "syntax": "watch_file_change_type: DELTA | PERCENT | SIZE",
+    "title": "Specify the Type of Change in File Size",
+    "value_type": "enum"
+  },
+  "watch_file_change_value": {
+    "default": null,
+    "family": "file-watch",
+    "limits": "Up to 19 digits",
+    "object": "job",
+    "pdf_page": 2809,
+    "requirement": "required",
+    "supported_job_types": [
+      "FT"
+    ],
+    "syntax": "watch_file_change_value: value",
+    "title": "Specify the Change in File Size",
+    "value_type": "str"
+  },
+  "watch_file_groupname": {
+    "default": null,
+    "family": "file-watch",
+    "limits": "Up to 80 characters; case-sensitive; it cannot contain delimiters (such as spaces)",
+    "object": "job",
+    "pdf_page": 2810,
+    "requirement": "optional",
+    "supported_job_types": [
+      "FT"
+    ],
+    "syntax": "watch_file_groupname: group",
+    "title": "Specify the Group that Owns the File",
+    "value_type": "str"
+  },
+  "watch_file_min_size": {
+    "default": "0 (The job completes if the file exists.)",
+    "family": "file-watch",
+    "limits": "Up to 19 digits",
+    "object": "job",
+    "pdf_page": 2811,
+    "requirement": "optional",
+    "supported_job_types": [
+      "FW"
+    ],
+    "syntax": "watch_file_min_size: bytes",
+    "title": "Specify the Minimum Size that a File Must Reach",
+    "value_type": "int"
+  },
+  "watch_file_owner": {
+    "default": null,
+    "family": "file-watch",
+    "limits": "Up to 80 characters; case-sensitive; it cannot contain delimiters (such as spaces)",
+    "object": "job",
+    "pdf_page": 2811,
+    "requirement": "optional",
+    "supported_job_types": [
+      "FT"
+    ],
+    "syntax": "watch_file_owner: owner",
+    "title": "Specify the Owner of the File to be Monitored",
+    "value_type": "str"
+  },
+  "watch_file_recursive": {
+    "default": null,
+    "family": "file-watch",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2812,
+    "requirement": "optional",
+    "supported_job_types": [
+      "FT"
+    ],
+    "syntax": "watch_file_recursive: Y | N",
+    "title": "Specify Whether to Monitor Subdirectories for File Activity",
+    "value_type": "bool"
+  },
+  "watch_file_type": {
+    "default": null,
+    "family": "file-watch",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2813,
+    "requirement": "optional",
+    "supported_job_types": [
+      "FT"
+    ],
+    "syntax": "watch_file_type: CREATE | DELETE | EXIST | EXPAND |",
+    "title": "Specify the Type of File Activity to Monitor For",
+    "value_type": "enum"
+  },
+  "watch_file_win_user": {
+    "default": null,
+    "family": "file-watch",
+    "limits": "Up to 80 characters; case-sensitive; it cannot contain delimiters (such as spaces)",
+    "object": "job",
+    "pdf_page": 2820,
+    "requirement": "optional",
+    "supported_job_types": [
+      "FT"
+    ],
+    "syntax": "watch_file_win_user: user",
+    "title": "Specify a Windows User for Monitoring UNC Files",
+    "value_type": "str"
+  },
+  "watch_interval": {
+    "default": "60",
+    "family": "file-watch",
+    "limits": "Up to 2147483647",
+    "object": "job",
+    "pdf_page": 2821,
+    "requirement": "optional",
+    "supported_job_types": [
+      "FW"
+    ],
+    "syntax": "watch_interval: seconds",
+    "title": "Specify the Frequency to Monitor a File",
+    "value_type": "int"
+  },
+  "watch_no_change": {
+    "default": "1 (1 minute)",
+    "family": "file-watch",
+    "limits": "0 to 9223372036854775 for S, 0 to 153722867280912 for M, 0 to 2562047788015 for H, 0 to 106751991167",
+    "object": "job",
+    "pdf_page": 2822,
+    "requirement": "optional",
+    "supported_job_types": [
+      "FT"
+    ],
+    "syntax": "watch_no_change: nS|M|H|D",
+    "title": "Specify the Time the File Must Remain Unchanged",
+    "value_type": "bool"
+  },
+  "web_parameter": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 4000 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2823,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WBSVC"
+    ],
+    "syntax": "web_parameter: xsd\\:type=value | payload_job=job_name[, xsd\\:type=value |",
+    "title": "Specify Operation Parameters",
+    "value_type": "enum"
+  },
+  "web_user": {
+    "default": null,
+    "family": "security",
+    "limits": "Up to 145 characters",
+    "object": "job",
+    "pdf_page": 2824,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WBSVC"
+    ],
+    "syntax": "web_user: user_name",
+    "title": "Specify a Web Service User Name",
+    "value_type": "str"
+  },
+  "win_event_category": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2825,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMEL"
+    ],
+    "syntax": "win_event_category: event_category",
+    "title": "Specify a Windows Event Category",
+    "value_type": "str"
+  },
+  "win_event_computer": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 80 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2825,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMEL"
+    ],
+    "syntax": "win_event_computer: computer_name",
+    "title": "Specify a Local Computer for Windows Event Log",
+    "value_type": "str"
+  },
+  "win_event_datetime": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2826,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMEL"
+    ],
+    "syntax": "win_event_datetime: \"yyyymmdd hh:mm:ss\"",
+    "title": "Specify the Date and Time of a Windows Event Log",
+    "value_type": "hhmm"
+  },
+  "win_event_description": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2826,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMEL"
+    ],
+    "syntax": "win_event_description: event_description",
+    "title": "Specify a Windows Event Description",
+    "value_type": "str"
+  },
+  "win_event_id": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 10 digits",
+    "object": "job",
+    "pdf_page": 2827,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMEL"
+    ],
+    "syntax": "win_event_id: id",
+    "title": "Specify a Windows Event ID",
+    "value_type": "str"
+  },
+  "win_event_op": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2828,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMEL"
+    ],
+    "syntax": "win_event_op: GT | LT | LE | EQ | GE",
+    "title": "Specify a Comparison Operator for a Windows Event ID",
+    "value_type": "enum"
+  },
+  "win_event_source": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2828,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMEL"
+    ],
+    "syntax": "win_event_source: source_name",
+    "title": "Specify a Windows Event Source",
+    "value_type": "str"
+  },
+  "win_event_type": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2829,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMEL"
+    ],
+    "syntax": "win_event_type: ERROR | WARN | INFO | AUDITS | AUDITF",
+    "title": "Specify a Windows Event Type",
+    "value_type": "enum"
+  },
+  "win_log_name": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2830,
+    "requirement": "required",
+    "supported_job_types": [
+      "OMEL"
+    ],
+    "syntax": "win_log_name: log_name",
+    "title": "Specify the Name of a Windows Event Log",
+    "value_type": "str"
+  },
+  "win_service_name": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2830,
+    "requirement": "required",
+    "supported_job_types": [
+      "OMS"
+    ],
+    "syntax": "win_service_name: service_name",
+    "title": "Specify the Name of the Windows Service to be Monitored",
+    "value_type": "str"
+  },
+  "win_service_status": {
+    "default": null,
+    "family": "os-monitor",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2831,
+    "requirement": "optional",
+    "supported_job_types": [
+      "OMS"
+    ],
+    "syntax": "win_service_status: RUNNING | STOPPED | CONTINUE_PENDING |",
+    "title": "Specify the Status of the Windows Service to be Monitored",
+    "value_type": "enum"
+  },
+  "ws_authentication_order": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2833,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WSDOC"
+    ],
+    "syntax": null,
+    "title": "Specify Authentication Protocols",
+    "value_type": "str"
+  },
+  "ws_conn_domain": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 128 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2834,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WSDOC"
+    ],
+    "syntax": "ws_conn_domain: origin_domain",
+    "title": "Specify a Domain for NTLM Connection Authentication",
+    "value_type": "str"
+  },
+  "ws_conn_origin": {
+    "default": "The computer name where the agent is runningLimits: Up to 128 characters; case-sensitive",
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2834,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WSDOC"
+    ],
+    "syntax": "ws_conn_origin: origin_host",
+    "title": "Specify an Origin Host Name for NTLM Connection Authentication",
+    "value_type": "str"
+  },
+  "ws_conn_user": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 145 characters",
+    "object": "job",
+    "pdf_page": 2835,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WBSVC",
+      "WSDOC"
+    ],
+    "syntax": "ws_conn_user: authenticated_user@connhost",
+    "title": "Specify a User Name for Connection Authentication",
+    "value_type": "str"
+  },
+  "ws_global_proxy_defaults": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2836,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WSDOC"
+    ],
+    "syntax": "ws_global_proxy_defaults: Y | N",
+    "title": "Specify Whether to Use Global Proxy Defaults",
+    "value_type": "bool"
+  },
+  "ws_parameter": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 2048 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2837,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WSDOC"
+    ],
+    "syntax": null,
+    "title": "Specify Web Service Parameters",
+    "value_type": "str"
+  },
+  "ws_proxy_domain": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 128 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2839,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WSDOC"
+    ],
+    "syntax": "ws_proxy_domain: proxy_domain",
+    "title": "Specify a Domain for Proxy Authentication",
+    "value_type": "str"
+  },
+  "ws_proxy_host": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 128 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2840,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WSDOC"
+    ],
+    "syntax": "ws_proxy_host: proxy_host",
+    "title": "Specify a Proxy Host",
+    "value_type": "str"
+  },
+  "ws_proxy_origin": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 128 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2841,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WSDOC"
+    ],
+    "syntax": "ws_proxy_origin: proxy_origin",
+    "title": "Specify an Origin Name for Proxy Authentication",
+    "value_type": "str"
+  },
+  "ws_proxy_port": {
+    "default": null,
+    "family": "web",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2842,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WSDOC"
+    ],
+    "syntax": "ws_proxy_port: proxy_port",
+    "title": "Specify a Proxy Port",
+    "value_type": "str"
+  },
+  "ws_proxy_user": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 128 characters; case-sensitive; it cannot contain delimiters",
+    "object": "job",
+    "pdf_page": 2843,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WSDOC"
+    ],
+    "syntax": "ws_proxy_user: authenticated_user@proxydomain",
+    "title": "Specify a User for Proxy Authentication",
+    "value_type": "str"
+  },
+  "ws_security": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 512 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2844,
+    "requirement": "optional",
+    "supported_job_types": [
+      "WSDOC"
+    ],
+    "syntax": null,
+    "title": "Specify Additional Web Services Security Options",
+    "value_type": "str"
+  },
+  "wsdl_operation": {
+    "default": null,
+    "family": "web",
+    "limits": "Up to 256 characters; case-sensitive",
+    "object": "job",
+    "pdf_page": 2846,
+    "requirement": "required",
+    "supported_job_types": [
+      "WBSVC",
+      "WSDOC"
+    ],
+    "syntax": "wsdl_operation: operation",
+    "title": "Specify the Operation to be Invoked",
+    "value_type": "str"
+  },
+  "zos_dataset": {
+    "default": null,
+    "family": "zos",
+    "limits": "Up to 44 characters",
+    "object": "job",
+    "pdf_page": 2848,
+    "requirement": "required",
+    "supported_job_types": [
+      "ZOSDST"
+    ],
+    "syntax": "zos_dataset: jcl_library",
+    "title": "Specify a JCL Library for a z/OS Data Set Trigger Job",
+    "value_type": "str"
+  },
+  "zos_dsn_renamed": {
+    "default": null,
+    "family": "zos",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2849,
+    "requirement": "optional",
+    "supported_job_types": [
+      "ZOSDST"
+    ],
+    "syntax": "zos_dsn_renamed: Y | N",
+    "title": "Specify Whether to Monitor When a Data Set is Renamed",
+    "value_type": "bool"
+  },
+  "zos_dsn_updated": {
+    "default": null,
+    "family": "zos",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2850,
+    "requirement": "optional",
+    "supported_job_types": [
+      "ZOSDST"
+    ],
+    "syntax": "zos_dsn_updated: Y | N",
+    "title": "Specify Whether to Monitor for Updates to a Data Set",
+    "value_type": "bool"
+  },
+  "zos_explicit_dsn": {
+    "default": null,
+    "family": "zos",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2851,
+    "requirement": "optional",
+    "supported_job_types": [
+      "ZOSDST"
+    ],
+    "syntax": "zos_explicit_dsn: TRUE | FALSE",
+    "title": "Specify Whether to Monitor for an Explicit Data Set Notification",
+    "value_type": "enum"
+  },
+  "zos_ftp_direction": {
+    "default": null,
+    "family": "zos",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2851,
+    "requirement": "optional",
+    "supported_job_types": [
+      "ZOSDST"
+    ],
+    "syntax": "zos_ftp_direction: RECEIVE | SEND",
+    "title": "Specify Whether to Monitor for an FTP Transfer To or From a",
+    "value_type": "enum"
+  },
+  "zos_ftp_host": {
+    "default": null,
+    "family": "zos",
+    "limits": "Up to 128 characters",
+    "object": "job",
+    "pdf_page": 2852,
+    "requirement": "optional",
+    "supported_job_types": [
+      "ZOSDST"
+    ],
+    "syntax": "zos_ftp_host: host_name",
+    "title": "Specify a Remote Computer for an FTP Transfer",
+    "value_type": "str"
+  },
+  "zos_ftp_userid": {
+    "default": null,
+    "family": "zos",
+    "limits": "Up to 8 characters",
+    "object": "job",
+    "pdf_page": 2853,
+    "requirement": "optional",
+    "supported_job_types": [
+      "ZOSDST"
+    ],
+    "syntax": "zos_ftp_userid: user",
+    "title": "Specify a User ID for an FTP Connection",
+    "value_type": "str"
+  },
+  "zos_jobname": {
+    "default": null,
+    "family": "zos",
+    "limits": "Up to 8 alphanumeric or national ($, #, @) characters. The first character must be alphabetic or national. If",
+    "object": "job",
+    "pdf_page": 2853,
+    "requirement": "required",
+    "supported_job_types": [
+      "ZOSM"
+    ],
+    "syntax": "zos_jobname: name",
+    "title": "Specify the z/OS Job Name",
+    "value_type": "str"
+  },
+  "zos_trigger_by": {
+    "default": null,
+    "family": "zos",
+    "limits": "Up to 8 characters",
+    "object": "job",
+    "pdf_page": 2854,
+    "requirement": "optional",
+    "supported_job_types": [
+      "ZOSDST"
+    ],
+    "syntax": "zos_trigger_by: name",
+    "title": "Specify a Job Name or a User ID that Triggers the Job",
+    "value_type": "str"
+  },
+  "zos_trigger_on": {
+    "default": null,
+    "family": "zos",
+    "limits": "0-100",
+    "object": "job",
+    "pdf_page": 2855,
+    "requirement": "optional",
+    "supported_job_types": [
+      "ZOSDST"
+    ],
+    "syntax": "zos_trigger_on: number",
+    "title": "Specify the Number of Actions that Must Occur",
+    "value_type": "int"
+  },
+  "zos_trigger_type": {
+    "default": null,
+    "family": "zos",
+    "limits": null,
+    "object": "job",
+    "pdf_page": 2855,
+    "requirement": "optional",
+    "supported_job_types": [],
+    "syntax": null,
+    "title": "Specify Whether to Monitor for Data Set Activity by a Job or a",
+    "value_type": "str"
+  }
+}

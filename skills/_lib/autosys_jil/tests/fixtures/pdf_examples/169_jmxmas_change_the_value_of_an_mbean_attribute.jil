@@ -1,0 +1,10 @@
+/* extracted from PDF p.2562: Change the Value of an MBean Attribute */
+insert_job: change
+job_type: JMXMAS
+machine: appagent
+URL: "service:jmx:rmi:///jndi/rmi://agenttest:5099/jmxserver"
+mbean_name: "DefaultDomain:index=1,type=cdc.jmx.SimpleDynamic"
+mbean_attr: State
+jmx_parameter: payload_job=size
+condition: success(size)
+mbean_name: "domain_name:key=value[,key=value...]"

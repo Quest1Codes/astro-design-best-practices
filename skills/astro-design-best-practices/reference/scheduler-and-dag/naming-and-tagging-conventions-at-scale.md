@@ -1,3 +1,16 @@
+---
+topic: naming-and-tagging-conventions-at-scale
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: mixed
+signals: 
+  - multi_owner
+---
+
 # Naming and Tagging Conventions at Scale
 
 AutoSys already has two independent, orthogonal ways to classify a job — `box_name` (structural membership) [P1] and the `group`/`application` attributes (logical classification, independent of box membership) [F2]. Airflow's `dag_id` and `tags` map onto that same two-axis shape, and a large translated estate needs both, not just one.
@@ -22,4 +35,4 @@ At small scale, a single flat tagging scheme is fine. At large scale (thousands 
 
 - [F1] General Airflow community practice on DAG naming/tagging conventions (`dag_id` collection-prefix pattern, `tags` for cross-cutting classification) — sourced from community blog posts during this research pass, not an Astronomer/Apache primary specification. Treat as **`PRACTITIONER JUDGMENT`** for the specific naming shape; the underlying `tags` feature itself is a real, documented Airflow DAG argument.
 - [F2] Broadcom TechDocs — "How Job Groupings Are Created" (`group`/`application` JIL attributes, independent of box membership): https://techdocs.broadcom.com/us/en/ca-enterprise-software/intelligent-automation/autosys-workload-automation/12-1-01/scheduling/ae-scheduling/box-jobs-overview/how-job-groupings-are-created.html (tier 1 — vendor primary documentation, sourced during this project's earlier AutoSys-architecture research pass)
-- [P1] Project-internal — `skills/migrating-autosys-to-astronomer/reference/mapping.md` (box structural membership)
+- [P1] Project-internal — `skills/migrate-jil-to-airflow-translation/reference/conditions-and-dependencies.md` (box structural membership, "Cross-box and cross-DAG conditions" section)

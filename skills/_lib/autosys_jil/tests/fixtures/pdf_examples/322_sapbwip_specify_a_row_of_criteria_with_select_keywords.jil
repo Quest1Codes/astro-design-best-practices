@@ -1,0 +1,6 @@
+/* extracted from PDF p.2696: Specify a Row of Criteria With Select Keywords */
+insert_job: SAPJOB2
+job_type: SAPBWIP
+machine: sapagent
+sap_ext_table: field_name=SPTAG,low=20010101,high=20060606
+sap_fail_msg: message

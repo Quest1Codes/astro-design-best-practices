@@ -1,0 +1,6 @@
+/* extracted from PDF p.2768: Specify the File to Receive Standard Output for a Job on Windows */
+insert_job: win_stdout
+job_type: CMD
+machine: winagent
+command: “C:\COMMON\Backup”
+std_out_file: "C:\tmp\TEST.OUT"

@@ -1,3 +1,15 @@
+---
+topic: keda-based-autoscaling
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # KEDA-Based Autoscaling
 
 This file covers the specific mechanics behind the general autoscaling design principles in `autoscaling-design-for-bursty-batch-workloads.md` — how Astro's worker autoscaling actually computes worker count, which matters for tuning it correctly rather than just setting a min/max and hoping.

@@ -1,0 +1,13 @@
+/* extracted from PDF p.2604: Specify that the Children of a Single Request Program are Monitored */
+insert_job: OA7
+job_type: OASET
+machine: localhost
+oracle_appl_name: FND
+oracle_appl_name_type: SHORT
+oracle_req_set: FNDRSSUB873
+oracle_user: SYSADMIN
+oracle_resp: System Administrator
+oracle_mon_children: Y
+oracle_mon_children_delay: 10
+oracle_save_output: Y
+oracle_use_arg_def: Y

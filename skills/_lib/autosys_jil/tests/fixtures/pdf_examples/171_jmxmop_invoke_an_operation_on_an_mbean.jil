@@ -1,0 +1,9 @@
+/* extracted from PDF p.2563: Invoke an Operation on an MBean */
+insert_job: reset
+job_type: JMXMOP
+machine: agent
+URL: "service:jmx:rmi:///jndi/rmi://localhost:9999/server"
+mbean_name: "DefaultDomain:index=1,type=Config"
+mbean_operation: resetmem
+jmx_parameter: Integer=50
+media_type: type

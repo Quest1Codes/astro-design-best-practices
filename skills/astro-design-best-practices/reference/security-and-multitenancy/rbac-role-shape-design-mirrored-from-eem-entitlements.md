@@ -1,3 +1,16 @@
+---
+topic: rbac-role-shape-design-mirrored-from-eem-entitlements
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - credential_hits
+---
+
 # RBAC Role-Shape Design Mirrored from EEM Entitlements
 
 AutoSys's EEM (Enterprise Event Manager) managed access via entitlements — typically mapping to job groups or applications. Astro's RBAC model is hierarchical and additive: roles at Organization level cascade down, and Workspace/Deployment roles provide scoped, independent control.
@@ -10,7 +23,7 @@ This topic covers the target role shape design. For the EEM-vs-native-provider m
 Organization roles  →  apply across all Workspaces
 Workspace roles     →  apply within one Workspace
 Deployment roles    →  apply to one specific Deployment
-DAG-level roles     →  apply to individual DAGs (Astro Runtime 3.1-12+, Enterprise tier+)
+DAG-level roles     →  apply to individual DAGs (Astro Runtime 3.1+, Enterprise tier+)
 ```
 
 Permissions are **additive**: if a user holds multiple roles, the highest permission wins [B2]. Organization Owners inherit Workspace Owner permissions for every Workspace in the org [B4].
@@ -41,7 +54,7 @@ Permissions are **additive**: if a user holds multiple roles, the highest permis
 | Level | Use case |
 |---|---|
 | Deployment role | Restrict individual users to a single Deployment within a shared Workspace |
-| DAG-level role | Restrict access to specific DAGs within a shared Deployment (Astro Runtime 3.1-12+, Enterprise tier+) [B6][B8] |
+| DAG-level role | Restrict access to specific DAGs within a shared Deployment (Astro Runtime 3.1+, Enterprise tier+) [B6][B8] |
 
 ## EEM → Astro role mapping pattern
 

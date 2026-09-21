@@ -1,0 +1,5 @@
+/* extracted from PDF p.2417: Specify a Minimum Acceptable Process Rate */
+insert_job: test_SAPBDC11_SIMPLE
+job_type: SAPBDC
+machine: sapagent
+owner: WAAESAP@waae-jobstest

@@ -1,0 +1,11 @@
+/* extracted from PDF p.2748: Change the Value of an SNMP Variable using an Integer Value */
+insert_job: setvarint
+job_type: SNMPSET
+machine: snmpagent
+snmp_mib: cybermation.mib
+snmp_host: host.example.com
+snmp_oid: agentLogLevel
+port: 161
+snmp_version: 2
+snmp_comm_string: public
+snmp_value: int=8

@@ -1,0 +1,11 @@
+/* extracted from PDF p.2489: Upload a File from a Local Computer to a Remote Windows Server Using SSL FTP */
+insert_job:FTP_UPLOAD
+job_type: FTP
+machine: winagent
+owner: user1@winserver
+ftp_server_name: winserver
+ftp_server_port: 21
+ftp_transfer_direction: UPLOAD
+ftp_use_SSL: TRUE
+ftp_remote_name: "c:\uploaded_files\filename.txt"
+ftp_local_name: "d:\files_to_upload\filename.txt"

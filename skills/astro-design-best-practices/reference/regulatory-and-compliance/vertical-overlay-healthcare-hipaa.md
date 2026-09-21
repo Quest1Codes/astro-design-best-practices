@@ -1,3 +1,16 @@
+---
+topic: vertical-overlay-healthcare-hipaa
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - hipaa
+---
+
 # Vertical Overlay: Healthcare (HIPAA)
 
 HIPAA compliance for Airflow on Astro follows a **shared responsibility model**: Astronomer secures the platform infrastructure and provides the tools; the customer is responsible for configuring them correctly and signing the required agreements.

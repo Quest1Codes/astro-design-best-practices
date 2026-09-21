@@ -1,3 +1,16 @@
+---
+topic: mainframe-boundary-astro-side-architecture
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - zos
+---
+
 # Mainframe-Boundary Astro-Side Architecture
 
 Mainframe (z/OS) batch workloads present a unique integration challenge: Airflow runs on Kubernetes in the cloud; the mainframe runs JCL in JES2/JES3 on z/OS. This file covers the Airflow side of that boundary — how to trigger, monitor, and receive output from mainframe jobs without requiring Airflow to execute JCL natively.
@@ -33,7 +46,7 @@ If COBOL programs have been rehosted to a distributed runtime (e.g., Micro Focus
 |---|---|
 | JCL `COND=` parameter | `trigger_rule` (e.g., `TriggerRule.ALL_SUCCESS`, `ONE_FAILED`) |
 | Step restart (RESTART= parameter) | Idempotent tasks + `depends_on_past=True` or task retry |
-| GDG (Generation Data Group) file dependency | `S3KeySensor` or Airflow Assets/Datasets for event-driven triggers |
+| GDG (Generation Data Group) file dependency | `S3KeySensor` or Airflow Assets (formerly Datasets) for event-driven triggers |
 | Spool output capture | Fetch spool via Zowe API; write to S3 for log retention |
 | `MAXCC=0` check | Custom sensor validating job Condition Code before downstream tasks |
 

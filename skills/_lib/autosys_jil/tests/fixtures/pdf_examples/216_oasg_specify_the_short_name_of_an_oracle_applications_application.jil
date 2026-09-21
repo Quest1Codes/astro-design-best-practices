@@ -1,0 +1,10 @@
+/* extracted from PDF p.2600: Specify the Short Name of an Oracle Applications Application */
+insert_job: oasg_short
+job_type: oasg
+machine: oaagent
+oracle_appl_name_type: SHORT
+oracle_appl_name: ACCOUNTS
+oracle_program: FNDSCARU
+oracle_user: SYSADMIN
+oracle_resp: System Administrator
+oracle_args: argument[,argument...]

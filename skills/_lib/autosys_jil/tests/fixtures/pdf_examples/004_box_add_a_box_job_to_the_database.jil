@@ -1,0 +1,4 @@
+/* extracted from PDF p.2403: Add a Box Job to the Database */
+insert_job: end_of_day
+job_type: box
+Job: JOB_NAME is using Over-Ride #14

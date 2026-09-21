@@ -1,0 +1,9 @@
+/* extracted from PDF p.2528: Monitor an IP Address Specified in Dotted Decimal Format */
+insert_job: omip_job
+job_type: OMIP
+machine: monagt
+ip_host: 172.31.255.255
+ip_port: 7510
+monitor_mode: NOW
+ip_status: RUNNING
+ip_port: ip_port

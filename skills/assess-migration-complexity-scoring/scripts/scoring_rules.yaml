@@ -1,0 +1,208 @@
+# v1 migration-complexity scoring rules [spec §6.3]. Hand-authored, versioned; changing a rule
+# is a PR, not a runtime edit (never hand-edit a computed score -- change a rule here, or record
+# an override with a reason in manifest.scores.overrides[]).
+#
+# calibration_source: assumption -- effort_points_to_person_days below is a stated starting
+# assumption, not derived from completed-migration data (plan §11.9). Each completed migration
+# should feed a calibration record (research/effort-calibration/*.md) that updates these factors.
+version: 1
+calibration_source: assumption
+
+# Rough person-days per effort point, by the unit's final disposition. Deliberately coarse (v1).
+effort_points_to_person_days:
+  MECH: 0.25
+  JUDG: 0.75
+  REDESIGN: 2.0
+  NONE: 0.1
+  DECOMMISSION: 0.05
+
+# Job-type rules: first matching rule wins (same "ordered, first-match" convention as
+# commands_patterns.yaml's interpreter list). `match` is one of: job_types (exact code list),
+# job_type_prefix (code starts-with any of these), families (attribute/job_type_families.yaml
+# family), or default (catch-all, must be last).
+job_type_rules:
+  - match: {job_types: [CMD]}
+    points: 1
+    disposition: MECH
+  - match: {job_types: [BOX]}
+    points: 2
+    disposition: JUDG
+  - match: {job_types: [FW]}
+    points: 2
+    disposition: JUDG
+  - match: {job_types: [FT]}
+    points: 3
+    disposition: JUDG
+  - match: {job_types: [FTP, SCP]}
+    points: 2
+    disposition: MECH
+  - match: {job_types: [SQL, DBPROC, SQLAGENT]}
+    points: 1
+    disposition: MECH
+  - match: {job_types: [DBMON, DBTRIG]}
+    points: 3
+    disposition: JUDG
+    flags: [cdc]
+  - match: {families: [os-monitor]}
+    points: 1
+    disposition: NONE
+    flags: [monitoring]
+  - match: {job_types: [HTTP, WBSVC, WSDOC]}
+    points: 2
+    disposition: JUDG
+  - match: {job_type_prefix: [JMS, JMX, SNMP]}
+    points: 4
+    disposition: REDESIGN
+  - match: {families: [erp]}
+    points: 4
+    disposition: JUDG
+    flags: [erp]
+  - match: {job_type_prefix: [ZOS]}
+    points: 1
+    disposition: JUDG
+    flags: [route_mainframe]
+  - match: {families: [java]}
+    points: 3
+    disposition: JUDG
+  - match: {job_types: [HDFS, HIVE, PIG, SQOOP]}
+    points: 2
+    disposition: JUDG
+  - match: {job_types: [OOZIE]}
+    points: 4
+    disposition: REDESIGN
+  - match: {families: [pam-informatica]}
+    points: 3
+    disposition: JUDG
+  - match: {job_types: [I5, MICROFOCUS]}
+    points: 3
+    disposition: JUDG
+  - match: {job_types: [PROXY]}
+    points: 1
+    disposition: MECH
+  - match: {job_types: [WOL]}
+    points: 0
+    disposition: NONE
+  - match: {job_types: [CMDMACHINE]}
+    points: 2
+    disposition: JUDG
+  - match: {default: true}
+    points: 5
+    disposition: JUDG
+    flags: [unknown]
+
+# Additive modifiers over condition-string shape (from job.condition, when present).
+condition_rules:
+  - id: cond.or_present
+    when: has_or
+    points: 3
+    disposition_floor: REDESIGN
+  - id: cond.lookback
+    when: has_lookback
+    points: 2
+    disposition_floor: JUDG
+  - id: cond.exitcode
+    when: has_exitcode
+    points: 1
+  - id: cond.value_global
+    when: has_value
+    points: 2
+    disposition_floor: JUDG
+  - id: cond.cross_instance
+    when: has_cross_instance
+    points: 3
+    flags: [multi_deployment]
+  - id: cond.notrunning
+    when: has_notrunning
+    points: 2
+    disposition_floor: JUDG
+    flags: [mutex]
+  - id: cond.clause_count_gt5
+    when: clause_count_gt5
+    points: 2
+
+# Additive modifiers over scheduling attributes.
+scheduling_rules:
+  - id: sched.calendar_not_cron
+    when: calendar_not_cron
+    points: 2
+  - id: sched.run_window
+    when: has_run_window
+    points: 2
+  - id: sched.must_complete_times
+    when: has_must_complete_times
+    points: 1
+    flags: [sla]
+  - id: sched.timezone_nondefault
+    when: timezone_nondefault
+    points: 1
+
+# Additive modifiers over load/alerting/io attributes.
+attribute_rules:
+  - id: load.job_load_or_resources
+    when: has_job_load_or_resources
+    points: 1
+    flags: [pool]
+  - id: alert.svcdesk
+    when: has_svcdesk
+    points: 1
+    flags: [itsm]
+  - id: io.std_in_file
+    when: has_std_in_file
+    points: 1
+
+# Additive modifiers over command-payload analysis (manifest.commands[job_key]).
+command_rules:
+  - id: cmd.hidden_sendevent
+    when: has_hidden_control_flow
+    points: 3
+    disposition_floor: REDESIGN
+    flags: [hidden_flow]
+  - id: cmd.credential_hit
+    when: has_credential_hit
+    points: 1
+    flags: [secret]
+  - id: cmd.os_windows
+    when: os_windows
+    points: 2
+    flags: [windows]
+  - id: cmd.env_coupling_gt3
+    when: env_coupling_gt3
+    points: 1
+
+# Box-level modifiers (applied when aggregating; see box_aggregation below).
+box_rules:
+  - id: box.depth_ge3
+    when: depth_ge3
+    points: 2
+  - id: box.mixed_owner
+    when: mixed_owner
+    points: 1
+    disposition_floor: JUDG
+  - id: box.template_cluster_ge5
+    when: in_large_template_cluster
+    points: -1
+    flags: [factory_candidate]
+
+# History-derived overrides/modifiers (manifest.history; only applied when history was collected).
+history_rules:
+  - id: hist.dead
+    when: is_dead_job
+    disposition_override: DECOMMISSION
+  - id: hist.manual_interventions_gt10_per_90d
+    when: manual_interventions_gt10_per_90d
+    points: 2
+    flags: [hitl]
+  - id: hist.sla_breaching
+    when: is_sla_breaching
+    flags: [sla_breach]
+
+# Aggregation: box effort = sum(children's effort_points) + the box job's own points; box
+# disposition = the most severe disposition among itself and its children (severity order
+# below), unless a human override is recorded in manifest.scores.overrides[].
+disposition_severity: [NONE, MECH, JUDG, REDESIGN, DECOMMISSION]
+
+# Translation-tooling hint (plan §6.3): estate/box-level MECH share and hidden-flow presence.
+tooling_hint_rules:
+  otto_candidate:
+    min_mech_share: 0.70
+    max_hidden_flow_count: 0

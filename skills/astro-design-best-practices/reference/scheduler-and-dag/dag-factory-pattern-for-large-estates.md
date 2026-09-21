@@ -1,3 +1,16 @@
+---
+topic: dag-factory-pattern-for-large-estates
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - factory_candidate
+---
+
 # DAG-Factory Pattern for Large Estates
 
 An AutoSys estate carries job/box definitions as data (JIL), not code. The Astro-side design that preserves this property — rather than hand-writing one Python DAG file per box — is a **DAG factory**: workflow definitions kept as data (YAML/JSON, one file per box), plus a small number of Python modules that read that data at parse time and generate DAG objects [F1][F2].
@@ -32,6 +45,6 @@ The factory pattern is purely a *generation mechanism*. It does not decide box�
 - [F3] Apache Airflow docs — Dynamic Dag Generation (stable sort requirement) / Astronomer dynamically-generating-dags guide (tier 1/2)
 - [F4] Apache Airflow docs — Best Practices, top-level code guidance: https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html (tier 2)
 - [F5] Astronomer Docs — DAG writing best practices (`min_file_process_interval`): https://www.astronomer.io/docs/learn/dag-best-practices (tier 1)
-- [F6a] Astronomer Docs — rightsizing Airflow on Astro (`parsing_processes` sizing, ~2x vCPUs) — corrected citation, per Critic pass: this claim is not on the `dag-best-practices` page it was originally attributed to: https://www.astronomer.io/docs/astro/best-practices/rightsize-airflow-on-astro (tier 1)
+- [F6a] Astronomer Docs — Airflow scaling: workers/scheduler settings ("Astronomer recommends setting a value that is twice your available vCPUs" for `parsing_processes`) — corrected citation: this claim lives on the scaling-workers page, not the rightsize-Airflow-on-Astro page it was previously attributed to: https://www.astronomer.io/docs/learn/airflow-scaling-workers#scheduler-settings (tier 1, confirmed via astronomer-docs verification)
 - [F7] Airflow model API reference — `is_paused_upon_creation` DAG constructor parameter: https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/models/dag/index.html (tier 2) — **NEEDS_EXEC_CHECK**: an open Airflow GitHub issue (#30615) reports this parameter not reliably honored in combination with the `dags_are_paused_at_creation` global config on some versions; confirm actual behavior on the target Astro Runtime version before relying on it as the sole coexistence-safety mechanism.
-- [P1] Project-internal — `skills/migrating-autosys-to-astronomer/reference/mapping.md` (box→DAG boundary decision tree)
+- [P1] Project-internal — `skills/migrate-jil-to-airflow-translation/reference/conditions-and-dependencies.md` (box→DAG boundary decision tree, "Cross-box and cross-DAG conditions" section)

@@ -1,0 +1,13 @@
+/* extracted from PDF p.2479: Compress a File */
+insert_job: FTPJOB
+job_type: FTP
+machine: ftpagent
+ftp_server_name: aixunix
+ftp_server_port: 5222
+ftp_transfer_direction: DOWNLOAD
+ftp_compression: 3
+ftp_remote_name: /files_to_download/largefile.txt
+ftp_local_name: "c:\downloaded_files\largefile.txt"
+owner: ftpuser@aixunix
+ftp_local_name: file_name[; file_name...]
+Limits: Case-sensitive

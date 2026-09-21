@@ -1,3 +1,15 @@
+---
+topic: dag-testing-and-parse-gates-before-merge
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # DAG Testing and Parse Gates Before Merge
 
 AutoSys JIL validation often happened *after* import, relying on the `chk_auto_up` utility or runtime failures. In Airflow, pushing syntax errors to the metadata database can crash the Scheduler. 
@@ -11,14 +23,14 @@ Your CI/CD pipeline should enforce a layered testing strategy on every Pull Requ
 ### 1. Parse / Integrity check (The absolute minimum)
 
 The CI runner must execute `astro dev parse`.
-- **What it does**: Checks for basic Python syntax errors, import errors, and structural DAG validity (e.g., cyclic dependencies).
+- **What it does**: Checks for basic Python syntax errors, import errors, and successful DAG rendering. **Correction**: an earlier draft of this file also attributed cyclic-dependency detection to `astro dev parse`; current docs describe `astro dev parse` as syntax/import-error checking only. Cyclic-dependency detection is covered separately, as part of the `astro dev pytest` example test suite (a `test_dag_example.py`-style "Dags have no cycles" test) — see the Unit testing section below.
 - **Mechanism**: The CI pipeline fails immediately if this command returns a non-zero exit code.
 - **Why it matters**: It is fast, safe, and guarantees the DAG will at least load into the Airflow UI without crashing the parsing loop.
 
 ### 2. Unit testing (Custom logic validation)
 
 Use `pytest` to validate business logic without requiring a running Airflow cluster [B2].
-- **Astronomer Best Practices Repo**: Astronomer maintains a public `best_practices_pytests` repository. Import these tests to enforce standards (e.g., ensuring `catchup=False` is set globally, checking for hardcoded secrets, validating naming conventions).
+- **`astro dev pytest`**: Astronomer's own example test suite (`test_dag_example.py`) includes structural checks beyond syntax — including a "Dags have no cycles" test — alongside business-logic checks like requiring `catchup=False`, retries, and tags. Import/adapt these tests to enforce standards rather than relying on `astro dev parse` for structural validity.
 - **Custom Operators**: If you write custom operators in `plugins/`, they must have unit tests.
 
 ### 3. Ephemeral Integration testing (High-risk changes)

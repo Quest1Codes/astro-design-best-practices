@@ -1,0 +1,6 @@
+/* extracted from PDF p.2737: Specify a Shell to Run a Script */
+insert_job: MFGSORT
+job_type: CMD
+machine: unixagt
+command: /mfg/test/sort
+shell: /bin/csh

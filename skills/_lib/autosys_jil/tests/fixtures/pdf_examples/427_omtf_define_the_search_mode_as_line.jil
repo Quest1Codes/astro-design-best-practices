@@ -1,0 +1,9 @@
+/* extracted from PDF p.2785: Define the Search Mode as LINE */
+insert_job: omtf_line
+job_type: OMTF
+machine: monagt
+text_file_name: "c:\ca\log"
+text_file_filter: ERROR MESSAGE
+text_file_mode: LINE
+lower_boundary: 143
+monitor_mode: NOW

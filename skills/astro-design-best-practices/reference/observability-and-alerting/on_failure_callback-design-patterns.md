@@ -1,3 +1,15 @@
+---
+topic: on_failure_callback-design-patterns
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # on_failure_callback Design Patterns
 
 AutoSys triggered alerting natively on job failure without requiring per-job alerting logic. In Airflow, task and DAG failures are handled programmatically via callbacks. Designing these callbacks efficiently is critical for reliable alerting and avoiding scheduler performance degradation.

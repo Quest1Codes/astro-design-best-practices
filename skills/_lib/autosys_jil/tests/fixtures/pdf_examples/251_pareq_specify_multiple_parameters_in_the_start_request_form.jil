@@ -1,0 +1,14 @@
+/* extracted from PDF p.2635: Specify Multiple Parameters in the Start Request Form */
+insert_job: srf1
+job_type: PAREQ
+endpoint_URL: "http://paserver:8080/itpam/soap"
+machine: paagent
+owner: pamadmin@paserver
+pa_path: "/ITPAM Tutorials/S05 External Interactions/L06 Start Req Form for Input/"
+pa_name: "Start Request Form"
+pa_parameter: param_name="AlarmProcessingProduct", param_value="Test Alarm Product"
+pa_parameter: param_name="Server", param_value="paserver"
+pa_parameter: param_name="Port", param_value=80
+pa_monitor_progress: Y
+pa_trace: Y
+pa_path: path

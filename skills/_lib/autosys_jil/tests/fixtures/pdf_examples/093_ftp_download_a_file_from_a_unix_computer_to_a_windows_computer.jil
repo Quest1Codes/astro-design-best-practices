@@ -1,0 +1,11 @@
+/* extracted from PDF p.2485: Download a File from a UNIX Computer to a Windows Computer */
+insert_job: FTPT1A
+job_type: FTP
+machine: ftpagent
+ftp_server_name: 172.16.0.0
+ftp_server_port: 21
+ftp_transfer_direction: DOWNLOAD
+ftp_transfer_type: A
+ftp_remote_name: /u1/ftpdata/textfile
+ftp_local_name: "c:\ftpfiles"
+owner: ftpuser@172.16.0.0

@@ -1,0 +1,11 @@
+/* extracted from PDF p.2724: Upload Multiple Files from the Agent Computer to a Remote Server */
+insert_job: sftp_up_mult
+job_type: SCP
+machine: WINAGENT
+scp_transfer_direction: UPLOAD
+scp_server_name: aixunix
+scp_remote_dir: /u1/build/uploaded
+scp_remote_name: "*"
+scp_local_name: "c:\temp\upload\*"
+scp_protocol: SFTP
+owner: causer@WINAGENT

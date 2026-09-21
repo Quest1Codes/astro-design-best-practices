@@ -1,0 +1,12 @@
+/* extracted from PDF p.2467: Monitor a Text File Encoded in ISO-8859-1 */
+insert_job: textfile_job
+job_type: OMTF
+machine: monagt
+text_file_name: /export/home/logs/transactions.log
+text_file_filter: ERROR MESSAGE
+text_file_mode: LINE
+lower_boundary: 1
+upper_boundary: 50
+encoding: ISO-8859-1
+monitor_mode: NOW
+endpoint_URL: endpoint_url

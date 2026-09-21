@@ -1,0 +1,7 @@
+/* extracted from PDF p.2549: Terminate a Job on Box Failure */
+insert_job: jobterm1
+job_type: C
+box_name: unix_box
+command: sleep 120
+machine: unixagent
+job_terminator: y

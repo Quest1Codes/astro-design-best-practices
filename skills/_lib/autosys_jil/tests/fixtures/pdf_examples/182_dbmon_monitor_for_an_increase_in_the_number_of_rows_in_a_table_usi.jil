@@ -1,0 +1,8 @@
+/* extracted from PDF p.2572: Monitor for an increase in the Number of Rows in a Table Using a Condition */
+insert_job: dbmon_job
+job_type: DBMON
+machine: dbagt
+tablename: Inventory_List
+monitor_type: INCREASE
+monitor_cond: "ProductA < 1000"
+connect_string: "jdbc:oracle:thin:@172.31.255.255:1433:ORDERS"

@@ -1,0 +1,6 @@
+/* extracted from PDF p.2765: Specify a File Name that Contains a Global Variable on UNIX */
+insert_job: unix_globalvar
+job_type: CMD
+machine: unixagent
+command: /usr/common/backup
+std_in_file: /tmp/$${Today}.in

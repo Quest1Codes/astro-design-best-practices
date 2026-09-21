@@ -1,0 +1,9 @@
+/* extracted from PDF p.2676: Specify a Time Zone */
+insert_job: ps_txtfile
+job_type: ps
+machine: psagt
+ps_process_name: DDDAUDIT
+ps_process_type: SQR Report
+ps_server_name: PSPR
+ps_time_zone: CST
+remote_command: command

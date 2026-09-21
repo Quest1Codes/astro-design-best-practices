@@ -1,0 +1,7 @@
+/* extracted from PDF p.2815: Monitor for the Deletion of Files That Have Names Beginning with Pay */
+insert_job: ftjob
+job_type: FT
+machine: ftagt
+watch_file: /usr/data/pay*
+watch_file_type: DELETE
+continuous: Y

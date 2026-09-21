@@ -1,0 +1,17 @@
+/* extracted from PDF p.2646: Specify the WSDL Port Name for Getting Stock Quotes */
+insert_job: quote
+job_type: WBSVC
+machine: localhost
+owner: ejmcommander
+max_run_alarm: 0
+alarm_if_fail: y
+send_notification: n
+wsdl_url: "http://host:8080/axis/services/StockQuote?wsdl"
+target_namespace: "http://ws.ca.com"
+service_name: StockQuoteService
+port_name: StockQuote
+wsdl_operation: GetQuote
+endpoint_url: "http://host:8080/axis/services/StockQuote"
+web_parameter: "xsd:string=CA"
+one_way: false
+preemptive_authentication: false

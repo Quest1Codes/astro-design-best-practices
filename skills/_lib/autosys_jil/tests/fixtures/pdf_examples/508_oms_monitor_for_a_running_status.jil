@@ -1,0 +1,8 @@
+/* extracted from PDF p.2832: Monitor for a Running Status */
+insert_job: oms_job2
+job_type: OMS
+machine: winagt
+win_service_name: App Server
+monitor_mode: WAIT
+ws_authentication_order: BASIC | DIGEST | NTLM
+ws_authentication_order: {[BASIC]}

@@ -1,3 +1,16 @@
+---
+topic: rsa-ig-access-review-to-astro-periodic-access-review
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - credential_hits
+---
+
 # RSA Identity Governance ACL/Access-Review Automation → Astro Periodic Access-Review Design
 
 AutoSys environments integrated with **RSA Identity Governance** (formerly RSA Archer / RSA Via Lifecycle) to automate access certification campaigns — periodic reviews where managers approved or revoked users' access to AutoSys jobs and calendars. RSA IG pulled ACL data from CA EEM, presented it to reviewers, and wrote back revocations automatically [B1].
@@ -14,7 +27,7 @@ Astro has no native access-certification automation equivalent. The Astro period
 | **Workspace level** | Workspace Owners, Operators, Authors | Astro UI → Workspace → Members |
 | **Deployment level** | Deployment Admins, custom Deployment roles | Astro UI → Deployment → Members |
 | **API Tokens** | Scoped tokens in use for CI/CD | Astro UI → API Tokens |
-| **DAG-level access** (if Runtime 3.1-12+, Enterprise tier+) | DAG-tag role assignments | Airflow UI → DAG-level permissions |
+| **DAG-level access** (if Runtime 3.1+, Enterprise tier+) | DAG-tag role assignments | Airflow UI → DAG-level permissions |
 
 ### Review Cadence (by Risk Level)
 

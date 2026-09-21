@@ -1,0 +1,7 @@
+/* extracted from PDF p.2427: Verify the Available File Space on Windows */
+insert_job: win_chk
+job_type: CMD
+machine: winagent
+command: "C:\Programs\Payroll\pay.exe"
+chk_files: "C: 100 D: 120"
+class_name: class

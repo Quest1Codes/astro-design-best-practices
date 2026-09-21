@@ -1,0 +1,135 @@
+{# assessment_report.md.j2 -- spec §6.5. `HUMAN:` blocks are placeholders render_report.py
+   --final refuses to accept unfilled; `<!-- G:empty:<field> -->` markers are placed on any
+   empty G table that has no waived_reason, and are what --final scans for as well. #}
+# AutoSys → Astronomer Migration Assessment
+
+Generated {{ generated_at }} | Registry version `{{ registry_version }}` | Schema `{{ schema_version }}`
+
+## 1. Executive Summary
+
+HUMAN: Go / go-with-conditions / stay, and the top 5 risks -- named by box/job ID or decision, not by category. Don't explain what "go-with-conditions" means; just say which one this estate is and why, citing the numbers already rendered above (job/box counts, disposition mix). Effort range: **{{ effort_days_range[0] }}-{{ effort_days_range[1] }} person-days**. Recommended tooling: **{{ tooling_hint }}**. One paragraph, per reference/report-structure.md's example.
+
+## 2. Scope and Method
+
+**Instances assessed**: {{ instances | join(', ') }}
+**Artifacts used** ({{ evidence_count }} total, see Appendix A for hashes): {{ evidence_kinds | join(', ') }}
+
+HUMAN: What was in scope, what was explicitly out of scope, and which assess-* skills/scripts produced this report. Name the artifacts actually used/missing for this engagement (see Appendix A) -- don't describe what those skills do in general.
+
+## 3. Estate Profile
+
+| Metric | Count |
+|---|---|
+| Instances | {{ instances | length }} |
+| Jobs | {{ job_count }} |
+| Boxes | {{ box_count }} |
+| Machines | {{ machine_count }} |
+
+### Job-type histogram
+{{ table(job_type_histogram, "Job type", "Count") }}
+
+### Owner concentration
+{{ table(owner_histogram, "Owner", "Job count") }}
+
+## 4. Operational Profile
+{% if history_available %}
+- Run count analyzed: {{ history_run_count }}
+- Dead-job candidates: {{ dead_job_count }} {% if not dead_job_trusted %}(LOW CONFIDENCE -- history coverage was only {{ history_coverage_pct }}; see reference/report-structure.md §4){% endif %}
+- Manual interventions (90d proxy): {{ manual_intervention_total }}
+- SLA breaches observed: {{ sla_breach_count }}
+{% else %}
+<!-- G:empty:history --><!-- WAIVED: run-history/event-archive artifacts are optional per assess-estate-discovery/reference/artifact-checklist.md and were not collected for this assessment --> _No run-history/event-archive artifacts were collected for this assessment. Operational-profile findings below are therefore unavailable; this is a stated scope limitation, not an omission. (If this should instead be treated as a gap to fill, replace the WAIVED comment above with the plan to collect it.)_
+{% endif %}
+
+## 5. Job-Type Coverage
+
+{{ table(job_type_histogram, "Job type", "Count") }}
+
+**Unknown job types**: {{ unknown_job_types | join(', ') if unknown_job_types else '(none)' }}
+
+## 6. Attribute Usage
+
+{{ table(attribute_family_histogram, "Attribute family", "Count") }}
+
+## 7. Dependency Topology
+
+| Metric | Value |
+|---|---|
+| Nodes | {{ graph_node_count }} |
+| Edges | {{ graph_edge_count }} |
+| Cycles | {{ graph_cycle_count }} |
+| Longest chain | {{ graph_longest_chain }} |
+| Cross-box condition edges | {{ graph_cross_box_count }} |
+| Cross-instance edges | {{ graph_cross_instance_count }} |
+| Hidden control-flow edges | {{ graph_hidden_count }} |
+
+HUMAN: Interpretation of the numbers above -- name the specific box(es)/job(s) driving the cycle count and cross-instance edges, and what that implies for DAG boundaries and wave sequencing (see assess-estate-inventory/reference/reading-the-inventory.md). Don't explain what a cycle or a cross-instance edge is in general.
+
+## 8. Command Payload Analysis
+
+{{ table(interpreter_histogram, "Interpreter", "Count") }}
+
+- OS hints: {{ os_hint_histogram }}
+- Credential hits (pattern names only, never values): {{ credential_hit_total }}
+- Template clusters (dag-factory candidates): {{ template_cluster_count }}
+
+HUMAN: Interpretation of the numbers above -- name the specific interpreters/template clusters/credential patterns found, environment coupling, factory-pattern opportunities, and any hidden-control-flow findings, named explicitly. Don't explain what a template cluster or hidden control flow is in general.
+
+## 9. Calendars and Scheduling
+
+| Metric | Value |
+|---|---|
+| Scheduled jobs | {{ scheduled_job_count }} |
+| Cron-expressible | {{ cron_expressible_count }} ({{ cron_expressible_pct }}) |
+| DST-sensitive jobs | {{ dst_sensitive_count }} |
+
+## 10. Complexity Scoring
+
+{{ table(by_disposition, "Disposition", "Count") }}
+
+- Total effort points: {{ effort_points }}
+- Effort range: {{ effort_days_range[0] }}-{{ effort_days_range[1] }} person-days
+- Tooling hint: {{ tooling_hint }}
+
+HUMAN: Name every REDESIGN/NONE/DECOMMISSION item explicitly (job/box ID, not just the count), and the one-line reason each landed in that disposition. Don't restate what the disposition categories mean.
+
+## 11. Target Architecture
+
+{{ table(architecture_decisions, "Decision", "Choice") }}
+
+**Sizing** (basis: observed = real data, floor = job-count-only lower bound):
+
+{{ table(sizing_summary, "Component", "Recommendation") }}
+
+**Consumption estimate**: {{ cost_estimate_range }} {{ cost_currency }}/month (ESTIMATE ONLY — {{ cost_basis_note }})
+
+HUMAN: Any overrides applied to the decisions/sizing above, with reasons specific to this estate. If none, say "no overrides" plainly -- don't explain the decision framework itself.
+
+## 12. Translation Tooling Strategy
+
+HUMAN: The actual tool choice per wave, informed by (not copied from) `tooling_hint: {{ tooling_hint }}`, and the one-line reason it does or doesn't diverge from the hint for that wave's specific units. Don't explain what Otto/Orbiter/hand translation are -- see assess-migration-complexity-scoring/reference/translation-tooling-strategy.md for that.
+
+## 13. Waves and Effort
+
+{{ table(wave_summary, "Wave", "Units / Points") }}
+
+HUMAN: Final, human-reviewed wave assignment (the table above is `propose_waves.py`'s proposal) -- name what changed from the proposal and why, if anything did. Don't restate what a wave is.
+
+## 14. Risks, Losses, and Stay-Signals
+
+HUMAN: Stated plainly, item by item, named by job/box ID and flag -- not a general risk taxonomy. Seed from: {{ risk_flags }}.
+
+## Appendix A: Evidence
+
+{{ table(evidence_table, "Artifact", "SHA-256 (first 12)") }}
+
+## Appendix B: Unknowns and Escalations
+
+- Unknown job types: {{ unknown_job_types | join(', ') if unknown_job_types else '(none)' }}
+- Unknown attributes: {{ unknown_attributes | join(', ') if unknown_attributes else '(none)' }}
+- Condition parse failures: {{ condition_parse_failure_count }}
+- Unresolved references: {{ unresolved_ref_count }}
+
+## Appendix C: Glossary
+
+See `autosys-to-astronomer/SKILL.md`'s glossary table.

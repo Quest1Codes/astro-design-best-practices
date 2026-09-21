@@ -1,10 +1,23 @@
+---
+topic: cross-dag-dependencies-datasets-vs-triggerdagrun-vs-externaltasksensor
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - cross_instance
+---
+
 # Cross-DAG Dependencies: Assets vs. TriggerDagRunOperator vs. ExternalTaskSensor
 
 The internal reference file `conditions-and-dependencies.md` already establishes *when* a condition string crossing box boundaries signals that two boxes should become two separate DAGs [P1]. This file is the next decision: once that's true, which of Airflow's three cross-DAG mechanisms to use.
 
 ## Naming note
 
-What Airflow 2.x called a **Dataset** is renamed **Asset** in Airflow 3 — "changed in version 3.0: the concept was previously called Dataset" [F1]. Since this skill targets Airflow 3/Astro Runtime 3.3+, use "Asset" throughout; older tutorials and blog posts (including some cited here) still say "Dataset" for the same mechanism.
+Airflow 3 renamed the **Asset (formerly Dataset)** feature — the official docs flag this as a version-3.0 rename of the same mechanism [F1]. This skill targets Airflow 3/Astro Runtime 3.3+, so use "Asset" throughout below; older tutorials and blog posts (including some cited here) may still use the old name for the same mechanism.
 
 ## The three mechanisms
 
@@ -26,8 +39,8 @@ At large scale, prefer Asset-based linking over `TriggerDagRunOperator` fan-out 
 
 ## Sources
 
-- [F1] Apache Airflow docs — Asset Definitions ("Changed in version 3.0: previously called Dataset"): https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/assets.html (tier 2)
-- [F2] Astronomer Docs — Cross-DAG dependencies (Asset/Dataset event-driven triggering): https://www.astronomer.io/docs/learn/cross-dag-dependencies (tier 1)
+- [F1] Apache Airflow docs — Asset Definitions (documents the Airflow 3.0 rename from the feature's prior name): https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/assets.html (tier 2)
+- [F2] Astronomer Docs — Cross-DAG dependencies (Asset event-driven triggering): https://www.astronomer.io/docs/learn/cross-dag-dependencies (tier 1)
 - [F3] Astronomer Docs — Cross-DAG dependencies (`TriggerDagRunOperator`, `ExternalTaskSensor` push/pull comparison): same as F2 (tier 1)
 - [F4] Astronomer Docs — Cross-DAG dependencies (sensor worker-slot/starvation caveat in cloud deployments): same as F2 (tier 1)
-- [P1] Project-internal — `skills/migrating-autosys-to-astronomer/reference/conditions-and-dependencies.md` (cross-box condition signal)
+- [P1] Project-internal — `skills/migrate-jil-to-airflow-translation/reference/conditions-and-dependencies.md` (cross-box condition signal)

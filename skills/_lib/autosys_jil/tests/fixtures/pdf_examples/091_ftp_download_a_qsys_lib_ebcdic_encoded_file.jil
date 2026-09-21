@@ -1,0 +1,12 @@
+/* extracted from PDF p.2484: Download a QSYS.LIB EBCDIC-encoded File */
+insert_job: FTP_EBCDIC
+job_type: FTP
+machine: I5AGENT
+ftp_server_name: i5agent
+ftp_server_port: 5222
+ftp_transfer_direction: DOWNLOAD
+ftp_transfer_type: E
+ftp_local_name: /QSYS.LIB/ESPLIB.LIB/DOWNLOAD.FILE/DATA.MBR
+ftp_remote_name: /QSYS.LIB/DATALIB.LIB/DATAFILE.FILE/DATA.MBR
+owner: ftpuser@i5agent
+ftp_server_name: server_address

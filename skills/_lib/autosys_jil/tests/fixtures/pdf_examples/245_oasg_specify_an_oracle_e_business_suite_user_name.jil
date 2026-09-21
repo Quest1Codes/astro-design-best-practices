@@ -1,0 +1,9 @@
+/* extracted from PDF p.2627: Specify an Oracle E-Business Suite User Name */
+insert_job: oasg_short
+job_type: oasg
+machine: oaagent
+oracle_appl_name_type: SHORT
+oracle_appl_name: ACCOUNTS
+oracle_program: FNDSCARU
+oracle_user: SYSADMIN
+oracle_resp: System Administrator

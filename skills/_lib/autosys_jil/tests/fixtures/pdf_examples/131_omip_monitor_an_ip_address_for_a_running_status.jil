@@ -1,0 +1,8 @@
+/* extracted from PDF p.2529: Monitor an IP Address for a Running Status */
+insert_job: omip_job
+job_type: OMIP
+machine: monagt
+ip_host: 172.31.255.255
+ip_port: 7510
+monitor_mode: NOW
+ip_status: RUNNING

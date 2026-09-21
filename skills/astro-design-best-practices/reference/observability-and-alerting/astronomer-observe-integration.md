@@ -1,3 +1,15 @@
+---
+topic: astronomer-observe-integration
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Astronomer Observe Integration
 
 AutoSys reporting (e.g., via WCC) was primarily job-centric. Astro Observe shifts the paradigm to **data-centric observability**, treating pipelines as "data products" and monitoring their overall health, timeliness, and cost rather than just individual task success/failure.

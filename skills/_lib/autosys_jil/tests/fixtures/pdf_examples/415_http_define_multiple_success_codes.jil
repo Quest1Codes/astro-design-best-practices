@@ -1,0 +1,6 @@
+/* extracted from PDF p.2771: Define Multiple success_codes */
+insert_job: HTTPJOB
+job_type: HTTP
+machine: localhost
+success_codes: 20-30,100-150
+success_criteria: regexp

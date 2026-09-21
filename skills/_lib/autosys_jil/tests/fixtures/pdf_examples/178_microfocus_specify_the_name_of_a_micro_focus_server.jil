@@ -1,0 +1,9 @@
+/* extracted from PDF p.2568: Specify the Name of a Micro Focus Server */
+insert_job: mf_job_with_server_by_name
+job_type: MICROFOCUS
+machine: mfagent
+mf_jcl_type: CONTENT
+mf_server_address_type: NAME
+mf_server: JCLDEMO
+mf_jcl_name: "C:\Program Files\Micro Focus\es-jcldemo\sleepsmp2.jcl"
+mf_user: user_id@identifier

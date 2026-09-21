@@ -1,0 +1,17 @@
+/* extracted from PDF p.2532: Specify Connection Domain and Origin for NTLM Authentication */
+insert_job: HTTP.CON_USER
+job_type: HTTP
+machine: appagent
+invocation_type: GET
+provider_url: "http://host.example.com/protected"
+j2ee_conn_origin: host.example.com
+j2ee_conn_domain: windows_domain
+j2ee_conn_user: myuser@windows_domain
+j2ee_no_global_proxy_defaults: Y
+j2ee_authentication_order: BASIC,DIGEST,NTLM
+j2ee_proxy_domain: "http://host.domain.proxy"
+j2ee_proxy_host: proxy.example.com
+j2ee_proxy_origin_host: "http://host.origin.proxy"
+j2ee_proxy_port: 90
+j2ee_proxy_user: user01
+j2ee_conn_user: authenticated_user@connhost

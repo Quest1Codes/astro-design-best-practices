@@ -1,0 +1,14 @@
+/* extracted from PDF p.2607: Specify the Operating Unit Name */
+insert_job: oasg_short
+job_type: oasg
+machine: oaagent
+oracle_appl_name_type: SHORT
+oracle_appl_name: ACCOUNTS
+oracle_output_format: PDF
+oracle_program: FNDSCARU
+oracle_user: SYSADMIN
+oracle_resp: System Administrator
+oracle_template_name: OraTemplate
+oracle_template_language: en
+oracle_template_territory: US
+oracle_oprunit: "MyOrgName"

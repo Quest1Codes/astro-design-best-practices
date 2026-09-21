@@ -1,0 +1,12 @@
+/* extracted from PDF p.2659: Specify a Distribution Detail Folder */
+insert_job: ps_dsfolder
+job_type: ps
+machine: psagt
+ps_process_name: AEMINITEST
+ps_process_type: Application Engine
+ps_dest_type: WEB
+ps_dest_format: PDF
+ps_run_cntrl_id: PS_ALL
+owner: VP1@server01
+ps_detail_folder: GENERAL
+ps_server_name: PSPROD

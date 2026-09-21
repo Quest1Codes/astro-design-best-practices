@@ -1,0 +1,7 @@
+/* extracted from PDF p.2694: Specify the Numeric Client within the SAP System */
+insert_job: SAPTEST
+job_type: SAPBWPC
+machine: SAPHTAGENT
+sap_client: 850
+sap_chain_id: DEMO_CHAIN
+sap_event_id: event_name

@@ -1,0 +1,10 @@
+/* extracted from PDF p.2598: Remove an Entity Bean */
+insert_job: remove
+job_type: ENTYBEAN
+machine: appagent
+initial_context_factory: weblogic.jndi.WLInitialContextFactory
+provider_url: "t3://localhost:7001"
+bean_name: customer
+operation_type: REMOVE
+finder_name: findByPrimaryKey
+finder_parameter: String="customerid"

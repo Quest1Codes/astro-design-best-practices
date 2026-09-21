@@ -1,0 +1,8 @@
+/* extracted from PDF p.2535: Define an HTTP Job to Perform a Google Search */
+insert_job: google
+job_type: HTTP
+machine: appagent
+invocation_type: GET
+provider_url: "http://google.com/search"
+j2ee_authentication_order: BASIC,DIGEST,NTLM
+j2ee_parameter: q="ca workload automation"

@@ -1,0 +1,9 @@
+/* extracted from PDF p.2795: Specify a Trigger Type for SQL Server */
+insert_job: dbtrig1
+job_type: DBTRIG
+machine: DB_agent
+trigger_type: DELETE,INSERT
+tablename: stores
+dbtype: MSSQL
+owner: sa@myhost
+connect_string:"jdbc:sqlserver://myhost:1433;DatabaseName=pubs"

@@ -1,0 +1,11 @@
+/* extracted from PDF p.2854: Restrict the Trigger to an FTP Transfer from a Specific User ID */
+insert_job: CYBER.XFER
+job_type: ZOSDST
+machine: ZOS1
+owner: CYBDL01
+zos_dataset: CYBER.XFER.001
+zos_trigger_type: zos_user_id
+zos_trigger_by: CYB-
+zos_ftp_direction: RECEIVE
+zos_ftp_userid: CYB-
+zos_trigger_on: number

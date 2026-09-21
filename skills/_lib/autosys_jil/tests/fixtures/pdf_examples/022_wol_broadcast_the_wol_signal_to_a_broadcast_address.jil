@@ -1,0 +1,9 @@
+/* extracted from PDF p.2425: Broadcast the WOL Signal to a Broadcast Address */
+insert_job: wol_job
+job_type: WOL
+machine: agentnme
+broadcast_address: 172.16.255.255
+mac_address: 00-1E-4F-C1-0F-FE
+ping_host: 172.16.1.101
+ping_ports: 7
+chk_files: locationsize [locationsize...]

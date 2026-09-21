@@ -1,0 +1,7 @@
+/* extracted from PDF p.2649: Monitor the Agent Process on i5/OS */
+insert_job: omp_i5_onejob
+job_type: OMP
+machine: i5agt
+process_name: 123456/PROD/APPLPGM
+process_status: RUNNING
+monitor_mode: NOW

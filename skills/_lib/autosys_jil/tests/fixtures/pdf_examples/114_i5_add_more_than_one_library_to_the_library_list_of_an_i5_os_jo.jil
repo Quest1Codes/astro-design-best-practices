@@ -1,0 +1,7 @@
+/* extracted from PDF p.2513: Add More Than One Library to the Library List of an i5/OS Job */
+insert_job: i5job_lib
+job_type: I5
+machine: i5agent
+i5_action: RUN_PROGRAM
+i5_name: ACCTJOB
+i5_library_list: "PAYROLL FINANCE"

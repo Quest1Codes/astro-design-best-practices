@@ -1,3 +1,15 @@
+---
+topic: astro-cli-deploy-pipeline-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Astro CLI Deploy Pipeline Design
 
 AutoSys deployments often involved custom shell scripts, manual JIL imports (`jil < job.jil`), or proprietary promotion tools. Astronomer standardizes this process using the `astro` CLI integrated directly into your CI/CD pipeline (e.g., GitHub Actions, GitLab CI).

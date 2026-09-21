@@ -1,0 +1,8 @@
+/* extracted from PDF p.2793: Specify a Trigger Condition for Oracle */
+insert_job: dbtrig_oracle
+job_type: DBTRIG
+machine: dbagent
+tablename: Inventory_List
+trigger_type: UPDATE
+trigger_cond: "new.ProductA < 1000"
+connect_string: "jdbc:oracle:thin:@172.31.255.255:1433:ORDERS"

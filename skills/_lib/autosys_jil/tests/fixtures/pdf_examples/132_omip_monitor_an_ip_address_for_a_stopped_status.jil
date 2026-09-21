@@ -1,0 +1,9 @@
+/* extracted from PDF p.2529: Monitor an IP Address for a Stopped Status */
+insert_job: omip_job
+job_type: OMIP
+machine: monagt
+ip_host: myhost
+ip_status: STOPPED
+monitor_mode: WAIT
+j2ee_authentication_order: BASIC | DIGEST | NTLM
+j2ee_authentication_order: {[BASIC]}

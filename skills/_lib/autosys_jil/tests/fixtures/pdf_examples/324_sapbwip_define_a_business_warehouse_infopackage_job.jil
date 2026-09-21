@@ -1,0 +1,5 @@
+/* extracted from PDF p.2697: Define a Business Warehouse InfoPackage Job */
+insert_job: BWIP
+job_type: SAPBWIP
+machine: sapagent
+sap_info_pack: ZPAK_6C7ZW2JAXS90AK71WD1CYIN

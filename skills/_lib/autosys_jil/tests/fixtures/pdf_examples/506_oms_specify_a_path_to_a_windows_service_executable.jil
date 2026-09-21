@@ -1,0 +1,7 @@
+/* extracted from PDF p.2831: Specify a Path to a Windows Service Executable */
+insert_job: oms_job2
+job_type: OMS
+machine: winagt
+win_service_name: "C:\Program Files\Log App\apptask.exe"
+win_service_status: CONTINUE_PENDING
+monitor_mode: WAIT

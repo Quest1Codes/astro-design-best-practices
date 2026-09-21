@@ -1,0 +1,119 @@
+# Hand-curated overlay merged into job_types.json by build_registry.py.
+# family -> which migrate-jil-to-airflow-translation/reference/job-types/*.md file covers it.
+# Source for the job-type list itself: AutoSys 12.0 doc, job_type attribute, [AS p.2549-2551].
+# 12.1-only job types (e.g. Kubernetes container agent) are NOT in the 12.0 doc and are
+# listed under `not_in_12_0` so the parser recognises them without claiming a 12.0 cite.
+
+families:
+  core:
+    translation_ref: core-cmd-box.md
+    types: [CMD, BOX, CMDMACHINE]
+  file-watch:
+    translation_ref: file-watch-and-trigger-fw-ft.md
+    types: [FW, FT]
+  file-transfer:
+    translation_ref: file-transfer-ftp-scp.md
+    types: [FTP, SCP]
+  database:
+    translation_ref: database-sql-dbproc-dbmon-dbtrig-sqlagent.md
+    types: [SQL, DBPROC, DBMON, DBTRIG, SQLAGENT]
+  os-monitor:
+    translation_ref: os-monitors-om.md
+    types: [OMCPU, OMD, OMEL, OMIP, OMP, OMS, OMTF]
+  web-messaging:
+    translation_ref: web-and-messaging-http-wbsvc-wsdoc-jms-jmx-snmp.md
+    types: [HTTP, WBSVC, WSDOC, JMSPUB, JMSSUB, JMXMAG, JMXMAS, JMXMC, JMXMOP, JMXMREM, JMXSUB, SNMPGET, SNMPSET]
+  erp:
+    translation_ref: erp-sap-ps-oracle-ebs.md
+    types: [SAP, SAPBDC, SAPBWIP, SAPBWPC, SAPDA, SAPEVT, SAPJC, SAPPM, PS, OASG, OASET, OACOPY]
+  java:
+    translation_ref: java-pojo-ejb-rmi.md
+    types: [POJO, ENTYBEAN, SESSBEAN, JAVARMI]
+  hadoop:
+    translation_ref: hadoop-hdfs-hive-pig-oozie-sqoop.md
+    types: [HDFS, HIVE, PIG, OOZIE, SQOOP]
+  platform:
+    translation_ref: platform-i5-zos-microfocus-proxy-wol.md
+    types: [I5, ZOS, ZOSM, ZOSDST, MICROFOCUS, PROXY, WOL]
+  pam-informatica:
+    translation_ref: pam-and-informatica.md
+    types: [PAPROC, PAREQ, INFORMATICA]
+
+aliases:
+  c: CMD
+  b: BOX
+  f: FW
+
+# Long names as printed in the 12.0 doc's job_type attribute page.
+names:
+  BOX: Box
+  CMD: Command
+  CMDMACHINE: Command (machine-selected at run time)
+  DBMON: Database Monitor
+  DBPROC: Database Stored Procedure
+  DBTRIG: Database Trigger
+  ENTYBEAN: Entity Bean
+  FT: File Trigger
+  FTP: File Transfer Protocol
+  FW: File Watcher
+  HTTP: HTTP
+  HDFS: Hadoop HDFS
+  HIVE: Hadoop Hive
+  I5: i5/OS
+  INFORMATICA: Informatica
+  JAVARMI: Java Remote Method Invocation
+  JMSPUB: JMS Publish
+  JMSSUB: JMS Subscribe
+  JMXMAG: JMX-MBean Attribute Get
+  JMXMAS: JMX-MBean Attribute Set
+  JMXMC: JMX-MBean Create Instance
+  JMXMOP: JMX-MBean Operation
+  JMXMREM: JMX-MBean Remove Instance
+  JMXSUB: JMX-MBean Subscribe
+  MICROFOCUS: Micro Focus
+  OACOPY: Oracle E-Business Suite Copy Single Request
+  OASET: Oracle E-Business Suite Request Set
+  OASG: Oracle E-Business Suite Single Request
+  OMCPU: CPU Monitoring
+  OMD: Disk Monitoring
+  OMEL: Windows Event Log Monitoring
+  OMIP: IP Monitoring
+  OMP: Process Monitoring
+  OMS: Windows Service Monitoring
+  OMTF: Text File Reading and Monitoring
+  OOZIE: Hadoop Oozie Workflow
+  PAPROC: Process Automation Process Execution
+  PAREQ: Process Automation Start Request Form
+  PIG: Hadoop Pig
+  POJO: Plain Old Java Object
+  PROXY: Remote Execution
+  PS: PeopleSoft
+  SAPBDC: SAP Batch Input Session
+  SAPBWIP: SAP BW InfoPackage
+  SAPBWPC: SAP BW Process Chain
+  SAPDA: SAP Data Archiving
+  SAPEVT: SAP Event Monitor
+  SAPJC: SAP Job Copy
+  SAPPM: SAP Process Monitor
+  SAP: SAP R/3
+  SCP: Secure Copy
+  SESSBEAN: Session Bean
+  SNMPGET: SNMP Value Get
+  SNMPSET: SNMP Value Set
+  SQL: SQL
+  SQLAGENT: SQL Server Agent Job
+  SQOOP: Hadoop Sqoop
+  WBSVC: Web Service (SOAP)
+  WSDOC: Web Service Document
+  WOL: Wake on LAN
+  ZOS: z/OS Regular
+  ZOSM: z/OS Manual
+  ZOSDST: z/OS Data Set Trigger
+
+# Recognised for parsing but carry no 12.0 page cite.
+not_in_12_0:
+  K8S:
+    name: Kubernetes container job (12.1+)
+    family: platform
+    translation_ref: platform-i5-zos-microfocus-proxy-wol.md
+    note: "Introduced after 12.0; see astro-design-best-practices cluster 19 (confidence: mixed)."

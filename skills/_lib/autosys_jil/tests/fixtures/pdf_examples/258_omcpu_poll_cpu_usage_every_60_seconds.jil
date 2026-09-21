@@ -1,0 +1,10 @@
+/* extracted from PDF p.2644: Poll CPU Usage Every 60 Seconds */
+insert_job: omcpu_job
+job_type: OMCPU
+machine: unixagent
+cpu_usage: FREE
+inside_range: TRUE
+poll_interval: 60
+monitor_mode: CONTINUOUS
+lower_boundary: 75
+upper_boundary: 95

@@ -1,0 +1,11 @@
+/* extracted from PDF p.2735: Initiate a Service Desk Request */
+insert_job: service_desk_on_failure_2
+machine: localhost
+command: false
+owner: user@localhost
+service_desk: y
+svcdesk_imp: 3
+svcdesk_sev: 4
+svcdesk_desc: “service_desk_on_failure_2 has failed.”
+service_name: service
+Limits: Up to 255 characters; case-sensitive

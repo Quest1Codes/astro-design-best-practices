@@ -1,3 +1,15 @@
+---
+topic: incident-ticket-automation
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Incident-Ticket Automation (Replacing Service Desk)
 
 AutoSys often relied on proprietary plugins or OS-level scripts to create incident tickets in tools like ServiceNow or BMC Remedy upon job failure. In Astro, automating incident creation is achieved via API-driven orchestration or event-driven middleware.
@@ -16,7 +28,7 @@ Use Airflow's native callback system to create tickets programmatically.
 ### 2. Event-driven integration (Middleware)
 For robust ITSM workflows, decouple ticket creation from the Airflow worker.
 
-- **Mechanism**: Use Astro Alerts to send a failure notification to a webhook or an intermediate routing tool (like PagerDuty or an Enterprise Service Bus) [B-AstroAlerts].
+- **Mechanism**: Astro Alerts does not have a generic/raw webhook channel type. Its notification channels are **Slack, Email, PagerDuty, Opsgenie, and DAG Trigger**. Route to an intermediate tool (PagerDuty/Opsgenie, or an Enterprise Service Bus) via one of those channels — e.g., the PagerDuty or Opsgenie channel for direct incident routing, or the DAG Trigger channel to run a DAG that calls a custom webhook/ESB endpoint itself [B-AstroAlerts].
 - **ServiceNow IntegrationHub**: Use the ServiceNow Jira Spoke to automatically generate Jira issues for engineering teams when a ServiceNow incident is created by the Airflow alert [B-ServiceNow].
 - **Benefits**: Reduces custom code in Airflow; centralizes incident routing logic in the ITSM platform.
 
@@ -38,4 +50,4 @@ Automated ticket creation is prone to "ticket sprawl" if not designed carefully.
 [B-ServiceNow] ServiceNow Docs — Table API / IntegrationHub Jira Spoke (accessed 2026-08-08)
 [B-Jira] Atlassian Docs — Jira REST API (accessed 2026-08-08)
 [B-Airflow-Callbacks] Apache Airflow Docs — Callbacks and context variables: https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html (tier 2)
-[B-AstroAlerts] Astronomer Docs — Set up Astro alerts (webhook/PagerDuty/email routing on Dag failure): https://www.astronomer.io/docs/astro/alerts (tier 1, added on Critic-pass review)
+[B-AstroAlerts] Astronomer Docs — Configure and add alert notification channels (Slack, Email, PagerDuty, Opsgenie, DAG Trigger — no generic webhook channel): https://www.astronomer.io/docs/astro/alerts#configure-and-add-alert-notification-channels (tier 1, confirmed via astronomer-docs verification)

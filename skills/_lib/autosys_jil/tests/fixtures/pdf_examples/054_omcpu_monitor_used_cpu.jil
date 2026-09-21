@@ -1,0 +1,9 @@
+/* extracted from PDF p.2455: Monitor Used CPU */
+insert_job: omcpu_job
+job_type: OMCPU
+machine: unixagent
+lower_boundary: 20
+upper_boundary: 80
+inside_range: FALSE
+cpu_usage: USED
+date_conditions: y | n

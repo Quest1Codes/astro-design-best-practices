@@ -1,0 +1,7 @@
+/* extracted from PDF p.2672: Specify a Run Control ID */
+insert_job: ps_txtfile
+job_type: ps
+machine: psagt
+ps_process_name: AEMINTEST
+ps_process_type: Application Engine
+ps_run_cntrl_id: PS_ALL

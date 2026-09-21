@@ -1,0 +1,7 @@
+/* extracted from PDF p.2801: Query a JMX Server for the Value of an MBean Attribute */
+insert_job: query
+job_type: JMXMAG
+machine: appagent
+URL: "service:jmx:rmi:///jndi/rmi://localhost:9999/server"
+mbean_name: "DefaultDomain:index=1,type=Config"
+mbean_attr: cachesize

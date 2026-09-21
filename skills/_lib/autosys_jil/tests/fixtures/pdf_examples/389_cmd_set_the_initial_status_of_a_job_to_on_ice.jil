@@ -1,0 +1,6 @@
+/* extracted from PDF p.2760: Set the Initial Status of a Job to ON_ICE */
+insert_job: test_js2
+command:dir
+machine:localhost
+status:on_ice
+std_err_file: file_name [environment_variable]| blob_name

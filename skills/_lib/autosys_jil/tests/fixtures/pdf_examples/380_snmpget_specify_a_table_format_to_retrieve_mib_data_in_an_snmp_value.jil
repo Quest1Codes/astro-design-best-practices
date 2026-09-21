@@ -1,0 +1,14 @@
+/* extracted from PDF p.2747: Specify a table format to retrieve MIB data in an SNMP Value Get Job */
+insert_job: getsubtree
+job_type: SNMPGET
+machine: snmpagent
+snmp_mib: cybermation.mib
+snmp_host: host.example.com
+snmp_oid: tcpipChannelsTable
+port: 161
+snmp_version: 3
+snmp_privacy_user: user@host
+snmp_comm_string: public
+snmp_subtree: y
+snmp_table_view: y
+snmp_value: type=value[, type=value...]

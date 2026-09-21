@@ -1,0 +1,8 @@
+/* extracted from PDF p.2460: Return Data from a Database Table that Match a Condition */
+insert_job: sql_job1
+job_type: SQL
+machine: SQL_server1
+sql_command: select emp_name from emp where emp_name like 'S%'
+connect_string:"jdbc:oracle:thin:@172.31.255.255:1433:ORDERS"
+success_criteria: emp_name=S.*
+destination_file: "c:\temp\sql_job1_out.log"

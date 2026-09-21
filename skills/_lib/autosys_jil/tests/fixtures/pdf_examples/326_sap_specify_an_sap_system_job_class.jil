@@ -1,0 +1,8 @@
+/* extracted from PDF p.2698: Specify an SAP System Job Class */
+insert_job: SAPTEST
+job_type: SAP
+machine: SAPAGENT
+sap_job_class: C
+sap_job_name: SAP_JOB
+sap_step_parms: abap_name=BTCTEST
+sap_job_count: count

@@ -1,0 +1,9 @@
+/* extracted from PDF p.2850: Monitor When a Data Set is Renamed */
+insert_job: test_ZOSDST
+job_type: ZOSDST
+machine: zosagent
+owner: user1@ca11
+zos_dsn_updated: N
+zos_trigger_on: 0
+zos_dataset: CYB2.DA.DSTRIG1
+zos_dsn_renamed: y

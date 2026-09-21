@@ -1,0 +1,6 @@
+/* extracted from PDF p.2763: Store Standard Error File Output as a Job Blob in Textual Format */
+insert_job: report_job1
+job_type: CMD
+machine: localhost
+command: myapplication
+std_err_file: $$blobt

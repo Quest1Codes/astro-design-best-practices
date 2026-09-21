@@ -1,0 +1,8 @@
+/* extracted from PDF p.2735: Initiate a Service Desk Incident */
+insert_job: service_desk_on_failure_1
+machine: localhost
+command: false
+owner: user@localhost
+service_desk: y
+svcdesk_pri: 1
+svcdesk_desc: “service_desk_on_failure_1 has failed.”

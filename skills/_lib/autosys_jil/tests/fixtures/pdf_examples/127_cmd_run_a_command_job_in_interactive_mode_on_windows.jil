@@ -1,0 +1,7 @@
+/* extracted from PDF p.2526: Run a Command Job in Interactive Mode on Windows */
+insert_job: edit_file
+job_type: CMD
+machine: winagent
+description: "Edit/review a configuration file"
+command: notepad.exe "c:\run_info\config.txt"
+interactive: y

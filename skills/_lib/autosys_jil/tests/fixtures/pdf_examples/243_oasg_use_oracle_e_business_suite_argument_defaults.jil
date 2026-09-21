@@ -1,0 +1,12 @@
+/* extracted from PDF p.2625: Use Oracle E-Business Suite Argument Defaults */
+insert_job: oasg_args
+job_type: oasg
+machine: oaagent
+oracle_appl_name_type: DISPLAY
+oracle_appl_name: Application Object Library
+oracle_user: SYSADMIN
+oracle_resp: System Administrator
+oracle_program: FNDSCARU
+oracle_use_arg_def: Y
+oracle_args: T,,X23,,
+oracle_use_set_defaults_first: Y | N | T | F | YES | NO | TRUE | FALSE

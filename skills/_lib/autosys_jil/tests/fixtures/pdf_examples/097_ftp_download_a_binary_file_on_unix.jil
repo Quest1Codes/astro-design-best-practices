@@ -1,0 +1,11 @@
+/* extracted from PDF p.2488: Download a Binary File on UNIX */
+insert_job: FTPBINARY
+job_type: FTP
+machine: unixagent
+ftp_server_name: hpunix
+ftp_server_port: 5222
+ftp_transfer_direction: DOWNLOAD
+ftp_transfer_type: B
+ftp_remote_name: /u1/qatest/ftpdata/binaryfile
+ftp_local_name: /export/home/qatest/ftpdata/transf.bin
+owner: test@hpunix

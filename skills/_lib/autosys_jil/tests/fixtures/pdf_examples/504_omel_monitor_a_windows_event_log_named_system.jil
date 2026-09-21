@@ -1,0 +1,9 @@
+/* extracted from PDF p.2830: Monitor a Windows Event Log named System */
+insert_job: eventlog_job
+job_type: OMEL
+machine: monagt
+win_log_name: System
+win_event_type: WARN
+win_event_source: MrxSmb
+win_event_category: None
+win_service_name: service_name

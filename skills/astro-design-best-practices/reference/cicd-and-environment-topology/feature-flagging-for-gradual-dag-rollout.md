@@ -1,3 +1,15 @@
+---
+topic: feature-flagging-for-gradual-dag-rollout
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Feature-Flagging for Gradual DAG Rollout
 
 AutoSys lacked native feature-flagging; new job streams were typically created with unique names or put on "ON ICE" until ready. In Airflow, gradual rollouts and A/B testing of pipelines can be achieved using native architectural features rather than maintaining duplicate DAGs.
@@ -45,7 +57,7 @@ If a feature rollout in production fails, rely on Astronomer's **Deploy Rollback
 
 ## Sources
 
-[B1, B2, B3, B4] Astronomer Docs — Airflow feature support on Astro (Dag versioning): https://www.astronomer.io/docs/astro/airflow-feature-support (tier 1) — NEEDS_EXEC_CHECK: not independently re-verified this page covers Dag Versioning specifically; confirm before relying on it
+[B1, B2, B3, B4] Astronomer Docs — Dag versioning (Airflow 3 feature, automatic, no setup required): https://www.astronomer.io/docs/astro/dag-versioning and https://www.astronomer.io/docs/learn/airflow-dag-versioning (tier 1, confirmed via astronomer-docs verification — **corrected citation**: the previously-cited `astro/airflow-feature-support` page does not mention Dag Versioning/Dag Bundles at all; these are the actual pages)
 [B5] Astronomer Docs — Create Airflow variables in the Astro UI: https://www.astronomer.io/docs/astro/create-and-link-variables (tier 1)
 [B6] Astronomer Docs — Deploy Dags to Astro: https://www.astronomer.io/docs/astro/deploy-dags (tier 1)
 [B7, B8, B9] Astronomer Docs — Deploy history, roll back to a past deploy: https://www.astronomer.io/docs/astro/deploy-history#roll-back-to-a-past-deploy (tier 1)

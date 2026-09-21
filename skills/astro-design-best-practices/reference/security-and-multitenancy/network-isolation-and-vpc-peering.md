@@ -1,3 +1,15 @@
+---
+topic: network-isolation-and-vpc-peering
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Network Isolation and VPC Peering (Hybrid)
 
 AutoSys used OS-level TCP connectivity between the Event Server and agents — no cloud VPC model. On Astro, network topology is the primary physical isolation control and is the deciding factor for whether a **Standard Cluster** or a **Dedicated Cluster** is required.
@@ -8,20 +20,22 @@ AutoSys used OS-level TCP connectivity between the Event Server and agents — n
 |---|---|---|
 | Namespace-level isolation | ✓ | ✓ |
 | VPC peering to private data | ✗ | ✓ |
-| AWS PrivateLink | ✗ | ✓ |
+| AWS PrivateLink | Limited, pre-configured set only (S3, EC2 Autoscaling, ECR, ELB, AWS STS) | Full/custom PrivateLink connectivity |
 | Transit Gateway / VPN | ✗ | ✓ |
 | Private egress mode (no public internet) | ✗ | ✓ (AWS) |
 | Remote Execution agents | ✗ | ✓ |
 | Data residency / sovereignty | Limited | Full control |
 
+**Correction**: an earlier draft of this table marked AWS PrivateLink as entirely unavailable on Standard clusters. Current docs state all Astro clusters — including Standard — are pre-configured with a limited set of AWS PrivateLink endpoints (S3, EC2 Autoscaling, ECR, ELB, AWS STS); only expanded/custom PrivateLink connectivity to arbitrary private services is Dedicated-only.
+
 For any AutoSys migration that involves connecting Airflow workers to on-premises databases, private cloud APIs, or VPC-resident services without public endpoints, a **Dedicated Cluster** is required.
 
-## Private connectivity options (Dedicated Cluster only)
+## Private connectivity options (Dedicated Cluster only, except pre-configured AWS PrivateLink)
 
 | Method | Use case |
 |---|---|
 | **VPC Peering / VNet Peering** | Most private connectivity use cases; recommended first choice |
-| **AWS PrivateLink** | AWS services (S3, SQS, ECR) or connecting Remote Execution agents to Astro control plane without public internet exposure |
+| **AWS PrivateLink** | Pre-configured, limited endpoint set (S3, EC2 Autoscaling, ECR, ELB, STS) is available on all clusters, including Standard; expanded/custom PrivateLink to arbitrary AWS services or to connect Remote Execution agents requires a Dedicated Cluster |
 | **Transit Gateway** | Hub-and-spoke enterprise networking to connect Astro to multiple on-premises or multi-account VPCs |
 | **VPN** | Site-to-site connectivity to corporate network |
 
@@ -66,4 +80,4 @@ For data residency (EU GDPR, Australia Privacy Act) or ITAR/export control requi
 [Network facts] Astronomer Docs — Dedicated clusters and networking: https://www.astronomer.io/docs/astro/create-dedicated-cluster (accessed 2026-08-08)
 [Remote Execution] Astronomer Docs — Remote Execution: https://www.astronomer.io/docs/astro/remote-execution (accessed 2026-08-08)
 [Private egress] Astronomer Docs — Private network egress: https://www.astronomer.io/docs/astro/private-network-egress (accessed 2026-08-08)
-[PrivateLink] Astronomer Docs — Create a dedicated cluster (private networking options; no dedicated standalone "AWS PrivateLink" page found — this is the closest confirmed match, covering VPC/Pod CIDR and private connectivity configuration): https://www.astronomer.io/docs/astro/create-dedicated-cluster (tier 1, URL added on citation review)
+[PrivateLink] Astronomer Docs — Connect to Astro via AWS PrivateLink (pre-configured endpoint set on all clusters — S3, EC2 Autoscaling, ECR, ELB, STS — vs. expanded/custom PrivateLink on Dedicated Clusters): https://www.astronomer.io/docs/astro/connect-aws-privatelink (tier 1, confirmed via astronomer-docs verification); Create a dedicated cluster (VPC/Pod CIDR and private connectivity configuration): https://www.astronomer.io/docs/astro/create-dedicated-cluster (tier 1)

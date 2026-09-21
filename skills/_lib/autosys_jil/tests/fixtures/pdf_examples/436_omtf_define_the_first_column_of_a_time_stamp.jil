@@ -1,0 +1,14 @@
+/* extracted from PDF p.2790: Define the First Column of a Time Stamp */
+insert_job: timeformat_job
+job_type: OMTF
+machine: monagt
+monitor_mode: now
+text_file_name: /export/home/logs/transaction.log
+text_file_filter: UNAGR
+text_file_mode: DATETIME
+time_format: "h:mm a"
+time_position: 12
+lower_boundary: "10:08 PM"
+upper_boundary: "12:30 PM"
+monitor_mode: now
+timezone: zone

@@ -1,0 +1,12 @@
+/* extracted from PDF p.2613: Specify the Short Name of an Oracle E-Business Suite Program */
+insert_job: oaset_fmt
+job_type: OASET
+machine: localhost
+oracle_user: SYSADMIN
+oracle_resp: System Administrator
+oracle_appl_name_type: SHORT
+oracle_appl_name: BIS
+oracle_req_name_type: DISPLAY
+oracle_req_set: FNDRSSUB1310
+oracle_use_arg_def: Y
+oracle_programdata: index=1, output_format=PDF, template_name=OraTemplate,

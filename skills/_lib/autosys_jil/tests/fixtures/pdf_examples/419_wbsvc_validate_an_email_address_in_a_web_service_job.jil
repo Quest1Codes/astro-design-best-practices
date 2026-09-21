@@ -1,0 +1,15 @@
+/* extracted from PDF p.2776: Validate an Email Address in a Web Service Job */
+insert_job: subscribe
+job_type: WBSVC
+machine: wsagent
+target_namespace: "http://www.webserviceX.NET/"
+service_name: ValidateEmail
+port_name: ValidateEmailSoap
+wsdl_operation: IsValidEmail
+WSDL_URL: "http://www.webservicex.net/ValidateEmail.asmx?wsdl"
+endpoint_URL: "http://www.webservicex.net/ValidateEmail.asmx"
+web_parameter: xsd\:string="john.smith@example.com"
+return_class_name: java.lang.Boolean
+return_xml_name: boolean
+return_namespace: "http://www.webservicex.net"
+success_pattern: true

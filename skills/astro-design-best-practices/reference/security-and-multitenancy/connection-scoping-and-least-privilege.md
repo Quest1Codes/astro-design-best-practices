@@ -1,3 +1,16 @@
+---
+topic: connection-scoping-and-least-privilege
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - credential_hits
+---
+
 # Connection Scoping and Least Privilege
 
 AutoSys job credentials were typically embedded in JIL (`machine:`, `login:`) or managed by the OS at the agent level — there was no concept of connection scoping across job boundaries. **Correction**: an earlier draft of this file's foundational premise — that Airflow connections are global within a Deployment by default, and that this creates an implicit privilege-expansion risk — carried no citation, despite being the claim the whole file's mitigation table is built on. Airflow's Connections are indeed stored per-environment (not per-DAG or per-user) and any DAG author with code-deploy access can reference any Connection defined in that Deployment [B4][B5].
@@ -14,7 +27,7 @@ Mitigation strategies, in order of decreasing isolation:
 | Strategy | Isolation level | How |
 |---|---|---|
 | **Separate Deployment per team** | Strongest — connection pool is scoped to one team | Each team's Deployment has its own connection namespace |
-| **DAG-level RBAC** (Astro Runtime 3.1-12+, Enterprise tier+) | Logical — restricts which users can trigger which DAGs | Limits blast radius but doesn't prevent code from referencing shared connections |
+| **DAG-level RBAC** (Astro Runtime 3.1+, Enterprise tier+) | Logical — restricts which users can trigger which DAGs | Limits blast radius but doesn't prevent code from referencing shared connections |
 | **Naming conventions + secrets backend scoping** | Weak — relies on discipline | Prefix connections by team (`finance_db_rw`, `ops_db_ro`) and document ownership |
 
 Astronomer explicitly recommends separate Deployments over shared instances for teams with distinct security requirements [B4][B5].

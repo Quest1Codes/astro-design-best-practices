@@ -1,0 +1,9 @@
+/* extracted from PDF p.2511: Specify Data for the Local Data Area in Hexadecimal Format */
+insert_job: i5job_lda
+job_type: I5
+machine: i5agent
+i5_action: COMMAND
+i5_name: IVP
+i5_lda: x'abcd'
+i5_lib: library
+i5_lib: /QSYS.LIB/library.LIB

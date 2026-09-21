@@ -1,0 +1,6 @@
+/* extracted from PDF p.2694: Trigger an SAP event */
+insert_job: SAPMON
+job_type: SAPEVT
+machine: SAPAGENT
+sap_event_id: SAP_Event
+sap_event_parm: parameters

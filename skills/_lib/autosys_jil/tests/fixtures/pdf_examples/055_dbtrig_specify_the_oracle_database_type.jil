@@ -1,0 +1,9 @@
+/* extracted from PDF p.2457: Specify the Oracle Database Type */
+insert_job: dbtrig_oracle
+job_type: DBTRIG
+machine: dbagent
+tablename: Inventory_List
+dbtype: Oracle
+trigger_type: INSERT,DELETE
+owner: sys@orcl
+connect_string: "jdbc:oracle:thin:@172.31.255.255:1433:ORDERS"

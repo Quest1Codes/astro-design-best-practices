@@ -1,0 +1,8 @@
+/* extracted from PDF p.2772: Define Basic Success Criteria */
+insert_job: QRY1
+job_type: SQL
+machine: DB_agent
+sql_command: SELECT PartNo FROM Inv_List WHERE Stock > 30
+success_criteria: PartNo=IDG.*
+connect_string: "jdbc:sqlserver://myhost:1433;DatabaseName=ORDERS"
+destination_file: "c:\log\qry1.txt"

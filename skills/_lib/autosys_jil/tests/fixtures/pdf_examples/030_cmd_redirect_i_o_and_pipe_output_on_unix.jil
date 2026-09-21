@@ -1,0 +1,6 @@
+/* extracted from PDF p.2431: Redirect I/O and Pipe Output on UNIX */
+insert_job: unix_job
+job_type: CMD
+machine: unixagent
+command: /usr/bin/ksh -c "ps -ef|grep someValue >>/tmp/log"
+owner: user1

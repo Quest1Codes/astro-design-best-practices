@@ -1,0 +1,13 @@
+/* extracted from PDF p.2620: Specify the Name of an Oracle E-Business Suite Request Set */
+insert_job: oaset_resp
+job_type: oaset
+machine: oaagent
+oracle_appl_name_type: SHORT
+oracle_appl_name: BIS
+oracle_req_set_type: SHORT
+oracle_req_set: FNDRSSUB1310
+oracle_user: SYSADMIN
+oracle_resp: "Business Intelligence Super User, Progress S&L"
+oracle_save_output: Y
+oracle_resp: responsibility_name
+Limits: Up to 100 characters; case-sensitive

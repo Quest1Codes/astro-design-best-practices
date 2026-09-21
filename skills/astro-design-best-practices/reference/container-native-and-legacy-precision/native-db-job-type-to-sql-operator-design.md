@@ -1,3 +1,15 @@
+---
+topic: native-db-job-type-to-sql-operator-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Native DB Job Type Execution Patterns → Airflow SQL-Operator Design
 
 AutoSys's native DB job type executes SQL statements directly against a database (Oracle, SQL Server, Sybase, PostgreSQL, DB2) without a wrapper shell script — the JIL definition specifies the database connection, SQL command or script file, and success/failure conditions [B1].

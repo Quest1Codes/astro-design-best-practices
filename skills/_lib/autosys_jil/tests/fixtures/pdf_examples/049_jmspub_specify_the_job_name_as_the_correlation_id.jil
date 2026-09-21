@@ -1,0 +1,12 @@
+/* extracted from PDF p.2451: Specify the Job Name as the Correlation ID */
+insert_job: jmspub4
+job_type: JMSPUB
+machine: jms
+owner: weblogic@mach
+connection_factory: weblogic.examples.jms.QueueConnectionFactory
+initial_context_factory: weblogic.jndi.WLInitialContextFactory
+use_topic: false
+provider_url: "t3://jms_server:7001"
+message_class: String
+destination_name: weblogic.examples.jms.exampleQueue
+j2ee_parameter: String="Hello World"

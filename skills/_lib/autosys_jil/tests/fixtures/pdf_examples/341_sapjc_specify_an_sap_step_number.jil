@@ -1,0 +1,12 @@
+/* extracted from PDF p.2711: Specify an SAP Step Number */
+insert_job: test_SAPJC_2
+job_class: SAP
+job_type: SAPJC
+machine: sapagent
+owner: WAAESAP@sapserver
+sap_job_name: AM
+sap_job_count: 11331500
+sap_release_option: I
+sap_target_jobname: "SAPJC_DUP"
+sap_step_num:1
+sap_step_parms: abap_name=abap[,keyword=value...]

@@ -1,3 +1,15 @@
+---
+topic: documentation-as-code-strategy
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Documentation-as-Code Strategy
 
 AutoSys documentation typically lived in Confluence, SharePoint, or Word documents — decoupled from the actual job definitions. This creates chronic drift: the documentation describes the old behavior, not what actually runs. Airflow's `doc_md` attribute solves this by co-locating documentation with the code that defines the pipeline.

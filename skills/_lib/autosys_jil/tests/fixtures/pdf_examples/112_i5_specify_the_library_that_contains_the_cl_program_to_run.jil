@@ -1,0 +1,8 @@
+/* extracted from PDF p.2512: Specify the Library that Contains the CL Program to Run */
+insert_job: i5job_lib
+job_type: I5
+machine: i5agent
+i5_action: RUN_PROGRAM
+i5_name: MFGDATA
+i5_lib: PRODJOBS
+i5_library_list: "library..."

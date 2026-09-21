@@ -1,3 +1,16 @@
+---
+topic: environment-specific-connection-management
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - credential_hits
+---
+
 # Environment-Specific Connection Management
 
 When promoting DAGs from Development to Production, the code must remain identical. Therefore, you cannot hardcode environment-specific logic (e.g., `db_conn = 'prod_db'`) into the DAG.

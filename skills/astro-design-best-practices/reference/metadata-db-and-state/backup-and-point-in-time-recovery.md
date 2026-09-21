@@ -1,3 +1,15 @@
+---
+topic: backup-and-point-in-time-recovery
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Backup and Point-in-Time Recovery
 
 AutoSys's Event Server RDBMS (Oracle, SQL Server, or Sybase) was backed up by a DBA team using standard RDBMS procedures. Airflow's metadata DB plays the same structural role: it is the scheduler's sole state store [B1]. Losing it without a valid backup means losing all DAG run history, task instance state, XComs, connections, and variables — current executions will be interrupted [B1].

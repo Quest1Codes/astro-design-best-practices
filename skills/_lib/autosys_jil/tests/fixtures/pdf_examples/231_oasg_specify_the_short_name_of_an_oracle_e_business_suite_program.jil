@@ -1,0 +1,10 @@
+/* extracted from PDF p.2613: Specify the Short Name of an Oracle E-Business Suite Program */
+insert_job: oast_short
+job_type: oasg
+machine: oaagent
+oracle_appl_name: FNDSCARU
+oracle_program_name_type: SHORT
+oracle_program: ACCOUNTS
+oracle_user: YSADMIN
+oracle_resp: System Administrator
+oracle_programdata: index=number,

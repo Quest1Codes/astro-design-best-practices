@@ -1,0 +1,7 @@
+/* extracted from PDF p.2721: Specify the SAP System Application Server */
+insert_job: SAPTEST
+job_type: SAP
+machine: SAPHTAGENT
+sap_job_name: SAP_JOB
+sap_step_parms: abap_name=BTCTEST, step_user=J01PROD, variant=TEST
+sap_target_sys: tst005

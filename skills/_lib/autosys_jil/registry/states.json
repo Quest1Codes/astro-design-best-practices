@@ -1,0 +1,110 @@
+{
+  "ACTIVATED": {
+    "airflow_equivalent": "scheduled",
+    "description": "Box started; job waiting for its own starting conditions",
+    "pdf_page": 2916,
+    "terminal": false
+  },
+  "FAILURE": {
+    "airflow_equivalent": "failed",
+    "description": "Exit code outside success range",
+    "pdf_page": 2917,
+    "terminal": true
+  },
+  "INACTIVE": {
+    "airflow_equivalent": "none",
+    "description": "Job has never run or was reset; not eligible until conditions/schedule met",
+    "pdf_page": 2914,
+    "terminal": false
+  },
+  "ON_HOLD": {
+    "airflow_equivalent": "paused (dependents blocked)",
+    "description": "Held by operator; will NOT start; dependents wait",
+    "pdf_page": 2915,
+    "terminal": false
+  },
+  "ON_ICE": {
+    "airflow_equivalent": "paused (dependents proceed)",
+    "description": "Iced by operator; removed from flow; dependents treat as SUCCESS",
+    "pdf_page": 2915,
+    "terminal": false
+  },
+  "ON_NOEXEC": {
+    "airflow_equivalent": "skipped-as-success",
+    "description": "Runs through the flow without executing; marked SUCCESS",
+    "pdf_page": 2914,
+    "terminal": false
+  },
+  "PEND_MACH": {
+    "airflow_equivalent": "queued (no worker)",
+    "description": "Machine offline/unreachable; waiting",
+    "pdf_page": 2916,
+    "terminal": false
+  },
+  "QUE_WAIT": {
+    "airflow_equivalent": "queued",
+    "description": "Eligible to start but waiting for machine load / priority",
+    "pdf_page": 2914,
+    "terminal": false
+  },
+  "REFRESH_DEPENDENCIES": {
+    "airflow_equivalent": "n/a",
+    "description": "Transient: re-evaluating dependencies",
+    "pdf_page": null,
+    "terminal": false
+  },
+  "REFRESH_FILEWATCHER": {
+    "airflow_equivalent": "n/a",
+    "description": "Transient: file watcher refresh",
+    "pdf_page": null,
+    "terminal": false
+  },
+  "RESTART": {
+    "airflow_equivalent": "up_for_retry",
+    "description": "Application-level failure; scheduler will retry (n_retrys)",
+    "pdf_page": 2923,
+    "terminal": false
+  },
+  "RESWAIT": {
+    "airflow_equivalent": "queued (pool slot)",
+    "description": "Waiting for a virtual resource",
+    "pdf_page": 2915,
+    "terminal": false
+  },
+  "RUNNING": {
+    "airflow_equivalent": "running",
+    "description": "Process is executing on the agent",
+    "pdf_page": 2914,
+    "terminal": false
+  },
+  "STARTING": {
+    "airflow_equivalent": "queued",
+    "description": "Event processor initiated start; agent not yet reported RUNNING",
+    "pdf_page": 2915,
+    "terminal": false
+  },
+  "SUCCESS": {
+    "airflow_equivalent": "success",
+    "description": "Exit code within success range (0 or <= max_exit_success / in success_codes)",
+    "pdf_page": 2914,
+    "terminal": true
+  },
+  "SUSPENDED": {
+    "airflow_equivalent": "none",
+    "description": "Suspended via SUSPENDJOB",
+    "pdf_page": 2920,
+    "terminal": false
+  },
+  "TERMINATED": {
+    "airflow_equivalent": "failed",
+    "description": "Killed (KILLJOB), box terminated it, or agent lost",
+    "pdf_page": 2917,
+    "terminal": true
+  },
+  "WAIT_REPLY": {
+    "airflow_equivalent": "none (HITL redesign)",
+    "description": "Waiting for a manual REPLY_RESPONSE",
+    "pdf_page": 2919,
+    "terminal": false
+  }
+}

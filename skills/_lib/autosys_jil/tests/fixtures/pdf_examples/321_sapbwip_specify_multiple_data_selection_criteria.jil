@@ -1,0 +1,6 @@
+/* extracted from PDF p.2696: Specify Multiple Data Selection Criteria */
+insert_job: SAPJOB1
+job_type: SAPBWIP
+machine: sapagent
+sap_info_pack: InfoBw2
+sap_ext_table: field_name=SPTAG, object_name=0CALDAY, sign=I, operation=BT,

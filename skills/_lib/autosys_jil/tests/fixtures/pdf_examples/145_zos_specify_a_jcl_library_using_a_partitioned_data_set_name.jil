@@ -1,0 +1,5 @@
+/* extracted from PDF p.2541: Specify a JCL Library Using a Partitioned Data Set Name */
+insert_job: ZOS_JOB
+job_type: ZOS
+machine: ZOS1
+jcl_library: CYBDL01.JCLLIB(CYBDL01A)

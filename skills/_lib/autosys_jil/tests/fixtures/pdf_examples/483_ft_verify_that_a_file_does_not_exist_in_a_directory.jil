@@ -1,0 +1,6 @@
+/* extracted from PDF p.2817: Verify that a File Does Not Exist in a Directory */
+insert_job: ft_unix_notexist
+job_type: FT
+machine: unixagt
+watch_file: /start/term/vacation
+watch_file_type: NOTEXIST

@@ -1,0 +1,4 @@
+/* extracted from PDF p.2415: Put a Job on Hold when its Container’s Status Changes to RUNNING */
+insert_job: holdBox
+job_type: BOX
+owner: root@localhost

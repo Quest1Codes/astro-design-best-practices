@@ -1,0 +1,10 @@
+/* extracted from PDF p.2786: Monitor a UNIX Text File for a String at the Beginning of a Line */
+insert_job: omtf_unix_line
+job_type: OMTF
+machine: monagt
+text_file_name: /export/home/systemagent/agentparm.txt
+text_file_filter: \.0/MAIN$
+text_file_mode: REGEX
+lower_boundary: \Aagent
+upper_boundary: level=2\Z
+monitor_mode: NOW

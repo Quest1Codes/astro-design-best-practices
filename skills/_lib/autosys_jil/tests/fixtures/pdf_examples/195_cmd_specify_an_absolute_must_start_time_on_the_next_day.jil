@@ -1,0 +1,9 @@
+/* extracted from PDF p.2581: Specify an Absolute Must Start Time on the Next Day */
+insert_job: job3
+command: echo "hello"
+machine: localhost
+date_conditions: y
+days_of_week: all
+start_times: "12:00"
+must_start_times: "34:10"
+must_complete_times: "34:12"

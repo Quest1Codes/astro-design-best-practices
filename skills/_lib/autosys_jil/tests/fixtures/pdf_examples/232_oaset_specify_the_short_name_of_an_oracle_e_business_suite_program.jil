@@ -1,0 +1,13 @@
+/* extracted from PDF p.2613: Specify the Short Name of an Oracle E-Business Suite Program */
+insert_job: oaset_prog
+job_type: oaset
+machine: oaagent
+oracle_appl_name_type: DISPLAY
+oracle_appl_name: Application Object Library
+oracle_req_set: EXTRACTS
+oracle_user: SYSADMIN
+oracle_resp: System Administrator
+oracle_printer: "\\printer path\Q8"
+oracle_print_style: LANDSCAPE
+oracle_print_copies: 1
+oracle_programdata: index=1, args="T23,,R1", printer="\\printer\Q1",

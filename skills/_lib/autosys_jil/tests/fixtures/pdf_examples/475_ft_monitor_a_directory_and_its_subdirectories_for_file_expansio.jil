@@ -1,0 +1,9 @@
+/* extracted from PDF p.2813: Monitor a Directory and Its Subdirectories for File Expansion */
+insert_job: ft_job
+job_type: FT
+machine: ftagt
+watch_file: "c:\fwjobs\inventory.txt"
+watch_file_type: Expand
+watch_file_change_type: DELTA
+watch_file_change_value: 10
+watch_file_recursive: Y

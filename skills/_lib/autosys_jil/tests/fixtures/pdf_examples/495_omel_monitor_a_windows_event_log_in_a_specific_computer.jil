@@ -1,0 +1,12 @@
+/* extracted from PDF p.2825: Monitor a Windows Event Log in a Specific Computer */
+insert_job: eventlog_job
+job_type: OMEL
+machine: monagt
+win_log_name: Security
+win_event_type: AUDITS
+win_event_source: Security
+win_event_computer: D9GBJG11
+win_event_category: System Event
+win_event_op: GT
+win_event_id: 0
+win_event_datetime: "yyyymmdd hh:mm:ss"

@@ -1,3 +1,15 @@
+---
+topic: branching-strategy-for-dag-code
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Branching Strategy for DAG Code
 
 Because Airflow pipelines are written in Python, they inherit modern software engineering practices. AutoSys teams migrating to Astro must shift from editing jobs directly in the GUI/CLI to managing DAG code via standard Git branching strategies.

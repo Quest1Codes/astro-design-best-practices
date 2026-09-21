@@ -1,0 +1,11 @@
+/* extracted from PDF p.2675: Ignore Parameters in the PS_PRCSDEFN Table and Pass Additional Parameters to the nVision Report */
+insert_job: ps_skipparms2
+job_type: ps
+machine: psagt
+ps_process_name: NVSRUN
+ps_process_type: nVision-Report
+ps_dest_type: FILE
+ps_dest_format: XLS
+ps_output_dest: "c:\test\testnv.xls"
+ps_skip_parm_updates: YES
+ps_args: "-NRNVARIABLE -NBUAUS01 -NHLhttp://10.1.1.40/psp/ps                       /EMPLOYEE/ERP/c/

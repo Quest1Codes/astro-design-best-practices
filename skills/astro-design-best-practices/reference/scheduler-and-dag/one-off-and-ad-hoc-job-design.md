@@ -1,3 +1,15 @@
+---
+topic: one-off-and-ad-hoc-job-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # One-Off and Ad-Hoc Job Design
 
 AutoSys handles a one-time job the same way as any other job — insert it, let it run once (or force-start it via `sendevent`), then leave it defined or delete it. Airflow's model separates "the DAG structure" from "this particular run's inputs" more explicitly, which changes how a genuinely one-off task should be designed rather than just translated.
@@ -6,7 +18,7 @@ AutoSys handles a one-time job the same way as any other job — insert it, let 
 
 - **Params** are Airflow's mechanism for runtime configuration passed into a DAG at trigger time [F1].
 - When a DAG is triggered manually (via UI or API) rather than by its schedule, its Params can be modified for that specific run before the run starts — this is the "Trigger DAG w/ config" flow [F2].
-- The trigger form for entering config values was hidden from the UI by default starting in Airflow 2.7.0, but the underlying functionality is unchanged and can be restored via the `show_trigger_form_if_no_params` setting [F2]. **Resolved during Critic review**: a fresh-context Critic pass independently re-searched this and confirmed the setting is still current as of the target Airflow 3.x line — closing the `NEEDS_EXEC_CHECK` this file originally carried on it.
+- The trigger form for entering config values was hidden from the UI by default starting in Airflow 2.7.0, but the underlying functionality is unchanged and can be restored via the `show_trigger_form_if_no_params` setting [F2]. **Resolved**: confirmed current as of the target Airflow 3.x line via astronomer-docs (`AIRFLOW__WEBSERVER__SHOW_TRIGGER_FORM_IF_NO_PARAMS`, `learn/airflow-params`).
 - Inside a task, the passed configuration is available via `params` in the task context, or via `dag_run.conf` [F3].
 - Manually-triggered runs have their Params fixed at trigger time (calculated once, shown on the trigger UI, then locked in for that run) — this differs from how a scheduled run's Params are evaluated [F1].
 

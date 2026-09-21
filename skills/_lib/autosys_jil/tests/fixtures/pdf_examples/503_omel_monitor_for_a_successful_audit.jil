@@ -1,0 +1,10 @@
+/* extracted from PDF p.2830: Monitor for a Successful Audit */
+insert_job: eventlog_job
+job_type: OMEL
+machine: monagt
+win_log_name: Security
+win_event_type: AUDITS
+win_event_category: System Event
+win_event_source: Service Control Manager
+win_event_description: "-succeeded +Audit log"
+win_log_name: log_name

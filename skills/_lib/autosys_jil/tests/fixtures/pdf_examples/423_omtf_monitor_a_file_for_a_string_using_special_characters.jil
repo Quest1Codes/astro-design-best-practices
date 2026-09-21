@@ -1,0 +1,10 @@
+/* extracted from PDF p.2783: Monitor a File for a String Using Special Characters */
+insert_job: textfile_job2
+job_type: OMTF
+machine: monagt
+text_file_name: /export/home/agentdir/agentparm.txt
+text_file_filter: "=jars*.*\Z"
+text_file_mode: LINE
+lower_boundary: 1
+upper_boundary: 110
+monitor_mode: now

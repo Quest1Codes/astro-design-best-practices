@@ -1,0 +1,11 @@
+/* extracted from PDF p.2667: Direct the Output of a PeopleSoft Job to a File */
+insert_job: ps_file
+job_type: ps
+machine: psagent
+ps_process_name: XRFWIN
+ps_process_type: SQR Report
+ps_dest_type: FILE
+ps_dest_format: PDF
+ps_output_dest: /export/home/PSoutput/report1.pdf
+ps_run_cntrl_id: test
+owner: VP1@ps1

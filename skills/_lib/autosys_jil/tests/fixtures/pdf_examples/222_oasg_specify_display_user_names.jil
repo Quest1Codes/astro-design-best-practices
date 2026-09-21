@@ -1,0 +1,15 @@
+/* extracted from PDF p.2606: Specify Display User Names */
+insert_job: oasg_disp
+job_type: oasg
+machine: oaagent
+oracle_appl_name_type: DISPLAY
+oracle_appl_name: Application Object Library
+oracle_program: FNDSCARU
+oracle_user: SYSADMIN
+oracle_resp: System Administrator
+oracle_desc: CONFIRMED REQ 2010808 by TYB212
+oracle_save_output: N
+oracle_notify_display_users: 'Applications Manager', 'System Administrator'
+oracle_output_format: PDF
+oracle_notify_users: 'short_user'[,'short_user'...]
+Limits: case-sensitive

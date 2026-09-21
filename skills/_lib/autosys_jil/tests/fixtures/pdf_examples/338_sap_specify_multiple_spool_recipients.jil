@@ -1,0 +1,10 @@
+/* extracted from PDF p.2709: Specify Multiple Spool Recipients */
+insert_job: sap_job
+machine: sapagent
+job_type: SAP
+sap_job_name: BTCTEST
+sap_step_parms: abap_name=BTCABAP
+sap_recipients: rcp_type=INT,recipient=J01PROD@example.com
+sap_recipients: rcp_type=INT,recipient=J01TEST@example.com,blind_copy=Y
+sap_recipients: rcp_type=INT,recipient=J02PROD@example.com,Copy=Y
+sap_recipients: rcp_type=DLI,recipient="SAPoffice Dist List",

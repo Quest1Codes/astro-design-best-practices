@@ -1,0 +1,6 @@
+/* extracted from PDF p.2559: Use job_load and roundrobin Methods to Determine the Real Machine to Run the Job */
+insert_job: JobL3
+command: sleep 5
+machine: VM_JL1
+job_load: 10
+priority: 3

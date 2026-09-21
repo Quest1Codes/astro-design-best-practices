@@ -1,0 +1,15 @@
+/* synthetic fixture: instance PRD side of a cross-instance dependency [AS p.2435 job^INST]. */
+insert_xinst: ACE
+xmachine: ace-scheduler-01.bank.com
+xport: 7500
+
+insert_job: prd_settlement_consume
+job_type: CMD
+machine: prd-app01
+command: /scripts/prd/consume_settlement_feed.sh
+owner: prd_ops@bank.com
+permission:
+condition: success(ace_settlement_feed^ACE)
+date_conditions: 1
+days_of_week: all
+start_times: "21:00"

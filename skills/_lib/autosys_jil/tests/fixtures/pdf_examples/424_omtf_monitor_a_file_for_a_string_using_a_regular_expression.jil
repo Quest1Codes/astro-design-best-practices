@@ -1,0 +1,10 @@
+/* extracted from PDF p.2783: Monitor a File for a String using a Regular Expression */
+insert_job: omtf2
+job_type: OMTF
+machine: monagt
+text_file_name: /export/home/agentdir/agentparm.txt
+text_file_filter: ^\w{4,10}\.
+text_file_mode: REGEX
+lower_boundary: “log*.*”
+monitor_mode: now
+text_file_filter: b1{1,3}c

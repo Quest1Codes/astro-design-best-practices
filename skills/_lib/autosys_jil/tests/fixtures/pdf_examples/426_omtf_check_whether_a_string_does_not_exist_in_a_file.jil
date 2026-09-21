@@ -1,0 +1,11 @@
+/* extracted from PDF p.2784: Check Whether a String Does Not Exist in a File */
+insert_job: textfile_job
+job_type: OMTF
+machine: monagt
+text_file_name: /export/home/log/transmitter.log
+text_file_filter: Warning
+text_file_mode: LINE
+lower_boundary: 1
+upper_boundary: 200
+text_file_filter_exists: FALSE
+monitor_mode: NOW

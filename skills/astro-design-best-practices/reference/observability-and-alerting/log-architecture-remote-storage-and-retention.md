@@ -1,3 +1,15 @@
+---
+topic: log-architecture-remote-storage-and-retention
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Log Architecture — Remote Storage and Retention
 
 AutoSys logs were written to the local agent filesystem (`$AUTOSYS/out`) and required manual rotation or collection. Astro's containerized architecture means local pod storage is ephemeral. Therefore, task execution logs must be externalized for persistence, troubleshooting, and compliance.

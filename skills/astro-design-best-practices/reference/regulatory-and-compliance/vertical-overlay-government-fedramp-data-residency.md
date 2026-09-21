@@ -1,3 +1,17 @@
+---
+topic: vertical-overlay-government-fedramp-data-residency
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - fedramp
+  - residency
+---
+
 # Vertical Overlay: Government / Public Sector (FedRAMP / Data Residency)
 
 Government and public sector deployments impose the strictest requirements around data sovereignty, security posture, and sometimes network isolation. This file covers the architectural choices for deploying Airflow on Astro within these constraints.

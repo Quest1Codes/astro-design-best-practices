@@ -1,3 +1,16 @@
+---
+topic: secret-rotation-strategy
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - credential_hits
+---
+
 # Secret Rotation Strategy
 
 Migrating from AutoSys to Airflow presents an opportunity to modernize credential management. Hardcoding secrets or storing them in a database requiring manual updates is an anti-pattern. 

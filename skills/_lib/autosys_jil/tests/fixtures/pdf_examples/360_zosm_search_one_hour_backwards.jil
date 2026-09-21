@@ -1,0 +1,7 @@
+/* extracted from PDF p.2732: Search One Hour Backwards */
+insert_job: test_ZOSM
+job_type: ZOSM
+machine: zosagent
+owner: user1@ca11
+search_bw: 01
+zos_jobname: CYBJAK11

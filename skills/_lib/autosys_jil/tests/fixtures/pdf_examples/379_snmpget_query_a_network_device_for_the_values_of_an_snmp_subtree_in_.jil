@@ -1,0 +1,11 @@
+/* extracted from PDF p.2746: Query a Network Device for the Values of an SNMP Subtree in an SNMP Value Get Job */
+insert_job: getsubtree
+job_type: SNMPGET
+machine: snmpagent
+snmp_mib: cybermation.mib
+snmp_host: host.example.com
+snmp_oid: agentVersion
+port: 161
+snmp_version: 2
+snmp_comm_string: public
+snmp_subtree: y

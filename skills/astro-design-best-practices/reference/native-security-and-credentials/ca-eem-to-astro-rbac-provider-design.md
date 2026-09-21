@@ -1,3 +1,16 @@
+---
+topic: ca-eem-to-astro-rbac-provider-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - credential_hits
+---
+
 # CA EEM vs. Native OS Security-Provider Migration → Astro RBAC Provider Design
 
 AutoSys supports two authentication security models: **Native OS** (permissions granted based on OS-level users) and **CA EEM (Embedded Entitlements Manager)** — the default enterprise model. EEM centralizes authentication and authorization, integrating with LDAP/Active Directory and defining Security Policies that map group membership to AutoSys resource access. CA EEM also provides SSO integration via CA SiteMinder [B1].

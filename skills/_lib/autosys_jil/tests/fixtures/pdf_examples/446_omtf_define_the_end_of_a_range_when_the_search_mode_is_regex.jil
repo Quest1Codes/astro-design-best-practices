@@ -1,0 +1,9 @@
+/* extracted from PDF p.2798: Define the End of a Range When the Search Mode is RegEx */
+insert_job: omtf_regex
+job_type: OMTF
+machine: monagt
+text_file_name: "c:\ca\log"
+text_file_filter: ARCHIVE
+text_file_mode: REGEX
+upper_boundary: service
+monitor_mode: NOW

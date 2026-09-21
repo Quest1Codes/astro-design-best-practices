@@ -1,3 +1,15 @@
+---
+topic: bi-and-reporting-layer-integration
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # BI and Reporting-Layer Integration
 
 One of the most common data freshness problems in AutoSys-managed shops was dashboards running on static schedules that were decoupled from actual data pipeline completion. Airflow's event-driven model allows BI tool refreshes to be triggered *only after* the upstream data is verified as ready — eliminating "stale dashboard" incidents.

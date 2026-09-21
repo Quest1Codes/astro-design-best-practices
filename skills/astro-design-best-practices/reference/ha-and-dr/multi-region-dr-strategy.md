@@ -1,3 +1,15 @@
+---
+topic: multi-region-dr-strategy
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Multi-Region Disaster Recovery Strategy
 
 Astro's Control Plane / Data Plane separation directly enables a managed multi-region DR capability. This is a significant architectural advantage over AutoSys's dual-Event-Server DR model, which required customers to manually synchronize schema and state across locations.
@@ -25,7 +37,7 @@ Astro handles replication of the following to the secondary region [B2][B3]:
 
 ## Platform Tier Requirement
 
-Cross-region DR is available for **Enterprise Business Critical** tier customers on dedicated clusters only — this is a hard gate, not a soft recommendation, and applies regardless of cloud provider [B1][B3][B4]. **Correction**: an earlier draft of this file stated Azure support was "a roadmap item" — this is wrong. Current docs show full, documented cluster-creation and existing-cluster-enablement paths for **all three providers — AWS, Azure, and GCP** [B4]. Azure is actually the most self-service of the three (enable DR directly from the Astro UI or API, no support ticket or maintenance window required, unlike AWS/GCP, which both require a support request and a maintenance window) [B4]. Note the overall cross-region DR capability is documented as **Preview** as of the most recent release notes covering it [B5] — confirm current GA/Preview status before treating it as a fully supported production dependency, but do not describe Azure specifically as behind AWS/GCP; the docs show it ahead if anything.
+Cross-region DR is available for **Enterprise Business Critical** tier customers on dedicated clusters only — this is a hard gate, not a soft recommendation, and applies regardless of cloud provider [B1][B3][B4]. **Correction**: an earlier draft of this file stated Azure support was "a roadmap item" — this is wrong. Current docs show full, documented cluster-creation and existing-cluster-enablement paths for **all three providers — AWS, Azure, and GCP** [B4]. Azure is actually the most self-service of the three (enable DR directly from the Astro UI or API, no support ticket or maintenance window required, unlike AWS/GCP, which both require a support request and a maintenance window) [B4]. **Update**: cross-region DR is now **Generally Available** for AWS, Azure, and GCP dedicated clusters (GA'd progressively — AWS April 21 2026, GCP July 29 2026 — after starting in Preview per the March 11 2026 release notes [B5]). Treat it as a fully supported production dependency for Enterprise Business Critical tier customers on dedicated clusters, not a Preview feature.
 
 ## Components NOT Covered by Astro's Managed DR
 
@@ -40,4 +52,4 @@ Your runbook must explicitly cover these even when using managed DR [B2]:
 [B2] Astronomer Docs — Shared responsibility model: https://www.astronomer.io/docs/astro/shared-responsibility-model (tier 1, URL added on citation review)
 [B3] Astronomer Docs — Cross-region disaster recovery, RTO/RPO targets: https://www.astronomer.io/docs/astro/disaster-recovery#cross-region-disaster-recovery (tier 1, URL added on citation review)
 [B4] Astronomer Docs — Create a dedicated Astro cluster (DR creation/enablement steps documented for AWS, Azure, and GCP; Azure enablement is self-service with no support ticket or maintenance window, unlike AWS/GCP): https://www.astronomer.io/docs/astro/create-dedicated-cluster (tier 1, added on doc-verification review — corrects the "Azure is a roadmap item" claim above)
-[B5] Astronomer Docs — Release notes, March 11 2026 ("Cross-region disaster recovery for AWS dedicated clusters now in Preview"): https://www.astronomer.io/docs/astro/release-notes#march-11-2026 (tier 1, added on doc-verification review — confirms the feature's Preview status as of its most recent documented release; re-check current status before relying on GA availability)
+[B5] Astronomer Docs — Release notes, March 11 2026 ("Cross-region disaster recovery for AWS dedicated clusters now in Preview") and subsequent GA release notes (AWS April 21 2026, GCP July 29 2026): https://www.astronomer.io/docs/astro/release-notes and https://www.astronomer.io/docs/astro/disaster-recovery (tier 1, GA status confirmed via astronomer-docs verification)

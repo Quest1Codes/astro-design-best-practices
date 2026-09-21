@@ -1,0 +1,10 @@
+/* extracted from PDF p.2602: Specify a Default Value Set Expression */
+insert_job: oaset_resp
+job_type: oaset
+machine: cyboa
+oracle_appl_name_type: DISPLAY
+oracle_appl_name: Process Manufacturing Financials
+oracle_resp: System Administrator
+oracle_user: SYSADMIN
+oracle_use_arg_def: Y
+oracle_custom_property: key=":$FLEX$.EAM_SRS_MAINTAINED_ITEM_NAMES_W_ACT",

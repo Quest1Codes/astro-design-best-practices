@@ -1,0 +1,6 @@
+/* extracted from PDF p.2769: Append New Information to the Output File on Windows */
+insert_job: win_appendout
+job_type: CMD
+machine: winagent
+command: “C:\COMMON\Backup”
+std_out_file: ">>C:\tmp\TEST.OUT"

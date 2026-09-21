@@ -1,3 +1,16 @@
+---
+topic: dual-run-shadow-dag-architecture
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - brownfield_astro
+---
+
 # Dual-Run / Shadow-DAG Architecture During Coexistence
 
 A "big bang" cutover — disabling AutoSys on Friday night and enabling Airflow Monday morning — is the highest-risk migration approach and should be avoided for any production workload with a meaningful SLA. The dual-run / shadow-DAG architecture reduces risk by running both systems in parallel, with Airflow in a "passive" mode until confidence is established.

@@ -1,0 +1,7 @@
+/* extracted from PDF p.2827: Monitor for Words Excluded in the Event Description */
+insert_job: eventlog_job1
+job_type: OMEL
+machine: monagt
+win_log_name: System
+win_event_type: ERROR
+win_event_description: "+conflict +state -deny -master -browser"

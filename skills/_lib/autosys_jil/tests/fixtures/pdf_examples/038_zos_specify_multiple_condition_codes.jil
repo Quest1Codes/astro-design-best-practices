@@ -1,0 +1,12 @@
+/* extracted from PDF p.2443: Specify Multiple Condition Codes */
+insert_job: zos_job
+job_type: ZOS
+machine: zagent
+jcl_library: CYBJAK1.JCL
+jcl_member: CYBJAK11
+condition_code: rc=111,result=SUCCESS,action=CONTINUE,step_name=xyz
+condition_code: rc=112,result=SUCCESS,action=CONTINUE
+condition_code: rc=113,result=SUCCESS,action=STOP
+condition_code: rc=114,result=FAILURE,action=CONTINUE
+condition_code: rc=115,result=FAILURE,action=STOP
+connect_string: "dburl"

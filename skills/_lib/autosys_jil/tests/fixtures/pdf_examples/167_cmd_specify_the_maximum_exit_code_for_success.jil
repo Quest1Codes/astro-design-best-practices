@@ -1,0 +1,6 @@
+/* extracted from PDF p.2560: Specify the Maximum Exit Code for Success */
+insert_job: unix_script
+job_type: CMD
+machine: unixagent
+command: /usr/common/backup
+max_exit_success: 2

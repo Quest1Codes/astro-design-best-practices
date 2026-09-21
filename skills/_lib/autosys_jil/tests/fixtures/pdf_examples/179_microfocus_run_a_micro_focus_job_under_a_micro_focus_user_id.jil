@@ -1,0 +1,9 @@
+/* extracted from PDF p.2569: Run a Micro Focus Job Under a Micro Focus User ID */
+insert_job: mf_job_with_mf_user
+job_type: MICROFOCUS
+machine: mfagent
+mf_server_address_type: NAME
+mf_server: mfprod
+mf_jcl_type: REFERENCE
+mf_jcl_name: "C:\Program Files\micro focus\es-jcldemo\if.jcl"
+mf_user: MFUSER01@mfprod

@@ -1,0 +1,7 @@
+/* extracted from PDF p.2853: Post a z/OS Manual Job as Complete Based on the User ID */
+insert_job: ABC_job
+job_type: ZOSM
+machine: ZOS1
+zos_jobname: ABC
+owner: zosuser
+auth_string: CYBER

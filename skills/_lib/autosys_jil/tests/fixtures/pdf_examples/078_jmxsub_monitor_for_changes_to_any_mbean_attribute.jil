@@ -1,0 +1,10 @@
+/* extracted from PDF p.2475: Monitor for Changes to Any MBean Attribute */
+insert_job: change
+job_type: JMXSUB
+machine: appagent
+URL: "service:jmx:rmi:///jndi/rmi://localhost:9999/server"
+mbean_name: "DefaultDomain:index=1,type=Config"
+continuous: Y
+filter_type: Types
+filter: jmx.attribute.change
+finder_name: finder_method

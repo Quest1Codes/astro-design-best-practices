@@ -1,0 +1,8 @@
+/* extracted from PDF p.2467: Run a Command Job in Elevated Mode on Windows */
+insert_job: open_window
+job_type: CMD
+machine: winagent
+description: "Open the Computer Management window"
+command: compmgmt.msc
+interactive: y
+elevated: y

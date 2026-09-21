@@ -1,0 +1,9 @@
+/* extracted from PDF p.2786: Monitor a UNIX Text File for a String Between Regular Expressions */
+insert_job: omtf_unix_regex
+job_type: OMTF
+machine: monagt
+text_file_name: /export/home/systemagent/agentparm.txt
+text_file_filter: \A\W\sRunner
+text_file_mode: REGEX
+upper_boundary: service
+monitor_mode: now

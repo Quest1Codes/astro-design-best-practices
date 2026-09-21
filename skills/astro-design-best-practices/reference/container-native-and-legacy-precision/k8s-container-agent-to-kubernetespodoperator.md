@@ -1,3 +1,16 @@
+---
+topic: k8s-container-agent-to-kubernetespodoperator
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - brownfield_astro
+---
+
 # AutoSys Kubernetes/OpenShift Container-Agent Feature Parity → KubernetesPodOperator Design
 
 AutoSys has a native Kubernetes/OpenShift job type that submits containerized workloads directly to a K8s cluster via the Kubernetes API — no traditional agent process needs to run inside the container. AutoSys defines a "Connection Profile" pointing to the cluster's API endpoint; the Kubernetes job type then creates a Kubernetes Job object to run the container [B1].

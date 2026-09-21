@@ -1,0 +1,7 @@
+/* extracted from PDF p.2523: Specify Initial Context Factory for a WebSphere Application Server */
+insert_job: testae_getjob   job_type: HTTP
+machine: localhost
+invocation_type: GET
+provider_url: "https://github.gwd.broadcom.net:443/ESD/ae"
+results_file_overwrite: 0
+persist_output_cookies: 1

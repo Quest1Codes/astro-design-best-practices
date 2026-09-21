@@ -1,0 +1,6 @@
+/* extracted from PDF p.2762: Append New Information to the Standard Error File on Windows */
+insert_job: win_appenderr
+job_type: CMD
+machine: winagent
+command: “C:\COMMON\Backup”
+std_err_file: ">>C:\tmp\TEST.ERR"

@@ -1,0 +1,6 @@
+/* extracted from PDF p.2652: Assign a Job Profile on Windows */
+insert_job: test_run
+job_type: CMD
+machine: winagent
+command: "c:\bin\test.bat"
+profile: eng

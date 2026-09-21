@@ -1,3 +1,16 @@
+---
+topic: virtual-resources-to-airflow-pools-and-dag-concurrency
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - virtual_resources
+---
+
 # Named Virtual Resources (Semaphore-Style Throttling) → Airflow Pools/max_active_tis_per_dag
 
 AutoSys "virtual resources" are named, abstract concurrency tokens — they are entirely independent of machine load. A virtual resource named `DB_CONNECTIONS` with a count of `10` means that at most 10 jobs holding that resource can run simultaneously, regardless of which machines they run on or what `max_load` those machines have [B1]. This is a **semaphore pattern**: the resource is not a physical thing; it is a named counter.

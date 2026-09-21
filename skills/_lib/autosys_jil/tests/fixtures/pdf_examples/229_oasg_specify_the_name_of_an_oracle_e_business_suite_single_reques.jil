@@ -1,0 +1,10 @@
+/* extracted from PDF p.2612: Specify the Name of an Oracle E-Business Suite Single Request Program */
+insert_job: oasg_disp
+job_type: oasg
+machine: oaagent
+oracle_appl_name: ACCOUNTS
+oracle_program_name_type: DISPLAY
+oracle_program: Application Object Library
+oracle_user: SYSADMIN
+oracle_resp: System Administrator
+oracle_desc: CONFIRMED REQ 2010808 by TYB212

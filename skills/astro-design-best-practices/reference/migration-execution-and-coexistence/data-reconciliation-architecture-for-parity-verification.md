@@ -1,3 +1,15 @@
+---
+topic: data-reconciliation-architecture-for-parity-verification
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Data-Reconciliation Architecture for Parity Verification
 
 During the dual-run phase, the key deliverable is a statistically defensible proof that the Airflow DAG produces the same output as the AutoSys job. This requires a **dedicated reconciliation pipeline** — not manual spot-checks.

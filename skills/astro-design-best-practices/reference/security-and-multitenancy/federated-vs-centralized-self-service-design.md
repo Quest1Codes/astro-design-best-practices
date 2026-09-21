@@ -1,3 +1,16 @@
+---
+topic: federated-vs-centralized-self-service-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - multi_owner
+---
+
 # Federated vs. Centralized Self-Service Design
 
 AutoSys estates ran in two common topologies:

@@ -1,0 +1,9 @@
+/* extracted from PDF p.2416: Specify a Maximum Acceptable Error Rate */
+insert_job: test_SAPBDC
+job_type: SAPBDC
+machine: sapagent
+owner: WAAESAP@waae-jobstest
+sap_job_name: ZBDCTEST
+sap_release_option: A
+sap_step_parms: abap_name=ZBDCTEST
+bdc_err_rate: 5

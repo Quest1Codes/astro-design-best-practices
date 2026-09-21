@@ -1,0 +1,5 @@
+/* extracted from PDF p.2406: Update a Command */
+insert_job: job_name
+machine: machine_name
+Note: This attribute is not valid for file trigger jobs.
+alarm_if_fail: y | n

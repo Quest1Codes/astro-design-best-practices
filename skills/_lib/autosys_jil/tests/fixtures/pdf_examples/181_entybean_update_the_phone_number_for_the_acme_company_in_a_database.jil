@@ -1,0 +1,13 @@
+/* extracted from PDF p.2571: Update the Phone Number for the Acme Company in a Database */
+insert_job: update
+job_type: ENTYBEAN
+machine: appagent
+initial_context_factory: weblogic.jndi.WLInitialContextFactory
+provider_url: "t3://localhost:7001"
+bean_name: customer
+operation_type: UPDATE
+method_name: changephone
+finder_name: findByPrimaryKey
+finder_parameter: String="customerid"
+modify_parameter: String="800-555-0199"
+monitor_cond: condition

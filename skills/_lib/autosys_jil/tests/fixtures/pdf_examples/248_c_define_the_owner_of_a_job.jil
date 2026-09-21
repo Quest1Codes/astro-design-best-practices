@@ -1,0 +1,8 @@
+/* extracted from PDF p.2632: Define the Owner of a Job */
+insert_job: test_job
+job_type: c
+command: sleep 60
+machine: juno
+owner: jerry@jupiter
+permission: wx
+alarm_if_fail: 1

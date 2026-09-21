@@ -1,3 +1,15 @@
+---
+topic: alert-fatigue-and-deduplication-strategy
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Alert-Fatigue and Deduplication Strategy
 
 In AutoSys, noisy alarms were often suppressed manually at the console or via static rules. In Airflow, frequent task retries, downstream cascade failures, and transient network issues can quickly lead to alert fatigue, causing teams to ignore critical notifications.

@@ -1,0 +1,8 @@
+/* extracted from PDF p.2770: Specify UNIX Option Using the submit_modifier Attribute */
+insert_job: ux_job
+job_type: PROXY
+machine: proxagent
+owner: user1@uxmach
+remote_target: uxmach
+remote_command: "ls - l /u1/user1/setTest.out"
+submit_modifier: Option1="pwd;set>/u1/user1/setTest.out"

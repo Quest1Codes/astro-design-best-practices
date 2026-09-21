@@ -1,0 +1,12 @@
+/* extracted from PDF p.2725: Download a File from a Remote Server to the Agent Computer */
+insert_job: scp_download
+job_type: SCP
+machine: WINAGENT
+scp_transfer_direction: DOWNLOAD
+scp_server_name: chi-linux
+scp_remote_dir: /root
+scp_remote_name: install.log
+scp_local_name: "C:\temp\install.log1"
+scp_protocol: SCP
+owner: causer@WINAGENT
+scp_local_user: causer@WIAGENT

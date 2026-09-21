@@ -1,0 +1,13 @@
+/* extracted from PDF p.2605: Delay Monitoring Children by 60 Seconds */
+insert_job: oasg_nomon
+job_type: oasg
+machine: oaagent
+oracle_appl_name_type: DISPLAY
+oracle_appl_name: Application Object Library
+oracle_program: FNDSCARU
+oracle_user: SYSADMIN
+oracle_resp: System Administrator
+oracle_mon_children: Y
+oracle_mon_children_delay: 60
+oracle_notify_display_users: 'display_user' [,'display_user'...]
+Limits: case-sensitive

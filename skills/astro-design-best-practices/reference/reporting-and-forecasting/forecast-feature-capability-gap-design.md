@@ -1,3 +1,15 @@
+---
+topic: forecast-feature-capability-gap-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Forecast Feature (What-If Scheduling) → Capability Gap Design
 
 > **Explicit Gap**: Airflow has no native equivalent to AutoSys Forecast. This document describes the gap precisely, why "use the Airflow UI Gantt chart" is not an adequate answer, and what a real design for this capability looks like on Astro.

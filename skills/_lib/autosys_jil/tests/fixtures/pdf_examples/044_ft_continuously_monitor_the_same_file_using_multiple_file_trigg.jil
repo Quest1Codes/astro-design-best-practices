@@ -1,0 +1,9 @@
+/* extracted from PDF p.2448: Continuously Monitor the Same File Using Multiple File Trigger Jobs */
+insert_job: ftjob1
+job_type: FT
+machine: ftagent
+watch_file: "c:\data\totals"
+watch_file_type: EXPAND
+continuous: Y
+watch_file_change_type: DELTA
+watch_file_change_value: 10240 /* The value must be entered in bytes (10 x 1024 bytes = 10240) */

@@ -1,0 +1,6 @@
+/* extracted from PDF p.2832: Monitor for the Existence of a Windows Service */
+insert_job: oms_job1
+job_type: OMS
+machine: winagt
+win_service_name: Proc Server
+win_service_status: EXISTS

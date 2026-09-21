@@ -1,0 +1,12 @@
+/* extracted from PDF p.2609: Print 15 Copies of an Oracle E-Business Suite Single Request */
+insert_job: oasg_short
+job_type: oasg
+machine: oaagent
+oracle_appl_name_type: SHORT
+oracle_appl_name: ACCOUNTS
+oracle_program: FNDSCARU
+oracle_user: SYSADMIIN
+oracle_resp: System Administrator
+oracle_printer:Q_DEVELOPMENT
+oracle_print_style: PORTRAIT
+oracle_print_copies: 15

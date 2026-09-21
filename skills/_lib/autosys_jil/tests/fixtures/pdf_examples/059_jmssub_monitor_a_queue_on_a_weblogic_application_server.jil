@@ -1,0 +1,13 @@
+/* extracted from PDF p.2461: Monitor a Queue on a WebLogic Application Server */
+insert_job: monitor
+job_type: JMSSUB
+machine: appagent
+initial_context_factory: weblogic.jndi.WLInitialContextFactory
+provider_url: "t3://172.24.0.0:7001"
+connection_factory: ConnectionFactory
+destination_name: Queue1
+continuous: Y
+filter: abc\s...\s[a-zA-Z]+\sFilter![\sa-z0-9]+
+use_topic: FALSE
+destination_file: /export/home/user1/outputfile1
+j2ee_user: cyberuser@host

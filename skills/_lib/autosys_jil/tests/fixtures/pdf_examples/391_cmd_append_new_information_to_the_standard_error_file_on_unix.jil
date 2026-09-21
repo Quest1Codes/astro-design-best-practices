@@ -1,0 +1,6 @@
+/* extracted from PDF p.2762: Append New Information to the Standard Error File on UNIX */
+insert_job: unix_appenderr
+job_type: CMD
+machine: unixagent
+command: /usr/common/backup
+std_err_file: >>/tmp/test.err

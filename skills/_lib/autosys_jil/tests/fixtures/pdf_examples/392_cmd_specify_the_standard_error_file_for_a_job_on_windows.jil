@@ -1,0 +1,6 @@
+/* extracted from PDF p.2762: Specify the Standard Error File for a Job on Windows */
+insert_job: win_err
+job_type: CMD
+machine: winagent
+command: “C:\COMMON\Backup”
+std_err_file: "C:\tmp\TEST.ERR"

@@ -1,3 +1,16 @@
+---
+topic: client-surface-inventory-to-astro-parity-mapping
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - brownfield_astro
+---
+
 # AutoSys Client Surface Inventory → Astro API/CLI/UI Parity Mapping
 
 Every AutoSys operation that operators perform today goes through one of several "client surfaces" — tools and interfaces that communicate with the Application Server. Before decommissioning AutoSys, every team that uses any of these surfaces needs a mapped Astro/Airflow equivalent. Missing even one surface means a team will lose a capability they rely on.

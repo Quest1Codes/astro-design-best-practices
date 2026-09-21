@@ -1,0 +1,7 @@
+/* extracted from PDF p.2816: Verify that a File Exists in a Directory or Its Subdirectories */
+insert_job: ft_win_recursive
+job_type: FT
+machine: winagt
+watch_file: "c:\bank\account\money"
+watch_file_type: EXIST
+watch_file_recursive: Y

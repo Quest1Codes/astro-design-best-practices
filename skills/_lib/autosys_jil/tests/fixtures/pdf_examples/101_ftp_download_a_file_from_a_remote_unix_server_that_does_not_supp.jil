@@ -1,0 +1,11 @@
+/* extracted from PDF p.2490: Download a File from a Remote UNIX Server That Does Not Support SSL FTP to a Local Computer That */
+insert_job: FTP_DOWNLOAD
+job_type: FTP
+machine: winagent
+owner: user1@hpunix
+ftp_server_name: hpunix
+ftp_server_port: 5222
+ftp_transfer_direction: DOWNLOAD
+ftp_use_SSL: FALSE
+ftp_remote_name: /files_to_download/filename.txt
+ftp_local_name: "d:\downloaded_files\filename.txt"

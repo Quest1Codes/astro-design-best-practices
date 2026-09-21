@@ -1,3 +1,16 @@
+---
+topic: legacy-machine-type-inventory-cleanup
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - brownfield_astro
+---
+
 # Legacy Machine-Type Inventory (Deprecated n/l/L/r Types) → Pre-Migration Cleanup Task
 
 AutoSys machine definitions carry a `type` attribute that specifies the agent technology. The current and only supported agent type is **`a`** (Workload Automation Agent), compatible with UNIX, Linux, Windows, i5/OS, and z/OS [B1]. Legacy machine types `n`, `l`, `L`, and `r` were platform-specific agent designations from AutoSys 4.5.x and r11 eras and are deprecated [B1].

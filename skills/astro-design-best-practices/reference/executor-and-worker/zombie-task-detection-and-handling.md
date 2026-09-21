@@ -1,3 +1,15 @@
+---
+topic: zombie-task-detection-and-handling
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Zombie-Task Detection and Handling
 
 AutoSys's `chase` utility periodically reconciles what the Event Server *thinks* is running against what's actually alive on the target machine — a job whose process died without reporting back raises `PROCESS_MIA`. Airflow has a structurally similar reconciliation problem with a different name and mechanism: a **zombie task**.

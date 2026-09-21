@@ -1,0 +1,7 @@
+/* extracted from PDF p.2653: Assign a Job Profile that is Located on Another Windows Machine */
+insert_job: test_run
+job_type: CMD
+machine: winagent
+command: "c:\bin\test.bat"
+profile: \\dev\share\cmdprof.txt
+provider_url: "location"

@@ -1,0 +1,8 @@
+/* extracted from PDF p.2473: Define a Range of Exit Codes to Indicate Job Failure */
+insert_job: CMDJOB
+job_type: CMD
+machine: winagt
+command: "c:\temp\procjob.exe"
+fail_codes: 40-50
+filter: filter
+filter: attribute | type[,attribute | type...]

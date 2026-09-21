@@ -1,0 +1,10 @@
+/* extracted from PDF p.2574: Monitor a Text File Continuously */
+insert_job: textfile_job
+job_type: OMTF
+machine: monagt
+text_file_name: /export/home/log/transmitter.log
+text_file_filter: Warning
+text_file_mode: LINE
+lower_boundary: 25
+text_file_filter_exists: TRUE
+monitor_mode: CONTINUOUS

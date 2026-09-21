@@ -1,0 +1,11 @@
+/* extracted from PDF p.2658: Format the Report Output as a Text File */
+insert_job: ps_txtfile
+job_type: ps
+machine: psagt
+owner: VP1@server01
+ps_output_dest:"c\:\temp\payroll.txt"
+ps_process_name: PAYROLL
+ps_process_type: Application Engine
+ps_dest_type: FILE
+ps_dest_format: TXT
+ps_run_cntrl_id: PS_ALL

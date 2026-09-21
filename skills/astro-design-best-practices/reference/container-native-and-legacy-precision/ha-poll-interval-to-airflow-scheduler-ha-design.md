@@ -1,3 +1,15 @@
+---
+topic: ha-poll-interval-to-airflow-scheduler-ha-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Heartbeat/HAPollInterval Failover-Detection → Airflow Scheduler HA Heartbeat/Leader-Election Design
 
 AutoSys HA uses a **Primary/Shadow (Active/Passive)** model. The primary scheduler writes heartbeats to the shared Event Server database; the shadow scheduler polls the database at the `HAPollInterval` (default 15 seconds) [B1]. If the shadow detects that the primary's heartbeat has not updated within the poll interval window, it initiates takeover. A tie-breaker scheduler resolves split-brain scenarios in the dual Event Server (HADS) configuration [B1].

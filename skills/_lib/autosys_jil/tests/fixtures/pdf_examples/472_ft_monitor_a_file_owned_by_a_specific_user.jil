@@ -1,0 +1,8 @@
+/* extracted from PDF p.2812: Monitor a File Owned by a Specific User */
+insert_job: ft_job
+job_type: FT
+machine: ftagt
+watch_file: /usr/data/payroll
+watch_file_type: CREATE
+watch_file_owner: JDOE
+watch_no_change: 30

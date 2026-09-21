@@ -1,0 +1,8 @@
+/* extracted from PDF p.2668: Run a PeopleSoft Process */
+insert_job: ps_txtfile
+job_type: ps
+machine: psagt
+ps_process_name: AEMINTEST
+ps_process_type: Application Engine
+ps_run_cntrl_id: PS_ALL
+ps_process_type: process_type

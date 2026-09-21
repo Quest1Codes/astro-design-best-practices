@@ -1,0 +1,10 @@
+/* extracted from PDF p.2570: Run a Job in the JES3 Environment */
+insert_job: mf_job_with_version_jes3
+job_type: MICROFOCUS
+machine: mfagent
+mf_server_address_type: NAME
+mf_server: mfprod
+mf_jcl_type: REFERENCE
+mf_jcl_name: "C:\Program Files\micro focus\es-jcldemo\if.jcl"
+mf_version: JES3
+min_run_alarm: mins

@@ -1,0 +1,7 @@
+/* extracted from PDF p.2508: Send a C Program’s Return Code as the Job’s Exit Code */
+insert_job: i5job_returnC
+job_type: I5
+machine: i5agent
+i5_action: RUN_PROGRAM
+i5_name: SALARY
+i5_cc_exit: *USER

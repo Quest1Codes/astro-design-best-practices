@@ -1,0 +1,9 @@
+/* extracted from PDF p.2808: Monitor for an Increase in File Size by a Certain Amount */
+insert_job: ft_unix_delta
+job_type: FT
+machine: unixagt
+watch_file: /credit/record
+watch_file_type: EXPAND
+watch_file_change_type: DELTA
+watch_file_change_value: 200000
+watch_no_change: 30

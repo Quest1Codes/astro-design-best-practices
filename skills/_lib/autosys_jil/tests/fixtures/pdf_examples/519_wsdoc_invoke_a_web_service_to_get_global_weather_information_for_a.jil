@@ -1,0 +1,11 @@
+/* extracted from PDF p.2843: Invoke a Web Service to Get Global Weather Information for a Weather Station */
+insert_job: weather
+job_type: WSDOC
+machine: wsagent
+endpoint_URL: "http://www.webservicex.net/globalweather.asmx"
+WSDL_URL: "http://www.webservicex.net/globalweather.asmx?wsdl"
+service_name: GlobalWeather
+port_name: GlobalWeatherSoap
+wsdl_operation: GetWeather
+ws_parameter: param_name="/GetWeather", param_value=""
+ws_parameter: param_name="/GetWeather/CityName", param_value="Raleigh / Durham, Raleigh-

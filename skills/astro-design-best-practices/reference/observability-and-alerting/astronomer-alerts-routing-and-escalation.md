@@ -1,3 +1,15 @@
+---
+topic: astronomer-alerts-routing-and-escalation
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Astronomer Alerts Routing and Escalation
 
 AutoSys integrated with enterprise event managers to route alarms based on job criticality. On the Astro platform, alert routing can be handled at two levels: native **Astro Alerts** (platform-level) and **Airflow Callbacks** (code-level).

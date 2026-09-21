@@ -1,0 +1,11 @@
+/* extracted from PDF p.2795: Specify a Trigger Type for IBM DB2 */
+insert_job: dbtrig_db2
+job_type: DBTRIG
+machine: dbagent
+dbtype: DB2
+owner: entadm@myhost
+connect_string:"jdbc:db2://172.31.255.255:50000/SAMPLE"
+tablename: STAFF
+dbtype: DB2
+trigger_type: UPDATE
+ulimit: resource_type="soft_value,hard_value"

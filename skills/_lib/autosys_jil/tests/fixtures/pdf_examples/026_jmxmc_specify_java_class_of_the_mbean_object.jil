@@ -1,0 +1,9 @@
+/* extracted from PDF p.2428: Specify Java Class of the MBean Object */
+insert_job: create
+job_type: JMXMC
+machine: appagent
+URL: "service:jmx:rmi:///jndi/rmi://agenttest:5099/jmxserver"
+mbean_name: "DefaultDomain:index=CreateIns1,type=cdc.jmx.SimpleDynamic"
+class_name: cdc.jmx.SimpleDynamic
+jmx_parameter: java.lang.String="Hello"
+command: commandargument...

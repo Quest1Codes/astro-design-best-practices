@@ -1,0 +1,10 @@
+/* extracted from PDF p.2586: Monitor for a Change in CPU Usage Greater Than 10 Percent */
+insert_job: omcpu_job
+job_type: OMCPU
+machine: winagt
+cpu_usage: FREE
+lower_boundary: 25
+upper_boundary: 75
+inside_range: FALSE
+no_change: 10
+monitor_mode: CONTINUOUS

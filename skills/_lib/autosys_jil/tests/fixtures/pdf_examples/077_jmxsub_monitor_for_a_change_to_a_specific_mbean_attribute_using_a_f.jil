@@ -1,0 +1,9 @@
+/* extracted from PDF p.2475: Monitor for a Change to a Specific MBean Attribute Using a Filter */
+insert_job: change
+job_type: JMXSUB
+machine: agent
+URL: "service:jmx:"rmi://docops.ca.com/jndi/rmi://localhost:9999/server" scope="local">rmi:///jndi/rmi://
+localhost:9999/server"
+mbean_name: "DefaultDomain:index=1,type=Config"
+filter_type: Attributes
+filter: cachesize

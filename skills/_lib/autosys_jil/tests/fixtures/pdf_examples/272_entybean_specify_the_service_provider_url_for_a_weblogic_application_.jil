@@ -1,0 +1,10 @@
+/* extracted from PDF p.2654: Specify the Service Provider URL for a WebLogic Application Server */
+insert_job: create
+job_type: ENTYBEAN
+machine: appagent
+initial_context_factory: weblogic.jndi.WLInitialContextFactory
+provider_url: "t3://localhost:7001"
+bean_name: customer
+create_name: createcustomer
+operation_type: CREATE
+create_parameter: String="customerid", String="800-555-0100"

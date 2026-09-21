@@ -1,3 +1,16 @@
+---
+topic: job-classification-group-application-to-tagging-namespacing
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - multi_owner
+---
+
 # Job Classification via group/application Attributes → Astro Tagging and dag_id Namespacing
 
 AutoSys's `group` and `application` attributes were independent of the `box` hierarchy — they provided a metadata classification layer for filtering jobs in `autorep` reports and GUI views, independent of which box a job was contained in. A job could be in box `ETL_NIGHTLY` but have `application=FINANCE` and `group=BATCH_CRITICAL`. These were free-form text fields [B1].

@@ -1,0 +1,7 @@
+/* extracted from PDF p.2633: Track a Process Automation Process to Completion */
+insert_job: pam1
+job_type: PAPROC
+endpoint_url: "http://canor01-vm2k3c:8080/itpam/soap"
+machine: paagent
+owner: pamadmin@capamach
+pa_name: "/ITPAM Tutorials/S01 Getting started/L01 Creating a Simple Process/L01-

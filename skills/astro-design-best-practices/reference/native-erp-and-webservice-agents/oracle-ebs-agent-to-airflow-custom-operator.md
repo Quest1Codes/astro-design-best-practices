@@ -1,3 +1,16 @@
+---
+topic: oracle-ebs-agent-to-airflow-custom-operator
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - erp_oracle
+---
+
 # Oracle E-Business Suite Agent Migration → Airflow Custom Operator Design
 
 AutoSys's Oracle E-Business Suite (EBS) agent type submits Concurrent Requests directly to the Oracle EBS Concurrent Manager without a wrapper script [B1]. The Concurrent Manager queues and executes EBS programs (Application Engine, PL/SQL programs, reports) on behalf of the scheduler.

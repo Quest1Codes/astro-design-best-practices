@@ -1,12 +1,23 @@
+---
+topic: capacity-planning-from-job-count-and-schedule-density
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - job_load_present
+---
+
 # Capacity Planning from Job Count and Schedule Density
 
 Migrating from AutoSys means translating "N boxes, M jobs, K calendar schedules" into Airflow compute requirements. This is not a 1:1 mapping. AutoSys was centralized (one scheduler for all); Airflow on Astro is deployment-isolated (each Deployment has its own scheduler and workers).
 
-## Astronomer Unit (AU) Primer
+## Resource sizing on Astro Hosted
 
-**1 AU = 0.1 vCPU + 0.375 GiB memory** [B1].
-
-All resource allocation on Astro (scheduler, webserver, triggerer, workers) is expressed in AUs. Understanding this baseline is prerequisite to capacity planning.
+**Correction**: an earlier draft of this file described all Astro resource allocation as expressed in "Astronomer Units (AU)," where 1 AU = 0.1 vCPU + 0.375 GiB. That AU model has since been **removed** — current Astro Hosted docs size Deployment components (scheduler, webserver, triggerer, workers) directly in **vCPU and GiB**, with no AU framing [B1]. The AU unit still appears in older Astro Private Cloud (self-managed) documentation, but do not use it as the baseline for Astro Hosted capacity planning.
 
 ## Astro Deployment Size Guide (Official Templates)
 
@@ -32,12 +43,12 @@ All resource allocation on Astro (scheduler, webserver, triggerer, workers) is e
 
 | Signal | Action |
 |---|---|
-| Workers frequently hitting memory limits | Upgrade worker type (e.g., A5 → A10 or larger AU size) [B1]. |
+| Workers frequently hitting memory limits | Upgrade worker type (e.g., A5 → A10 or larger vCPU/memory size) [B1]. |
 | Workers at high CPU saturation | Reduce `WORKER_CONCURRENCY` or upgrade worker type. |
 | Queue depth growing faster than tasks complete | Increase maximum worker count in the queue autoscaling config [B1]. |
 | Deferrable Operators used heavily | Monitor Triggerer pod. Default Triggerer handles ~1,000 concurrent triggers; add Triggerer replicas if exceeded [B1]. |
 
 ## Sources
 
-[B1] Astronomer Docs — Deployment resources, Triggerer (default 1 replica, ~1000 concurrent trigger capacity): https://www.astronomer.io/docs/astro/deployment-resources#triggerer (tier 1, added on doc-verification review); AU definition (1 AU = 0.1 vCPU + 0.375 GiB): https://www.astronomer.io/docs/astro-private-cloud/v-0-37/configure-deployment#select-a-resource-strategy (tier 1, added on doc-verification review)
+[B1] Astronomer Docs — Deployment resources, Triggerer (default 1 replica, ~1000 concurrent trigger capacity) and size options (vCPU/GiB-based sizing, no AU framing): https://www.astronomer.io/docs/astro/deployment-resources#triggerer and https://www.astronomer.io/docs/astro/deployment-resources#size-options (tier 1, added on doc-verification review). The legacy AU definition (1 AU = 0.1 vCPU + 0.375 GiB) is Astro Private Cloud-specific and predates current Astro Hosted sizing: https://www.astronomer.io/docs/astro-private-cloud/v-0-37/configure-deployment#select-a-resource-strategy; see also https://www.astronomer.io/docs/astro-private-cloud/v-1-x/breaking-changes-removals ("Removal of Astronomer Units (AU) and Standardization of CPU/Memory Settings").
 [B2] Astronomer Docs — Deployment resources, size options (Large = 1 Dag Processor pod at 3 vCPU; Extra Large = 2 Dag Processor pods): https://www.astronomer.io/docs/astro/deployment-resources#size-options (tier 1, added on doc-verification review — corrects the "3 DAG Processors" claim for Large above)

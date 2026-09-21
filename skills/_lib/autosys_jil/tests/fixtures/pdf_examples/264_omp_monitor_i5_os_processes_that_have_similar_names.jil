@@ -1,0 +1,7 @@
+/* extracted from PDF p.2650: Monitor i5/OS Processes That Have Similar Names */
+insert_job: omp_i5
+job_type: OMP
+machine: i5agt
+process_name: *ALL/JDOE/CALC*
+process_status: STOPPED
+monitor_mode: WAIT

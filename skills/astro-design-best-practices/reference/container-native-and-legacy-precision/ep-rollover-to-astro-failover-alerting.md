@@ -1,3 +1,15 @@
+---
+topic: ep-rollover-to-astro-failover-alerting
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # EP_ROLLOVER Alarm and Failover-Event Handling → Astro Failover Alerting Design
 
 `EP_ROLLOVER` (Event Processor Rollover) is the AutoSys alarm name for the event that fires when the shadow scheduler takes over from a failed primary [B1]. In dual Event Server mode (HADS), a related `DB_ROLLOVER` alarm fires when one Event Server database fails over to the other [B1]. These alarms are routed via SNMP traps or the AutoSys alarm manager to operations teams.

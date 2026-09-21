@@ -1,3 +1,16 @@
+---
+topic: max-load-job-load-to-airflow-pools-sizing
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - job_load_present
+---
+
 # max_load/job_load Weighted Machine Queuing → Airflow Pools Sizing Design
 
 AutoSys's `max_load` and `job_load` implement a weighted concurrency model at the machine level. Each agent machine has a `max_load` value (the total capacity in arbitrary units), and each job has a `job_load` value (the units it consumes when running). When the sum of running job `job_load` values on a machine would exceed `max_load`, incoming jobs enter `QUE_WAIT` state [B1]. Critically, these units have no fixed relationship to physical CPU or memory — they are purely a scheduling weight system.

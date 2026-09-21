@@ -1,0 +1,5 @@
+/* extracted from PDF p.2434: Run a Batch File on Windows */
+insert_job: win_batch
+job_type: CMD
+machine: winagent
+command: “C:\COMMON\Backup”

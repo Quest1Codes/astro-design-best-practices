@@ -1,3 +1,15 @@
+---
+topic: scheduler-ha-what-astro-provides-vs-what-you-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Scheduler HA: What Astro Provides vs. What You Must Design
 
 AutoSys's HA model required explicit architectural planning: a **primary** scheduler, a **shadow** scheduler, a **tie-breaker**, and dual Event Servers — all carefully configured to prevent split-brain. Astro's model collapses most of this complexity into a managed platform capability. Understanding exactly what is provided for free vs. what still requires explicit design decisions prevents over-engineering in some areas and dangerous blind spots in others.
@@ -29,9 +41,9 @@ AutoSys's HA model required explicit architectural planning: a **primary** sched
 
 ## Sources
 
-[B1] Astronomer Docs — Airflow components, high availability (active-active scheduler model; Astro High Availability toggle): https://www.astronomer.io/docs/learn/airflow-components#high-availability (tier 1, resolved on citation review — closes the earlier `NEEDS_EXEC_CHECK`)
-[B2] Astronomer Docs — Resilience (Astro control/data plane AZ design, automated backups, cross-region DR): https://www.astronomer.io/docs/astro/resilience (tier 1, resolved on citation review — closes the earlier `NEEDS_EXEC_CHECK`)
-[B3] Astronomer Docs — Private Cloud database architecture, PostgreSQL replication ("Astronomer doesn't recommend using internal PostgreSQL instance... use an externally managed database service"): https://www.astronomer.io/docs/astro-private-cloud/v-2-x/database-architecture#postgresql-replication (tier 1, resolved on citation review — closes the earlier `NEEDS_EXEC_CHECK`)
+[B1] Astronomer Docs — Airflow components, high availability (active-active scheduler model; Astro High Availability toggle): https://www.astronomer.io/docs/learn/airflow-components#high-availability (tier 1, confirmed via astronomer-docs verification)
+[B2] Astronomer Docs — Resilience (Astro control/data plane AZ design, automated backups, cross-region DR): https://www.astronomer.io/docs/astro/resilience (tier 1, confirmed via astronomer-docs verification)
+[B3] Astronomer Docs — Private Cloud database architecture, PostgreSQL replication ("Astronomer doesn't recommend using internal PostgreSQL instance... use an externally managed database service"): https://www.astronomer.io/docs/astro-private-cloud/v-2-x/database-architecture#postgresql-replication (tier 1, confirmed via astronomer-docs verification)
 [B4] Apache Airflow Docs — Idempotency best practices (no Astronomer Docs match found on this pass — this is Apache Airflow OSS content not indexed in the Astronomer docs MCP; verify against airflow.apache.org's best-practices guide directly rather than treating this as closed)
 [B5] Astronomer Docs — Airflow system components, "Horizontal scaling" (Astro Private Cloud/Hybrid): Scheduler supports up to 4 replicas by default: https://www.astronomer.io/docs/astro-private-cloud/v-2-x/airflow-system-components#horizontal-scaling (tier 1, added on platform-split review)
 [B6] Astronomer Docs — Scheduler (Astro Hosted): single scheduler by default; High Availability toggle runs exactly two, not a configurable count: https://www.astronomer.io/docs/astro/deployment-resources#scheduler (tier 1, added on platform-split review)

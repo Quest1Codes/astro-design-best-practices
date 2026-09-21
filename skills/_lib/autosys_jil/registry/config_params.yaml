@@ -1,0 +1,83 @@
+# Hand-curated overlay: `$AUTOUSER/config.$AUTOSERV` parameters that change migration semantics
+# [skills/docs/REFACTOR-FILE-SPEC.md §1.1 config_params.json row; plan §11.3].
+#
+# Unlike job_types.json/attributes.json (mechanically extracted from a fixed PDF heading
+# pattern), the Administrating section (PDF p.851-1132) does not follow one consistent heading
+# shape, and *which* of its ~40 parameters actually change a migration decision is itself a
+# judgment call -- so this is a hand-curated subset (not exhaustive), same pattern as
+# `job_type_families.yaml`. Every row is a real, PDF-verified parameter name and page; the
+# `translation_effect` is `{syn: ...}` synthesis from the cited page, not a separate citation.
+#
+# Consumed by config.py `semantic_params()`. Not yet used by anything else.
+version: 1
+
+AUTOSERV:
+  pdf_page: 853
+  description: "Instance name (uppercase, 3-char alphanumeric) associated with this config file."
+  translation_effect: "Instance identity used to label manifest.instances[id] and dag tags; no direct DAG-level effect."
+
+AUTOUSER:
+  pdf_page: 853
+  description: "Path to the instance-wide directory (output files, encryption files, archive output, sound files)."
+  translation_effect: "Discovery-only: names where to find agentparm.txt, output logs, archive_events output for this instance."
+
+MaxRestartTrys:
+  pdf_page: 892
+  default: 10
+  description: "Maximum number of times the scheduler retries a job after a system/network-level restart (distinct from n_retrys, which is job-defined retry-on-failure)."
+  translation_effect: "{syn: default `retries` for jobs that do not set `n_retrys` themselves; document the AutoSys system-retry vs. job-retry distinction in the delta statement.}"
+
+RestartConstant:
+  pdf_page: 891
+  description: "Constant term (seconds) in the restart wait-time formula."
+  translation_effect: "{syn: input to `retry_delay` when no job-level backoff is configured.}"
+
+RestartFactor:
+  pdf_page: 891
+  description: "Multiplier (seconds per attempt) in the restart wait-time formula: WaitTime = RestartConstant + (Num_of_Trys * RestartFactor) [AS p.891]."
+  translation_effect: "{syn: input to `retry_exponential_backoff` sizing -- the formula is already linear-in-attempt-count, which maps cleanly to Airflow's `retry_delay` with a fixed `retry_exponential_backoff=False` unless MaxRestartWait caps it, in which case backoff should be capped too.}"
+
+MaxRestartWait:
+  pdf_page: 891
+  description: "Upper bound (seconds) on the calculated restart wait time."
+  translation_effect: "{syn: cap for the `retry_delay` derived from RestartConstant/RestartFactor.}"
+
+GlobalAutoHold:
+  pdf_page: 876
+  description: "Starts the scheduler in Global Auto Hold mode after a restart (values 0|1)."
+  translation_effect: "{syn: if 1, every job in the instance defaults to auto_hold semantics after a restart -- worth checking against `is_paused_upon_creation` conventions for a like-for-like cutover posture.}"
+
+RepeatAlarmNotification:
+  pdf_page: 888
+  description: "Controls how repeated alarm email notifications are sent: ALL|FIRST|LAST."
+  translation_effect: "{syn: informs the repeat/dedupe cadence to configure on the Astro Alerts / ITSM integration side so notification volume does not change materially at cutover.}"
+
+HAPollInterval:
+  pdf_page: 874
+  description: "Seconds between status polls when the scheduler runs in high-availability (primary/shadow) mode."
+  translation_effect: "{syn: architecture-only input -- informs the HA/DR conversation (KB ha-and-dr cluster), not a per-job translation.}"
+
+DBEventReconnect:
+  pdf_page: 900
+  description: "Number of times the scheduler/application server retries a database connection."
+  translation_effect: "{syn: informs metadata-DB resilience expectations when sizing the target Deployment's DB tier.}"
+
+Check_Heartbeat:
+  pdf_page: 893
+  description: "Enables/tunes agent heartbeat checking."
+  translation_effect: "{syn: informs worker/agent liveness health-check cadence in the target executor's worker-fleet design.}"
+
+EnableFIPSMode:
+  pdf_page: 868
+  description: "Enables FIPS 140-2 compliant encryption mode."
+  translation_effect: "{syn: feeds the compliance/vertical-overlay assessment (FIPS/FedRAMP) -- if enabled on-prem, the target's encryption posture must match.}"
+
+EvaluateQueuedJobStarts:
+  pdf_page: 886
+  description: "Controls whether/how the scheduler re-evaluates jobs left in a queued state."
+  translation_effect: "{syn: relevant when comparing AutoSys QUE_WAIT semantics to Airflow pool/queue wait behaviour (job-states-to-task-states.md QUE_WAIT row).}"
+
+CrossPlatformScheduling:
+  pdf_page: 895
+  description: "Enables scheduling jobs across mixed Windows/UNIX agent machines from one instance."
+  translation_effect: "{syn: signals a mixed-OS estate -- triggers the Windows-options section (job-types/core-cmd-box.md) even before scanning individual machine `opsys` values.}"

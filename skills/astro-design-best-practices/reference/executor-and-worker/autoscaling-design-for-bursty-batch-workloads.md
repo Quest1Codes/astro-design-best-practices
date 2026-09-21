@@ -1,3 +1,16 @@
+---
+topic: autoscaling-design-for-bursty-batch-workloads
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - job_load_present
+---
+
 # Autoscaling Design for Bursty Batch Workloads
 
 AutoSys estates are almost universally bursty by nature — heavy overnight/end-of-day batch windows, near-idle stretches between them. AutoSys itself doesn't autoscale (its agents are fixed, pre-provisioned machines); the burst is simply absorbed by however much fixed capacity was provisioned, with jobs queuing if capacity is insufficient. Astro's worker autoscaling is a genuinely new capability the source estate never had — worth designing deliberately rather than defaulting to fixed sizing out of habit.

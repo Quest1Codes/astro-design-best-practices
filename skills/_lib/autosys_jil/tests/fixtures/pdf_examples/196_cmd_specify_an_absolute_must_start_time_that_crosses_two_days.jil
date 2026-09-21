@@ -1,0 +1,10 @@
+/* extracted from PDF p.2582: Specify an Absolute Must Start Time That Crosses Two Days */
+insert_job: job3
+job_type: CMD
+machine: localhost
+command: echo "hello"
+date_conditions: y
+days_of_week: all
+start_times: "16:00"
+must_start_times: "54:10"
+must_complete_times: "54:12"

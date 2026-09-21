@@ -1,3 +1,15 @@
+---
+topic: siem-export-integration-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # SIEM Export Integration Design
 
 SIEM (Security Information and Event Management) integration for Astro involves two distinct log streams that require separate export pipelines: **Astro Control Plane Audit Logs** (administrative actions) and **Airflow Task Logs** (pipeline execution). These require different architectures.

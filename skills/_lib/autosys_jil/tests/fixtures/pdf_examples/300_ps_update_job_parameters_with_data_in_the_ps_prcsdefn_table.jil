@@ -1,0 +1,10 @@
+/* extracted from PDF p.2676: Update Job Parameters with Data in the PS_PRCSDEFN Table */
+insert_job: ps_updateparms
+job_type: ps
+machine: psagt
+ps_process_name: OMC3220-
+ps_process_type: Crystal
+ps_run_cntrl_id: sample
+ps_skip_parm_updates: NO
+owner: VP2@server01
+ps_time_zone: time_zone

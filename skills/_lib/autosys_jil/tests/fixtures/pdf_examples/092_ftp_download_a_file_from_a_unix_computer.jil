@@ -1,0 +1,11 @@
+/* extracted from PDF p.2485: Download a File from a UNIX Computer */
+insert_job: FTPT1A
+job_type: FTP
+machine: ftpagent
+ftp_server_name: hpsupport
+ftp_server_port: 5222
+ftp_transfer_direction: DOWNLOAD
+ftp_transfer_type: A
+ftp_remote_name: /u1/qatest/ftpdata/textfile
+ftp_local_name: /export/home/ftpfiles/test1
+owner: ftpuser@hpsupport

@@ -1,3 +1,15 @@
+---
+topic: gitops-design-for-dag-deployment
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # GitOps Design for DAG Deployment
 
 AutoSys deployments relied on moving definition files (JIL) and running imports against a database. With Airflow 3 and Astro, deploying DAGs directly from a Git repository via `GitDagBundle` is the recommended best practice for production GitOps workflows.
@@ -38,6 +50,6 @@ GitOps requires that Git is the sole source of truth.
 
 ## Sources
 
-[B1, B2] Astronomer Docs — Airflow feature support on Astro (Dag Versioning / Dag Bundles): https://www.astronomer.io/docs/astro/airflow-feature-support (tier 1) — NEEDS_EXEC_CHECK: not independently re-verified this page covers Dag Bundles specifically; confirm before relying on it
+[B1, B2] Astronomer Docs — Dag versioning and Dag bundles (`LocalDagBundle`, `GitDagBundle`, per-commit versioning): https://www.astronomer.io/docs/astro/dag-versioning and https://www.astronomer.io/docs/learn/airflow-dag-versioning (tier 1, confirmed via astronomer-docs verification — **corrected citation**: the previously-cited `astro/airflow-feature-support` page does not mention Dag Bundles at all; these are the actual pages)
 [B3] Astronomer Docs — GitOps deployment strategies (Dag-only deploys via Deploy Dags to Astro): https://www.astronomer.io/docs/astro/deploy-dags (tier 1) — pipeline-automation mechanics specifically not independently re-verified against this page; verify separately
 [B4] Astronomer Docs — Configure Dag sources for a Remote Execution Agent, "Dag hashing" (enabled by default starting Astro Agent client release 1.8.0, `ASTRO_AGENT_CLIENT_DAG_PROCESSOR__ENABLE_DAG_CACHING` to disable, cache-hit/miss/size metrics): https://www.astronomer.io/docs/astro/remote-execution/remote-execution-configure-dag-sources#dag-hashing (tier 1, confirmed on follow-up review — restores and correctly sources the original pre-correction claim)

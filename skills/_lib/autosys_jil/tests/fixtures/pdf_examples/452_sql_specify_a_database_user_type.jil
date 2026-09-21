@@ -1,0 +1,8 @@
+/* extracted from PDF p.2803: Specify a Database User Type */
+insert_job: QRY1
+job_type: SQL
+machine: dbagent
+owner: dbuser1@orcl
+user_role: as sysdba
+sql_command: SELECT * from NEWORDS
+connect_string: "jdbc:oracle:thin:@172.31.255.255:1433:ORDERS"

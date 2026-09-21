@@ -1,0 +1,6 @@
+/* extracted from PDF p.2700: Specify a Job to be Copied */
+insert_job: SAPCOPY
+job_type: SAPJC
+machine: sapagent
+sap_job_name: proctest
+sap_job_count: 00458131

@@ -1,0 +1,7 @@
+/* extracted from PDF p.2535: Define an RMI Job to Start a Remote Server Immediately */
+insert_job: start
+job_type: JAVARMI
+machine: appagent
+remote_name: "rmi://remotehost/Test"
+method_name: startserver
+j2ee_parameter: String="now"

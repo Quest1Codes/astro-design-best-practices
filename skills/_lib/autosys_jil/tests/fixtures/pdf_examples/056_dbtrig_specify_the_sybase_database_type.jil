@@ -1,0 +1,10 @@
+/* extracted from PDF p.2458: Specify the Sybase Database Type */
+insert_job: db_sqltrig_upd
+job_type: DBTRIG
+machine: localhost
+dbtype: Sybase
+connect_string: "jdbc:sybase:Tds:myhost:5001/APDB"
+trigger_type: UPDATE
+tablename: ap_invoices
+owner: admin@myhost
+description: "text"

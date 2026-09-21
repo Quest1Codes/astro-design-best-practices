@@ -1,0 +1,6 @@
+/* extracted from PDF p.2652: Assign a Job Profile on UNIX */
+insert_job: test_run
+job_type: CMD
+machine: unixagent
+command: /bin/touch /tmp/test_run.out
+profile: /usr/home/my_profile

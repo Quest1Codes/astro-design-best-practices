@@ -1,0 +1,10 @@
+/* extracted from PDF p.2793: Specify a Trigger Condition for SQL Server */
+insert_job: dbtrig_sqlsvr
+job_type: DBTRIG
+machine: dbagent
+dbtype: MSSQL
+owner: sa@myhost
+connect_string: "jdbc:sqlserver://myhost:1433;DatabaseName=pubs"
+tablename: sales
+trigger_type: UPDATE
+trigger_cond: UPDATE(ord_date) and UPDATE(qty)

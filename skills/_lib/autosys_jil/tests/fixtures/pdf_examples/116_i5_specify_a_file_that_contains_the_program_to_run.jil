@@ -1,0 +1,6 @@
+/* extracted from PDF p.2515: Specify a File that Contains the Program to Run */
+insert_job: i5job_file
+job_type: I5
+machine: i5agent
+i5_action: RUN_PROG_IN_FILE
+i5_name: CLSRC(BACKUP)

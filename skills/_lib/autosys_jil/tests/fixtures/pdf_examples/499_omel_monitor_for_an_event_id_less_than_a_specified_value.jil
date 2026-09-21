@@ -1,0 +1,8 @@
+/* extracted from PDF p.2827: Monitor for an Event ID Less Than a Specified Value */
+insert_job: eventlog_job
+job_type: OMEL
+machine: monagt
+win_log_name: Application
+win_event_op: LT
+win_event_id: 1
+win_event_op: GT | LT | LE | EQ | GE

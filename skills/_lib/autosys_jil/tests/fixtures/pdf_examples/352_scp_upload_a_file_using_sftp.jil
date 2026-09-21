@@ -1,0 +1,12 @@
+/* extracted from PDF p.2726: Upload a File Using SFTP */
+insert_job: sftp_upload
+job_type: SCP
+machine: WINAGENT
+scp_transfer_direction: UPLOAD
+scp_server_name: hpsupport
+scp_remote_dir: /u/tmp
+scp_remote_name: logs.tar
+scp_local_name: "D:\temp\logs.tar"
+scp_protocol: SFTP
+owner: causer@WINAGENT
+scp_remote_dir: directory

@@ -1,3 +1,15 @@
+---
+topic: aews-rest-api-to-airflow-rest-api-parity
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # AEWS REST API Surface Parity → Airflow REST API Design
 
 AutoSys Web Services (AEWS) is the AutoSys **control-plane REST API** — the programmatic interface for triggering jobs, changing job status, querying job state, and managing events in the AutoSys engine. It is distinct from AutoSys's `job_type: WS` (which is an outbound web-service job type). AEWS is inbound: it's how external systems tell AutoSys what to do [B1].
@@ -12,7 +24,7 @@ The Airflow REST API (Stable API, introduced in Airflow 2.0) is the direct equiv
 |---|---|
 | **`FORCE_START_JOB`** (trigger a job immediately) | `POST /api/v2/dags/{dag_id}/dagRuns` |
 | **`ON_ICE`** / **`OFF_ICE`** (hold/release a job) | `PATCH /api/v2/dags/{dag_id}` with `{"is_paused": true/false}` |
-| **`KILL_JOB`** (abort a running job) | `PATCH .../dagRuns/{dag_run_id}/updateTaskInstancesState` (or the Airflow UI's "Mark state as failed" action) with `{"new_state": "failed"}` on the running task instance — **correction**: an earlier draft of this row mapped `KILL_JOB` to `DELETE .../dagRuns/{dag_run_id}` or `.../clearTaskInstances`, which is wrong: `DELETE` on a DagRun removes the *record*, and `clearTaskInstances` resets state for a *re-run* — neither sends a stop signal to a currently-running task/pod. Marking the running task instance's state (which the scheduler/executor interprets as a signal to terminate the process) is the actual mechanism a UI "kill" action uses [B2]. `NEEDS_EXEC_CHECK`: the exact REST endpoint path for a single-task-instance state update on a *running* (not yet terminal) task wasn't independently re-verified on this pass — confirm against the live Airflow 3 API reference before scripting this. |
+| **`KILL_JOB`** (abort a running job) | `PATCH .../dagRuns/{dag_run_id}/updateTaskInstancesState` (or the Airflow UI's "Mark state as failed" action) with `{"new_state": "failed"}` on the running task instance — **correction**: an earlier draft of this row mapped `KILL_JOB` to `DELETE .../dagRuns/{dag_run_id}` or `.../clearTaskInstances`, which is wrong: `DELETE` on a DagRun removes the *record*, and `clearTaskInstances` resets state for a *re-run* — neither sends a stop signal to a currently-running task/pod. Marking the running task instance's state (which the scheduler/executor interprets as a signal to terminate the process) is the actual mechanism a UI "kill" action uses [B2]. **Narrowed** (astronomer-docs confirms the operation exists but not full path/schema): the underlying Airflow REST API operation is `patch_task_instance`, referenced from Astronomer's own rerunning-Dags guide (https://www.astronomer.io/docs/learn/rerunning-dags, which links `stable-rest-api-ref.html#operation/patch_task_instance`) — astronomer-docs doesn't reproduce the exact path/request schema itself, so `NEEDS_EXEC_CHECK` against the live Airflow 3 `stable-rest-api-ref.html#operation/patch_task_instance` reference before scripting this. |
 | **`CHANGE_STATUS SUCCESS`** (manually mark success) | `PATCH /api/v2/dags/{dag_id}/updateTaskInstancesState` with `{"state": "success"}` |
 | **Query job status** (`autorep -J`) | `GET /api/v2/dags/{dag_id}/dagRuns` |
 | **Query task status** | `GET /api/v2/dags/{dag_id}/dagRuns/{run_id}/taskInstances/{task_id}` |

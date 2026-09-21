@@ -1,0 +1,6 @@
+/* extracted from PDF p.2849: Specify a JCL Library */
+insert_job: PROD.NIGHTLY
+job_type: ZOSDST
+machine: ZOS1
+owner: CYBDL01
+zos_dataset: PROD.CICS.FILE1602

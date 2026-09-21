@@ -1,3 +1,15 @@
+---
+topic: idempotency-and-retry-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: mixed
+signals: []
+---
+
 # Idempotency and Retry Design for Translated Tasks
 
 AutoSys's `n_retrys` attribute is a count with no built-in idempotency guarantee of its own — a retried AutoSys job simply re-runs the same command, and whether that's safe depends entirely on what the command does. The same is true after translation; Airflow's retry mechanism does not make a task idempotent, it just re-invokes it.
@@ -19,7 +31,7 @@ AutoSys's `n_retrys` attribute is a count with no built-in idempotency guarantee
 
 ## Resolved during Critic review
 
-The float-multiplier form of `retry_exponential_backoff` (originally flagged here as `NEEDS_EXEC_CHECK`, pending confirmation) is in fact already stated on [F1] — the same Astronomer doc already cited for the boolean form: "In Airflow 3.2+ you can set `retry_exponential_backoff` to a float to directly specify the factor by which the retry delay should be multiplied between retries." No further execution check is needed for this specific claim; the original flag was appropriately cautious but the corroboration was sitting in an already-cited source.
+The float-multiplier form of `retry_exponential_backoff` is confirmed on [F1] — the same Astronomer doc already cited for the boolean form: "In Airflow 3.2+ you can set `retry_exponential_backoff` to a float to directly specify the factor by which the retry delay should be multiplied between retries."
 
 ## Sources
 

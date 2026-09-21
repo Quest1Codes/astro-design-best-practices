@@ -1,3 +1,15 @@
+---
+topic: ws-job-type-to-http-operator-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Native Web Services Job Type (job_type: WS) → Airflow HttpOperator/SimpleHttpOperator Design
 
 AutoSys's `job_type: WS` (Web Services) is a native job type that submits SOAP or REST web service calls **without a wrapper script** — the JIL definition contains the endpoint URL, method, headers, and payload directly [B1]. This is AutoSys's built-in HTTP client; no shell script or third-party tool is needed.

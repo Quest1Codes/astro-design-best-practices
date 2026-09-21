@@ -1,3 +1,16 @@
+---
+topic: worker-queue-segregation-mirroring-machine-groups
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - virtual_resources
+---
+
 # Worker Queue Segregation Mirroring AutoSys Machine Groups
 
 AutoSys physically segregated jobs by pinning them to specific `machine:` names or machine groups — a job requiring a particular tool, credential set, or resource profile ran on the machine(s) that had it. Airflow's equivalent segregation mechanism under CeleryExecutor is worker queues, and it needs to be designed deliberately, not left as one undifferentiated worker pool.

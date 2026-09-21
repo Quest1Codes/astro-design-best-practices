@@ -1,0 +1,9 @@
+/* extracted from PDF p.2755: Specify a Path to a Spool File */
+insert_job: ls_cmd
+job_type: PROXY
+machine: proxyagent
+remote_target: hpserver
+remote_command: ls
+spool_file: >>/opt/rootdev/CA_USER/test/ls.out
+owner: user1@proxytest
+sql_command: sql_statement

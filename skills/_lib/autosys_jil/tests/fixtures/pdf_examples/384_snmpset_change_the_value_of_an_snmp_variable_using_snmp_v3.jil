@@ -1,0 +1,13 @@
+/* extracted from PDF p.2750: Change the Value of an SNMP Variable using SNMP v3 */
+insert_job: setvarv3
+job_type: SNMPSET
+machine: snmpagent
+snmp_mib: cybermation.mib
+snmp_host: host.example.com
+snmp_oid: out456789
+snmp_version: 3
+snmp_privacy: AES
+snmp_privacy_user: user1
+snmp_auth_protocol: MD5
+snmp_value: int=8
+soap_action: webmethod/soapaction

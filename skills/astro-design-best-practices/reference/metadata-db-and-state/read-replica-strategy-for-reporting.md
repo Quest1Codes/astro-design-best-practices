@@ -1,3 +1,15 @@
+---
+topic: read-replica-strategy-for-reporting
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Read-Replica Strategy for Reporting
 
 AutoSys environments often involved querying the event server DB directly for custom reporting, which risked impacting the scheduler's performance. In Airflow, the metadata database (PostgreSQL) is the critical source of truth for the Scheduler, Webserver, and API.

@@ -1,0 +1,5 @@
+/* extracted from PDF p.2434: Run a Command on Windows */
+insert_job: win_cmd
+job_type: CMD
+machine: winagent
+command: as_test -t 5 -e 0

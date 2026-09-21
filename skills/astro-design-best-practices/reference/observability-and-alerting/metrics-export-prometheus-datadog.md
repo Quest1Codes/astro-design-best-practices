@@ -1,3 +1,15 @@
+---
+topic: metrics-export-prometheus-datadog
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Metrics Export (Prometheus / Datadog)
 
 AutoSys exposed operational metrics via proprietary SNMP traps or database queries. Astro provides native, cloud-standard observability by emitting metrics in standard formats that can be routed to enterprise monitoring systems.

@@ -1,3 +1,16 @@
+---
+topic: custom-timetable-design-for-autosys-calendars
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - calendar_not_cron
+---
+
 # Custom Timetable Design for AutoSys-Calendar Equivalents
 
 The internal reference file `calendars-and-scheduling.md` already establishes *when* a JIL calendar (`run_calendar`/`exclude_calendar`) requires a custom Timetable rather than a cron string [P1]. This file covers how to actually build that Timetable well.
@@ -26,4 +39,4 @@ Since `next_dagrun_info`/`infer_manual_data_interval` is the same two-method con
 
 - [F1] Apache Airflow docs — Timetables (when a custom Timetable is needed vs. cron/timedelta): https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/timetable.html (tier 2)
 - [F2] Apache Airflow docs — Customizing DAG Scheduling with Timetables (`next_dagrun_info`/`infer_manual_data_interval` contract): https://airflow.apache.org/docs/apache-airflow/stable/howto/timetable.html (tier 2)
-- [P1] Project-internal — `skills/migrating-autosys-to-astronomer/reference/calendars-and-scheduling.md` (calendar→Timetable translation rules)
+- [P1] Project-internal — `skills/migrate-jil-to-airflow-translation/reference/calendars-and-scheduling.md` (calendar→Timetable translation rules)

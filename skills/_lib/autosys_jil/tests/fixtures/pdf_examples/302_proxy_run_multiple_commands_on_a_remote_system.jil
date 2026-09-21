@@ -1,0 +1,8 @@
+/* extracted from PDF p.2677: Run Multiple Commands on a Remote System */
+insert_job: proxy_job
+job_type: PROXY
+machine: proxyagent
+remote_target: garfunkel
+remote_command: command1
+remote_command: command2
+remote_name: "remote_class"

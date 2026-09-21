@@ -1,3 +1,15 @@
+---
+topic: rollback-strategy-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Rollback Strategy Design
 
 In legacy schedulers, rolling back a deployed job often meant manually re-importing an older version of a JIL file. In Astro, deployments are holistic (DAG code, Airflow version, and Python dependencies). Relying on reverting Git commits and waiting for a CI/CD pipeline to rebuild is too slow during a critical production outage.

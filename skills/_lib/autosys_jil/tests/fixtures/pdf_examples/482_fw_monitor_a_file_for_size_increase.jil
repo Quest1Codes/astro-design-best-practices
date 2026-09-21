@@ -1,0 +1,8 @@
+/* extracted from PDF p.2817: Monitor a File for Size Increase */
+insert_job: ftjob
+job_type: FW
+machine: ftagt
+watch_file: "c:\fwjobs\inventory.txt"
+watch_file_type: EXPAND
+watch_file_change_type: SIZE
+watch_file_change_value: 1000

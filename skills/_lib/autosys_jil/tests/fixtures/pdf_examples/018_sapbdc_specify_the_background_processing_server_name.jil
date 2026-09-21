@@ -1,0 +1,9 @@
+/* extracted from PDF p.2418: Specify the Background Processing Server Name */
+insert_job: test_SAPBDC11_SIMPLE2
+job_type: SAPBDC
+machine: sap_agent
+owner: WAAESAP@waae-jobstest
+sap_job_name: ZBDCTEST
+sap_office: N
+sap_release_option: I
+bdc_ext_log: N

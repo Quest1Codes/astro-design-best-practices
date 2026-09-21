@@ -1,0 +1,7 @@
+/* extracted from PDF p.2820: Monitor a File for Inactivity */
+insert_job: FTP_input_companyXYZ
+job_type: FT
+machine: localhost
+watch_file: /in_coming/FTP/companyXYZ.dat
+watch_file_type: GENERATE
+watch_no_change: 3

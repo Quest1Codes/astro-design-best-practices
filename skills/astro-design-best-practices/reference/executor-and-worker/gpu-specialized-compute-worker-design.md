@@ -1,6 +1,19 @@
+---
+topic: gpu-specialized-compute-worker-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - virtual_resources
+---
+
 # GPU / Specialized-Compute Worker Design
 
-AutoSys handled GPU or other specialized-hardware jobs the same way it handled any hardware constraint: `machine:` pinning to a specific host pool that actually had the resource. Astro's standard worker types (used by the Celery executor and the Astro executor) are general-purpose CPU/memory instances — there is no documented GPU-enabled standard worker type [NEEDS_EXEC_CHECK: not found in the standard worker-type table; treat as unsupported for standard worker queues unless confirmed otherwise]. GPU workloads need one of two genuinely different, both real, patterns.
+AutoSys handled GPU or other specialized-hardware jobs the same way it handled any hardware constraint: `machine:` pinning to a specific host pool that actually had the resource. Astro's standard worker types (used by the Celery executor and the Astro executor) are general-purpose CPU/memory instances — **confirmed**: the current Astro worker-type table (A5 through A160, https://www.astronomer.io/docs/astro/resource-reference-hosted#astro-worker-types) lists only vCPU/memory/ephemeral-storage/concurrency columns, with no GPU-enabled standard worker type. Treat GPU as unsupported for standard worker queues. GPU workloads need one of two genuinely different, both real, patterns.
 
 ## {syn: F1,F2} Two real patterns — pick based on execution mode, not preference
 

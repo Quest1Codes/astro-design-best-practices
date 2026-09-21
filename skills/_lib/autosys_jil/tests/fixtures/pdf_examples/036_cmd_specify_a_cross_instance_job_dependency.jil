@@ -1,0 +1,6 @@
+/* extracted from PDF p.2439: Specify a Cross-Instance Job Dependency */
+insert_job: dep_job1
+machine: localhost
+job_type: CMD
+command: sleep 100
+condition: success(jobA) AND success(jobB^PRD)

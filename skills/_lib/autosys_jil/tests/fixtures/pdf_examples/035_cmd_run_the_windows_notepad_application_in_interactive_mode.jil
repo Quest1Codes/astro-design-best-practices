@@ -1,0 +1,7 @@
+/* extracted from PDF p.2434: Run the Windows Notepad Application in Interactive Mode */
+insert_job: edit_file
+job_type: CMD
+machine: winagent
+description: "Edit/review a configuration file"
+command: notepad.exe "c:\run_info\config.txt"
+interactive: y

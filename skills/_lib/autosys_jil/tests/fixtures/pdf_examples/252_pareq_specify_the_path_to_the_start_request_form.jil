@@ -1,0 +1,14 @@
+/* extracted from PDF p.2636: Specify the Path to the Start Request Form */
+insert_job: srf1
+job_type: PAREQ
+endpoint_URL: "http://paserver:8080/itpam/soap"
+machine: paagent
+owner: pamadmin@paserver
+pa_path: "/ITPAM Tutorials/S05 External Interactions/L06 Start Req Form for Input/"
+pa_name: "Start Request Form"
+pa_parameter: Name="AlarmProcessingProduct", Value="Test Alarm Product"
+pa_parameter: Name="Server", Value="paserver"
+pa_parameter: Name="Port", Value=80
+pa_monitor_progress: Y
+pa_trace: N
+pa_trace: y | n

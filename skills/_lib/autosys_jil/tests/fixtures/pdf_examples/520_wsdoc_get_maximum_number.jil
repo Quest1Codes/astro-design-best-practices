@@ -1,0 +1,19 @@
+/* extracted from PDF p.2846: Get Maximum Number */
+insert_job: getmax2
+job_type: WSDOC
+machine: thismach
+endpoint_URL: "http://thismach:8080/axis2/services/TestWS"
+wsdl_operation: intGetMax
+port_name: TestWSHttpSoap11Endpoint
+service_name: TestWS
+WSDL_URL: "http://thismach:8080/axis2/services/TestWS?wsdl"
+ws_parameter: param_name="/intGetMax",param_value=""
+ws_parameter: param_name="/intGetMax/ii[3]", param_value="1,4,2"
+ws_authentication_order: DIGEST,BASIC,NTLM
+ws_global_proxy_defaults: Y
+ws_conn_user: causer@thismach
+job_criteria: criteria_xpath="//ns:return", criteria_filter=".*4.*"
+ws_security: wss_type=USERTOKEN, wss_user=myuser@hostname, wss_digest=True
+ws_security: wss_type=TIMESTAMP, wss_ttl=120
+ws_security: wss_type=SIGNATURE
+ws_security: wss_type=ENCRYPTION, wss_alias=securestore, wss_keytype=EMBEDDED_KEYNAME,

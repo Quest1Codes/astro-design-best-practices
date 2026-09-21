@@ -1,0 +1,10 @@
+/* extracted from PDF p.2483: Download Multiple Local Files */
+insert_job: DOWNLOAD_MULTIPLE
+job_type: FTP
+machine: RAGENT
+ftp_server_name: hprsupp
+ftp_server_port: 5222
+ftp_transfer_direction: DOWNLOAD
+ftp_transfer_type: A
+ftp_remote_name: /u1/files/scripts/echo;/u1/files/scripts/echo1;/u1/files/scripts/echo2
+ftp_local_name: /export/home/ftpfiles/ftpdata/echo;/export/home/ftpfiles/ftpdata/

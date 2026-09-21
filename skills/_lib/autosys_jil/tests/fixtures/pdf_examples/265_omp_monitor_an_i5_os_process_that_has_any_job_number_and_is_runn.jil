@@ -1,0 +1,7 @@
+/* extracted from PDF p.2650: Monitor an i5/OS Process That Has Any Job Number and Is Running Under Any User Name */
+insert_job: omp_i5_all
+job_type: OMP
+machine: i5agt
+process_name: "*ALL/*ALL/CYBAGENT"
+process_status: RUNNING
+monitor_mode: NOW

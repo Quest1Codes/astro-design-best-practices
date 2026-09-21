@@ -1,3 +1,15 @@
+---
+topic: connection-pooling-with-pgbouncer
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Connection Pooling with PgBouncer
 
 AutoSys's Event Server used a proprietary binary protocol with fixed client processes — there was no open SQL connection pool to design. Airflow is the opposite: every scheduler, worker, and triggerer process opens its own SQLAlchemy connection pool to PostgreSQL, and with many workers those connections compound rapidly without a pooler [B1].
@@ -33,7 +45,7 @@ Transaction pool mode means a server connection is held only for the duration of
 | `resultBackendPoolSize` | 5 | Server connections for Celery result backend [B8] |
 | `maxClientConn` | 100 | Maximum inbound Airflow-side connections to PgBouncer [B8] |
 
-> **Resolved**: the earlier `NEEDS_EXEC_CHECK` on these defaults is closed — current Astronomer Private Cloud docs confirm the exact values above (`metadataPoolSize: 10`, `resultBackendPoolSize: 5`, `maxClientConn: 100`) [B8].
+> **Resolved**: current Astronomer Private Cloud docs confirm the exact values above (`metadataPoolSize: 10`, `resultBackendPoolSize: 5`, `maxClientConn: 100`) [B8].
 
 ## Estate scale table (Axis B — H rating)
 
@@ -54,4 +66,4 @@ Watch `cl_waiting` in PgBouncer stats [B6]:
 [B1–B7, A1-1–A1-4, B-S1–B-S2] Astronomer Docs — Private Cloud database architecture, connection pooling (PgBouncer): https://www.astronomer.io/docs/astro-private-cloud/v-2-x/database-architecture#connection-pooling-pgbouncer (tier 1, URL added on citation review)
 [B7] Apache Airflow Helm chart production guide (PgBouncer rationale): https://airflow.apache.org/docs/helm-chart/stable/production-guide.html (tier 2, URL added on citation review)
 [A1-4] Astronomer Docs — Kerberos database setup, PgBouncer as GSSAPI proxy: https://www.astronomer.io/docs/astro-private-cloud/v-2-x/kerberos-database-setup (tier 1, URL added on citation review)
-[B8] Astronomer Docs — Private Cloud database architecture, pool sizes (`metadataPoolSize: 10`, `resultBackendPoolSize: 5`, `maxClientConn: 100`, matching Apache Airflow Helm chart defaults): https://www.astronomer.io/docs/astro-private-cloud/v-2-x/database-architecture#pool-sizes (tier 1, added on doc-verification review — resolves the prior `NEEDS_EXEC_CHECK`)
+[B8] Astronomer Docs — Private Cloud database architecture, pool sizes (`metadataPoolSize: 10`, `resultBackendPoolSize: 5`, `maxClientConn: 100`, matching Apache Airflow Helm chart defaults): https://www.astronomer.io/docs/astro-private-cloud/v-2-x/database-architecture#pool-sizes (tier 1, confirmed via astronomer-docs verification)

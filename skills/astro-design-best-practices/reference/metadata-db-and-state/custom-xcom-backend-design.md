@@ -1,3 +1,15 @@
+---
+topic: custom-xcom-backend-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Custom XCom Backend Design
 
 AutoSys passed limited state between jobs via global variables. Airflow uses XComs (Cross-Communication) to pass data between tasks. By default, XComs are serialized and stored in the metadata database. 

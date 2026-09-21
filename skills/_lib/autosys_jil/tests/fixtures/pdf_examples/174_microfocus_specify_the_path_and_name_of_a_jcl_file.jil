@@ -1,0 +1,8 @@
+/* extracted from PDF p.2566: Specify the Path and Name of a JCL File */
+insert_job: mfjcl_job
+job_type: MICROFOCUS
+machine: mfagent
+mf_jcl_type: CONTENT
+mf_server_address_type: NAME
+mf_server: JCLDEMO
+mf_jcl_name: "C:\Program Files\Micro Focus\es-jcldemo\sleepsmp2.jcl"

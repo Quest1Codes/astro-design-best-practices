@@ -1,3 +1,16 @@
+---
+topic: api-token-service-account-lifecycle-management
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - credential_hits
+---
+
 # API Token and Service-Account Lifecycle Management
 
 AutoSys service accounts were OS-level accounts on the agent machines — managed by the enterprise LDAP/AD team. Astro's automation surface is API-token based: any CI/CD pipeline, Terraform, or external system that drives Astro does so via a scoped API token.

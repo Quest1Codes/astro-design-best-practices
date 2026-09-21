@@ -1,0 +1,11 @@
+/* extracted from PDF p.2589: Send Email Notification to Multiple Recipients When the Job Completes Successfully */
+insert_job: email_job_1
+machine: localhost
+job_type: c
+command: as_test -t 2
+send_notification:1
+notification_emailaddress: admin@example.com, admin1@example.com, admin2@example.com
+notification_emailaddress_on_success: success@example.com
+notification_emailaddress_on_terminated: terminate@example.com
+notification_msg:"email_job_1 has completed"
+notification_emailaddress_on_alarm: email_alarm

@@ -1,0 +1,8 @@
+/* extracted from PDF p.2811: Specify the Minimum File Size */
+insert_job: fw_job
+job_type: FW
+machine: unixagent
+watch_file: /tmp/watch_file.log
+watch_file_min_size: 10000
+watch_interval: 60
+watch_file_owner: owner

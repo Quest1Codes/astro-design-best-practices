@@ -1,17 +1,30 @@
-# Cross-Instance Job Dependencies → Dataset/REST-Based Cross-Deployment Dependencies
+---
+topic: cross-instance-dependencies-to-dataset-rest-patterns
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: mixed
+signals: 
+  - cross_instance
+---
+
+# Cross-Instance Job Dependencies → Asset/REST-Based Cross-Deployment Dependencies
 
 In AutoSys, cross-instance job dependencies were expressed as `CHANGE_STATUS` events sent from one instance's Event Server to a remote instance's Event Server. A job in instance `UAT` could declare a dependency on a job in instance `PRD` completing successfully — the `UAT` scheduler would wait for the remote status signal before starting the dependent job [B1].
 
-Airflow has no shared global event bus between isolated Deployments. The migration replaces this with either polling (ExternalTaskSensor) or data-driven triggering (Datasets/Assets).
+Airflow has no shared global event bus between isolated Deployments. The migration replaces this with either polling (`ExternalTaskSensor`) or data-driven triggering via Assets (formerly Datasets).
 
 ## Migration Decision: Which Pattern?
 
-The choice between `ExternalTaskSensor` and Airflow Datasets depends on what the cross-instance dependency actually represents:
+The choice between `ExternalTaskSensor` and Airflow Assets depends on what the cross-instance dependency actually represents:
 
 | Cross-Instance Dependency Type | Recommended Airflow Pattern |
 |---|---|
 | **Job B in Instance 2 must wait for Job A in Instance 1 to reach `SUCCESS`** — pure status signal | `ExternalTaskSensor` [B2] |
-| **Job B in Instance 2 must wait for data produced by Job A in Instance 1 to be available** — data readiness | Airflow Datasets (Airflow 2.4+) [B2] |
+| **Job B in Instance 2 must wait for data produced by Job A in Instance 1 to be available** — data readiness | Airflow Assets (Airflow 2.4+) [B2] |
 | **Job A in Instance 1 must actively kick off Job B in Instance 2** — push trigger | `TriggerDagRunOperator` or REST API call [B2] |
 
 ## Pattern 1: ExternalTaskSensor
@@ -31,27 +44,33 @@ wait_for_upstream_dag = ExternalTaskSensor(
 
 > **Critical gotcha**: `ExternalTaskSensor` by default requires an exact match on `execution_date`. If the upstream and downstream DAGs run on different schedules, you **must** specify `execution_delta` or `execution_date_fn` — otherwise the sensor will wait forever for a `logical_date` that never exists in the upstream DAG [B2].
 
-## Pattern 2: Airflow Datasets (Data-Centric Dependency)
+## Pattern 2: Airflow Assets (Data-Centric Dependency)
+
+> PRACTITIONER JUDGMENT: the class behind this feature was renamed to `Asset` in Airflow 3.0 (see
+> naming note in `scheduler-and-dag/cross-dag-dependencies-datasets-vs-triggerdagrun-vs-externaltasksensor.md`).
+> The import path below (`airflow.sdk`) reflects Airflow 3's Task SDK namespace convention but was
+> not re-verified against a live Airflow 3.3.1 environment this session — confirm the exact import
+> path before shipping this code.
 
 Upstream DAG signals data readiness:
 ```python
-from airflow import Dataset
+from airflow.sdk import Asset
 
-my_dataset = Dataset("s3://prod-bucket/finance/daily_output/")
+my_asset = Asset("s3://prod-bucket/finance/daily_output/")
 
-@task(outlets=[my_dataset])
+@task(outlets=[my_asset])
 def produce_output():
     # write data to S3
     ...
 ```
 
-Downstream DAG triggers on dataset update:
+Downstream DAG triggers on asset update:
 ```python
-with DAG(dag_id="downstream_consumer", schedule=[my_dataset]):
+with DAG(dag_id="downstream_consumer", schedule=[my_asset]):
     ...
 ```
 
-The downstream DAG triggers automatically when the upstream DAG marks the dataset as updated — no polling, no shared DB required [B2].
+The downstream DAG triggers automatically when the upstream DAG marks the asset as updated — no polling, no shared DB required [B2].
 
 ## Cross-Deployment Complication
 

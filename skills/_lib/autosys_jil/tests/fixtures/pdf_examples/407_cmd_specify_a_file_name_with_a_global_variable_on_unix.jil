@@ -1,0 +1,6 @@
+/* extracted from PDF p.2768: Specify a File Name with a Global Variable on UNIX */
+insert_job: unix_globalvar
+job_type: CMD
+machine: unixagent
+command: /usr/common/backup
+std_out_file: /tmp/$${Today}.out

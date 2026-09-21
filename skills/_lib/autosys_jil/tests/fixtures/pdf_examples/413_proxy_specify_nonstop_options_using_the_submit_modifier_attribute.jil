@@ -1,0 +1,8 @@
+/* extracted from PDF p.2770: Specify NonStop Options Using the submit_modifier Attribute */
+insert_job: tan_job
+job_type: PROXY
+machine: proxagent
+owner: user1@NonStop1400
+remote_target: NonStop1400
+remote_command: who
+submit_modifier: Option1="HIGHPIN ON,INSPECT ON",option2="2",option3="ABENDONABEND"

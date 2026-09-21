@@ -1,0 +1,5 @@
+/* extracted from PDF p.2403: Add a Command Job to the Database */
+insert_job: time_stamp
+machine: prod
+command: time_stamp.bat
+job_type: CMD

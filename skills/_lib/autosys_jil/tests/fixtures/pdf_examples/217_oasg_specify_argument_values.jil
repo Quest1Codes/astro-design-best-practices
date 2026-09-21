@@ -1,0 +1,12 @@
+/* extracted from PDF p.2601: Specify Argument Values */
+insert_job: oasg_args
+job_type: oasg
+machine: oaagent
+oracle_appl_name_type: DISPLAY
+oracle_appl_name: Application Object Library
+oracle_user: SYSADMIN
+oracle_resp: System Administrator
+oracle_program: FNDSCARU
+oracle_use_arg_def: Y
+oracle_args: T,,X23,,
+oracle_custom_property: prop_key=expression, prop_value=value

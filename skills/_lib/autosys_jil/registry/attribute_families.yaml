@@ -1,0 +1,192 @@
+# Hand-curated overlay merged into attributes.json by build_registry.py.
+# Two mechanisms: explicit names, then prefix rules. First match wins.
+# Also carries value_type overrides where the doc's Syntax block is not machine-inferable.
+
+explicit:
+  identity: [insert_job, update_job, delete_job, override_job, job_type, box_name, owner, permission,
+             description, application, group, job_class, priority, status, auto_delete, auto_hold,
+             run_external, elevated, interactive, ulimit, shell, avg_runtime, compatibility, encoding,
+             external_os_user, envvars, fail_codes, condition_code, auth_string, dbtype, filter, filter_type,
+             broadcast_address, mac_address, wake_password_expanded]
+  scheduling: [date_conditions, days_of_week, start_times, start_mins, run_window, run_calendar,
+               exclude_calendar, timezone, must_start_times, must_complete_times]
+  sla: [term_run_time, max_run_alarm, min_run_alarm, n_retrys, max_exit_success, success_codes,
+        retry_on_failure_count, retry_on_failure_delay, retry_on_failure_details,
+        job_terminator, box_terminator, box_success, box_failure]
+  dependency: [condition, resources, look_back]
+  load: [job_load, max_load, factor, machine]
+  alerting: [alarm_if_fail, alarm_if_terminated, alarm_if_success, send_notification, notification_msg,
+             notification_emails, notification_alarm_types, notification_id, notification_template,
+             notification_emails_expanded, service_desk, svcdesk_attr, svcdesk_desc, svcdesk_imp,
+             svcdesk_pri, svcdesk_sev]
+  io: [command, std_in_file, std_out_file, std_err_file, profile, envvar, chk_files, heartbeat_interval,
+       success_criteria, success_criteria_json, success_criteria_regex, success_criteria_value,
+       success_criteria_xpath, success_pattern, monitor_mode, poll_interval, continuous, output_var]
+  security: [os_user, user_role, wake_password, encryption_type, key_to_agent, web_user, connectionprofile]
+  file-watch: [watch_file, watch_interval, watch_file_change_type, watch_file_change_value,
+               watch_file_groupname, watch_file_min_size, watch_file_owner, watch_file_recursive,
+               watch_file_type, watch_file_win_user, watch_no_change, trigger_cond, trigger_type]
+  file-transfer: [ftp_local_name, ftp_local_user, ftp_remote_name, ftp_remote_user, ftp_server_name,
+                  ftp_server_port, ftp_transfer_direction, ftp_transfer_mode, ftp_transfer_type,
+                  ftp_delete_sourcefile, ftp_create_targetdir, ftp_target_os, ftp_rename_sourcefile,
+                  ftp_delete_sourcedir, ftp_remote_dir, ftp_encryption, ftp_ssl_type, ftp_reuse_session,
+                  ftp_compression, ftp_local_dir, ftp_ssh_auth_type, ftp_ssh_key_file]
+  db: [connect_string, sql_command, sp_name, sp_arg, tablename, monitor_type, trigger_mode,
+       db_field, db_value, sqlagent_domain_name, sqlagent_jobid, sqlagent_jobname, sqlagent_server_name,
+       sqlagent_step_name, sqlagent_target_db, sqlagent_user_name, jdbc_url, jdbc_class, results_file,
+       results_file_overwrite, result_type, spool_file, db_user, db_password]
+  web: [URL, WSDL_URL, wsdl_operation, soap_action, soap_version, ws_authentication_order, ws_conn_domain,
+        ws_conn_origin, ws_conn_user, ws_global_proxy_defaults, ws_parameter, ws_proxy_domain,
+        ws_proxy_host, ws_proxy_origin, ws_proxy_port, ws_proxy_user, ws_security, target_namespace,
+        return_class_name, return_namespace, return_xml_name, request_id, payload_uri, web_parameter,
+        persist_output_cookies, persist_output_header, persist_output_payload, preemptive_authentication,
+        http_method, http_headers, invocation_type, provider_url, destination, message_type, message_text,
+        message_file, use_topic, jndi_factory, jndi_user, jndi_password, mbean_name, attribute_name,
+        attribute_value, operation_name, operation_args, snmp_auth_protocol, snmp_comm_string,
+        snmp_context_engine_id, snmp_context_name, snmp_host, snmp_mib, snmp_oid, snmp_privacy,
+        snmp_privacy_user, snmp_subtree, snmp_table_view, snmp_value, snmp_version, reply_to]
+  os-monitor: [text_file_name, text_file_filter, text_file_filter_exists, text_file_mode, lower_boundary,
+               upper_boundary, time_format, time_position, process_name, process_status, win_service_name,
+               win_service_status, win_log_name, win_event_category, win_event_computer, win_event_datetime,
+               win_event_description, win_event_id, win_event_op, win_event_source, win_event_type,
+               cpu_usage, disk_name, disk_usage, ping_host, ping_ports, ping_timeout, monitor_filter]
+  zos: [zos_dataset, zos_dsn_renamed, zos_dsn_updated, zos_explicit_dsn, zos_ftp_direction, zos_ftp_host,
+        zos_ftp_userid, zos_jobname, zos_trigger_by, zos_trigger_on, zos_trigger_type, jcl_library,
+        member_name, submit_modifier, job_class_zos, sysout_class]
+  java: [class_name, method_name, method_args, jar_file, classpath, java_home, jvm_args, bean_name,
+         java_lookup, remote_name, remote_target, remote_command]
+  i5: [i5_command, i5_library, i5_user, i5_job_description]
+  pam: [pa_monitor_progress, pa_name, pa_parameter, pa_path, pa_trace]
+  informatica: [inf_folder, inf_workflow, inf_session, inf_parameter_file, inf_repository, inf_domain,
+                inf_integration_service, inf_os_profile]
+  hadoop: [hdfs_command, hdfs_path, hive_script, hive_query, pig_script, oozie_job_properties,
+           oozie_url, sqoop_command]
+
+prefixes:
+  informatica_: informatica
+  j2ee_: web
+  mf_: platform-microfocus
+  ip_: os-monitor
+  header: web
+  input_cookies: web
+  hadoop_: hadoop
+  hive_: hadoop
+  pig_: hadoop
+  oozie_: hadoop
+  sqoop_: hadoop
+  bdc_: erp-sap
+  arc_: erp-sap
+  blob_: io
+  connection_: web
+  destination_: file-transfer
+  finder_: java
+  create_: java
+  form_: pam
+  disk_: os-monitor
+  cpu_: os-monitor
+  ping_: os-monitor
+  process_: os-monitor
+  monitor_: os-monitor
+  event_: web
+  jndi_: web
+  mbean_: web
+  attribute_: web
+  operation_: web
+  message_: web
+  soap_: web
+  wsdl_: web
+  return_: web
+  payload_: web
+  persist_: web
+  ejb_: java
+  method_: java
+  class_: java
+  jvm_: java
+  jar_: java
+  java_: java
+  ext_: erp-oracle
+  request_: erp-oracle
+  responsibility_: erp-oracle
+  jcl_: zos
+  member_: zos
+  sysout_: zos
+  text_: os-monitor
+  file_: file-watch
+  spool_: db
+  results_: db
+  sql_: db
+  db_: db
+  jdbc_: db
+  sp_: db
+  trigger_: file-watch
+  sap_: erp-sap
+  arc_obj_: erp-sap
+  ps_: erp-ps
+  oracle_: erp-oracle
+  oa_: erp-oracle
+  scp_: file-transfer
+  ftp_: file-transfer
+  ws_: web
+  snmp_: web
+  win_: os-monitor
+  text_file_: os-monitor
+  watch_file: file-watch
+  zos_: zos
+  sqlagent_: db
+  svcdesk_: alerting
+  notification_: alerting
+  pa_: pam
+  inf_: informatica
+  i5_: i5
+  jmx_: web
+  jms_: web
+  http_: web
+  success_criteria: io
+  retry_on_failure_: sla
+
+# value_type overrides (parser normalisation). Anything not listed is inferred
+# from the doc's Syntax/Default/Limits blocks or defaults to "str".
+value_types:
+  days_of_week: list
+  start_times: hhmm_list
+  must_start_times: hhmm_list
+  must_complete_times: hhmm_list
+  start_mins: int_list
+  run_window: time_range
+  job_load: int
+  priority: int
+  n_retrys: int
+  max_exit_success: int
+  term_run_time: int
+  max_run_alarm: int
+  min_run_alarm: int
+  watch_interval: int
+  watch_file_min_size: int
+  heartbeat_interval: int
+  poll_interval: int
+  retry_on_failure_count: int
+  retry_on_failure_delay: int
+  date_conditions: bool
+  alarm_if_fail: bool
+  alarm_if_terminated: bool
+  alarm_if_success: bool
+  box_terminator: bool
+  job_terminator: bool
+  auto_hold: bool
+  auto_delete: int
+  run_external: bool
+  send_notification: bool
+  watch_no_change: bool
+  watch_file_recursive: bool
+  interactive: bool
+  elevated: bool
+  continuous: bool
+  condition: condition
+  envvar: repeatable
+  resources: resources
+  machine: machine_list
+  permission: permission
+  owner: owner
+  success_codes: int_list
+  notification_emails: csv_list
+  timezone: str

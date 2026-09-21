@@ -1,3 +1,15 @@
+---
+topic: legacy-server-access-via-sshoperator
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Legacy-Server Access via SSHOperator
 
 AutoSys handled "this job must run on that specific host" via `machine:` — a named agent process on a specific box. Some AutoSys jobs genuinely need that forever: a command that only exists on a legacy/vendor appliance, a mainframe-adjacent gateway box, or a server a specific team owns and won't containerize. For those, Astro doesn't run the work itself — it reaches out and runs a command on the remote host, the same way a person would over `ssh`.
@@ -18,7 +30,7 @@ SSH access to a fixed legacy host is architecturally identical to any other cred
 | Connection identity | One `ssh_conn_id` per target host, named for the host/purpose (not shared across unrelated legacy servers), mirroring how AutoSys `machine:` assignment was explicit and auditable per job. |
 | Key rotation | Same rotation discipline as any other Secrets-Backend-held credential — see `reference/config-and-secrets/secret-rotation-strategy.md`. |
 
-`NEEDS_EXEC_CHECK`: the exact field layout Airflow's SSH connection type expects in the Astro UI/Connection form (host, port, username, and whether the private key is supplied as key content vs. a key-file path) should be confirmed against the current `apache-airflow-providers-ssh` connection docs on the target Astro Runtime version before scripting connection creation via Terraform/CLI — this file states the *architectural* pattern (Secrets-Backend-resolved Connection), not the exact form-field names.
+`NEEDS_EXEC_CHECK`: the exact field layout Airflow's SSH connection type expects in the Astro UI/Connection form (host, port, username, and whether the private key is supplied as key content vs. a key-file path) is not covered by astronomer-docs (it's `apache-airflow-providers-ssh`-specific, upstream provider documentation, not indexed by this MCP server) — confirm against the current `apache-airflow-providers-ssh` connection docs on the target Astro Runtime version before scripting connection creation via Terraform/CLI. This file states the *architectural* pattern (Secrets-Backend-resolved Connection), not the exact form-field names.
 
 ## When SSHOperator is the right migration answer — and when it's a smell
 

@@ -1,0 +1,12 @@
+job,run_num,ntry,start,end,status,exit_code,machine
+nightly_extract,101,1,09/01/2026 01:00:05,09/01/2026 01:04:12,SUCCESS,0,winapp01
+nightly_extract,102,1,09/02/2026 01:00:03,09/02/2026 01:04:40,SUCCESS,0,winapp01
+nightly_extract,103,1,09/03/2026 01:00:04,09/03/2026 01:22:31,SUCCESS,0,winapp01
+nightly_extract,104,1,09/04/2026 01:00:02,09/04/2026 01:03:58,FAILURE,1,winapp01
+nightly_extract,104,2,09/04/2026 01:10:02,09/04/2026 01:14:20,SUCCESS,0,winapp01
+build_report,201,1,09/01/2026 01:05:00,09/01/2026 01:09:00,SUCCESS,0,winapp01
+build_report,202,1,09/02/2026 01:05:00,09/02/2026 01:09:10,SUCCESS,0,winapp01
+build_report,203,1,09/03/2026 01:23:00,09/03/2026 01:27:45,SUCCESS,0,winapp01
+build_report,204,1,09/04/2026 01:15:00,09/04/2026 01:19:02,SUCCESS,0,winapp01
+monthly_close,301,1,08/31/2026 23:00:00,09/01/2026 00:45:12,SUCCESS,0,fin-app01
+monthly_close,302,1,09/30/2026 23:00:00,10/01/2026 01:10:44,SUCCESS,0,fin-app01

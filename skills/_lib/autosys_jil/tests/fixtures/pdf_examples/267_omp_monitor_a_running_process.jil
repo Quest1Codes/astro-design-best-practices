@@ -1,0 +1,7 @@
+/* extracted from PDF p.2651: Monitor a Running Process */
+insert_job: omp_unix
+job_type: OMP
+machine: unixagt
+process_name: 2568
+process_status: RUNNING
+monitor_mode: WAIT

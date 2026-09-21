@@ -1,0 +1,10 @@
+/* extracted from PDF p.2822: Monitor for an Increase in File Size to a Certain Amount with an Unchanged Condition */
+insert_job: ft_unix_nochange
+job_type: FT
+machine: unixagt
+watch_file: /research/analysis
+watch_file_type: EXPAND
+watch_file_change_type: SIZE
+watch_file_change_value: 1
+watch_no_change: 120
+web_parameter: xsd\:type=value | payload_job=job_name[, xsd\:type=value |

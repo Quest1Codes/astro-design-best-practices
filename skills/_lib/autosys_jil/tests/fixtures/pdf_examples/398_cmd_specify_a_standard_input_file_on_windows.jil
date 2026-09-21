@@ -1,0 +1,6 @@
+/* extracted from PDF p.2765: Specify a Standard Input File on Windows */
+insert_job: win_stdin
+job_type: CMD
+machine: winagent
+command: “C:\COMMON\Backup”
+std_in_file: "C:\tmp\TEST.IN"

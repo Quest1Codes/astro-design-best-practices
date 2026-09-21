@@ -1,0 +1,11 @@
+/* extracted from PDF p.2787: Monitor an i5/OS Text File for a String in the First 20 Lines of the File */
+insert_job: omtf_i5os_line
+job_type: OMTF
+machine: i5agt
+text_file_name: /QSYS.LIB/LIBRARY.LIB/RESULTS.FILE/DATA.MBR
+text_file_filter: Create file failed
+text_file_mode: LINE
+lower_boundary: 1
+upper_boundary: 20
+monitor_mode: now
+text_file_name: file_name

@@ -1,3 +1,15 @@
+---
+topic: dynamic-task-mapping-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Dynamic Task Mapping Design
 
 The internal reference file `global-variables-and-templating.md` already classifies this translation as **REDESIGN**, not a mechanical mapping: an AutoSys "template" job cloned N times at runtime (via `sendevent`/scripted `jil` generation) has no line-by-line Airflow equivalent — the cloning logic has to be reconstructed as a mapping input [P1]. This file is that reconstruction's design guidance.
@@ -25,4 +37,4 @@ Do not attempt to preserve the *mechanics* of AutoSys's cloning (e.g., literally
 
 - [F1] Apache Airflow docs — Dynamic Task Mapping (overview, replaces manual for-loop): https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/dynamic-task-mapping.html (tier 2)
 - [F2] Apache Airflow docs — Dynamic Task Mapping (`partial()`/`expand()` mechanics): same as F1 (tier 2)
-- [P1] Project-internal — `skills/migrating-autosys-to-astronomer/reference/global-variables-and-templating.md` (runtime job templating → REDESIGN classification)
+- [P1] Project-internal — `skills/migrate-jil-to-airflow-translation/reference/global-variables-and-templating.md` (runtime job templating → REDESIGN classification)

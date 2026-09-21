@@ -1,0 +1,4 @@
+/* extracted from PDF p.2682: Define a Global Resource on a Box Job */
+insert_job: box1_resource_Y
+job_type:box
+resources: (glb_resource1,QUANTITY=1,FREE=Y)

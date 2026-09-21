@@ -1,10 +1,22 @@
+---
+topic: backup-cadence-and-rto-rpo-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Backup Cadence and RTO/RPO Design
 
 RTO/RPO targets and backup responsibilities differ significantly between **Astro Cloud** (managed SaaS) and **Astro Private Cloud** (self-hosted). This is a critical distinction: teams migrating from AutoSys must understand where platform-managed vs. customer-managed responsibility begins.
 
 ## Astro Cloud (Managed SaaS)
 
-On Astro's managed platform with the cross-region DR feature enabled. **Requires the Enterprise Business Critical tier and a dedicated cluster** — this is a hard gate, not available on shared clusters or lower tiers, and an earlier draft of this file didn't state that constraint [B4]. The feature is also currently documented as **Preview** as of its most recent release notes; confirm current GA status before treating these targets as a committed SLA [B5]:
+On Astro's managed platform with the cross-region DR feature enabled. **Requires the Enterprise Business Critical tier and a dedicated cluster** — this is a hard gate, not available on shared clusters or lower tiers [B4]. The feature is now **Generally Available** for AWS, Azure, and GCP dedicated clusters (it started in Preview per the March 11 2026 release notes, then GA'd progressively through 2026) — these targets can be treated as a committed SLA for qualifying tiers/clusters [B5]:
 
 | Metric | Target |
 |---|---|
@@ -45,4 +57,4 @@ On self-hosted Astronomer Software, the customer is fully responsible for backup
 [B2] Astronomer Docs — Prepare for disaster recovery, Task Logs Replication SLA: https://www.astronomer.io/docs/astro/disaster-recovery-prepare#task-logs-replication-sla (tier 1, URL added on citation review)
 [B3] Astronomer Docs — Astronomer Software disaster recovery (Velero-based backup/restore recommendation): https://www.astronomer.io/docs/astro-private-cloud/v-0-37/disaster-recovery (tier 1, URL added on citation review)
 [B4] Astronomer Docs — Disaster recovery (Enterprise Business Critical tier requirement, dedicated clusters only): https://www.astronomer.io/docs/astro/disaster-recovery (tier 1, added on doc-verification review)
-[B5] Astronomer Docs — Release notes, March 11 2026 (cross-region DR documented as Preview): https://www.astronomer.io/docs/astro/release-notes#march-11-2026 (tier 1, added on doc-verification review)
+[B5] Astronomer Docs — Release notes, March 11 2026 (cross-region DR entered Preview) and subsequent GA release notes (AWS April 21 2026, GCP July 29 2026): https://www.astronomer.io/docs/astro/release-notes and https://www.astronomer.io/docs/astro/disaster-recovery (tier 1, GA status confirmed via astronomer-docs verification)

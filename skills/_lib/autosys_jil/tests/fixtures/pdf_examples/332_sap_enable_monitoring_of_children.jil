@@ -1,0 +1,7 @@
+/* extracted from PDF p.2702: Enable Monitoring of Children */
+insert_job: SAPTEST
+job_type: SAP
+machine: SAPHTAGENT
+sap_mon_child: Y
+sap_job_name: SAP_JOB
+sap_step_parms: abap_name=ZCHILDJOB1

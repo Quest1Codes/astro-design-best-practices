@@ -1,3 +1,15 @@
+---
+topic: training-enablement-for-autosys-ops-staff
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Training and Enablement Design for AutoSys Ops Staff
 
 AutoSys operators and admins have deep expertise in JIL, box job semantics, calendar scheduling, and event rules — but almost no exposure to Python, Git, or Kubernetes. A training program that ignores this starting point and jumps straight to "Airflow concepts" will lose people. The curriculum must explicitly map the known mental model to the new one.

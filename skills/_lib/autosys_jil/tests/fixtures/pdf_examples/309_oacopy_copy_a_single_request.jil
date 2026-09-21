@@ -1,0 +1,7 @@
+/* extracted from PDF p.2681: Copy a Single Request */
+insert_job: oacopy_single
+job_type: oacopy
+machine: oaagent
+request_id: 2255470
+oracle_user: SYSADMIN
+oracle_resp: System Administrator

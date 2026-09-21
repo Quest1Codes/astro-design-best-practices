@@ -1,0 +1,14 @@
+/* extracted from PDF p.2740: Specify a Context Engine ID in an SNMP Value Set Job */
+insert_job: setvarv3
+job_type: SNMPSET
+machine: snmpagent
+snmp_mib: cybermation.mib
+snmp_host: host.example.com
+snmp_oid: out456789
+snmp_version: 3
+snmp_context_name: contxtname
+snmp_context_engine_id: 8000000006
+snmp_privacy: AES
+snmp_privacy_user: user1
+snmp_auth_protocol: MD5
+snmp_value: int=8

@@ -1,3 +1,15 @@
+---
+topic: legacy-job-deprecation-process
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Legacy-Job Deprecation Process During Migration
 
 Decommissioning AutoSys jobs is as important as building Airflow DAGs. Jobs left running in AutoSys after their Airflow equivalent is live create confusion, consume licenses, and can cause data duplication. A formal deprecation process prevents "zombie jobs" from lingering indefinitely.

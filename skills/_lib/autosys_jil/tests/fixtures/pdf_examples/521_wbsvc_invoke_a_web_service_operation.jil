@@ -1,0 +1,18 @@
+/* extracted from PDF p.2847: Invoke a Web Service Operation */
+insert_job: quote
+job_type: WBSVC
+machine: localhost
+owner: ejmcommander
+max_run_alarm: 0
+alarm_if_fail: y
+send_notification: n
+wsdl_url: "http://host:8080/axis/services/StockQuote?wsdl"
+target_namespace: "http://ws.ca.com"
+service_name: StockQuoteService
+port_name: StockQuote
+wsdl_operation: GetQuote
+endpoint_url: "http://host:8080/axis/services/StockQuote"
+web_parameter: "xsd:string=CA"
+one_way: false
+WSDL_URL: wsdl_url
+Limits: Up to 256 characters (Web Service RPC/Encoded) and up to 2048 characters (Web Service Document/

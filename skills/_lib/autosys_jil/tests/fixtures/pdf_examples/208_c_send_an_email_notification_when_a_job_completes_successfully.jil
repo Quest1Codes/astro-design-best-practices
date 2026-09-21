@@ -1,0 +1,9 @@
+/* extracted from PDF p.2592: Send an Email Notification When a Job Completes Successfully */
+insert_job: email_job_2
+machine: localhost
+job_type: c
+command: as_test -t 2
+send_notification:y
+notification_template: emailtemplate2
+notification_emailaddress_on_success:admin@example.com
+notification_emailaddress_on_terminated: email_terminate

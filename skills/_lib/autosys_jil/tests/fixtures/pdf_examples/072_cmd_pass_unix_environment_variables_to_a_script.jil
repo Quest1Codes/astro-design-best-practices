@@ -1,0 +1,8 @@
+/* extracted from PDF p.2470: Pass UNIX Environment Variables to a Script */
+insert_job: unix_job
+job_type: CMD
+machine: unixprod
+command: /home/scripts/pay
+envvars: NAME="user 1"
+envvars: JOB=PAYROLL
+envvars: PWD=/usr/scripts/dailyrun

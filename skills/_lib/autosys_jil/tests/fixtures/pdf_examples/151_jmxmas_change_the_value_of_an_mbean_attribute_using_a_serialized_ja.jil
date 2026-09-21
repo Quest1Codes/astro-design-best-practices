@@ -1,0 +1,9 @@
+/* extracted from PDF p.2544: Change the Value of an MBean Attribute Using a Serialized Java Object */
+insert_job: change
+job_type: JMXMAS
+machine: appagent
+URL: "service:jmx:rmi:///jndi/rmi://agenttest:5099/jmxserver"
+mbean_name: "DefaultDomain:index=1,type=cdc.jmx.SimpleDynamic"
+mbean_attr: State
+jmx_parameter: payload_job=size
+condition: success(size)

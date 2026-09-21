@@ -1,3 +1,15 @@
+---
+topic: metadata-retention-and-cleanup-policy
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Metadata Retention and Cleanup Policy
 
 AutoSys stored job history in the Event Server RDBMS — typically managed by a DBA team with standard RDBMS retention policies set outside AutoSys. Airflow's metadata DB has no equivalent built-in purge mechanism: it accumulates historical `dag_run`, `task_instance`, `log`, `xcom`, and related records indefinitely unless an explicit retention policy is designed [B1].
@@ -56,7 +68,7 @@ Monitor these tables' row counts and disk usage on a recurring schedule (weekly 
 
 | Deployment model | Recommended cleanup mechanism |
 |---|---|
-| **Astronomer Software (self-managed)** | Configure automated CronJob via `astronomer.houston.cleanupAirflowDb` in `values.yaml` [A1-1] *(verify key name against current version — `NEEDS_EXEC_CHECK`)* |
+| **Astronomer Software (self-managed)** | Configure automated CronJob via `astronomer.houston.cleanupAirflowDb` in `values.yaml` [A1-1] *(key name confirmed against current docs)* |
 | **Astro Hosted** | Build a maintenance DAG using an Airflow plugin that exposes `airflow db clean`; tasks in Airflow 3 cannot access the DB directly [A1-2][B9] |
 
 ## Estate scale table (Axis B — H rating)

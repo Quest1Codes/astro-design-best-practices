@@ -1,0 +1,11 @@
+/* extracted from PDF p.2507: Run a Command on an i5/OS System */
+insert_job: i5job_displib
+job_type: I5
+machine: i5agent
+i5_action: COMMAND
+i5_name: DSPLIBL
+i5_lib: *LIBL
+i5_curr_lib: AGTLIB
+i5_job_name: PAYJOBA
+i5_job_desc: PRDLIB/PRDOPR
+i5_job_queue: ABCSYS/PAYROLL

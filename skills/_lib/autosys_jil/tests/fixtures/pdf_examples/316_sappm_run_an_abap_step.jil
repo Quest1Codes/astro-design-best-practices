@@ -1,0 +1,7 @@
+/* extracted from PDF p.2692: Run an ABAP Step */
+insert_job: SAPPM_JOB
+job_type: SAPPM
+machine: SAPAGENT
+sap_process_status: RUNNING
+sap_abap_name: RSPARAM
+sap_chain_id: process_chain

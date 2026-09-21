@@ -1,0 +1,8 @@
+/* extracted from PDF p.2701: Specify an SAP Language */
+insert_job: SAPBWPC3
+job_type: SAPBWPC
+machine: sapagent
+owner: WAAESAP@sapagent
+sap_chain_id: DEMO_CHAIN1
+sap_lang: EN
+sap_rfc_dest: SM1

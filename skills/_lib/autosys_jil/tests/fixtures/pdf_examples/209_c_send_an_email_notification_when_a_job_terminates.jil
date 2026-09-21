@@ -1,0 +1,11 @@
+/* extracted from PDF p.2593: Send an Email Notification when a Job Terminates */
+insert_job: email_job_2
+machine: localhost
+job_type: c
+command: as_test -t 2
+send_notification: y
+notification_template: emailtemplate2
+notification_emailaddress_on_terminated:admin@example.com
+notification_msg: value
+Limits: Up to 255 alphanumeric characters
+Example: "The server appears to be down."

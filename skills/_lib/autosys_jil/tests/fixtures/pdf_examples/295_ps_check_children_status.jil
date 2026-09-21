@@ -1,0 +1,9 @@
+/* extracted from PDF p.2672: Check Children Status */
+insert_job: ps_children
+job_type: ps
+machine: psagt
+ps_process_name: AEMINITEST
+ps_process_type: Application Engine
+owner: VP1@server01
+ps_run_cntrl_id: HDL8010.*
+ps_run_control_table: control_table

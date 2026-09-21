@@ -1,0 +1,8 @@
+/* extracted from PDF p.2773: Define a More Complex Success Criteria */
+insert_job: QRY2
+job_type: SQL
+machine: DB_agent
+sql_command: SELECT ID FROM Proc_List WHERE Orders > 30
+success_criteria: ID=\w{2,4}
+connect_string: "jdbc:db2://172.31.255.255:50000/SAMPLE"
+destination_file: /export/home/user1/log/qry2.txt

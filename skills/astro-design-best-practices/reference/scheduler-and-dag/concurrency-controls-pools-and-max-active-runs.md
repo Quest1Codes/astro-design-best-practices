@@ -1,3 +1,16 @@
+---
+topic: concurrency-controls-pools-and-max-active-runs
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - job_load_present
+---
+
 # Concurrency Controls — Pools and `max_active_runs`
 
 This is the Airflow-side mechanics companion to the AutoSys-side concepts covered in the `machine-load-and-virtual-resources` cluster (`max_load`/`job_load`/virtual resources) — this file covers what Airflow actually gives you to implement those concepts with.

@@ -1,0 +1,8 @@
+/* extracted from PDF p.2678: Specify a Target System */
+insert_job: ls_cmd
+job_type: PROXY
+machine: proxyagent
+remote_target: hpserver
+remote_command: ls
+spool_file: >>/opt/rootdev/CA_USER/test/ls.out
+owner: user1@proxytest

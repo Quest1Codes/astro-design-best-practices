@@ -1,0 +1,9 @@
+/* extracted from PDF p.2702: Save Outgoing Mail to the SAPoffice Outbox */
+insert_job: SAPTEST
+job_type: SAP
+machine: SAPAGENT
+sap_job_name: SAP_JOB
+sap_step_parms: abap_name=RSPARAM, step_user=J01PRO
+sap_recipients: recipient=SU,rcp_type=SU
+sap_office: Y
+sap_print_parms: dest=value[,keyword=value...]

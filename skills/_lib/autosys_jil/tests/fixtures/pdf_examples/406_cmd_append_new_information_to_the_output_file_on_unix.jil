@@ -1,0 +1,6 @@
+/* extracted from PDF p.2768: Append New Information to the Output File on UNIX */
+insert_job: unix_appendout
+job_type: CMD
+machine: unixagent
+command: /usr/common/backup
+std_out_file: >>/tmp/test.out

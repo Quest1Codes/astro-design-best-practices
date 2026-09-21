@@ -1,0 +1,14 @@
+/* extracted from PDF p.2478: Send FTP Commands to an FTP Server */
+insert_job: CYBJK.FTP
+job_type: FTP
+machine: ftpagent
+ftp_server_name: ftp.ca.com
+ftp_server_port: 21
+ftp_transfer_direction: DOWNLOAD
+ftp_transfer_type: B
+ftp_compression: 8
+ftp_remote_name: /pub/cazip.exe
+ftp_local_name: /tmp/bla
+ftp_command: locsite blksize=FB
+ftp_command: locsite automount
+owner: user1@ftp.ca.com

@@ -1,0 +1,7 @@
+/* extracted from PDF p.2850: Monitor When a Data Set is Updated */
+insert_job: test_ZOSDST_Upd
+job_type: ZOSDST
+machine: zosagent
+owner: user1@ca11
+zos_dsn_updated: Y
+zos_dataset: CYB2.DA.DSTRIG1

@@ -1,0 +1,11 @@
+/* extracted from PDF p.2829: Monitor an Application Event Log for Info Events */
+insert_job: eventlog_job
+job_type: OMEL
+machine: monagt
+win_log_name: Application
+win_event_type: INFO
+win_event_category: None
+win_event_source: Userenv
+win_event_computer: LLUSER
+win_event_id: 1000
+win_event_op: EQ

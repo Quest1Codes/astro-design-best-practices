@@ -1,0 +1,9 @@
+/* extracted from PDF p.2810: Monitor for an Increase in File Size by a Certain Percentage */
+insert_job: ft_win_percent
+job_type: FT
+machine: unixagt
+watch_file: /amount/test
+watch_file_type: EXPAND
+watch_file_change_type: PERCENT
+watch_file_change_value: 90
+watch_file_groupname: group

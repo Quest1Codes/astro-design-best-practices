@@ -1,0 +1,7 @@
+/* extracted from PDF p.2649: Monitor Multiple Instances */
+insert_job: mon_sql_server_instance1
+job_type: OMP
+machine: mssqlserver
+process_name: "C:\Program Files\Microsoft SQL Server\MSSQL.1\MSSQL\Binn\sqlservr.exe"
+process_status: stopped
+monitor_mode: wait

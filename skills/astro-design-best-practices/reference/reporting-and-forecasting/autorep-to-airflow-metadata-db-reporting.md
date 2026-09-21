@@ -1,3 +1,15 @@
+---
+topic: autorep-to-airflow-metadata-db-reporting
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # autorep Ad-Hoc Reporting Query Patterns → Airflow Metadata-DB Reporting Design
 
 `autorep` is AutoSys's primary read-only reporting CLI. It queries the AutoSys Event Server (database) and produces formatted text reports about jobs, machines, calendars, and global variables [B1]. It is the tool that operations teams use for ad-hoc operational queries — the equivalent of what you'd do with SQL against the Airflow metadata DB.

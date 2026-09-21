@@ -1,0 +1,6 @@
+/* extracted from PDF p.2420: Create an Input Job Blob */
+insert_job: test_blob
+job_type: CMD
+command: cat
+machine: unixagent
+blob_input: <auto_blobt>multi-lined text data for job blob

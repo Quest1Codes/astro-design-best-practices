@@ -1,0 +1,9 @@
+/* extracted from PDF p.2511: Specify the Library Name and Job Queue for an i5/OS Job */
+insert_job: i5job_lib
+job_type: I5
+machine: i5agent
+i5_action: RUN_PROGRAM
+i5_name: PAYLOAD
+i5_curr_lib: PAY1
+i5_job_queue: /QYS.LIB/QBASE.LIB/JQUEUE.JOBQ
+i5_lda: "data" | X'hh...'

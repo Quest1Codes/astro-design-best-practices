@@ -1,0 +1,10 @@
+/* extracted from PDF p.2469: Specify the Target Endpoint Address URL for a Process Automation Job */
+insert_job: execproc
+job_type: PAPROC
+machine: localhost
+endpoint_URL: "http://capamach:8080/itpam/soap"
+pa_name: "/CAWAAE/Test Process"
+owner: pamadmin@capamach
+pa_monitor_progress: Y
+pa_parameter: Name="strTestName", Value="PA Test"
+envvars: parm_name=parm_value[, parm_name=parm_value...]

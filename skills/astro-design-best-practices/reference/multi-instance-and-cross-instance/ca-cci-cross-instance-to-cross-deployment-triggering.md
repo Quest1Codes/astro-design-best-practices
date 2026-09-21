@@ -1,3 +1,17 @@
+---
+topic: ca-cci-cross-instance-to-cross-deployment-triggering
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - cross_instance
+  - multi_instance
+---
+
 # CA CCI Cross-Instance/Cross-Platform Event Architecture → Astro Cross-Deployment Triggering
 
 AutoSys used **CAICCI (CA Common Communications Interface)** as the transport layer for cross-instance and cross-platform event communication. A job in the `PRD` instance could trigger or depend on a job in the `UAT` instance via CAICCI-routed `sendevent` commands. The receiving instance's Application Server processed the incoming event and updated its own Event Server database [B1].
@@ -36,12 +50,12 @@ trigger_downstream = SimpleHttpOperator(
 )
 ```
 
-### Pattern 2: Airflow Assets/Datasets (Preferred for Data Dependency)
+### Pattern 2: Airflow Assets (formerly Datasets) (Preferred for Data Dependency)
 
-If the cross-Deployment dependency is really about data readiness (not just job status), use Airflow Datasets. An upstream DAG publishes to a dataset outlet; a downstream DAG is scheduled to trigger when that dataset is updated [B2]. This is the modern replacement for event-based `CHANGE_STATUS` signaling.
+If the cross-Deployment dependency is really about data readiness (not just job status), use Airflow Assets. An upstream DAG publishes to an asset outlet; a downstream DAG is scheduled to trigger when that asset is updated [B2]. This is the modern replacement for event-based `CHANGE_STATUS` signaling.
 
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — CAICCI architecture, cross-instance `sendevent`, Application Server event routing (accessed 2026-08-11)
 [B2] Astronomer Docs — Airflow API on Astro (Airflow 3 uses the `/api/v2/` REST API): https://www.astronomer.io/docs/astro/airflow-api (tier 1, added on doc-verification review). **Correction**: this file's REST paths were originally `/api/v1/` throughout (`{syn}` note, table row, and the Pattern 1 code example) — corrected to `/api/v2/` above. Confirm the target Deployment's actual Airflow major version before relying on this path; Airflow 2.x Deployments still use `/api/v1/`.
-[B3] Astronomer Learn — Implement cross-DAG dependencies (`ExternalTaskSensor`, `TriggerDagRunOperator`, Airflow Datasets/Assets as cross-DAG dependency mechanisms): https://www.astronomer.io/docs/learn/cross-dag-dependencies#implement-cross-dag-dependencies (tier 1, added on doc-verification review)
+[B3] Astronomer Learn — Implement cross-DAG dependencies (`ExternalTaskSensor`, `TriggerDagRunOperator`, Airflow Assets as cross-DAG dependency mechanisms): https://www.astronomer.io/docs/learn/cross-dag-dependencies#implement-cross-dag-dependencies (tier 1, added on doc-verification review)

@@ -1,0 +1,12 @@
+/* extracted from PDF p.2540: Specify a JNDI User ID in a JMS Publish Job */
+insert_job: publish
+job_type: JMSPUB
+machine: appagent
+initial_context_factory: com.ibm.websphere.naming.WsnInitialContextFactory
+provider_url: "iiop://172.24.0.0:2809"
+connection_factory: ConnectionFactory
+destination_name: Queue
+use_topic: FALSE
+message_class: String
+j2ee_user: cyberuser@host
+j2ee_parameter: java.lang.String="this is my message"

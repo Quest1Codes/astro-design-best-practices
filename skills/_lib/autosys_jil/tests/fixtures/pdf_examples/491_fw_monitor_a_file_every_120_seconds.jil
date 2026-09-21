@@ -1,0 +1,7 @@
+/* extracted from PDF p.2821: Monitor a File Every 120 Seconds */
+insert_job: fw_job
+job_type: FW
+machine: winagent
+watch_file: “c:\tmp\watch_file.log”
+watch_file_min_size: 10000
+watch_interval: 90

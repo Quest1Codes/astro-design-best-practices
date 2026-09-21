@@ -1,0 +1,11 @@
+/* extracted from PDF p.2454: Specify Create Parameter to Access a Stateful Session Bean */
+insert_job: addbook
+job_type: SESSBEAN
+machine: appagent
+initial_context_factory: com.ibm.websphere.naming.WsnInitialContextFactory
+provider_url: "iiop://172.24.0.0:2809"
+bean_name: Shoppingcart
+create_method: createaddbook
+method_name: addbook
+create_parameter: String="ISBN"
+j2ee_parameter: Integer[2]="1551929120,1582701709"

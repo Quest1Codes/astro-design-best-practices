@@ -1,3 +1,16 @@
+---
+topic: sap-application-job-to-airflow-sap-provider
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - erp_sap
+---
+
 # SAP Application Job Agent Migration → Airflow SAP Provider/Operator Design
 
 AutoSys's SAP Application Job type is a native agent that submits ABAP background jobs directly to SAP without requiring a wrapper script. The AutoSys agent communicates with SAP via RFC (Remote Function Call) to trigger ABAP programs, function modules, or variants [B1].

@@ -1,0 +1,10 @@
+/* extracted from PDF p.2583: Specify Relative Must Start Times With start_mins */
+insert_job: test_must_start_complete
+job_type: CMD
+machine: localhost
+command: /opt/StartTransactions.sh
+date_conditions: y
+days_of_week: all
+start_mins: 10, 20, 30, 40, 50, 00
+must_start_times: +2
+must_complete_times: +7

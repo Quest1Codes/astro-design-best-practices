@@ -1,0 +1,11 @@
+/* extracted from PDF p.2523: Specify Initial Context Factory for a WebSphere Application Server */
+insert_job: reverse
+job_type: SESSBEAN
+machine: appagent
+initial_context_factory: com.ibm.websphere.naming.WsnInitialContextFactory
+provider_url: "corbaloc:iiop://172.24.0.0:2809"
+bean_name: CybEJBTestBean
+method_name: reverse
+destination_file: "C:\Makapt15"
+j2ee_user: cyberuser
+j2ee_parameter: java.lang.String="a23"

@@ -1,0 +1,70 @@
+# Workflow definitions for autosys_jil.status -- ONE state machine for every manifest kind
+# [skills/docs/REFACTOR-FILE-SPEC.md §1.12]. Order in `states` is display order only; advancing
+# does not have to be sequential (unchanged semantics from the four legacy status.py copies --
+# the only hard rules are: a `deferred_states` entry requires a --note/--reason, and `summary`/
+# `gate` fail while any unit sits in a non-terminal state).
+#
+# `unit_scope` is documentation only (which kind of record a unit-id names).
+# `repeatable` states may be advanced into more than once; status.py tracks a `cycle` counter
+# for those (used by the `cutover` workflow's parity-1..parity-N cycles).
+
+assessment:
+  unit_scope: estate
+  states: [collected, parsed, scored, architected, reported]
+  terminal: [reported]
+  deferred_states: []
+  repeatable: []
+
+translation:
+  unit_scope: job_or_box
+  states: [pending, translate, fix-import, fix-lint, fix-tests, verify-parity, complete, deferred]
+  terminal: [complete, deferred]
+  deferred_states: [deferred]
+  repeatable: []
+
+topology:
+  unit_scope: machine_group
+  states: [pending, assessed, planned, piloted, migrating, cutover, complete, deferred]
+  terminal: [complete, deferred]
+  deferred_states: [deferred]
+  repeatable: []
+
+k8s-parity:
+  # Real shape established by migrate-topology-k8s/scripts/k8s_parity_scan.py + its legacy
+  # status.py (pre-_lib): state and disposition are two independent dimensions -- an item can
+  # be classified (disposition recorded) long before it is actually planned/piloted. `advance`
+  # accepts an optional disposition; `completeness` flags any unit past the initial state with
+  # no disposition recorded yet, same discipline as the legacy tool's
+  # "ADVANCED WITHOUT A RECORDED DISPOSITION" check.
+  unit_scope: checklist_row
+  states: [pending, classified, planned, piloted, complete, deferred]
+  terminal: [complete, deferred]
+  deferred_states: [deferred]
+  dispositions: [direct-port, needs-translation, superseded]
+  repeatable: []
+
+boundary:
+  # Real shape established by migrate-topology-mainframe-boundary/scripts/status.py (pre-_lib).
+  unit_scope: job
+  states: [flagged, confirmed, translate, trial, validating, complete, not-a-boundary-job, deferred]
+  terminal: [complete, not-a-boundary-job, deferred]
+  deferred_states: [deferred]
+  repeatable: []
+
+cutover:
+  unit_scope: box
+  states: [shadow, parity, go, cut, observed, decommissioned, rolled-back]
+  terminal: [decommissioned, rolled-back]
+  deferred_states: [rolled-back]
+  repeatable: [parity]
+
+platform:
+  # migrate-astro-platform-buildout's validation gate (spec §7.5 Phase 8: gates P1-P6).
+  # unit_scope is the platform component being validated (identity, secrets, cicd,
+  # observability, worker-queue, ...) -- unlike other workflows this one usually has few units
+  # per engagement (one per component category), not one per job/box.
+  unit_scope: platform_component
+  states: [pending, provisioned, identity, secrets, pipelines, observability, validated, deferred]
+  terminal: [validated, deferred]
+  deferred_states: [deferred]
+  repeatable: []

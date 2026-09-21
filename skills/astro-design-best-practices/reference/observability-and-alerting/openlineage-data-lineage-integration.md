@@ -1,3 +1,15 @@
+---
+topic: openlineage-data-lineage-integration
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # OpenLineage / Data-Lineage Integration
 
 AutoSys tracked job dependencies but lacked insight into the actual data assets (tables, files, partitions) being moved. OpenLineage solves this by emitting metadata about what data a task reads and writes, enabling a true "data supply chain" view.
@@ -38,7 +50,7 @@ This prints the JSON lineage events to the terminal for debugging.
 
 ## Sources
 
-[B1] Astronomer Docs — Configure OpenLineage on Astro (pre-installed OpenLineage Airflow Provider, zero-config capture): https://www.astronomer.io/docs/astro/observe-openlineage (tier 1) — **NEEDS_EXEC_CHECK**: the file's original B1 URL (`/docs/astro/data-lineage`) was not independently re-verified on this review; this URL is the current live page confirmed to cover the same content.
+[B1] Astronomer Docs — Configure OpenLineage on Astro (pre-installed OpenLineage Airflow Provider, zero-config capture): https://www.astronomer.io/docs/astro/observe-openlineage (tier 1, confirmed current and live via astronomer-docs verification — supersedes the file's original `/docs/astro/data-lineage` citation)
 [B2] Astronomer Docs — Configure OpenLineage on Astro (real environment variables: `OPENLINEAGE_NAMESPACE`, `OPENLINEAGE__FACETS__ENVIRONMENT_VARIABLES`, `AIRFLOW__OPENLINEAGE__EXECUTION_TIMEOUT`, `AIRFLOW__CORE__TASK_SUCCESS_OVERTIME`): https://www.astronomer.io/docs/astro/observe-openlineage (tier 1, added on doc-verification review to replace the fabricated temp-table variable)
 [B-Custom] Apache Airflow Providers OpenLineage Docs (accessed 2026-08-08)
 [B3] Astronomer Docs — Deployment role templates ("Deployment Observe Ingest: allows a user entity permissions to ingest OpenLineage events and metrics") and Deployment role reference (`deployment.observability.event.create`, `deployment.observability.metrics.create`): https://www.astronomer.io/docs/astro/customize-deployment-roles#deployment-role-templates and https://www.astronomer.io/docs/astro/deployment-role-reference#deployment-observability (tier 1, added on Critic-pass review)

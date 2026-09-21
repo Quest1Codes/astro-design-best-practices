@@ -1,3 +1,16 @@
+---
+topic: peoplesoft-agent-to-airflow-custom-operator
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: 
+  - erp_ps
+---
+
 # PeopleSoft Agent Migration → Airflow Custom Operator Design
 
 AutoSys's PeopleSoft agent type submits requests directly to the PeopleSoft Process Scheduler without a wrapper script, using PeopleSoft's proprietary API [B1]. PeopleSoft Process Scheduler runs batch processes (Application Engine programs, SQR reports, Crystal Reports, etc.) on behalf of the scheduler.

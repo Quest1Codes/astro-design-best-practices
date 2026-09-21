@@ -1,0 +1,6 @@
+/* extracted from PDF p.2764: Specify the Standard Input File on UNIX */
+insert_job: unix_stdin
+job_type: CMD
+machine: unixagent
+command: /usr/common/backup
+std_in_file: /tmp/test.in

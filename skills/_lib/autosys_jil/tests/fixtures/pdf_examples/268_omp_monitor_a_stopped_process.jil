@@ -1,0 +1,7 @@
+/* extracted from PDF p.2651: Monitor a Stopped Process */
+insert_job: omp_win
+job_type: OMP
+machine: winagt
+process_name: "c:\Program files\Agent\cybAgent.exe"
+process_status: STOPPED
+monitor_mode: NOW

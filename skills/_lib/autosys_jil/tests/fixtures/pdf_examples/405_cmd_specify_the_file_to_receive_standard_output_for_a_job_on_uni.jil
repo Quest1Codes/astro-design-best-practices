@@ -1,0 +1,6 @@
+/* extracted from PDF p.2768: Specify the File to Receive Standard Output for a Job on UNIX */
+insert_job: unix_stdout
+job_type: CMD
+machine: unixagent
+command: /usr/common/backup
+std_out_file: /tmp/test.out

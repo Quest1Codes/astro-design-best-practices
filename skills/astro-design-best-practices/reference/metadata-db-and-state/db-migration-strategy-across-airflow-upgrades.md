@@ -1,3 +1,15 @@
+---
+topic: db-migration-strategy-across-airflow-upgrades
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # DB Migration Strategy Across Airflow Upgrades
 
 Upgrading Airflow—especially moving between major versions like Airflow 2 to Airflow 3—involves significant database schema migrations. A disciplined strategy is required to prevent data corruption and extended downtime.
@@ -14,7 +26,7 @@ Before initiating any Airflow upgrade or database migration [B1]:
 | Migration Type | Approach |
 |---|---|
 | **Minor Version Upgrades** | Typically handled automatically on Astro via `astro deploy` with an updated runtime image. Ensure no active deployments are interrupted during the brief migration window [B2]. |
-| **Major Version (Airflow 2 → 3)** | Avoid in-place upgrades. Because Airflow 3 is a rearchitecture (e.g., workers no longer connect to the DB directly), a "fresh database" approach is recommended to ensure a clean transition [B1][B3]. |
+| **Major Version (Airflow 2 → 3)** | In-place upgrade via `astro deploy` is the standard, fully-supported path on Astro (documented table-size limits apply, and rollback is supported within a bounded version window). Astro has since optimized this path, reducing in-place Airflow 2→3 upgrade times from hours to minutes. Workers no longer connecting to the DB directly (new API server) is an architectural change to plan around, not a reason to start from a fresh database [B1][B3]. |
 
 ## Handling downtime and component states
 

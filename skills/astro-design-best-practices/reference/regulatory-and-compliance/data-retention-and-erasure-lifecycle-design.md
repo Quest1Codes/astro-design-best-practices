@@ -1,3 +1,15 @@
+---
+topic: data-retention-and-erasure-lifecycle-design
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Data Retention and Erasure Lifecycle Design
 
 GDPR's Right to be Forgotten and similar data erasure regulations create a specific challenge for orchestration platforms: Airflow stores metadata about pipeline executions, and the pipelines themselves may have processed PII. Both dimensions must be addressed.

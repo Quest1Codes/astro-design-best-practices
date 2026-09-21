@@ -1,0 +1,8 @@
+/* extracted from PDF p.2697: Use a Failure Message to Determine a Job's Failure */
+insert_job: SAPTEST
+job_type: SAP
+machine: SAPAGENT
+sap_fail_msg: Internal problem
+sap_step_parms: abap_name=BTCTEST, variant=TEST
+sap_job_name: SAP_JOB
+sap_info_pack: infopackage

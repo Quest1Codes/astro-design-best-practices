@@ -1,3 +1,15 @@
+---
+topic: config-as-code-for-dag-factory-inputs
+family: knowledge
+skill: astro-design-best-practices
+verified_against:
+  airflow: "3.3.1"
+  astro_runtime: "3.3-2"
+last_verified: 2026-09-17
+confidence: cited
+signals: []
+---
+
 # Config-as-Code for DAG-Factory Inputs
 
 When implementing a DAG Factory pattern (see topic 001) for large-scale AutoSys migrations, pipelines are generated dynamically from configuration files. Managing these input files correctly is critical for performance and maintainability.

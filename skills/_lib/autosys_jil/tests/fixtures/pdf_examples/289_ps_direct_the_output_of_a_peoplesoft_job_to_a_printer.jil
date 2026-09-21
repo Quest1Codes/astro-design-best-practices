@@ -1,0 +1,12 @@
+/* extracted from PDF p.2668: Direct the Output of a PeopleSoft Job to a Printer */
+insert_job: ps_printer
+job_type: ps
+machine: psagent
+ps_process_name: XRFWIN
+ps_process_type: SQR Report
+ps_dest_type: PRINTER
+ps_dest_format: PS
+ps_output_dest: \\printers\PRINTER1
+ps_run_cntrl_id: test
+ps_operator_id: VP1@ps1
+ps_process_name: process_name

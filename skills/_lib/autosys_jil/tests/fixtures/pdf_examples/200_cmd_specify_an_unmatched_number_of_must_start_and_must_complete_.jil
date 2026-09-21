@@ -1,0 +1,10 @@
+/* extracted from PDF p.2584: Specify an Unmatched Number of Must Start and Must Complete Times */
+insert_job: job2
+job_type: CMD
+machine: localhost
+command: echo "Hello"
+date_conditions: y
+days_of_week: all
+start_times: "12:00, 13:00"
+must_start_times: "12:01"
+must_complete_times: "12:02"

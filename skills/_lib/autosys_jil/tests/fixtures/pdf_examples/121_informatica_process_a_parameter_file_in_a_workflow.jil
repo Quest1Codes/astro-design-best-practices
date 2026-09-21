@@ -1,0 +1,10 @@
+/* extracted from PDF p.2519: Process a Parameter File in a Workflow */
+insert_job: informatica
+job_type: INFORMATICA
+machine: 160_infor
+owner: root@informatica
+informatica_folder_name: FSTL
+informatica_workflow_name: WF_2
+informatica_pass_on_success: 1
+informatica_param_file: C:\Infa\wf2.prm
+informatica_pass_on_success: 0 | 1

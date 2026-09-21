@@ -1,0 +1,8 @@
+/* extracted from PDF p.2818: Monitor for a Specific Size */
+insert_job: ft_unix_shrink
+job_type: FT
+machine: unixagt
+watch_file: /cash/items/distribute
+watch_file_type: SHRINK
+watch_file_change_type: SIZE
+watch_file_change_value: 1000

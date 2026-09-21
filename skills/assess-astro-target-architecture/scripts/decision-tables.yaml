@@ -1,0 +1,124 @@
+# Machine-readable twin of reference/decision-tables.md, evaluated by recommend_architecture.py.
+# Each decision has an ordered `rules` list (first match wins) and a `default`. Every rule names
+# the KB topic(s) that justify it -- these are direct paths into
+# astro-design-best-practices/reference/, not yet routed through kb-routing.md's
+# generated signal table (that requires Phase 2's front-matter pass on the 130 KB files).
+#
+# confidence: mixed everywhere an Astro-side capability claim is involved -- this project did not
+# have Astronomer MCP access when these rules were authored; re-verify before presenting as fact.
+version: 1
+
+decisions:
+  deployment_model:
+    kb_topics: [ha-and-dr/scheduler-ha-what-astro-provides-vs-what-you-design.md]
+    rules:
+      - id: residency_dedicated
+        when: {nfr_key: residency, op: is_set}
+        choice: Dedicated
+        confidence: mixed
+        reason: "A stated data-residency requirement usually means Hosted's shared-region posture is not acceptable without confirmation; Dedicated (single-tenant, region-pinned) is the conservative default -- confirm against current Astro region/Dedicated availability."
+      - id: private_network_hybrid
+        when: {nfr_key: network_posture, op: eq, value: private}
+        choice: Hybrid
+        confidence: mixed
+        reason: "An entirely private-network estate needs Hybrid (customer-managed data plane) or Remote Execution agents, not Hosted, unless a network bridge is separately planned."
+      - id: brownfield_extend
+        when: {nfr_key: brownfield_astro, op: truthy}
+        choice: "Extend existing footprint (see astro_inventory.py output)"
+        confidence: mixed
+        reason: "An existing Astro footprint should be extended, not duplicated, absent a stated reason to greenfield."
+    default: {choice: Hosted, confidence: mixed, reason: "Simplest operational model absent a residency/network/brownfield signal forcing otherwise."}
+
+  executor:
+    kb_topics: [executor-and-worker/celeryexecutor-vs-kubernetesexecutor-decision-framework.md]
+    rules:
+      - id: k8s_brownfield
+        when: {estate_signal: k8s_source_topology}
+        choice: KubernetesExecutor
+        confidence: mixed
+        reason: "Source estate already runs containerized (nfr.brownfield_astro or migrate-topology-k8s signals present) -- KubernetesExecutor keeps the operational model closest to what the team already knows."
+      - id: high_isolation_erp
+        when: {estate_signal: erp_share_high}
+        choice: "KubernetesExecutor (or per-task KubernetesPodOperator override under CeleryExecutor)"
+        confidence: mixed
+        reason: "ERP job types often need distinct, heavier runtime images -- per-task isolation favors Kubernetes-based execution for that slice specifically."
+    default: {choice: CeleryExecutor, confidence: mixed, reason: "Default for a mostly-homogeneous, mostly-MECH workload -- lower per-task overhead than KubernetesExecutor."}
+
+  worker_queues:
+    kb_topics: [machine-load-and-virtual-resources/virtual-machine-groups-to-executor-queue-design.md]
+    rules:
+      - id: machine_groups_present
+        when: {estate_signal: many_machine_groups}
+        choice: "One queue class per machine-group purpose cluster (see machine_load_pressure)"
+        confidence: mixed
+        reason: "Distinct AutoSys machine groups usually reflect distinct resource/software profiles worth preserving as separate queues rather than flattening to one pool."
+    default: {choice: "Single default queue", confidence: mixed, reason: "No machine-group signal strong enough to justify queue segmentation yet."}
+
+  remote_execution_agents:
+    kb_topics: []
+    rules:
+      - id: network_bound_groups
+        when: {estate_signal: many_machine_groups}
+        choice: "Evaluate Remote Execution agents per machine group -- see migrate-topology-onprem-distributed"
+        confidence: mixed
+        reason: "A large distributed machine fleet (>=10 groups) is the shape where some groups typically cannot reach Hosted workers directly and need a Remote Execution agent, rather than a full Hybrid data plane for the whole estate. This is a hint to check per-group, not a per-group answer."
+    default: {choice: "Not evaluated -- small/simple machine topology", confidence: mixed}
+
+  metadata_db_tier:
+    kb_topics: [metadata-db-and-state/postgres-sizing-and-instance-class-selection.md]
+    rules:
+      - id: large_estate
+        when: {estate_signal: job_count_gt2000}
+        choice: "Larger instance class -- see size_target.py db_tier() for the actual sizing"
+        confidence: mixed
+      - id: history_retention_long
+        when: {nfr_key: dr_runbook_exists, op: truthy}
+        choice: "Confirm retention/backup cadence matches DR runbook requirements"
+        confidence: mixed
+    default: {choice: "Standard instance class -- see size_target.py db_tier()", confidence: mixed}
+
+  secrets_backend:
+    kb_topics: [security-and-multitenancy/secrets-backend-selection.md]
+    rules:
+      - id: pam_in_use
+        when: {nfr_key: pam_solution, op: is_set}
+        choice: "Integrate existing PAM/vault as the Astro secrets backend"
+        confidence: mixed
+        reason: "An existing PAM/vault solution should be integrated, not replaced, absent a stated reason."
+    default: {choice: "Astro-managed secrets backend or environment-variable Connections", confidence: mixed}
+
+  identity:
+    kb_topics: [security-and-multitenancy/sso-oauth-integration-design.md]
+    rules:
+      - id: idp_present
+        when: {nfr_key: idp, op: is_set}
+        choice: "SSO via the existing IdP"
+        confidence: mixed
+    default: {choice: "Astro-native user management (small teams only)", confidence: mixed}
+
+  alerting_itsm:
+    kb_topics: [observability-and-alerting/incident-ticket-automation.md]
+    rules:
+      - id: svcdesk_flag_present
+        when: {estate_signal: svcdesk_flag_count_gt0}
+        choice: "Wire Astro Alerts to the existing ITSM tool (svcdesk_* attributes found)"
+        confidence: mixed
+    default: {choice: "Astro Alerts to email/Slack; no ITSM integration found as required", confidence: mixed}
+
+  compliance_overlay:
+    kb_topics: [regulatory-and-compliance]
+    rules:
+      - id: compliance_list_present
+        when: {nfr_key: compliance, op: is_set}
+        choice: "Route to the matching vertical-overlay-*.md KB topic(s) per nfr.compliance"
+        confidence: mixed
+    default: {choice: "No specific overlay identified", confidence: mixed}
+
+  greenfield_vs_extend:
+    kb_topics: []
+    rules:
+      - id: brownfield_present
+        when: {nfr_key: brownfield_astro, op: truthy}
+        choice: extend
+        confidence: mixed
+    default: {choice: greenfield, confidence: mixed}

@@ -1,0 +1,10 @@
+/* extracted from PDF p.2591: Send an Email Notification when a Job Fails */
+insert_job: email_job_2
+machine: localhost
+job_type: c
+command: as_test -t 2
+send_notification:f
+notification_template: emailtemplate2
+notification_emailaddress: admin2@example.com
+notification_emailaddress_on_failure:admin@example.com
+notification_emailaddress_on_success: email_success

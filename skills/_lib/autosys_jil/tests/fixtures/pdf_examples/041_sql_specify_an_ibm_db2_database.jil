@@ -1,0 +1,8 @@
+/* extracted from PDF p.2445: Specify an IBM DB2 Database */
+insert_job: UPDATE
+job_type: SQL
+machine: DB_AGENT
+owner: entadm@myhost
+sql_command: UPDATE ENTADM.STAFF SET YEARS=3 where NAME='Jonson'
+destination_file: "c:\log\updatejob.txt"
+connect_string: "jdbc:db2://172.31.255.255:50000/SAMPLE"

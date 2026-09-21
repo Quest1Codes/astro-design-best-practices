@@ -1,0 +1,6 @@
+/* extracted from PDF p.2543: Specify a JCL Member from a Sequential Data set */
+insert_job: ZOS_SEQ_JOB
+job_type: ZOS
+machine: ZOS1
+jcl_library: seq-CYBSL02.SEQJCL
+jcl_member: CYBTS002
