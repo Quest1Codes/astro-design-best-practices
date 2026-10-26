@@ -56,10 +56,10 @@ light_task = BashOperator(
 ## Pool Management
 
 - Create Pools via **Airflow UI → Admin → Pools** or CLI: `airflow pools set <pool_name> <slots> "<description>"` [B2].
-- Manage Pools as Infrastructure as Code: define them in your Deployment's Terraform or via the Astro API at Deployment creation time [B2].
+- Manage Pools as code: Pools can be created and managed through the Airflow REST API as well as the UI and CLI [B2], so a deploy pipeline can script them with the CLI or REST API instead of hand-creating them in the UI. {syn: B2}
 - The **`default_pool`** in Airflow has 128 slots by default and applies to all tasks not explicitly assigned to a named pool. Do not rely on `default_pool` for throttling — create named pools for each resource group [B2].
 
 ## Sources
 
 [B1] Broadcom AutoSys Documentation — `max_load` and `job_load` JIL attributes, `QUE_WAIT` status when machine capacity exceeded, arbitrary unit definition (accessed 2026-08-11)
-[B2] Astronomer Learn — Airflow Pools (`default_pool` 128-slot default, `pool` parameter, `pool_slots`, `priority_weight`, custom `weight_rule`): https://www.astronomer.io/docs/learn/airflow-pools (tier 1, added on doc-verification review)
+[B2] Astronomer Learn — Airflow Pools (`default_pool` 128-slot default, `pool` parameter, `pool_slots`, `priority_weight`, custom `weight_rule`; pools managed via UI, CLI, or REST API): https://www.astronomer.io/docs/learn/airflow-pools (tier 1, added on doc-verification review; re-checked 2026-10-22: the page does not mention Terraform or the Astro API for pool management, so that earlier claim was removed)

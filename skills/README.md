@@ -63,8 +63,8 @@ workflow itself (`AGENTS.md` Design Principles #2), so each gets its own skill b
 - `astro-design-best-practices/` — target-side design guidance, 137 topics across 19 clusters,
   organized as `reference/{cluster}/{topic}.md`. Load **selectively** via
   `assess-astro-target-architecture/reference/kb-routing.md` (inventory signal → topic list), not
-  all 137 at once. Provenance (which topics are Critic-checked vs. self-cited vs. flagged
-  `NEEDS_EXEC_CHECK`) is tracked in `research/kb-provenance.md`.
+  all 137 at once. **Draft status**: only 24 topics are Critic-checked and none are human-signed-off;
+  see the provenance table in that skill's `SKILL.md` before treating any claim as verified.
 
 ## Shared library (not a skill — imported by scripts across every family above)
 

@@ -15,7 +15,8 @@ signals:
 
 > PRACTITIONER JUDGMENT: Astronomer's Otto is a real AI-assisted migration/operations agent,
 > confirmed via astronomer-docs to include "migrate workflows from legacy orchestration systems to
-> Airflow on Astro" as a stated capability. **Its current documented status is Labs (early-access)**,
+> Airflow on Astro" as a stated capability, and Astronomer's migration announcement names AutoSys
+> JIL explicitly as a supported input [B2]. **Its current documented status is Labs (early-access)**,
 > not GA — factor that into reliability and support expectations before depending on it for a
 > production migration timeline. Otto's exact ingestion format, UI flow, and built-in stop
 > conditions remain **NEEDS_EXEC_CHECK** against current Astronomer documentation before relying on
@@ -78,4 +79,5 @@ workflow it's recommending — not a separate, unrelated tool choice.
 - [P1] Project-internal — `skills/assess-migration-complexity-scoring/reference/translation-tooling-strategy.md` (tooling_hint field and its scoring inputs)
 - [P2] Project-internal — `skills/migrate-jil-to-airflow-translation/scripts/scaffold_dags.py` (refusal behavior for REDESIGN/NONE, `traceability.json` shape)
 - [B1] Astronomer Docs — Otto overview and Labs/early-access status: https://www.astronomer.io/docs/astro/otto/otto-overview and https://www.astronomer.io/docs/astro/feature-previews (tier 1, confirmed via astronomer-docs verification)
+- [B2] Astronomer Blog — "Introducing AI-assisted migrations with Otto" ("Otto supports migrations from tools like Control-M, AutoSys, Automic ..."; "takes your Control-M XML or AutoSys JIL and produces Python"): https://www.astronomer.io/blog/introducing-ai-assisted-migrations-with-otto-your-airflow-expert-for-the-translation-work-that-stalls-every-project/ (tier 3, vendor blog; accessed 2026-10-22)
 - NEEDS_EXEC_CHECK — Otto's actual ingestion format, UI flow, and any built-in stop conditions; not independently verified this session.

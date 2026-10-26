@@ -11,7 +11,7 @@ description: >
 metadata:
   author: Quest1
   version: "0.2.0"
-  status: "COMPLETE — 137 of 137 planned topics shipped across 19 clusters"
+  status: "DRAFT — 137 of 137 planned topics drafted; 24 Critic-checked; 0 human-signed-off"
   source_project: astro-design-best-practices
 ---
 
@@ -20,32 +20,29 @@ metadata:
 ## Overview
 
 137 topic files across 19 clusters (see `tasks/README.md` in this repo for
-the full roadmap and the axis relevance matrix), each produced by the
-Researcher → Human Source Check → Generator → Critic → Human Sign-off
-pipeline defined in `AGENTS.md`, or (the 7 topics added in the Phase 2 KB
-refresh) authored directly with inline `NEEDS_EXEC_CHECK`/`PRACTITIONER
-JUDGMENT` markers where live-docs verification wasn't available. Every claim
-in every file traces to a `## Sources` section; every recommendation that
-bridges an AutoSys mechanism to an Astro/Airflow design is marked
-`{syn: ...}` and built transparently from cited facts, per `AGENTS.md`
-Design Principle #6.
+the full roadmap and the axis relevance matrix). **This KB is a draft, not
+verified content.** The Researcher → Human Source Check → Generator → Critic →
+Human Sign-off pipeline in `AGENTS.md` has only partly run, and no topic has
+passed either human gate. Treat every file as unreviewed until its row below
+says otherwise.
 
-**Provenance (which pipeline stages actually ran, Critic report paths, and
-sign-off status) has moved to `research/kb-provenance.md`** — read that file
-before treating any topic's claims as independently verified. In short:
-topics 001-020 are Critic-checked but not human-signed-off; 021-130 are
-self-cited but never received a separate Critic pass; 131-137 (the 7 new
-Phase 2 topics) are directly-authored with explicit `NEEDS_EXEC_CHECK`
-markers on anything not independently verifiable this session. None of the
-137 files have completed `.agents/signoff-checklist.md`.
+**Provenance, by topic range** (from the 2026-10-22 whole-skill assessment,
+`.work/_skill-assessment/critic-output.md`):
 
-Every file's `verified_against` front-matter is checked against the single
-source of truth in `versions.yaml` by `tools/refresh_check.py` — run
-`python3 tools/refresh_check.py --summary` for the current verification-status
-table, and `python3 tools/lint_terms.py --root .` for banned/stale-term and
-front-matter-completeness checks. Both currently report clean across all 137
-files (see `research/kb-provenance.md` for the mechanical-pass details of
-what that cleanup involved).
+| Topics | Fact-sheet on record | Critic report on record | Human gates |
+|---|---|---|---|
+| 001–020 | `research/*-fact-sheet.md` (batched) | `research/*-critic-report.md` | Both skipped |
+| 025–028 | `research/0NN-*.md` | `.work/0NN/critic-output.md` | Both skipped |
+| 021–024, 029–130 | None | **None.** `.work/029–068/status.md` says "Critic DONE (inline)", but no Critic output exists, so treat these as not checked | Not run |
+| 131–137 (Phase 2 refresh) | None (authored directly) | None | Not run |
+
+Known quality gaps across the corpus: 13 files have no inline citation
+markers; in 34 files the `{syn: ...}` tag lists fact rows that are never
+cited in the body, or wraps prose instead of row IDs; only 24 files address
+the relevance-matrix axes. The `verified_against` / `last_verified`
+front-matter has not been machine-checked: the `versions.yaml`,
+`tools/refresh_check.py` and `tools/lint_terms.py` that earlier versions of
+this file referenced are not in the repo.
 
 ## Reference Files — Cluster 1: Scheduler & DAG Design
 
@@ -57,7 +54,7 @@ what that cleanup involved).
 - `reference/scheduler-and-dag/cross-dag-dependencies-datasets-vs-triggerdagrun-vs-externaltasksensor.md` — Asset (formerly Dataset) vs. `TriggerDagRunOperator` vs. `ExternalTaskSensor`, mapped onto AutoSys cross-box condition patterns.
 - `reference/scheduler-and-dag/dynamic-task-mapping-design.md` — `.partial()`/`.expand()` design for AutoSys's runtime job-cloning pattern.
 - `reference/scheduler-and-dag/custom-timetable-design-for-autosys-calendars.md` — custom `Timetable` design for `run_calendar`/`exclude_calendar`, extending the imported skill's calendar rules.
-- `reference/scheduler-and-dag/dag-level-sla-and-catchup-backfill-policy.md` — Airflow 3's SLA removal (replaced by experimental Deadline Alerts in 3.1) and the new `catchup=False` default; **flags a staleness conflict in the imported `alerting-and-sla.md` file, not yet corrected**.
+- `reference/scheduler-and-dag/dag-level-sla-and-catchup-backfill-policy.md` — Airflow 3's SLA removal (replaced by experimental Deadline Alerts in 3.1) and the new `catchup=False` default; the staleness conflict it flagged in `migrate-jil-to-airflow-translation/reference/alerting-and-sla.md` has since been fixed (that file was rewritten for Airflow 3).
 - `reference/scheduler-and-dag/idempotency-and-retry-design.md` — `n_retrys` → `retries` migration requires an idempotency classification step JIL never had.
 - `reference/scheduler-and-dag/concurrency-controls-pools-and-max-active-runs.md` — Pools vs. `max_active_runs` mechanics, mapped onto `machine-load-and-virtual-resources` cluster's AutoSys `max_load`/`job_load`/virtual-resource concepts.
 - `reference/scheduler-and-dag/naming-and-tagging-conventions-at-scale.md` — `dag_id`/`tags` mapped onto AutoSys's `box_name` (structural) vs. `group`/`application` (cross-cutting classification) two-axis model.
@@ -245,9 +242,8 @@ Cluster 1 (Scheduler & DAG Design, 15 topics) is now complete.
 
 ## Known open items
 
-Full batch/cohort provenance (pipeline stages run, Critic report paths, sign-off status) lives in
-`research/kb-provenance.md` — this section only lists items that genuinely still require a human
-(or a future session with live docs access) to run something real, not just re-read a file:
+Provenance by topic range is in the Overview table above. This section lists only items that
+still need a human (or a session with live docs access) to run something, not just re-read a file:
 
 - `dag-factory-pattern-for-large-estates.md` — confirm `is_paused_upon_creation` behaves as
   documented (an open Airflow GitHub issue questions its reliability).
@@ -266,7 +262,8 @@ Full batch/cohort provenance (pipeline stages run, Critic report paths, sign-off
   `orbiter-vs-otto-vs-hand-translation.md`, `airflowctl-and-astro-cli-division-of-labor.md`, and
   `deadline-alerts-status-and-fallbacks.md` still carry open markers — their claims are outside
   astronomer-docs' coverage (third-party tools, upstream OSS CLI surface) or inherently
-  version-dependent. See `research/kb-provenance.md` Cohort 3 for the original full list.
+  version-dependent. **Update 2026-10-22**: `orbiter-vs-otto-vs-hand-translation.md`'s claim
+  that neither tool supports AutoSys JIL was wrong and has been corrected against live sources.
 - `SETUP-4` (seed source list) and `SETUP-6` (formal scaffold task) were done informally as part
   of generating the original 130 topics, not as their own gated tasks — see `tasks/README.md` for
   the formal tracker state.
